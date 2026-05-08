@@ -1,0 +1,364 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+\usepackage{bbold}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\graphicspath{ {./images/} }
+
+\DeclareUnicodeCharacter{21D2}{\ifmmode\Rightarrow\else{$\Rightarrow$}\fi}
+
+\begin{document}
+The same technological environment, just different trading arrangements: trade occurs in every period
+
+Commodity space:
+
+\begin{itemize}
+  \item Final goods (can be used for cons. or capital stock)
+  \item normalize price to 1
+  \item Capital rental services
+  \item price $r_{+}$(measured in terms of time-t goods)
+  \item Labor services
+  \item price cot
+\end{itemize}
+
+Consumer's problem:
+
+$$
+\begin{aligned}
+& \operatorname{Max}_{\imath\left(k_{+}, k_{+}, l_{+}\right\}_{+\infty}^{\infty}} \sum_{+=0}^{\infty} \beta^{+} u\left(c_{,}, l_{+}\right) \\
+& \text {s.t. } l_{+}+n_{+} \leq 1 \quad l_{+} \geq 0 \quad n_{+} \geq 0 \\
+& k_{++1} \geq 0 \quad c_{+} \geq 0 \quad k_{0}-\text { given } \\
+& (\oplus) \quad B \text { adget constr. for every t: } \\
+& c_{+}+k_{++1} \leq r_{+} k_{+}+\omega_{+} n_{+}+\pi_{+}+(1-\delta) k_{+}
+\end{aligned}
+$$
+
+To solve it: (FOC) + (TVC) (like the OGM with linear\\
+technology)\\
+Given $\left\{\omega_{+}, r_{+}, T_{+}\right\}_{+=0}^{\infty}$ : find optimal $\left\{C_{+}, k_{+\cdots}, n_{+}, l_{n}\right\}_{-\infty}^{\infty}=0$\\
+Firm's Problem:
+
+$$
+\begin{aligned}
+\mathbb{P}_{+} & =\operatorname{Max}_{k_{+}, n_{+}}\left[F\left(k_{+}, n_{+}\right)-r_{+} k_{+}-w_{+} n_{+}\right], \forall t \geq 0 \\
+& \Rightarrow F_{1}\left(k_{+}, n_{+}\right)=r_{+} \\
+& F_{2}\left(k_{+}, n_{+}\right)=w_{+}
+\end{aligned}
+$$
+
+Given $\left\{w_{+}, r_{+}\right\}_{+=0}^{\infty}$, quantities $\left\{k_{+}, n_{+}, \pi_{+}\right\}_{+=0}^{\infty}$ solve the firm's problem.
+
+\section*{A competitive equilibrium}
+consists of prices $\left\{r_{+}, w_{+}\right\}_{t=0}^{\infty}$ \& quantities $\left\{G_{1} k_{+1}, n_{+}, l_{+}, \pi_{+}\right\}_{+=0}^{\infty}$ such that:
+
+\begin{enumerate}
+  \item Given prices and dividends, consumers behave optinally
+  \item Given prices, firms behave opormally
+  \item prices are such that the markets clear
+\end{enumerate}
+
+\begin{itemize}
+  \item capital \{ks\}: same in cons' \& firms' problems
+  \item lasor \{nt\}: $\_\_\_\_$\\
+$\_\_\_\_$\\
+$\_\_\_\_$\\
+-goods: $c_{+}+k_{++1}=F\left(k_{+1} n_{+}\right)+(1-\alpha) k_{+}$
+\end{itemize}
+
+\section*{Remark:}
+Since $\pi_{+}=F\left(k_{+}, n_{+}\right)-r_{+} k_{-}-\omega_{+} n_{+}$, the goods met clearing conol. is the same as the cons' budget constr. But this is not true, for example, if there are different types of consumers (e.g. only some of them own firms \& receive dividends)
+
+\section*{Weltare properties:}
+HW: establish that the $1^{\text {st }} \& 2^{\text {nd }}$ Welfare\\
+\includegraphics[max width=\textwidth, alt={}, center]{9f16eef1-4adf-4916-94df-0975ecff1d23-02_78_208_2275_199}\\
+theorems hold.
+
+The key step of setting up the recursive problems, as well as the recursive equilitivium, is choosing the sit of state variables.
+
+In contrast to the Social Planner's problem, the decision of agents in competitive equilibrium is affected by the market variables which the agents cannot control (e.g. prices).\\
+These market variables:
+
+\begin{itemize}
+  \item are endogenous (depend on the behaviour of the agents participating in the economy).
+  \item may evolve overtime (because individual agent's chorces evolve over time)\\
+⇒ the agents take into account how these aggregate variables evolve,\\
+the law of motion for these aggregate variables must be consistent with the agent's chorces.
+\end{itemize}
+
+Let's try to be very general / abstract first:\\
+In general, all the state variables can be classified into.
+
+\begin{enumerate}
+  \item $x$ - individural agent's state variables\\
+(describe the agent-specific situation)
+  \item $X$ - aggregate endogenous state variables
+\end{enumerate}
+
+Idiscribe the state of the markets that can be impacted by the chorces of markets'particigants)\\
+3) 2 - aggregate exogenous state variables (l.g. nature, etc.) (affect the state of the market, not impactud by the agents' behavior).
+
+Then the decision problem of an agent /consumer or firm) can be written town as:
+
+$$
+V(x, X, Z)=\max _{y \in \Gamma(x, x, z)}\left\{F(x, X, z, y)+\beta V\left(x^{\prime}, X^{\prime}, Z^{\prime}\right)\right\} .
+$$
+
+s.t. 1) the law of motion for the individual state:
+
+$$
+x^{\prime}=h(x, x, z, y)
+$$
+
+\section*{affected by individual choices}
+\begin{enumerate}
+  \setcounter{enumi}{1}
+  \item the law of motion for the aggregart state:
+\end{enumerate}
+
+$$
+X^{\prime}=H(x, z)
+$$
+
+\begin{itemize}
+  \item does not depend on individeral state or chorcy
+  \item agents take it as given
+\end{itemize}
+
+\begin{enumerate}
+  \setcounter{enumi}{2}
+  \item the law of motion for the nature's state:
+\end{enumerate}
+
+$$
+Z^{\prime}=M(Z)
+$$
+
+\begin{itemize}
+  \item not affected by the agents' individual chorces or aggregate outcomes\\
+(so "nature" may be not the best interpretation - aka Global Warming $\mathrm{y}^{\circ}$ )\\
+This problem says:\\
+Given the current \& the Letture state of the markets $\left(X, X^{\prime}, Z, Z^{\prime}\right)$, the agent with individual state $X$ makes individual decision $y=g(x, X, Z)$.
+\end{itemize}
+
+Ir the copulitrium, the law of motion of the aggregare state variable must be consistent with the individual decisions of the apents.
+
+Sometimes peope separate individual and aggregate state variables by; $\quad V(x ; X, Z)$
+
+\section*{Remarks:}
+\begin{enumerate}
+  \item In contrast to the sequentral competitive equilitorium, recursive competitive equilibrium also describes outs of-equitibrium behavior because it desoribes the choices for all possible $X$, while only some values of $X$ may obtain in equilibrium.
+  \item Choosing $x$ is not trivial...
+\end{enumerate}
+
+First, $X$ should include all the aggregate variables that determine prices (or prices themselves). second, $X$ should be sufficient, alling with $Z$, for describing the evolution of $X$.\\
+For example, in the growth model we've considered, prices $r$ and $w$ are determined by $(K, N)$. But aggregate $(K, N)$ may be not sufficient to describe the evolution of prices when agents are heterogneous (then the tistribution of $k$ accoss people, not just total /average $K$, matters!)
+
+Recursive Competitive Equilibrium (RCE) in a neoclassical growth model
+
+\begin{itemize}
+  \item The same environment as before:\\
+consumers. Own capital \& shares in firms\\
+"decide how much to work/rest
+  \item decole how much to consume/sare\\
+firms. "choose inpusts to max. profit\\
+"pay tividends to shareholders
+  \item Trade occurs in every period:\\
+(recursive setup ⇒ today and the future ⇒\\
+⇒ cannot time the trade stifterntly)
+  \item State space:
+  \item no nature variable $(\nexists Z)$\\
+(other settings: technology $Z F\left(k_{1} N\right), Z$ evolves over time, deferministically or stochastically)
+  \item aggregare state variables.\\
+what does consumer take as given? pricys dividerag ⇒ obvious candidate is\\
+$X=(r, \omega, \pi)$\\
+need to think asbut the aggrepate law of motion $X^{\prime}=M(X) \ldots$
+\end{itemize}
+
+This would be correct...\\
+But the state space can be reduced.!"\\
+(always try to do it if possible, because computation time increases exponentially on the \# of state variables).
+
+Denote by $k_{1} n$ : individual choices (small letters)\\
+KIN: a ggregate variables (capital letters)\\
+Running ahead, we foresee that
+
+$$
+\begin{aligned}
+& r=F_{1}(K, N)=\tilde{r}(K, N) \\
+& \omega=F_{2}(K, N)=\tilde{\omega}(K, N) \\
+& \begin{aligned}
+\pi=F(K, N)-r K-\omega N & =F(K, N)-\tilde{r}(K, N) \cdot K-\tilde{\omega}(K, N) \cdot N \\
+& =\tilde{\pi}(K, N)
+\end{aligned}
+\end{aligned}
+$$
+
+Thus, knowing aggrepate $K, N$ is sufficient for recovering $(r, w, \pi)$\\
+$\Rightarrow X=(K, N)$ is a natural candidate.\\
+Can we reduce the state space even further?\\
+For an individual, $e / n$ choice is determined by $k$ and aggregate state variables.\\
+⇒ Aggregate labor is a function of agogregate state (at least in the representasive agent aconomy).\\
+So it makes sense to "gress" that we com only have one state variable, $K$\\
+with $N$ being a $f^{2}$ of 1t, and this function wrust be consistent with individual labor choices.
+
+\begin{itemize}
+  \item individrual state, $k$ (individual capital stode)
+\end{itemize}
+
+Consumer problem:
+
+\section*{Consumer problem:}
+$$
+\begin{aligned}
+& V(k, K)=\max _{\substack{0 \leq k^{\prime} \\
+0 \leq l \leq 1}}\left\{u(c, l)+\beta V\left(k^{\prime}, K^{\prime}\right)\right\} \\
+& \text { s.t. 1) } c+k^{\prime} \leq \omega(K)(1-l)+(1+r(K)-\delta) k+\pi(K)
+\end{aligned}
+$$
+
+(CP)\\
+2) $r(K), w(K), \pi(K)$, are exogenous, for the consermer)\\
+3) $K^{\prime}=M(K)$\\
+the law of motion for the aggregate state
+
+$$
+\left.\Rightarrow \begin{array}{l}
+k^{\prime}=g^{k^{\prime}}(k, K) \\
+c=g^{c}(k, K) \\
+n=1-l=g^{n}(k, K)
+\end{array}\right\} \text { policy functions }
+$$
+
+\section*{Firm's problem:}
+(FP) Max $F(k, n)-r(K) \cdot k-\omega(K) \cdot n$ k. n\\
+$\Rightarrow k^{f}(K), n^{f}(K), \pi(K)$
+
+\section*{The Recursive Competitive Equilibrium consists of:}
+\begin{itemize}
+  \item price functions: $r(K), \omega(K)$\\
+$\left.\begin{array}{rl}-\frac{\text { policy functions }}{(\text { quantities })}: & g^{k^{\prime}}(k, k) \\ & g^{c}(k, k) \\ & g^{n}(k, k) \\ & f(1)\end{array}\right\}$ consumers
+\end{itemize}
+
+$$
+\left.\begin{array}{l}
+\dot{g}^{n}(k, k) \\
+k^{f}(k) \\
+n^{f}(k) \\
+\pi(k)
+\end{array}\right\} \text { firms }
+$$
+
+\begin{itemize}
+  \item value function: $V(k, k)$
+  \item The law of motion for aggregate state $H(K)$ such that:
+\end{itemize}
+
+\begin{enumerate}
+  \item Given $r(k), \omega(k), \pi(k)$ and $H(k)$,\\
+$V(k, K)$ solves (CP)\\
+$g^{i}(k, k)$ - correspording policies
+  \item Given $r(k), \omega(k)$,\\
+$k^{f}(K), n^{f}(K)$ and $\nabla(K)$ solve (FP)
+  \item Markets char:\\
+capital: $\quad k^{f}(K)=K$\\
+note: in equilibrium, $K=k$ (captal supply) but $k, K$ are state var-s for the cons., the problem is solved for $\forall$ compinitations of $(k, K)$, not just $k=K$.\\
+But we will use $k=K$ betow.\\
+labor: $n^{f}(K)=N=g^{e}(K, K) \quad \forall K$\\
+\includegraphics[max width=\textwidth, alt={}, center]{9f16eef1-4adf-4916-94df-0975ecff1d23-09_288_1336_2359_785}\\
+aggręgate labor\\
+goods: $\quad C+K^{\prime}=Y+(1-\infty) K$\\
+Lin aggregate variables)
+\end{enumerate}
+
+$$
+\Leftrightarrow g^{c}\left(k_{1} k\right)+H(k)=F\left(k_{1} n+(k)\right)+(1-\infty) k
+$$
+
+\begin{enumerate}
+  \setcounter{enumi}{3}
+  \item Consistency lof aggr. Law of motion with ind.
+\end{enumerate}
+
+$$
+H(K)=g^{k^{\prime}}(K, K), \forall K
+$$
+
+representative consumer
+
+Weltare properties of the RCE:\\
+Social Planner's allocation:
+
+$$
+V(K)=\max _{0 \leq K^{\prime} \leq F(K, 1)+(1-\alpha) K} u\left(F(K, 1)+(1-\alpha) K-K^{\prime}\right)+\beta V\left(K^{\prime}\right)
+$$
+
+$\Leftrightarrow K^{\prime}=g(K)$ is such that\\
+$u^{\prime}(F(K, 1)+(1-\delta) K-g(K))=\beta\left(F_{1}(g(K), 1)+(1-\delta) g(K)\right) \cdot u^{\prime}(F(g(K), 1)+(1-\delta) g(K)-$ - $g(g(k)))$
+
+\section*{$1^{\text {st }}$ Weltare theorem:}
+Competiture equilibrium is efficient.\\
+need to show that $K^{\prime}=H(K)$ solves the (SP) problem, mamely that $g(k)=H(K)$ solves $\left(E E^{*}\right)$.\\
+(CP) in RCE:\\
+$V(k, k)=\max u\left(\frac{g^{c} / k, k}{(1+r(k)-\delta) k+\pi(k)-k^{\prime}}\right)+\beta V(k!H(k)) \left.k^{\prime} \leq 1+r(k)-\sigma\right) k+\infty(k)$\\
+$(F O C): u^{\prime}(c)=\beta V_{1}\left(k^{\prime}, H(K)\right)$\\
+(EC): $V_{1}(k, K)=u^{\prime}(c) \cdot(1+r(K)-r)$
+
+
+\begin{equation*}
+\Rightarrow(E E): \quad u^{\prime}\left(g^{c}(k, k)\right)=\beta\left(1+r\left(k^{\prime}\right)-\delta\right) \cdot u^{\prime}\left(g^{c}\left(g^{k^{\prime}}(k, k), k^{\prime}\right)\right) \tag{K}
+\end{equation*}
+
+
+s.t. $k^{\prime}=H(K)$
+
+In particular, it must hald for $k=k$ :\\
+$k^{\prime}=M(k)$
+
+$$
+u^{\prime}(\underbrace{}_{=\left(g^{c}(k, 1), \ldots, r^{c} \mid \gamma-H(v)\right.})=\beta(1+\underbrace{r(H(K))}_{-F .(u \mid v) 1)}-\delta) \cdot u^{\prime}(g^{c}(\underbrace{g^{k^{\prime}}(K, K)}_{=H(K)}, K_{1}^{\prime})), \forall K
+$$
+
+$$
+=F(K, 1)+(1-\alpha) K-H(K)
+$$
+
+(goods mict clearing)\\
+\includegraphics[max width=\textwidth, alt={}, center]{9f16eef1-4adf-4916-94df-0975ecff1d23-12_108_721_107_797}
+
+$$
+=F_{1}(H(K), 1)
+$$
+
+(FP)\\
+T
+
+$$
+=F\left(\left.H(K)\right|_{1}\right)+(1-\delta) H(K)-H(H(K))
+$$
+
+$\Rightarrow g(K)=H(K)$ solves ( $E E^{*}$ )
+
+\section*{$2^{\text {nd }}$ Welfare theorem:}
+Parets Optimal allocation can be achieved in a competitive equilibrium\\
+Proof: trivial:\\
+define
+
+$$
+\begin{aligned}
+& r(K)=F_{1}(K, 1) \\
+& \omega(K)=F_{2}(K, 1) \\
+& \pi(K)=F(K, 1)-r(K) \cdot K-\omega(K) \cdot 1 \\
+& H(K)=g(K) \quad \text { (optimal policy in (sp)) }
+\end{aligned}
+$$
+
+⇒ all equilibrium conditions are immediatuly verified
+
+
+\end{document}
