@@ -1,0 +1,177 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+
+\DeclareUnicodeCharacter{21D2}{\ifmmode\Rightarrow\else{$\Rightarrow$}\fi}
+\DeclareUnicodeCharacter{22EF}{\ifmmode\cdots\else{$\cdots$}\fi}
+
+\begin{document}
+Last time we have conduded that the solution to the finite harizon optimal growth model is equivalent to the solution of:
+
+$$
+u^{\prime}\left(f\left(k_{+}\right)-k_{++1}\right)=\beta u^{\prime}\left(f\left(k_{++1}\right)-k_{++2}\right) \cdot f^{\prime}\left(k_{++1}\right)
+$$
+
+(**)\\
+$k_{0}$ is given
+
+$$
+t=0 . . T-1
+$$
+
+$$
+k_{T+1}=0 \quad \text { (by property (1)) }
+$$
+
+In general,- second-order difference equations are hard to solve.\\
+It can be done numerically or, for some U/.I ff.), analytically.\\
+(1) Numerical solution - "shootings" algorythm:
+
+Given $k_{0}$\\
+Gives $k_{1}$\\
+loop\\
+fird $k_{2} \Rightarrow$ find $k_{3} \Rightarrow, \ldots \Rightarrow$ find $k_{T} \Rightarrow$ find $k_{T+1}$ If $k_{T+1}=0 \Rightarrow$ tone\\
+If $k_{T+1} \neq 0 \Rightarrow$ adjust $k_{1}$\\
+Remark: for $k_{+1} k_{++1}$ : $k_{-+2}$ solves
+
+$$
+\text { LHS, } \frac{u^{\prime}\left(f^{\prime}\left(k_{+}\right)-k_{++1}\right)}{\beta f^{\prime}\left(k_{+1}\right)}=u^{\prime}(f\left(k_{++1}\right)-\underbrace{k_{++2}}_{\text {indep of } k_{++2}})
+$$
+
+if $\operatorname{RHS}\left(k_{++2}=0\right)>L H S \Rightarrow \nexists k_{++2}$ solving this equation $\Rightarrow$ adjust the greess on $k_{1}$ (the solution must exist if optimal $k_{a}$ is chosen)
+
+Note also that if $f(0)>0 \Rightarrow$ corner solution $k_{++1}=0$ is possible, then EE may hold with inequality, and the solution (numerical algorythm) should account for it.\\
+(2) Analytreal solution can be found for some 4.1.1.1.) namely, $u(c)=\log c$ or $u(c)=\frac{c^{1-8}-1}{1-8}$
+
+$$
+f(k)=R k \text { or } f(k)=A k^{\alpha}
+$$
+
+Example 1: $u(c)=\log c, f(k)=R k$\\
+For linear production technology the solution is simple
+
+$$
+\left\{\begin{array}{l}
+C_{0}+k_{1}=R k_{0} \\
+\frac{c_{1}}{R}+\frac{k_{2}}{R}=k_{1} \quad \quad\left(c_{1}+k_{2}=k k_{1} ; \frac{h}{1} R\right) \\
+\frac{c_{2}}{R^{2}}+\frac{k_{3}}{R^{3}}=\frac{k_{2}}{R^{2}} \\
+\vdots \\
+\frac{c_{T}}{R^{T}}+\frac{k_{T+1}}{R^{T}}=\frac{k_{T}}{R^{T}-1} \\
+k_{T+1}=0
+\end{array}\right.
+$$
+
+$\Rightarrow \mid$ add them up $\mid \Rightarrow$
+
+$$
+\begin{gathered}
+\Rightarrow c_{0}+k_{1}+\frac{c_{1}}{R}+\frac{k_{2}}{R}+\frac{c_{2}}{R^{2}}+\frac{k_{2}}{R^{2}}+11+\frac{c_{T}}{R^{T}}+\frac{k_{T+1}}{R^{T}}= \\
+=R k_{0}+k_{1}+\frac{k_{z}}{R}+\frac{k_{2}}{R^{2}}+111+\frac{k_{T}}{R^{T-1}} \\
+\Rightarrow c_{0}+\frac{c_{1}}{R}+\frac{c_{2}}{R^{2}}+11+\frac{c_{T}}{R^{T}}=R k_{0}
+\end{gathered}
+$$
+
+$$
+\begin{aligned}
+& \text { PV of life-time cons. RV of life-time wealsh } \\
+& (\text { linear technology }=\text { save at interest rate } R)
+\end{aligned}
+$$
+
+Suppose also that $u(c)=\log (c)$\\
+⇒ Suter Equation (IE): $C_{++1}=\beta R C_{x}$
+
+$$
+\begin{aligned}
+& \Rightarrow C_{1}=(\beta R)^{t} C_{0} \\
+& \Rightarrow C_{0}+\frac{\beta R}{R} C_{0}+\left(\frac{\beta R}{R}\right)^{2} C_{0}+1+\left(\frac{\beta R}{R}\right)^{\top} C_{0}=R k_{0} \\
+& \Rightarrow C_{0}=R \cdot \frac{1}{1+\beta+11+\beta^{\top}} k=\frac{1-\beta}{1-\beta^{\top+1}} R k_{0}=C_{0} \\
+& C_{+}=(\beta R)^{+} C_{0} \\
+& t=1, \ldots, T
+\end{aligned}
+$$
+
+Remark: This is dearly a generalization of the consumer decision problem that you've seen in the OLG models.
+
+This "trick" of summing up the budget constraints and cancelling intermediate $k_{++1}$ will not work for non-linear technology.\\
+Then there is another approach.\\
+Illustrate it on the linear case here, you'll have to do it for a concave $f(k)$ in the HW.
+
+Example 2: $u(c)=\log c, f(k)=R k$, alter native approach $(E E) \Rightarrow u^{\prime}\left(C_{r}\right)=\beta R u^{\prime}\left(C_{a+1}\right) \quad \Rightarrow \quad C_{++1}=\beta R C_{4}$\\
+feasibility $\Rightarrow C_{r}=R k_{+}-k_{++1}$\\
+Denote $k_{t+1}=\underbrace{S_{t}}_{K} \cdot R k_{t}$\\
+${ }^{\sigma}$ savings rate\\
+$\Rightarrow$ (EE): $\quad \frac{c_{++1}}{c_{+}}=\frac{R k_{t+1}-s_{t_{1}} \cdot R \cdot k_{t+1}}{R k_{t}-s_{t} \cdot R k_{t}}=\beta R$
+
+$$
+\begin{aligned}
+\text { Rearrange } & \Rightarrow \frac{\left(1-s_{t+1}\right) \cdot R k_{t+1}}{\left(1-s_{t}\right) \cdot R k_{t}}=\beta R \quad, k_{t+1}=s_{t} \cdot R k_{t} \\
+& \Rightarrow \frac{\left(1-s_{t+1}\right) \cdot R \cdot s_{t} R k_{t}}{\left(1-s_{t}\right) R k_{t}}=\beta R \\
+& \Rightarrow R \cdot \frac{s_{t}\left(1-s_{t+1}\right)}{1-s_{t}}=\beta R \quad t=0 \ldots T-1
+\end{aligned}
+$$
+
+Add $k_{T+1}=0 \Rightarrow S_{T}=0$\\
+⇒ The optimal savings rate solve
+
+$$
+\begin{aligned}
+& \left(1-s_{t+1}\right) \cdot s_{t}=\beta\left(1-s_{t}\right), \quad t=0 \cdots T-1 \\
+& s_{T}=0
+\end{aligned}
+$$
+
+This is a first-order difference equation with the terminal condition $S_{T}=0 \Rightarrow$ we can easily solve it backwards!'
+
+$$
+\begin{aligned}
+& S_{t}=\frac{\beta}{1+\beta-S_{t+1}} \quad \frac{\text { Remark: generally, }}{\text { (contrary to the }} \text { Solow model) } \\
+& S_{T}=0 \Rightarrow S_{T-1}=\frac{\beta}{1+\beta} \\
+& S_{T-2}=\frac{\beta}{1+\beta-\frac{\beta}{1+\beta}}=\frac{\beta(1+\beta)}{1+2 \beta+\beta^{2}-\beta}=\frac{\beta(1+\beta)}{1+\beta+\beta^{2}}
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+& S_{T-2}=\frac{1}{1+\beta-\frac{\beta}{1+\beta}}=\overline{1+2 \beta+\beta^{2}-\beta}-\overline{1+\beta+\beta^{2}} \\
+& S_{T-3}=\frac{\beta}{1+\beta-\frac{\beta(1+\beta)}{1+\beta+\beta^{2}}}=\frac{\beta\left(1+\beta+\beta^{2}\right)}{1+2 \beta+\beta^{2}+\beta^{2}+\beta^{3}-\beta-\beta^{2}}=\frac{\beta\left(1+\beta+\beta^{2}\right)}{1+\beta+\beta^{2}+\beta^{3}}
+\end{aligned}
+$$
+
+⋯ show by induction that
+
+$$
+S_{T-t}=\frac{\beta\left(1+\beta t, 1+\beta^{t-1}\right)}{1+\beta t n+\beta^{t}}=\beta \cdot \frac{1-\beta^{t}}{1-\beta^{t+1}} \quad, t=1, \ldots T
+$$
+
+Rename the index $T-t \rightarrow t \Rightarrow$
+
+$$
+\begin{aligned}
+& S_{t}=\beta \cdot \frac{1-\beta^{T-t}}{1-\beta^{T-t+1}} \quad, t=0, \ldots, T_{-1} \\
+& S_{T}=0
+\end{aligned}
+$$
+
+Still have not found $\left\{c_{T}\right\}_{t=0}^{\top}$ or $\left\{k_{t+1}\right\}_{t=0}^{+} \ldots$
+
+$$
+\begin{aligned}
+k_{t+1} & =s_{t} \cdot R k_{t}=\beta \cdot \frac{1-\beta^{T-t}}{1-\beta^{T-t+1}} \cdot R k_{t} \\
+\Rightarrow C_{t} & =R k_{t}-k_{t+1}=R k_{t} \cdot\left(1-s_{t}\right)= \\
+& =R k_{t} \cdot \frac{1-\beta^{T-t+T}-\beta+\beta^{T-T T}}{1-\beta^{T-t+1}}=\frac{1-\beta}{1-\beta^{T-t+1}} \cdot R k_{t} \\
+\Rightarrow C_{0} & =\frac{1-\beta}{1-\beta^{T+1}} \cdot R k_{0} \quad \begin{array}{l}
+\text { same as in } \\
+\text { the porevious } \\
+C_{t}
+\end{array}=(\beta R)^{t} \cdot C_{t-1}, \quad t=1 \ldots T \quad \text { example } i^{-1}
+\end{aligned}
+$$
+
+
+\end{document}

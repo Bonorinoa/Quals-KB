@@ -1,0 +1,179 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+
+\DeclareUnicodeCharacter{21D2}{\ifmmode\Rightarrow\else{$\Rightarrow$}\fi}
+
+\begin{document}
+Now let's go back to the optimal Growth model.\\
+The recursive formulation:
+
+$$
+V(k)=\underbrace{\max _{k^{\prime} \in \Gamma(k)}\left\{F\left(k, k^{\prime}\right)+\beta V\left(k^{\prime}\right)\right\}}_{\text {denote by } T V(k)} \text { Equation }
+$$
+
+To establish that $T$ is contraction / and, hence, the Bellman Equation has a migue solution V(k)), let's check if it satisfies monotonicity \& discounting.
+
+\begin{enumerate}
+  \item Monoto micity:
+\end{enumerate}
+
+$$
+\begin{aligned}
+\text { Let } V(k) & \leqslant W(k), \forall k \\
+(T V) \mid k) & =\max _{k^{\prime} \in \Gamma(k)}\left\{F\left(k, k^{\prime}\right)+\beta V\left(k^{\prime}\right)\right\} \leqslant \\
+& \leqslant \max _{k^{\prime} \in \Gamma(k)}\left\{F\left(k, k^{\prime}\right)+\beta W\left(k^{\prime}\right)\right\}=T W(k)
+\end{aligned}
+$$
+
+\begin{enumerate}
+  \setcounter{enumi}{1}
+  \item Discounting:
+\end{enumerate}
+
+$$
+\begin{aligned}
+(T(V+\delta))(k) & =\max _{k^{\prime} \in \Gamma(k)}\left\{F\left(k, k^{\prime}\right)+\beta\left(V\left(k^{\prime}\right)+\infty\right)\right\} \\
+& =\max _{k^{\prime} \in \Gamma(k)}\left\{F\left(k, k^{\prime}\right)+\beta V\left(k^{\prime}\right)+\beta \infty\right\} \\
+& =(T V(k)+\beta \cdot \delta
+\end{aligned}
+$$
+
+$\Rightarrow T$ is a contraction of modulus $\beta \in(0,1)$\\
+⇒ It has a unique fixed point.'
+
+Now we know that there exists a unique $V(k)$ solving the Bell man Equation:
+
+$$
+V(k)=\max _{k^{\prime} \in r(k)}\left\{F\left(k, k^{\prime}\right)+\beta V\left(k^{\prime}\right)\right\}
+$$
+
+(RP)\\
+recursive powblem
+
+How to find such $V(k)$ ?\\
+Two main approaches:\\
+(1) Analytical solution - "Guess and Verify" works for a very limited set of $F\left(k, k^{\prime}\right)$\\
+(2) Numerical solution (when A analytral solution)\\
+(1) Analytical solution "Guess and verify."
+
+Since V is "generated" by some modification of $F\left(k, k^{\prime}\right)$, it often inherits its properties, induding the functronal form.\\
+In our main mode, $\left.F\left(k, k^{\prime}\right)=u(f \mid k)-k^{\prime}\right)$\\
+⇒ we should expect that V(.) may "inherit the shape" of " $(\cdot)$
+
+Example: $u(c)=\log c, f(k)=R k$\\
+Recall that in the ( $S P$ ), the solution was
+
+$$
+k_{++1}=\beta R k_{-1}
+$$
+
+Let's see what we get in(RP) (should be the same)\\
+Guess: $V(k)=A+B \cdot \ln k$
+
+Solve for $k^{\prime}=g(k)$ given this guess:
+
+RHS of (RP).
+
+$$
+\max _{k^{\prime} \leqslant R k} \ln \left(R k-k^{\prime}\right)+\beta\left[A+B \cdot \ln k^{\prime}\right]
+$$
+
+$$
+\begin{aligned}
+F O C \Rightarrow \frac{1}{R k-k^{\prime}} & =\beta \cdot B \frac{1}{k^{\prime}} \\
+k^{\prime} & =\beta B \cdot R k-\beta B k^{\prime} \\
+k^{\prime} & =\frac{\beta B}{1+\beta B} \cdot R k=g(k)
+\end{aligned}
+$$
+
+Verify that the implied $V(k)$ is indeed $A+B \ln (k)$\\
+Plug $g(k)=\frac{\beta B}{1+\beta B} \cdot R k$ into the ( $R H S$ ) of ( $R P$ ).
+
+$$
+\begin{aligned}
+\Rightarrow V(k) & =\log \left(R k-\frac{\beta B}{1+\beta B} k k\right)+\beta \cdot\left[A+B \cdot \log \left(\frac{\beta B}{(1+\beta B} \cdot R k\right)\right] \\
+& =\log \left(\frac{R}{1+\beta B}\right)+\log (k)+\beta A+\beta B \cdot \log \frac{\beta B}{1+\beta B} R+\beta B \log k \\
+& =\beta A+\log \frac{R}{1+\beta B}+\log \frac{\beta B}{1+\beta B} \cdot R+(1+\beta B) \log k
+\end{aligned}
+$$
+
+$=V(k) \Rightarrow$ must be equal to $A+B \log k$ forevery $k$\\
+$\Rightarrow\left\{\begin{array}{l}1+\beta B=B \\ \beta A+\log \frac{R}{1+\beta B}+\beta B \cdot \log \frac{\beta B}{1+\beta B} \cdot R=A\end{array}\right.$\\
+$\Rightarrow B=\frac{1}{1-\beta} \quad \Rightarrow \quad g(k)=\frac{\beta / 1-\beta}{1+\frac{\beta}{1-\beta}} \cdot R k=\beta R k=g(k)$
+
+Plug this B into the creasard essercation to hind $A$.\\
+consistent with what we rot in the (SP)!
+
+Plug this B into the second equation to find $A$ :\\
+consistent with what we got in the (SP)!
+
+$$
+\begin{aligned}
+& \beta A+\log (11-\beta) R)+\frac{\beta}{1-\beta} \cdot \log (\beta R)=A \\
+\Rightarrow & \sqrt{A=\frac{\beta}{(1-\beta)^{2}} \log (\beta R)+\frac{\log ((1-\beta) R)}{1-\beta}} \\
+\Rightarrow & V(k)=\frac{\beta}{(1-\beta)^{2}} \log (\beta R)+\frac{\log (11-\beta) R}{1-\beta}+\frac{\log k}{1-\beta}
+\end{aligned}
+$$
+
+We gust verified that thrs $f$-n solves ( $R P$ ), Since (RP) has a unique solution, we are done!!!
+
+Clased-form solution, however, often does not exist. Can we establish any moperties of the optimal choice? Normally, one would use the FOC...\\
+When is the first order approach valid?\\
+$V(k)=\max _{k^{\prime} \in \Gamma(k)}\left\{F\left(k_{1} k^{\prime}\right)+\beta V\left(k^{\prime}\right)\right\} \quad(k P)$\\
+$F\left(k, k^{\prime}\right)$ : increasing in $k$\\
+decreasing in $k^{\prime}$\\
+⇒ for the "trade-off" to exist, V(k') must be $T$ in $k$ '\\
+lotherwise choose the smallest $k^{\prime}$ ).\\
+Result 1: $V(k)$ - increasing if. $F\left(k, k^{\prime}\right)$ is strictly $\uparrow$ in $k$
+
+\begin{itemize}
+  \item $\Gamma(k)$ is increasing in $k$
+\end{itemize}
+
+Proof: "recursive" argument. Very useful to establish various properties of the solution.\\
+Idea: show that operator $T$ preserves the desired property:
+
+\begin{itemize}
+  \item suppose $V_{0}$ has property (P)
+  \item verify that TV0 has the same property\\
+$\Rightarrow T^{2} V_{0}$ has it too $\Rightarrow \ldots T^{n} V_{0}$ has property $(P)$\\
+$\Rightarrow$ Hake limit $\mid \Rightarrow V=\lim _{n \rightarrow \infty} T^{n} V_{0}$ has the weak version of this property
+  \item if want to show that ( $P$ ) is strict ⇒\\
+(e.s. strict monotonicity)
+\end{itemize}
+
+⇒ establish that strong ( $P$ ) holds for $T V_{0}$ even if $V_{0}$ satisfies weak $(P)$.\\
+$\Rightarrow \lim _{n \rightarrow \infty} T^{n} V_{0}$ satisfies weak (P)\\
+But $T$ applied to $\lim _{n \rightarrow \infty} T^{n} V_{0}$ woubld satisfy strong $(P) \Rightarrow V=T V$ satisfies strong (P)
+
+Apply this approach heve:\\
+Let $V_{0}(k)$ - weakly increasing in $k \Rightarrow$
+
+Show that $\left(T V_{0}\right)\left(k_{1}\right)<\left(T V_{0}\right)\left(k_{2}\right) \quad \forall k_{1}<k_{2}$ feasible.
+
+$$
+\begin{aligned}
+\left(T V_{0}\right)\left(k_{1}\right) & =\max _{k^{\prime} \in \Gamma\left(k_{1}\right)}\left\{F\left(k_{1}, k^{\prime}\right)+\beta V\left(k^{\prime}\right)\right\} \leq \\
+& </ \begin{array}{l}
+F\left(k_{1}, k^{\prime}\right)<F\left(k_{1}, k^{\prime}\right): F \text { is stridly increasing in } k \\
+\Gamma\left(k_{1}\right) \leq \Gamma\left(k_{2}\right): \Gamma(\cdot) \text { is increasing in } k
+\end{array} \\
+& <\max _{k^{\prime} \in \Gamma\left(k_{2}\right)}\left\{\stackrel{\left.F\left(k_{2}, k^{\prime}\right)+\beta V\left(k^{\prime}\right)\right\}=\left(T V_{0}\right)\left(k_{1}\right)}{=}\right.
+\end{aligned}
+$$
+
+$\Rightarrow T$ converts a weakly increasing $f-n$ into a strictly increasing f-n.\\
+$\Rightarrow \lim _{n \rightarrow \infty} T^{n} v_{0}$ is weakly ncreasing\\
+⇒ T applied to this limit $A-n$ is stricty incroasiup
+
+Can be verified that $F(i),, \Gamma()$ satisfy the desired properties when $L(\cdot)$ - strictly increasing\\
+$f($.$) - strictly increasing$
+
+
+\end{document}

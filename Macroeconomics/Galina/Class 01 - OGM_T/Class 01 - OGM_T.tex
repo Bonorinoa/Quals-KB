@@ -1,0 +1,203 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+\usepackage{bbold}
+
+\DeclareUnicodeCharacter{21D2}{\ifmmode\Rightarrow\else{$\Rightarrow$}\fi}
+\DeclareUnicodeCharacter{2192}{\ifmmode\rightarrow\else{$\rightarrow$}\fi}
+
+\begin{document}
+Optimal growth model, finite horizon\\
+Main objective: to develop the tools for charactenzing denamic devisions in a model with many periods.\\
+Examples: financial savings, investment in human capital, investment in technology at.\\
+⇒ abstract from the static chorces le.g. consumption is. leiscure),\\
+focus on the dynamic tradeoft only\\
+The environment:\\
+Consider a (represent ative) consumer who lives for $T+1$ periods, has access to production technology that utilizes capital, and needs to allocate the vesources betwen consumption a capital investm. in each period.
+
+You can think of this as a Robinson-Cursol economy. OR as a decision problem of the Social Planner
+
+Preferences: $U\left(c_{0}, c_{1}, \cdots, c_{T}\right)$ - additively separable
+
+$$
+\begin{array}{r}
+=\sum_{t=0}^{T} \beta^{+} u\left(C_{4}\right), \text { where } \beta \in(0,1): \text { time discount } \\
+\text { (pactor } \\
+\text { (patience) }
+\end{array}
+$$
+
+Typical assumptions on $U(C)$ :
+
+\begin{itemize}
+  \item $U(C)$ - cont differentiable
+  \item $u^{\prime}(c)>0$ (ineceasing)
+  \item $u^{n}(c)<0$ (concave)
+  \item $\lim _{c \rightarrow 0} u^{\prime}(c)=+\infty \quad(\Rightarrow$ people never choose $c=0)$
+\end{itemize}
+
+\section*{Technology:}
+\begin{itemize}
+  \item production $F\left(k_{+}, N\right)$, assume $N=1$ (normalize) consumer $=$ moducer, decides how much be to use - assume $k_{++1} \geqslant 0, t=0, \ldots, T$
+\end{itemize}
+
+\section*{Typical assumptions on $F(k, N)$ :}
+\begin{itemize}
+  \item $F(k, N)$ - cont. differ
+  \item $F(0, N)=0$
+  \item $F_{K}(k, N)>0$ (increasing)
+\end{itemize}
+
+Sometimes we wrll assume that $F(k, 1)=A K$, e.S. The las assumption is violated
+
+\begin{itemize}
+  \item $C_{+}+i_{+} \leqslant F\left(k_{+}, N\right)$ (feasibility constraint for the conshmer)
+  \item $k_{++1} \leqslant i_{t}+(1-\alpha) k_{+}$(low of motion for capital)\\
+$\Rightarrow \quad C_{+}+\mu_{+}+k_{++1} \leq \mu_{+}+(1-\delta) k_{+}+F\left(k_{+}, N\right)$\\
+$\Rightarrow C_{+}+k_{++1} \leqslant(1-\delta) k_{+}+F\left(k_{+}, N\right), t=0, \ldots, T$\\
+feasibility constraint I resourse constraint I budget constraint
+  \item $k_{0}$ is given
+\end{itemize}
+
+We will label $F(k, N)+(1-\alpha) k=f(k)$
+
+\section*{Consumer's objestrive:}
+\begin{itemize}
+  \item choose the consumption and capital streams $\left(c_{+}, k_{+4}\right)_{+=0}^{\top}$
+  \item in order to maximize life-time utility
+  \item subject to the feasibility constraint/s) (the tradeofts imposed by the available technology)
+\end{itemize}
+
+Thus, the consumer's decision problem is:
+
+$$
+\begin{aligned}
+& \max _{\left\{c_{t}, k_{t+1}\right\}_{t=0}^{T}} \sum_{t=0}^{T} \beta^{1} u\left(c_{t}\right) \\
+& \begin{array}{ll}
+\text { s.t. } & c_{+}+k_{++1} \leqslant f\left(k_{+}\right) \\
+& k_{++1} \geqslant 0 \\
+& k_{0} \text { is given }
+\end{array} \quad \begin{array}{c}
+\left(\lambda_{+} \beta^{+}\right) \\
+\left(\mu_{+} \beta^{+}\right)
+\end{array} \quad\left\{\begin{array}{l}
+=\int \subset \mathbb{R}^{T+1} \\
+11 \\
+\left\{\begin{array}{l}
+\text { (co, }, \ldots, G \\
+\text { these coustr. } \\
+\text { are satistical }
+\end{array}\right\}
+\end{array}\right.
+\end{aligned}
+$$
+
+(1). The objective $f-n$ is continuast
+
+\begin{itemize}
+  \item the choice set (specified by all the constrants) is compact $\Rightarrow$ /Weierstrass's Theorem / → the max. of the objective $f-n$ is achieved in this set
+\end{itemize}
+
+$$
+\begin{aligned}
+\left(\exists \quad\left\{G_{4}^{*}\right\}_{t=0}^{T} \subset S: U\left(c_{0}^{*}, \ldots, G^{*}\right)=\right. & \max _{\left\{c_{4}\right\}_{t=0} \subset S} U\left(c_{0}, \ldots, G\right) \\
+\text { all coustr. } & \text { all constraints }
+\end{aligned}
+$$
+
+One can verify that $f(k)$-concave $\Rightarrow S$-convex\\
+(2) $U\left(C_{0}, \ldots, G\right)$ - stricty concare $\Rightarrow$ the maximum is unique,\\
+the solution can be obtained by the Kuhn-Tucker method\\
+(3) $\lim _{c \rightarrow 0} u^{\prime}(c)=+\infty \Rightarrow c_{4}^{x}>0, t=0, \ldots, T$\\
+(i.e. The solution is interior w.r.t. $G$ )
+
+Let's fird the solution!\\
+$L=\sum_{+=0}^{T} \beta^{t}\left[u\left(c_{a}\right)-\lambda_{+}\left(c_{a}+k_{++1}-f\left(k_{I}\right)\right)+\mu_{I} k_{I+1}\right]$\\
+$F O C:$
+
+
+\begin{align*}
+& \left(c_{+}\right): \quad u^{\prime}\left(c_{+}\right)-\lambda_{+}=0, t=0 . T  \tag{1}\\
+& \left(k_{++1}\right): \quad-\lambda_{+}+\mu_{+}+\beta \lambda_{++1} f^{\prime}\left(k_{++1}\right)=0, t=0, \ldots, T-1  \tag{12)}\\
+& \left(k_{T+1}\right): \quad-\lambda_{T}+\mu_{T}=0 \tag{3}
+\end{align*}
+
+
+K- $T$ cond: $\quad \lambda_{+}\left(C_{+} k_{++1}-f\left(k_{+}\right)\right)=0, t=0, \ldots, T$
+
+\[
+\begin{array}{ll}
+\mu_{+} k_{++1}=0, & t=0, \ldots, T  \tag{5}\\
+\lambda_{+} \geqslant 0 & \\
+\mu_{+} \geqslant 0 & , t=0, \ldots, T \\
+c_{+}+k_{++1} \leqslant f\left(k_{+}\right) & \\
+k_{++1} \geqslant 0 &
+\end{array}
+\]
+
+Key properties of the solution:\\
+(1) $k_{T+1}=0$ (no idle capital is left in the last period)
+
+$$
+\begin{aligned}
+& \Gamma u^{\prime}\left(C_{T}\right)>0 \Rightarrow /(1), t=T / \Rightarrow \lambda_{T}>0 \Rightarrow \\
+& /(3) / \Rightarrow \mu_{T}>0 \Rightarrow /(5), t=T / \Rightarrow k_{T+1}=0
+\end{aligned}
+$$
+
+(2) $c_{+}+k_{++1} \mapsto f\left(k_{+}\right)$(the kesourse constrant holds with equality - no resourses are wasted not surprising)
+
+$$
+\begin{aligned}
+& \Gamma\left(u^{\prime}\left(c_{1}\right)>0 \Rightarrow /(1) / \Rightarrow\right. \\
+& \Rightarrow \lambda_{+}>0 \Rightarrow /(4) / \Rightarrow c_{+}+k_{++1}=f\left(k_{+}\right)
+\end{aligned}
+$$
+
+(3) $\mu_{+}=0, t=0, \ldots, T-1$\\
+$t=0, \ldots, \top$ in order to have $C_{4}>0$, it must be that $k_{+}>0 \Rightarrow$
+
+$$
+\Rightarrow \mu_{+}=0, \quad t=0, \ldots, T-1 \quad f(0)=0 \text { is key here }
+$$
+
+Thus, $(1) \Rightarrow u^{\prime}(G)=\lambda_{+}, \quad t=0, \ldots, T$
+
+$$
+\begin{aligned}
+& u^{\prime}\left(c_{A+1}\right)=\lambda_{A+1}, \quad t=0, \ldots, T-1 \\
+& \text { (2) } \Rightarrow \lambda_{+}=\beta \lambda_{++1} \cdot f^{\prime}\left(k_{++1}\right)+\mu_{+}, t=0, \ldots, T-1 \\
+& \text { (3): } \mu_{t}=0 \\
+& \Rightarrow(* \underbrace{u^{\prime}(G)=\beta u^{\prime}(G+1) \cdot f^{\prime}\left(k_{++1}\right)}_{\text {marginal utility }} \underbrace{}_{R}, t=0, \ldots, T-1 \\
+& \text { of current cans. willity of } \\
+& \text { future cons. } \\
+& \text { future cons. can be gene- } \\
+& \text { rated by giving up } 1 \\
+& \text { unit of current cons. } \\
+& \text { Property (2) ⇒ } C_{+}=f\left(k_{+}\right)-k_{++1} \quad \Rightarrow \\
+& \text { (*) } k_{0} \text { is given }
+\end{aligned}
+$$
+
+Thus $\left\{k_{+}\right\}_{+=0}^{\top}$ solves the original decision problem if and only if it solves $(* *)$.\\
+(Note that $\left\{\mathrm{k}_{+}\right\}_{0}^{\top}$ pors down $\{\mathrm{G}\}_{0}^{\top}$ :
+
+$$
+G=f\left(k_{4}\right)-k_{++1}
+$$
+
+Thus we can solve for $\{G\}_{0}^{T}$ or $(k)_{0}^{T}$ only).\\
+$(* *)$ is the second-order fifference equation.\\
+It has a 2 -parameter fanily of solutrons (e.g. if $k_{0}, k_{1}$ are known $\Rightarrow(* *)$ pins down $k_{2}$\\
+$k_{1}, k_{2}$ are known ⇒ - $\cdots$ - $k_{3}$ )\\
+This solution is unique (because it is equivalent to the solution to the original problem, which has a unique solution).
+
+But finding this solution is not trivial... I Note that we know ko $8 k_{T+1}=0$, need to find $\left.\left(k_{1}, k_{2}, \ldots, k_{T}\right\}\right)$
+
+
+\end{document}
