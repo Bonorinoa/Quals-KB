@@ -1,0 +1,876 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+\usepackage{caption}
+\usepackage{bbold}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\graphicspath{ {./images/} }
+
+\DeclareUnicodeCharacter{22EF}{\ifmmode\cdots\else{$\cdots$}\fi}
+\DeclareUnicodeCharacter{22EE}{\ifmmode\vdots\else{$\vdots$}\fi}
+\DeclareUnicodeCharacter{22F1}{\ifmmode\ddots\else{$\ddots$}\fi}
+
+\begin{document}
+\captionsetup{singlelinecheck=false}
+\section*{Chapter 2}
+\section*{Overlapping Generations}
+\subsection*{2.1 Exchange Economy}
+Consider the following overlapping generations structure described below. Time is discrete and the horizon is infinite, $t=1,2, \ldots$. There is one perishable consumption good per period. Each agent lives for two periods. Therefore, at each point in time the economy is populated by two generations (cohorts), the young and the old. At each\\
+point in time a new generation appears.
+
+\begin{table}[h]
+\begin{center}
+\captionsetup{labelformat=empty}
+\caption{TIME}
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+GENERATIONS & 1 & 2 & 3 & … \\
+\hline
+0 & old (initial) &  &  & ⋯ \\
+\hline
+1 & young & old &  & … \\
+\hline
+2 &  & young & old & ⋯ \\
+\hline
+3 &  &  & young & ⋯ \\
+\hline
+⋮ & ⋮ & $\dot{a}$ & ⋮ & ⋱ \\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+There are $N(t)$ members of generation $t$. Let $c_{t}^{h}(t)$ and $c_{t}^{h}(t+1)$ be the consumption of agent $h$ in generation $t$ at time $t$ (when young) and at $t+1$ (when old), respectively. Similarly let $w_{t}^{h}(t)$ and $w_{t}^{h}(t+1)$ be the endowment of agent $h$ in generation $t$ at time $t$ (when young) and at $t+1$ (when old). At time 1 , there is $N(0)$ old people (the initial old).
+
+We will assume that the preferences of agent $h$ in generation $t>1$ is represented by $u_{t}^{h}\left(c_{t}^{h}(t), c_{t}^{h}(t+1)\right)$, where $u: \mathbb{R}_{+}^{2} \rightarrow \mathbb{R}$ is strictly increasing, twice-differentiable and strictly concave. Hence,
+
+$$
+\frac{\partial u_{t}^{h}\left(c_{t}^{h}(t), c_{t}^{h}(t+1)\right)}{\partial c_{t}^{h}(t+j)}>0 \text { and } \frac{\partial^{2} u_{t}^{h}\left(c_{t}^{h}(t), c_{t}^{h}(t+1)\right)}{\partial\left(c_{t}^{h}(t+j)\right)^{2}}<0 \text { for } j=0,1
+$$
+
+We will also assume that the initial old have preferences represented by a strictly increasing utility function.
+
+Remark 1. We will use $c_{y t}^{h}$ and $c_{o t+1}^{h}$ to denote an agent's consumption when young and old (similarly $w_{y t}^{h}$ and $w_{o t+1}^{h}$ to denote his endowments). Furthermore, if it is understood that every generation is identical and all agents in each generation are identical, we will simply refer to the consumption when old and when young as $c_{y}$ and $c_{o}\left(\right.$ or $c_{1}$ and $\left.c_{2}\right)$.
+
+Definition 3. A consumption allocation is an assignment of consumption goods for all agents in each date $t=1,2, \ldots$ Formally:
+
+$$
+C=\left\{\left(c_{t-1}^{h}(t)\right)_{h=1}^{N(t-1)},\left(c_{t}^{h}(t)\right)_{h=1}^{N(t)}\right\}_{t=1}^{\infty}
+$$
+
+Definition 4. A consumption allocation $C$ is feasible if, for all $t$
+
+$$
+C(t)=\underbrace{\sum_{h=1}^{N(t)} c_{t}^{h}(t)}_{C_{t}(t)}+\underbrace{\sum_{h=1}^{N(t-1)} c_{t-1}^{h}(t)}_{C_{t-1}(t)} \leq \underbrace{\sum_{h=1}^{N(t)} w_{t}^{h}(t)}_{Y_{t}(t)}+\underbrace{\sum_{h=1}^{N(t-1)} w_{t-1}^{h}(t)}_{Y_{t-1}(t)}=Y(t)
+$$
+
+\subsection*{2.2 Competitive Equilibrium}
+We will focus on a sequential markets arrangement. We imagine a market economy in which individuals trade their endowments using one period lending and borrowing arrangements to maximize their lifetime utility, and in which market clearing determines the interest rate. Let $R(t)$ be the gross interest rate between $t$ and $t+1$, representing how much time $t+1$ goods can be exchanged for each unit of time $t$ goods. Then, the\\
+problem of a young individual is given by
+
+
+\begin{equation*}
+\max _{c_{t}^{h}(t), c_{t}^{h}(t+1), l_{t}^{h}} u_{t}^{h}\left(c_{t}^{h}(t), c_{t}^{h}(t+1)\right) \tag{3}
+\end{equation*}
+
+
+subject to
+
+$$
+\begin{gathered}
+c_{t}^{h}(t) \leq w_{t}^{h}(t)-\underbrace{l_{t}^{h}}_{\text {lending/borrowing }} \\
+c_{t}^{h}(t+1) \leq l_{t}^{h} R(t)+w_{t}^{h}(t+1) \\
+c_{t}^{h}(t) \geq 0, c_{t}^{h}(t+1) \geq 0
+\end{gathered}
+$$
+
+Generation 0 (the initial old),
+
+
+\begin{equation*}
+\max _{c_{0}^{h}(1)} u_{0}^{h}\left(c_{0}^{h}(1)\right) \tag{4}
+\end{equation*}
+
+
+subject to
+
+$$
+c_{0}^{h}(1) \leq w_{0}^{h}(1)
+$$
+
+Remark 2. Note that $l_{t}^{h}<0$ represents borrowing. Note also that given the budget constraint and assumptions on the preferences of the initial old, $l_{0}^{0}=0$.
+
+Remark 3. Note that the old at time $t$ can't borrow since no one would lend them.
+
+For generations $1,2, \ldots$ we can combine two budget constraints to arrive at a lifetime budget constraint (represented in by connecting point $A$ and $B$ in Figure 2.1):
+
+$$
+c_{t}^{h}(t)+\frac{c_{t}^{h}(t+1)}{R(t)} \leq \underbrace{w_{t}^{h}(t)+\frac{w_{t}^{h}(t+1)}{R(t)}}_{\text {lifetime wealth }}
+$$
+
+Note that lending/borrowing does not appear in this budget constraint since they are simply ways to allocate resources between two periods.
+
+An agent's optimal decision will be determined by the solution to the utility maximization problem, subject to the lifetime budget constraint. We form the Lagrangian
+
+$$
+\mathcal{L}=u_{t}^{h}\left(c_{t}^{h}(t), c_{t}^{h}(t+1)\right)+\lambda\left[w_{t}^{h}(t)+\frac{w_{t}^{h}(t+1)}{R(t)}-c_{t}^{h}(t)-\frac{c_{t}^{h}(t+1)}{R(t)}\right]
+$$
+
+The first order conditions for the problem are:
+
+$$
+\frac{\partial \mathcal{L}}{\partial c_{t}^{h}(t)}=\frac{\partial u_{t}^{h}\left(c_{t}^{h}(t), c_{t}^{h}(t+1)\right)}{\partial c_{t}^{h}(t)}-\lambda=0
+$$
+
+$$
+\frac{\partial \mathcal{L}}{\partial c_{t}^{h}(t+1)}=\frac{\partial u_{t}^{h}\left(c_{t}^{h}(t), c_{t}^{h}(t+1)\right)}{\partial c_{t}^{h}(t+1)}-\lambda \frac{1}{R(t)}=0
+$$
+
+and
+
+$$
+\frac{\partial \mathcal{L}}{\partial \lambda}=w_{t}^{h}(t)+\frac{w_{t}^{h}(t+1)}{R(t)}-c_{t}^{h}(t)-\frac{c_{t}^{h}(t+1)}{R(t)}=0
+$$
+
+From the above conditions, we can determine the optimal consumption/saving decision, represented by point C in Figure 2.1:
+
+$$
+R(t)=\underbrace{\frac{\frac{\partial u_{t}^{h}}{\partial c_{t}^{h}(t)}}{\frac{\partial u_{t}^{h}}{\partial c_{t}^{h}(t+1)}}}_{\mathrm{MRS}}
+$$
+
+Note that in the special case in which the utility function is separable between consumption goods at $t$ and $t+1$, we can write.
+
+$$
+u_{t}^{h}\left(c_{t}^{h}(t), c_{t}^{h}(t+1)\right)=u\left(c_{t}^{h}(t)\right)+\beta u\left(c_{t}^{h}(t+1)\right)
+$$
+
+In this case, which we will use extensively later on3, $\beta>0$ is the discount factor. The corresponding intertemporal optimization condition is given by
+
+$$
+u^{\prime}\left(c_{t}^{h}(t)\right)=\beta R(t) u^{\prime}\left(c_{t}^{h}(t+1)\right) .
+$$
+
+\begin{figure}[h]
+\begin{center}
+\captionsetup{labelformat=empty}
+\caption{Figure 2.1: Solution to two-period consumption-saving problem}
+  \includegraphics[alt={},max width=\textwidth]{64a5f340-977a-4b2c-abce-fa297141ce1c-06_902_1015_1069_554}
+\end{center}
+\end{figure}
+
+Definition 5. A sequential market equilibrium is a consumption allocation $\widetilde{C}$, a sequence of lending/borrowing decisions, $\left(\left(\widetilde{l_{t}^{h}}\right)_{h=1}^{N(t)}\right)_{t=1}^{\infty}$, and a sequence of interest rates $\{\widetilde{R}(t)\}_{t=1}^{\infty}$ such that\\
+(1) given $\{\widetilde{R}(t)\}_{t=1}^{\infty}$, consumers maximize their utility by choosing the relevant elements of $\widetilde{C}$, i.e. consumers solve $P(3)$ and $P(4)$.\\
+(2) loans market clears, that is for all $t \geq 1$
+
+$$
+\sum_{h=1}^{N(t)} \widetilde{l_{t}^{h}}=0
+$$
+
+Remark 4. Note that in the definition of the sequential market equilibrium we ignored the goods market equilibrium. This is because the good market clearing condition aggregate feasibility - holds if and only if the loan market clears as well.
+
+To show this, we show that aggregate feasibility at all dates implies equilibrium in the loans markets. Note that at any time $t$, the total consumption of young is
+
+$$
+\sum_{h=1}^{N(t)} c_{t}^{h}(t)=\sum_{h=1}^{N(t)} w_{t}^{h}(t)-\sum_{h=1}^{N(t)} l_{t}^{h}
+$$
+
+and the total consumption of old is
+
+$$
+\sum_{h=1}^{N(t-1)} c_{t-1}^{h}(t)=R(t-1) \sum_{h=1}^{N(t-1)} l_{t-1}^{h}+\sum_{h=1}^{N(t-1)} w_{t-1}^{h}(t)
+$$
+
+Then
+
+$$
+\sum_{h=1}^{N(t)} c_{t}^{h}(t)+\sum_{h=1}^{N(t-1)} c_{t-1}^{h}(t)=\sum_{h=1}^{N(t)} w_{t}^{h}(t)-\sum_{h=1}^{N(t)} l_{t}^{h}+R(t-1) \sum_{h=1}^{N(t-1)} l_{t-1}^{h}+\sum_{h=1}^{N(t-1)} w_{t-1}^{h}(t) .
+$$
+
+If goods markets clear we have
+
+$$
+\sum_{h=1}^{N(t)} l_{t}^{h}=R(t-1) \sum_{h=1}^{N(t-1)} l_{t-1}^{h}
+$$
+
+If the initial old doesn't have any debt to pay, that is if
+
+$$
+\sum_{h=1}^{N(0)} l_{0}^{h}=0
+$$
+
+then,
+
+$$
+\sum_{h=1}^{N(t)} l_{t}^{h}=0 \text { for all } t \geq 1
+$$
+
+We have shown that the goods market clearing condition (aggregate feasibility) implies market clearing in the market for loans. You can now show the reverse: market clearing in the loan market implies market clearing in the goods market for all $t$.
+
+Example 3. Consider an OLG economy with identical agents in each cohort and no population growth. Let
+
+$$
+u_{t}\left(c_{y t}, c_{o t+1}\right)=\log \left(c_{y t}\right)+\log \left(c_{o t+1}\right)
+$$
+
+and
+
+$$
+\left[w_{y t}, w_{o t+1}\right]=[3,1]
+$$
+
+Then
+
+$$
+\max _{c_{y t}, c_{o t+1}} \log \left(c_{y t}\right)+\log \left(c_{o t+1}\right)
+$$
+
+subject to
+
+$$
+c_{y t}+\frac{c_{o t+1}}{R(t)} \leq w_{y t}+\frac{w_{o t+1}}{R(t)}
+$$
+
+Hence, FOCs are
+
+$$
+\frac{1}{c_{y t}}-\lambda=0
+$$
+
+and
+
+$$
+\frac{1}{c_{o t+1}}-\frac{1}{R(t)} \lambda=0
+$$
+
+Therefore
+
+$$
+\begin{gathered}
+\frac{1}{c_{o t+1}}=\frac{1}{R(t)} \frac{1}{c_{y t}} \rightarrow c_{o t+1}=R(t) c_{y t} \\
+c_{y t}+\frac{R(t) c_{y t}}{R(t)}=w_{y t}+\frac{w_{o t+1}}{R(t)} \Rightarrow 2 c_{y t}=w_{y t}+\frac{w_{o t+1}}{R(t)}
+\end{gathered}
+$$
+
+and,
+
+$$
+c_{y t}=\frac{1}{2}\left[w_{y t}+\frac{w_{o t+1}}{R(t)}\right], c_{o t+1}=\frac{1}{2}\left[w_{y t} R(t)+w_{o t+1}\right]
+$$
+
+Let $l_{t}$ be the savings given by
+
+$$
+l_{t}=w_{y t}-c_{y t}=\frac{1}{2} w_{y t}-\frac{1}{2} \frac{w_{o t+1}}{R(t)}
+$$
+
+Since in equilibrium $l_{t}=0$ (no heterogeneity, hence no lending and borrowing):
+
+$$
+R(t)=\frac{w_{o t+1}}{w_{y t}}=\frac{1}{3}
+$$
+
+Remark 5. Note that although there is no lending or borrowing in equilibrium, we still have to find $R(t)$ that makes this behavior optimal for all agents.
+
+Note that $R(t)=R=\frac{w_{o}}{w_{y}}$ simply represents the resources of an agent when he/she is old and young. In this economy, the interest rate is completely determined by endowment structure. Consumption allocations in competitive equilibrium is
+
+$$
+C=\left\{\left(c_{o 1}, c_{y 1}\right),\left(c_{o 2}, c_{y 2}\right),\left(c_{o 3}, c_{y 3}\right), \ldots\right\}=\{(1,3),(1,3),(1,3), \ldots\}
+$$
+
+Nobody saves in this economy (i.e. autarchy is the equilibrium), since all agents are identical and they all want to lend when they are young and borrow when they are old.
+
+Example 4. Consider an economy with agents having similar utility functions as the previous example
+
+$$
+\max _{c_{y t}, c_{o t+1}} \log \left(c_{y t}\right)+\log \left(c_{o t+1}\right)
+$$
+
+but let the economy be populated by two types of agents that differ in their endowments
+
+$$
+\left[w_{y t}^{1}, w_{o t+1}^{1}\right]=[1,1] \text { and }\left[w_{y t}^{2}, w_{o t+1}^{2}\right]=[2,1] .
+$$
+
+Now type-2 agents want to lend when they are young, and might be able to do this by offering an interest to type-1 agents. If we go through the same exercise as above for each type of agents, we will get
+
+$$
+l_{t}^{1}=w_{y t}^{1}-c_{y t}^{1}=\frac{1}{2} w_{y t}^{1}-\frac{1}{2} \frac{w_{o t+1}^{1}}{R(t)}=\frac{1}{2}-\frac{1}{2 R(t)}
+$$
+
+and
+
+$$
+l_{t}^{2}=w_{y t}^{2}-c_{y t}^{2}=\frac{1}{2} w_{y t}^{2}-\frac{1}{2} \frac{w_{o t+1}^{2}}{R(t)}=1-\frac{1}{2 R(t)}
+$$
+
+Therefore
+
+$$
+l_{t}^{1}+l_{t}^{2}=0 \Rightarrow \frac{1}{2}-\frac{1}{2 R(t)}+1-\frac{1}{2 R(t)}=0 \Rightarrow R(t)=\frac{2}{3}
+$$
+
+and
+
+$$
+\begin{gathered}
+c_{y}^{1}=\frac{1}{2}\left[w_{y t}^{1}+\frac{w_{o t+1}^{1}}{R(t)}\right]=\frac{5}{4} \Rightarrow l_{t}^{1}=-\frac{1}{4} \\
+c_{o t+1}^{1}=R(t) c_{y t}^{1}=\frac{5}{4} \frac{2}{3}=\frac{5}{6}
+\end{gathered}
+$$
+
+$$
+\begin{gathered}
+c_{y t}^{2}=\frac{1}{2}\left[w_{y t}^{2}+\frac{w_{o t+1}^{2}}{R(t)}\right]=\frac{7}{4} \Rightarrow l_{t}^{2}=\frac{1}{4} \\
+c_{o t+1}^{2}=R(t) c_{y t}^{2}=\frac{7}{4} \frac{2}{3}=\frac{7}{6}
+\end{gathered}
+$$
+
+Remark 6. Note again that $R(t)=\frac{2}{3}$ simply reflects the relative total endowments of young and old.
+
+The previous examples are summarized more generally in the next two exercises.
+
+Exercise 8. Consider an economy where $N(t)=N$ for all $t$, and Agents are identical: $u_{t}^{h}(\cdot, \cdot)=\log \left(c_{y}\right)+\log \left(c_{o}\right)$, and $\left(w_{t}^{h}(t), w_{t}^{h}(t+1)\right)=\left(w_{y}, w_{o}\right)$ for all $t, h$. Show that $\tilde{R}$ is constant and equal to $w_{o} / w_{y}$.
+
+Exercise 9. Consider an economy where $N(t)=N$ for all $t$, and Agents have identical preferences $u_{t}^{h}(\cdot, \cdot)=\log \left(c_{y}\right)+\log \left(c_{o}\right)$. But suppose there are two types (1,2) with unequal endowments $\left(w_{t}^{1}(t), w_{t}^{1}(t+1)\right)=\left(w_{y}^{1}, w_{o}^{1}\right)$ and $\left(w_{t}^{2}(t), w_{t}^{2}(t+1)\right)=\left(w_{y}^{2}, w_{o}^{2}\right)$ for all $t$. Also suppose there are $N_{1}$ type 1 agents and $N_{2}$ type 2 agents.
+
+Show that the equilibrium interest rate is constant and $\tilde{R}=\frac{N_{1} w_{o}^{1}+N_{2} w_{o}^{2}}{N_{1} w_{y}^{1}+N_{2} w_{y}^{2}}$. Note that depending on the pattern of endowments, at this interest rate some agents could be borrowing and others could be lending.
+
+\subsection*{2.3 Pareto Optimality}
+We will now investigate Pareto optimality in the two-period setting that we constructed above. We start with some definitions.
+
+Definition 6. $A$ consumption allocation $C_{A}$ is Pareto superior to $C_{B}$, if\\
+(1) no agent prefers $B$ to $A$ strictly, (2) at least one agent prefers $A$ to $B$ strictly.
+
+Definition 7. A consumption allocation is Pareto optimal, if it is feasible and if there does not exist another feasible allocation that is Pareto superior to it.
+
+Definition 8. A consumption allocation is symmetric if all members of all generations consume the same consumption pair,\\
+$c_{t}^{h}(t)=c_{s}^{j}(s)=c_{1}, c_{t}^{h}(t+1)=c_{s}^{j}(s+1)=c_{2}$, for all $h$ and $j$ in generations $t$ or $s$.
+
+Hence, a symmetric allocation treats all young in all generations and all old in all generations the same way. If $N(t)=N(t+1)=N$, and $Y(t)=Y(t+1)=Y$, the set of symmetric and efficient allocations will be characterized by
+
+$$
+N c_{1}+N c_{2}=Y,
+$$
+
+or
+
+$$
+c_{1}+c_{2}=\frac{Y}{N}
+$$
+
+Note that the allocation in Example 3 is not Pareto optimal, since the consumption allocation
+
+$$
+\widehat{C}=\left\{\left(\widehat{c}_{o 1}, \widehat{c}_{y 1}\right),\left(\widehat{c}_{o 2}, \widehat{c}_{y 2}\right),\left(\widehat{c}_{o 3}, \widehat{c}_{y 3}\right), \ldots\right\}=\{(2,2),(2,2),(2,2), \ldots\}
+$$
+
+is both feasible and Pareto superior to $C$. Note that all generations prefer $\widehat{C}$, since
+
+$$
+\log (2)+\log (2)>\log (3)+\log (1) \text { for all generations } t \geq 1
+$$
+
+and
+
+$$
+\log (2)>\log (1) \text { for the initial old. }
+$$
+
+We will now present a central result concerning efficiency in the stationary and symmetric case.
+
+Claim (Pareto Efficiency) Consider a stationary and symmetric OLG environment with endowments given by $\left(w_{1}, w_{2}\right)$. With strictly convex indifference curves, and with $w_{1}>0$, the unique equilibrium (i.e. autarchy) is PO if and only if MRS at the endowment point is greater than equal to 1 , i.e.
+
+$$
+\frac{u_{1}\left(w_{1}, w_{2}\right)}{u_{2}\left(w_{1}, w_{2}\right)} \geq 1 .
+$$
+
+Proof. The "If" part. By contradiction, suppose not. Then, the unique equilibrium is PO and $\frac{u_{1}\left(w_{1}, w_{2}\right)}{u_{2}\left(w_{1}, w_{2}\right)}<1$. This implies that $u_{1}\left(w_{1}, w_{2}\right)<u_{2}\left(w_{1}, w_{2}\right),$. But then ( $c_{1}=w_{1}, c_{2}=w_{2}$ ) is not Pareto optimal. To see this consider the alternative feasible allocation that gives $\widetilde{c}_{1}=w_{1}-\varepsilon$ to the young and $\widetilde{c}_{2}=w_{2}+\varepsilon$ to the old in every period (including the initial old). Since the marginal rate of substitution at the endowment point is less than one, the proposed allocation dominates $c_{1}=w_{1}$ and $c_{1}=w_{2}$ for some $\varepsilon \in\left(0, w_{1}\right)$. A contradiction.
+
+The "Only If" part. By contradiction, suppose not. It follows that $\frac{u_{1}\left(w_{1}, w_{2}\right)}{u_{2}\left(w_{1}, w_{2}\right)}>1$, and $c_{1}=w_{1}$ and $c_{2}=w_{2}$ is not Pareto optimal. Then, there exists an alternative\\
+feasible allocation $\widetilde{c}_{1, t}$ and $\widetilde{c}_{2, t}$ that Pareto dominates $c_{1}=w_{1}$ and $c_{2}=w_{2}$. That is, for all $t$
+
+$$
+u\left(\widetilde{c}_{1, t}, \widetilde{c}_{2, t+1}\right) \geq u\left(w_{1}, w_{2}\right)
+$$
+
+and for some $t$
+
+$$
+u\left(\widetilde{c}_{1, t}, \widetilde{c}_{2, t+1}\right)>u\left(w_{1}, w_{2}\right)
+$$
+
+Let $t$ be the first date such that $\widetilde{c}_{1, t} \neq w_{1}$ and $\widetilde{c}_{2, t} \neq w_{2}$. The only way $\widetilde{c}_{1, t}$ and $\widetilde{c}_{2, t}$ can be different from autarky and Pareto improving is if goods are transferred from the young to the old at time $t$. (Why?)
+
+Let $\varepsilon_{t}$ be the amount of goods that the young give to the old at time $t$. Then at time $t, \widetilde{c}_{2, t}=w_{2}+\varepsilon_{t}$, and $\widetilde{c}_{1, t}=w_{1}-\varepsilon_{t}$. Now next period the old (who were young at time $t$ ) must receive transfers from the young at time $t+1$. Let us call this transfer $\varepsilon_{t+1}$.
+
+Since $u_{1}\left(w_{1}, w_{2}\right)>u_{2}\left(w_{1}, w_{2}\right)$, in order to make generation $t$ as well off as they were in the autarky, we need $\varepsilon_{t+1}>\varepsilon_{t}$. Then, by the same argument $\varepsilon_{t+2}>\varepsilon_{t+1}$, and eventually the required transfer will be more than $w_{1}$. Hence, we cannot find an alternative (feasible) allocation that Pareto dominates $c_{1}=w_{1}$, and $c_{2}=w_{2}$. A contradiction.
+
+\subsection*{2.4 Introducing a Government}
+Suppose now there is a government that can impose taxes, provide transfers and consume goods. Let
+
+$$
+\tau_{t}^{h}=\left[\tau_{t}^{h}(t), \tau_{t}^{h}(t+1)\right]
+$$
+
+be the taxes or transfers/subsidies that agent $h$ of generation $t$ faces in his/her lifetime. Let $G(t)$ be the consumption of goods by the government, or just government consumption. These goods do not provide direct utility to agents in this setup, but exogenously need to be 'consumed' by the government.
+
+The government budget has be balanced. Hence,
+
+$$
+\sum_{h=1}^{N(t)} \tau_{t}^{h}(t)+\sum_{h=1}^{N(t-1)} \tau_{t-1}^{h}(t)=G(t)
+$$
+
+for all $t$. The feasibility constraint for the economy has now to consider goods consumed by the government as well. Hence,
+
+$$
+C(t)+G(t)=Y(t)
+$$
+
+for all $t$.\\
+The lifetime budget constraint for an agent will be given by
+
+$$
+c_{t}^{h}(t)+\frac{c_{t}^{h}(t+1)}{R(t)} \leq w_{t}^{h}(t)-\tau_{t}^{h}(t)+\frac{w_{t}^{h}(t+1)-\tau_{t}^{h}(t+1)}{R(t)}
+$$
+
+We can now define an equilibrium as follows.
+
+Definition 9. A sequential market equilibrium is a sequence of government consumption $\{\widetilde{G}(t)\}_{t=1}^{\infty}$, a tax sequence $\left\{\left(\widetilde{\tau}_{t-1}^{h}(t)\right)_{h=1}^{N(t-1)},\left(\widetilde{\tau}_{t}^{h}(t)\right)_{h=1}^{N(t)}\right\}_{t=1}^{\infty}$, a consumption allocation $\widetilde{C}$, a sequence of lending/borrowing decisions, $\left(\left(\widetilde{l}_{t}^{h}\right)_{h=1}^{N(t)}\right)_{t=1}^{\infty}$, and a sequence of interest rates $\{\widetilde{R}(t)\}_{t=1}^{\infty}$ such that\\
+(1) given $\left\{\left(\widetilde{\tau}_{t-1}^{h}(t)\right)_{h=1}^{N(t-1)},\left(\widetilde{\tau}_{t}^{h}(t)\right)_{h=1}^{N(t)}\right\}_{t=1}^{\infty}$ and $\{\widetilde{R}(t)\}_{t=1}^{\infty}$, consumers maximize their utility by choosing the relevant elements of $\widetilde{C}$.\\
+(2) the government budget balances, that is for all $t \geq 1$
+
+$$
+\sum_{h=1}^{N(t)} \widetilde{\tau}_{t}^{h}(t)+\sum_{h=1}^{N(t-1)} \widetilde{\tau}_{t-1}^{h}(t)=\widetilde{G(t)}
+$$
+
+(2) loans market clears, i.e. for all $t \geq 1$
+
+$$
+\sum_{h=1}^{N(t)} \widetilde{l}_{t}^{h}=0
+$$
+
+Example 5. Let $\left[w_{y t}, w_{o t+1}\right]=[2,1], \forall t$ and assume the same preference structure as the examples above. Let $\left[\tau_{y t}, \tau_{o t+1}\right]=\left[\frac{1}{2},-\frac{1}{2}\right], \forall t$. Hence, government taxes young and transfers the proceeds to the old. Then, going through the problem of the agents we have
+
+$$
+l_{t}=w_{y t}-\tau_{y t}-c_{y t}=\frac{1}{2}\left(w_{y t}-\tau_{y t}\right)-\frac{1}{2} \frac{w_{o t+1}-\tau_{o t+1}}{R(t)}=\frac{2-\frac{1}{2}}{2}-\frac{1+\frac{1}{2}}{2 R(t)} \Rightarrow R(t)=1
+$$
+
+and
+
+$$
+c_{y t}=c_{o t+1}=\frac{3}{2}
+$$
+
+Note that this allocation is Pareto optimal. In contrast, if there were no government the allocation would not be Pareto optimal. Note also that $\tau=\frac{1}{2}$ is not a random tax\\
+rate for the economy in this example. If we wanted to find the tax/transfer rate that maximizes an agent's lifetime utility, we would solve the following problem:
+
+$$
+\max _{\tau} \log \left(w_{y}-\tau\right)+\log \left(w_{o}+\tau\right),
+$$
+
+where we use the fact that autarchy is the competitive equilibrium for this economy.\\
+Hence the tax rate that maximizes utility is given by
+
+$$
+\frac{1}{w_{y}-\tau}=\frac{1}{w_{o}+\tau} \Rightarrow \tau^{*}=\frac{1}{2}
+$$
+
+Note also that at the optimal tax rate $\tau^{*}=\frac{1}{2}$, the interest rate is 1 .
+
+\subsection*{2.5 Government Borrowing}
+Now let the government be able to borrow from the young as well (note that government cannot borrow from the old). Suppose government issues one period bonds that are sure claims on 1 unit of goods the next period. Then, if $B(t)$ is the units of bonds sold at time $t$, at time $t+1$ the government needs $B(t)$ units of time $t+1$ goods to be able to pay back his commitments. The government can achieve this by taxing the young, taxing the old, or by issuing new bonds at time $t+1$.
+
+The government budget is then given by
+
+$$
+\sum_{h=1}^{N(t)} \tau_{t}^{h}(t)+\sum_{h=1}^{N(t-1)} \tau_{t-1}^{h}(t)+p(t) B(t)=G(t)+B(t-1)
+$$
+
+where $p(t)$ is the price of a unit of government bond at time $t$. The government budget is 'in balance' if
+
+$$
+\sum_{h=1}^{N(t)} \tau_{t}^{h}(t)+\sum_{h=1}^{N(t-1)} \tau_{t-1}^{h}(t)=G(t)
+$$
+
+and if $\sum_{h=1}^{N(t)} \tau_{t}^{h}(t)+\sum_{h=1}^{N(t-1)} \tau_{t-1}^{h}(t)-G(t)<0$, then government needs to issue new bonds which show up in the next period's government budget.
+
+Note that with government bonds, individual budget constraints become
+
+$$
+c_{t}^{h}(t)=w_{t}^{h}(t)-\tau_{t}^{h}(t)-l_{t}^{h}-p(t) b_{t}^{h}
+$$
+
+and
+
+$$
+c_{t}^{h}(t+1)=w_{t+1}^{h}(t)-\tau_{t}^{h}(t+1)+R(t) l_{t}^{h}+b_{t}^{h}
+$$
+
+where $b_{t}^{h}$ is the demand for government bonds by agent $h$ of generation $t$. Note that an agent demands $b_{t}^{h}$ units of government bonds at a unit price of $p(t)$ when young that will deliver $b_{t}^{h}$ units of goods next period. Note also that the rate of return on government bonds is $\frac{1}{p(t)}$.
+
+The lifetime budget constraint for an agent is then given by
+
+$$
+c_{t}^{h}(t)+\frac{c_{t}^{h}(t+1)}{R(t)}=w_{t}^{h}(t)-\tau_{t}^{h}(t)+\frac{w_{t}^{h}(t+1)-\tau_{t}^{h}(t+1)}{R(t)}-b_{t}^{h}\left[p(t)-\frac{1}{R(t)}\right] .
+$$
+
+Note an equilibrium exists only if $R(t)=\frac{1}{p(t)}$. Otherwise the return on the government bond and the return on private lending and borrowing are not the same and agents can make profits by borrowing from the agents and lending to the government. When $R(t)=\frac{1}{p(t)}$, these arbitrage opportunities are all exhausted.
+
+When $R(t)=\frac{1}{p(t)}$, the budget constraint of the agent $h$ becomes
+
+$$
+c_{t}^{h}(t)+\frac{c_{t}^{h}(t+1)}{R(t)}=w_{t}^{h}(t)-\tau_{t}^{h}(t)+\frac{w_{t}^{h}(t+1)-\tau_{t}^{h}(t+1)}{R(t)} .
+$$
+
+Hence, agents simply try to maximize their lifetime utility given their lifetime resources. They are indifferent between lending to the government or lending to the other agents. All that matters is the total amount that agents want to lend (to the government or to the others), $s_{t}^{h}=l_{t}^{h}+p(t) b_{t}^{h}=l_{t}^{h}+\frac{b_{t}^{h}}{R(t)}$.
+
+In equilibrium,
+
+$$
+\sum_{h=1}^{N(t)} c_{t}^{h}(t)=\sum_{h=1}^{N(t)} w_{t}^{h}(t)-\sum_{h=1}^{N(t)} \tau_{t}^{h}(t)-\underbrace{\sum_{h=1}^{N(t)}}_{=0} l_{t}^{h}-\sum_{h=1}^{N(t)} p(t) b_{t}^{h}
+$$
+
+and the total amount that agents are willing to lend to the government is
+
+$$
+\sum_{h=1}^{N(t)}\left[w_{t}^{h}(t)-\tau_{t}^{h}(t)-c_{t}^{h}(t)\right]=\underbrace{\sum_{h=1}^{N(t)} p(t) b_{t}^{h}}
+$$
+
+total lending to\\
+the government\\
+and this must be equal to $p(t) B(t)$.\\
+An equilibrium is now defined as
+
+Definition 10. A sequential equilibrium is a sequence of government consumption $\{\widetilde{G}(t)\}_{t=1}^{\infty}$, a sequence of taxes, $\left\{\left(\widetilde{\tau}_{t-1}^{h}(t)\right)_{h=1}^{N(t-1)},\left(\widetilde{\tau}_{t}^{h}(t)\right)_{h=1}^{N(t)}\right\}_{t=1}^{\infty}$, a sequence of government borrowing, $(\widetilde{B}(t))_{t=1}^{\infty}$, a consumption allocation $\widetilde{C}$, a sequence of lend-\\
+ing/borrowing decisions $\left(\left(\widetilde{s}_{t}^{h}\right)_{h=1}^{N(t)}\right)_{t=1}^{\infty}$, and a sequence of interest rates $\{\widetilde{R}(t)\}_{t=1}^{\infty}$ such that\\
+(1) Given $\left\{\left(\widetilde{\tau}_{t-1}^{h}(t)\right)_{h=1}^{N(t-1)},\left(\widetilde{\tau}_{t}^{h}(t)\right)_{h=1}^{N(t)}\right\}_{t=1}^{\infty}$ and $\{\widetilde{R}(t)\}_{t=1}^{\infty}$, consumers maximize their utility by choosing the relevant elements of $\widetilde{C}$.\\
+(2) The government budget constraint holds, that is for all $t$
+
+$$
+\sum_{h=1}^{N(t)} \widetilde{\tau}_{t}^{h}(t)+\sum_{h=1}^{N(t-1)} \widetilde{\tau}_{t-1}^{h}(t)+\frac{\widetilde{B}(t)}{\widetilde{R}(t)}=\widetilde{G}(t)+\widetilde{B}(t-1)
+$$
+
+(2) Market clearing. For all $t$
+
+$$
+\underbrace{\sum_{h=1}^{N(t)} \widetilde{l}_{t}^{h}+\sum_{h=1}^{N(t)} \frac{\widetilde{b}_{t}^{h}}{\widetilde{R}(t)}}_{\widetilde{S}_{t}(\widetilde{R}(t))}-\frac{\widetilde{B}(t)}{\widetilde{R}(t)}=0
+$$
+
+Remark 7. It is important to note -again- that feasibility and the government budget constraint imply equilibrium in the loan market. The budget constraint of young agents at time $t$ implies
+
+$$
+\sum_{h=1}^{N(t)} c_{t}^{h}(t)=\sum_{h=1}^{N(t)} w_{t}^{h}(t)-\sum_{h=1}^{N(t)} \tau_{t}^{h}(t)-\sum_{h=1}^{N(t)} s_{t}^{h}
+$$
+
+and similarly the budget constraint of the old agents implies
+
+$$
+\sum_{h=1}^{N(t-1)} c_{t-1}^{h}(t)=R(t-1) \sum_{h=1}^{N(t-1)} s_{t-1}^{h}+\sum_{h=1}^{N(t-1)} w_{t-1}^{h}(t)-\sum_{h=1}^{N(t-1)} \tau_{t-1}^{h}(t)
+$$
+
+Then
+
+$$
+\begin{aligned}
+& \sum_{h=1}^{N(t)} c_{t}^{h}(t)+\sum_{h=1}^{N(t-1)} c_{t-1}^{h}(t) \\
+= & \sum_{h=1}^{N(t)} w_{t}^{h}(t)-\sum_{h=1}^{N(t)} \tau_{t}^{h}(t)-\sum_{h=1}^{N(t)} s_{t}^{h}+R(t-1) \sum_{h=1}^{N(t-1)} s_{t-1}^{h}+\sum_{h=1}^{N(t-1)} w_{t-1}^{h}(t)-\sum_{h=1}^{N(t-1)} \tau_{t-1}^{h}(t)
+\end{aligned}
+$$
+
+If feasibility holds, we have
+
+$$
+-G(t)=-\sum_{h=1}^{N(t)} s_{t}^{h}+R(t-1) \sum_{h=1}^{N(t-1)} s_{t-1}^{h}-\sum_{h=1}^{N(t)} \tau_{t}^{h}(t)-\sum_{h=1}^{N(t-1)} \tau_{t-1}^{h}(t)
+$$
+
+From the government budget constraint,
+
+$$
+\sum_{h=1}^{N(t)} \tau_{t}^{h}(t)+\sum_{h=1}^{N(t-1)} \tau_{t-1}^{h}(t)+p(t) B(t)-B(t-1)-G(t)=0
+$$
+
+we have
+
+$$
+-\sum_{h=1}^{N(t)} \tau_{t}^{h}(t)-\sum_{h=1}^{N(t-1)} \tau_{t-1}^{h}(t)=p(t) B(t)-B(t-1)-G(t)
+$$
+
+Then, we have
+
+$$
+\sum_{h=1}^{N(t)} s_{t}^{h}=R(t-1) \sum_{h=1}^{N(t-1)} s_{t-1}^{h}+p(t) B(t)-B(t-1)
+$$
+
+If the initial old and the government at time 0 has no outstanding debt, that is if,
+
+$$
+\sum_{h=1}^{N(0)} s_{0}^{h}=0 \text { and } B(0)=0
+$$
+
+we have
+
+$$
+\sum_{h=1}^{N(1)} s_{1}^{h}=p(1) B(1)
+$$
+
+and loan markets clear at time $t$. Then at time 2 ,
+
+$$
+\begin{aligned}
+\sum_{h=1}^{N(2)} s_{2}^{h} & =R(1) \sum_{h=1}^{N(1)} s_{1}^{h}+p(2) B(2)-B(1) \\
+& =R(1) \sum_{h=1}^{N(1)} s_{1}^{h}+p(2) B(2)-R(1) \sum_{h=1}^{N(1)} s_{1}^{h} \\
+& =p(2) B(2)
+\end{aligned}
+$$
+
+and loan markets clear at time 2 as well. Indeed they clear in every period.
+
+Example 6. Suppose that in period 1, the government wishes to borrow 5 units of time 1 goods and transfer it to the initial old. It will pay off this debt by taxing the young of generation 2 and will not issue new debt. Let\\
+$\left[w_{y t}^{1}, w_{o t+1}^{1}\right]=[2,1]$, with $N_{t}^{1}=50$, and $\left[w_{y t}^{2}, w_{o t+1}^{2}\right]=[1,1]$, with $N_{t}^{2}=50, \forall t$.\\
+and
+
+$$
+u_{t}^{h}=c_{y t}^{h} c_{o t+1}^{h}
+$$
+
+It is straightforward to derive
+
+$$
+s_{t}^{1}=1-\frac{1}{2 R(t)}
+$$
+
+and
+
+$$
+s_{t}^{2}=\frac{1}{2}-\frac{1}{2 R(t)}
+$$
+
+Then,
+
+$$
+\sum_{h}\left[s_{t}^{h}(R(t))\right]=50\left(1-\frac{1}{2 R(t)}\right)+50\left(\frac{1}{2}-\frac{1}{2 R(t)}\right)=75-\frac{50}{R(t)}
+$$
+
+At $t=1$, the loan market equilibrium implies
+
+$$
+75-\frac{50}{R(1)}-\underbrace{\frac{B(1)}{R(1)}}_{=5}=0
+$$
+
+and
+
+$$
+R(1)=\frac{5}{7}
+$$
+
+Given $R(1)$,
+
+$$
+s_{1}^{1}=1-\frac{1}{2 R(1)}=0.3
+$$
+
+and
+
+$$
+s_{1}^{2}=\frac{1}{2}-\frac{1}{2 R(1)}=-0.2
+$$
+
+Then,
+
+$$
+B(1)=5 R(1)=\frac{25}{7}
+$$
+
+Note that type 1 agents at time 1 want to lend 0.3 each or 15 as a whole. 10 units of this is borrowed by type 2 agents, and the remaining 5 is borrowed by the government. Each bond costs $p_{1}=\frac{7}{5}$ units of type 1 goods. Since type 1 agents have more resources when young, they are willing to pay a price higher than one for a unit of type 2 good to the government.
+
+Example 7. Let
+
+$$
+\left[w_{y t}, w_{o t+1}\right]=[2,1], \text { with } N_{t}=100
+$$
+
+and
+
+$$
+u_{t}^{h}=c_{y t} c_{o t+1}
+$$
+
+Suppose government issues bonds in the first period, and gives the revenue to the current old. Moreover, the government wants to raise 50 units of period 1 goods. After period 1, government issues new bonds at each period to pay the outstanding claims.
+
+Note that
+
+$$
+s_{t}=1-\frac{1}{2 R(t)}
+$$
+
+Hence,
+
+$$
+\sum_{h} s_{t}=100-\frac{50}{R(t)}
+$$
+
+At $t=1$,
+
+$$
+100-\frac{50}{R(1)}=\frac{B(1)}{R(1)}=50 .
+$$
+
+which implies
+
+$$
+R(1)=1 \text { and } B(1)=50
+$$
+
+Then,
+
+$$
+s_{1}=1-\frac{1}{2}=\frac{1}{2}
+$$
+
+Hence, young lends government $\frac{1}{2}$ and each old consumes $\frac{1}{2}$ units extra. Next period the same situation will be repeated by $B(2)=50$, and $R(2)=1$, etc. Note that here government takes place of a permanent borrower, and allows agents to transfer resources from one period to the next.
+
+Remark 8. Since $R(t)=\frac{1}{p(t)}$, we could model government borrowing slightly differently. We could simply state that the government wants to borrow some amount $B(t)$ at time $t$, and like any other agent in this economy is willing to pay an interest rate $R(t)$. Then the government budget constraint would be
+
+$$
+\sum_{h=1}^{N(t)} \tau_{t}^{h}(t)+\sum_{h=1}^{N(t-1)} \tau_{t-1}^{h}(t)+B(t)-R(t) B(t-1)=G(t)
+$$
+
+and the loan market equilibrium condition would be
+
+$$
+\underbrace{\sum_{h \in N(t)} l_{t}^{h}+\sum_{h \in N(t)} b_{t}^{h}}_{S_{t}(R(t))}=B(t)
+$$
+
+\subsection*{2.5.1 Ricardian Equivalence}
+Consider again the budget constraint for agent $h$ in generation $t$. Suppose $B(t)=0$, for all $t$. Then, the budget constraint is
+
+$$
+c_{t}^{h}(t)+\frac{c_{t}^{h}(t+1)}{R(t)}=w_{t}^{h}(t)-\tau_{t}^{h}(t)+\frac{w_{t}^{h}(t+1)-\tau_{t}^{h}(t+1)}{R(t)} .
+$$
+
+Now consider an alternative tax scheme that agent $h$ faces, $\left[\widehat{\tau}_{t}^{h}(t), \widehat{\tau}_{t}^{h}(t+1)\right]$. As long as
+
+$$
+\tau_{t}^{h}(t)+\frac{\tau_{t}^{h}(t+1)}{R(t)}=\widehat{\tau}_{t}^{h}(t)+\frac{\widehat{\tau}_{t}^{h}(t+1)}{R(t)}
+$$
+
+the agents's optimal decision will be the same. This is simply because his/her budget set doesn't change. Then, we can state the following:
+
+Proposition 2.5.1. Consider a sequential equilibrium, $\left\{\left(\widetilde{\tau}_{t-1}^{h}(t)\right)_{h=1}^{N(t-1)},\left(\widetilde{\tau}_{t}^{h}(t)\right)_{h=1}^{N(t)}\right\}_{t=1}^{\infty}$, $(\widetilde{B}(t))_{t=1}^{\infty}, \widetilde{C}$ and $\{\widetilde{R}(t)\}_{t=1}^{\infty}$, where $\widetilde{B}(t)=0$ for all $t$. Then, alternative taxes and transfers $\left\{\left(\widehat{\tau}_{t-1}^{h}(t)\right)_{h=1}^{N(t-1)},\left(\widehat{\tau}_{t}^{h}(t)\right)_{h=1}^{N(t)}\right\}_{t=1}^{\infty}$ that satisfy
+
+$$
+\widehat{\tau}_{t}^{h}(t)+\frac{\widehat{\tau}_{t}^{h}(t+1)}{R(t)}=\widetilde{\tau}_{t}^{h}(t)+\frac{\widetilde{\tau}_{t}^{h}(t+1)}{R(t)}
+$$
+
+for all $h$ and all $t$, and
+
+$$
+\sum_{h=1}^{N(t)} \widehat{\tau}_{t}^{h}(t)+\sum_{h=1}^{N(t-1)} \widehat{\tau}_{t-1}^{h}(t)=0
+$$
+
+for all $t$ are equivalent. That is, allocations and prices under the original tax-transfer scheme are the identical to allocations and prices under the alternative scheme.
+
+Indeed, we could state the following (which you should try to prove) result as well:
+
+Proposition 2.5.2. Consider a sequential equilibrium, $\left\{\left(\widetilde{\tau}_{t-1}^{h}(t)\right)_{h=1}^{N(t-1)},\left(\widetilde{\tau}_{t}^{h}(t)\right)_{h=1}^{N(t)}\right\}_{t=1}^{\infty}$, $\widetilde{C}$ and $\{\widetilde{R}(t)\}_{t=1}^{\infty}$. Then, alternative taxes and transfers $\left\{\left(\widehat{\tau}_{t-1}^{h}(t)\right)_{h=1}^{N(t-1)},\left(\widehat{\tau}_{t}^{h}(t)\right)_{h=1}^{N(t)}\right\}_{t=1}^{\infty}$ that satisfy
+
+$$
+\widehat{\tau}_{t}^{h}(t)+\frac{\widehat{\tau}_{t}^{h}(t+1)}{R(t)}=\widetilde{\tau}_{t}^{h}(t)+\frac{\widetilde{\tau}_{t}^{h}(t+1)}{R(t)} \text { for all } h \text { and all } t,
+$$
+
+are equivalent. That is, corresponding to the alternative taxation patterns, there is a pattern of government borrowing such that the initial equilibrium's consumption allocation and the initial equilibrium gross interest rates constitute an equilibrium under the alternative taxation pattern.
+
+Note that both of these propositions imply neutrality of government policy. If taxes are changed in a particular way (i.e. if they change so that each agent faces the same present value of taxes), the government policy has no real effect (i.e. allocations and the interest rate remain the same). These results are usually referred as Ricardian Equivalence results.
+
+\subsection*{2.6 Exercises}
+\begin{enumerate}
+  \item Consider the overlapping generations setup with 2 -period lives and a perishable consumption good. Individuals are identical within a cohort. Preferences are represented by
+\end{enumerate}
+
+$$
+u_{t}\left(c_{t}(t), c_{t}(t+1)\right)=\sqrt{c_{t}(t)}+\beta \sqrt{c_{t}(t+1)}
+$$
+
+Assume that the cohort size is constant, and that individuals have the same endowment of the consumption good when young and when old. Suppose that individual endowments grow over time: individual endowments from young to old age grow at the constant rate $(1+g)$.
+
+\begin{enumerate}
+  \item Solve for equilibrium interest rates for all $t$. How interest rates at different dates compare? Explain.
+  \item Suppose now that the growth rate of endowments vary over time, with $(1+g)_{t}$ being the growth rate of the endowment for a cohort born at $t$. Consider the case $(1+g)_{t}=x_{L}$ if $t$ is odd, and $(1+g)_{t}=x_{H}$ if $t$ is even, with $x_{L}<x_{H}$. Solve for equilibrium interest rates for all $t$, and compare your answer to the previous item.
+  \item Consider the following overlapping generations economy with a perishable consumption good. Individuals live for two periods and cohort size is constant over time.
+\end{enumerate}
+
+Individuals only receive an endowment when young. There are two types of individuals in this economy. Individuals of type $L$ have an endowment of $\bar{\omega}^{L}$ of the consumption good, while young individuals of type $H$ have an endowment $\bar{\omega}^{H}$, with $\bar{\omega}^{H}>\bar{\omega}^{L}$. Type-H individuals constitute a fraction $\phi$ of each cohort.
+
+When old, individuals receive a transfer $b$ from the government which is financed by a tax rate $\tau \in(0,1)$ on the endowments of all young individuals.
+
+There is a market for consumption loans in each period that pays the (gross) rate of return $R(t)$. Individuals value consumption in each period and discount the future at rate $\beta>0$. An individual of type $h \in\{H, L\}$ born at time $t$ maximizes
+
+$$
+U\left(c^{h}(t), c^{h}(t+1)\right)=\log \left(c^{h}(t)\right)+\beta \log \left(c^{h}(t+1)\right)
+$$
+
+\begin{enumerate}
+  \item Formulate the problem of a young individual born at time $t$.
+  \item Solve for the equilibrium consumption allocations for each type.
+  \item Let $v^{h}$ the value (indirect utility) function of each agent in equilibrium. That is,
+\end{enumerate}
+
+$$
+v^{h}=\log \left(\tilde{c}^{h}(t)\right)+\beta \log \left(\tilde{c}^{h}(t+1)\right)
+$$
+
+$$
+h=L, H
+$$
+
+We define ex-ante welfare as
+
+$$
+V \equiv \phi v^{H}+(1-\phi) v^{L}
+$$
+
+Is there a value of $\tau$ maximizes $V$ ? Explain.\\
+3. Consider the following overlapping generations model with a perishable consumption good in the island of Amerika. Time is discrete $(t=1,2, \ldots)$. There are $N$ identical individuals in each cohort who live for two periods.
+
+The consumption good is perishable and no storage is available. All individuals are endowed with $\bar{\omega}$ units of the consumption good when young and $\bar{\omega}$ when old. There is a market for consumption loans in each period that pays the (gross) rate of return $R(t)$.
+
+Individuals value consumption in each period . An individual born at $t$ chooses consumption levels $c_{y}(t), c_{o}(t+1)$, and consumption loans to maximize
+
+$$
+U\left(c_{y}(t), c_{o}(t+1)\right)=\log \left(c_{y}(t)\right)+\beta \log \left(c_{o}(t+1)\right)
+$$
+
+with $\beta>0$.
+
+\begin{enumerate}
+  \item Formulate the problem of a young individual born at $t$.
+  \item Find the interest on consumption loans in equilibrium, that is constant over time for all $t=1,2, \ldots$.
+  \item Suppose now that in anticipation of a potential war with neighbors, the island of Kanada, the government in Amerika decides to spend on defense at date $t_{0}$ a total amount $G$, once and for all. To finance this expenditure, the government issues bonds at $t_{0}$. Bonds will be fully repaid by (lump-sum) taxes on the young at $t_{0}+1$. Thankfully, the war with Kanada never happens.
+\end{enumerate}
+
+Obtain the equilibrium interest rates at different dates (i.e. $t_{0}, t_{0+1}$, etc) implied by this debt and spending policy.\\
+4. Economist A asserts that this policy will not affect interest rates given the Ricardian Equivalence principle. Is she/he right? Explain.\\
+4. Consider the following overlapping generations economy with a perishable consumption good. Individuals live for two periods and cohort size is constant over time. Individuals only receive an endowment when young. There are two types of individuals in this economy. Individuals of type L have an endowment of $\bar{\omega}^{L}$ of the consumption good, while young individuals of type H have and endowment $\bar{\omega}^{H}$, with $\bar{\omega}^{H}>\bar{\omega}^{L}$. Type-H individuals constitute a fraction $\phi$ of each cohort.
+
+When old, individuals receive a transfer $b$ from the government which is financed by a tax rate $\tau \in(0,1)$ on the endowments of all young individuals.
+
+There is a market for consumption loans in each period that pays the (gross) rate of return $R(t)$. Individuals value consumption in each period and discount the future\\
+at rate $\beta>0$. An individual of type $h \in\{H, L\}$ born at time $t$ maximizes
+
+$$
+U\left(c^{h}(t), c^{h}(t+1)\right)=\log \left(c^{h}(t)\right)+\beta \log \left(c^{h}(t+1)\right)
+$$
+
+\begin{enumerate}
+  \item Formulate the problem of a young individual born at time $t$. Define a competitive equilibrium for this economy.
+  \item Solve for the equilibrium interest rate in this economy. Is there borrowing and lending in equilibrium? Explain.
+  \item Dr. K, an economist, argues that an increase in the fraction of type-H individuals will make low-skilled ones worse off. Is Dr. K correct? Explain.
+\end{enumerate}
+
+\end{document}

@@ -1,0 +1,722 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+\usepackage{caption}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\graphicspath{ {./images/} }
+
+\begin{document}
+\captionsetup{singlelinecheck=false}
+\section*{Chapter 3}
+\section*{Overlapping Generations II}
+We now introduce capital and production into the economy. In this sense, we will consider a general equilibrium setting where the stock of capital is endogenous and household's income arises from the supply of factors of production (capital and labor) to firms.
+
+\section*{Demographics}
+A1: Time is discrete and runs from $t=0,1,2, \ldots$.
+
+A2: Individuals live for two periods, young an old $(y, o)$.
+
+A5: Individuals are identical within generations.
+
+A3: Size of new cohort (labor force) at $t$ is $L_{t}$. This grows at the rate $n$.
+
+\section*{Endowments}
+A4: Agents when young are endowed with one unit of productive "time" that they can rent at the competitive rate $W_{t}$ - we call this "work" time.
+
+A5: The initial old are endowed with $\bar{s}>0$ units of assets (capital).
+
+\section*{Technology}
+A6: On the technology side, aggregate labor $L_{t}$ and capital $K_{t}$ are converted into the final good $Y_{t}$ according to the production function $F\left(K_{t}, A_{t} L_{t}\right)$. Labor efficiency $\left(A_{t}\right)$ grows at the rate $g$. The function $F$ has all the properties we used in the Solow model.
+
+A7: Firms rent capital at rate $R_{t}$, and efficiency units of labor at rate $w_{t}$. Capital depreciates at the rate $\delta \in[0,1]$. There is a no arbitrage condition stating that $R_{t}-\delta=r_{t}$.
+
+A8: Agents can save in the first period of their life, and are repaid the next period. The rate of return on saving is denoted by $r_{t}$.
+
+\section*{Preferences}
+A9: Preferences are given by $u\left(c_{y}, c_{o}\right)=v\left(c_{y}\right)+\beta v\left(c_{o}\right)$. The function $v$ is strictly increasing, strictly concave and differentiable. In particular, we will consider utility\\
+functions in the CES (constant elasticity of substitution) class, also sometimes called CRRA (for constant relative risk aversion) when risk is present. These have the form $v(c)=\frac{c^{1-\sigma}-1}{1-\sigma}$ where $\sigma>0$ and $\sigma \neq 1$. If $\sigma=1$ then we have $\log$ utility, $v(c)=\ln c$. The intertemporal elasticity of substitution is $1 / \sigma$. Since agents live for two periods the two relevant goods are consumption when young and consumption when old.
+
+Consider the problem that a young individual faces at an arbitrary point in time $t$. His problem is to solve
+
+$$
+\begin{aligned}
+\max _{c_{y, t}, c_{o, t+1}, s_{t}} & \frac{c_{y, t}^{1-\sigma}}{1-\sigma}+\beta \frac{c_{o, t+1}^{1-\sigma}}{1-\sigma} \\
+\text { s.t. } & c_{y, t}+s_{t} \leq W_{t} \\
+& c_{o, t+1} \leq s_{t}\left(1+r_{t+1}\right)
+\end{aligned}
+$$
+
+The solution is characterized by the following Euler equation
+
+$$
+c_{y, t}^{-\sigma}=\beta\left(1+r_{t+1}\right) c_{o, t+1}^{-\sigma}
+$$
+
+The optimal saving rule is then a linear function of labor income:
+
+$$
+s_{t}=\mathcal{S}\left(r_{t+1}\right) W_{t}
+$$
+
+where $\mathcal{S}$ (.) is the saving rate which depends upon the rate of return to saving. The function $\mathcal{S}($.$) is given by$
+
+
+\begin{equation*}
+\mathcal{S}\left(r_{t+1}\right)=\frac{\beta^{\frac{1}{\sigma}}\left(1+r_{t+1}\right)^{\frac{1-\sigma}{\sigma}}}{1+\beta^{\frac{1}{\sigma}}\left(1+r_{t+1}\right)^{\frac{1-\sigma}{\sigma}}} \tag{3.1}
+\end{equation*}
+
+
+Changes in the rate of return We are interested is understanding how changes in the interest rate affect saving behavior; that is we want to know the sign of $\partial \mathcal{S}(r) / \partial r$. There are three cases to consider, and the reader should verify each one by inspecting the closed form for the saving rate function $\mathcal{S}$.
+
+\begin{enumerate}
+  \item $\sigma=1$. In this case $\partial \mathcal{S}(r) / \partial r=0$, so saving decisions are made independent of interest rate. That is because income and substitution effects cancel out.
+  \item $\sigma<1$. In this case $\partial \mathcal{S}(r) / \partial r>0$, that is because the substitution effect dominates the income effect (high intertemporal elasticity of substitution).
+  \item $\sigma>1$. In this case $\partial \mathcal{S}(r) / \partial r<0$, that is because the income effect dominates the substitution effect (low intertemporal elasticity of substitution).
+\end{enumerate}
+
+Exercise 10. Show that when $\sigma \rightarrow 1, v \rightarrow \log (c)$. Hence, for the log-case, income and substitution effects associated to an change in the interest rate cancel out.
+
+\subsection*{3.1 Equilibrium}
+We consider competitive environments where firms and agents are price takers in each market they participate in. Firms face the two prices $(w, R)$. Perfect competition\\
+implies that factors are paid their marginal products. Since $Y=A L f(k)$, we get, $R=f^{\prime}(k)$ and $w=f(k)-k f^{\prime}(k)$. Hence, individuals collect $W=w A$ from working, where $w$ is the rental price for effective units of time.
+
+At the beginning of a point in time, the entire capital stock is owned by the current old. Young agents work during the period. At the end of the period, young agents use their labor income for consumption and saving. Resources which are not consumed, are saved to provide for consumption at the old age. Firms use the stock of assets of the old as in capital in production, and then return the non-depreciated capital stock back to the agents at the end of the next period, along with a rental rate $R_{t}$. The total resources available for the old agents are the savings carried over from the previous period, corrected by $1+R_{t}-\delta$, where $\delta \in[0,1]$ is the rate of depreciation. The rental rate for capital satisfies $R_{t}-\delta=r_{t}$. Hence, $r_{t}$ is the net rate of return of capital, or the interest rate in the current setting.
+
+Exercise 11. Let $i_{t}$ the interest rate for borrowing and lending between $t$ and $t+1$. Show that in any equilibrium $i_{t}=r_{t+1}$, all $t$.
+
+Equilibrium Law of Motion In equilibrium, savings by the young must equal the capital stock that will be available in the next period. That is, $L_{t} s_{t}=K_{t+1}$, where $S$ is aggregate saving. Recall that $\mathcal{S}\left(r_{t+1}\right) A_{t} w_{t}$ are savings per worker at period $t$. Then $K_{t+1}=L_{t} \mathcal{S}\left(r_{t+1}\right) A_{t} w_{t}$.
+
+In equilibrium, since rental prices are competitive, we get
+
+\[
+\begin{array}{r}
+K_{t+1}=L_{t} A_{t} \mathcal{S}\left(f^{\prime}\left(k_{t+1}\right)-\delta\right)\left[f\left(k_{t}\right)-k_{t} f^{\prime}\left(k_{t}\right)\right] \\
+k_{t+1}(1+n)(1+g)=\mathcal{S}\left(f^{\prime}\left(k_{t+1}\right)-\delta\right)\left[f\left(k_{t}\right)-k_{t} f^{\prime}\left(k_{t}\right)\right] \tag{3.2}
+\end{array}
+\]
+
+Note that equation (3.2) implicitly defines a mapping from capital at $t$ to capital at $t+1$ say $k_{t+1}=\psi\left(k_{t}\right)$.
+
+At the steady-state, for stability we would like $\psi^{\prime}\left(k^{*}\right) \in(0,1)$. In the top left panel of figure 3.1, the mapping $\psi$ satisfies this restriction, and in the neighborhood of a steady state the capital per effective labor ratio behaves as in the Solow model. Therefore, the capital per effective labor ratio converges monotonically to a unique steady state.
+
+The top right panel of figure 3.1 displays the case where $\psi$ is decreasing. In this case, there is still a (locally) unique stable steady state, but convergence is not monotone; that is, oscillation occurs along the transition. Finally, there can be multiple steady states when the mapping $\psi$ is not concave, and this is displayed in the lower left panel of figure 3.1.
+
+The condition for stability can be evaluated by examining using the implicit function theorem:
+
+$$
+\left.\frac{\partial k_{t+1}}{\partial k_{t}}\right|_{k_{t}=k_{t+1}=k^{*}}=-\frac{\mathcal{S}\left(f^{\prime}\left(k^{*}\right)-\delta\right) k^{*} f^{\prime \prime}\left(k^{*}\right)}{(1+n)(1+g)-\mathcal{S}_{r}\left(f^{\prime}\left(k^{*}\right)-\delta\right) \underbrace{f^{\prime \prime}\left(k^{*}\right)}_{-} \underbrace{\left[f\left(k^{*}\right)-k^{*} f^{\prime}\left(k^{*}\right)\right]}_{+}}
+$$
+
+where $\mathcal{S}_{r}=\partial \mathcal{S} / \partial r$ is a function of $f^{\prime}\left(k^{*}\right)-\delta$.\\
+Here it is worth noting the following. First, if income and substitution effects cancel out in the saving rate, the slope of the mapping is always positive. If in addition, the production technology is Cobb-Douglas, there is a unique steady-state value for the capital to effective-labor ratio, and convergence to the steady state is monotone for any starting value, $k_{0}$. More generally, note also that if $\mathcal{S}_{r}>0$, then the whole denominator of the expression above is positive.
+
+We will focus on cases where the implicit mapping satisfies the local stability condition $\psi^{\prime}\left(k^{*}\right) \in(0,1)$.
+
+Exercise 12. Suppose that the production technology is Cobb-Douglas. Characterize the behavior of the mapping $\psi$ as far as you can.
+
+Competitive Equilibrium We need to define aggregate feasibility prior to stating a proper definition of equilibrium. Denote aggregate consumption by $C_{t}$. That is,
+
+$$
+C_{t} \equiv L_{t} c_{y, t}+L_{t-1} c_{o, t}
+$$
+
+It follows that the aggregate resource constraint is, for all $t=0,1,2 \ldots$ :
+
+$$
+C_{t}+K_{t+1}-K_{t}+\delta K_{t}=Y_{t}
+$$
+
+That is, the flow of aggregate output must equal the aggregate flows of consumption\\
+plus investment.\\
+Using the constant returns to scale properties of the technology, we can rewrite the feasibility condition as:
+
+
+\begin{equation*}
+\left(\frac{L_{t} c_{y, t}+L_{t-1} c_{o, t}}{A_{t} L_{t}}\right)+(1+n)(1+g) k_{t+1}=f\left(k_{t}\right)+(1-\delta) k_{t} \tag{3.3}
+\end{equation*}
+
+
+We can now define a competitive equilibrium.
+
+Definition 11. A competitive equilibrium are sequences $\left\{\tilde{k}_{t}\right\}_{0}^{\infty},\left\{\tilde{c}_{y, t}\right\}_{0}^{\infty},\left\{\tilde{c}_{o, t}\right\}_{0}^{\infty},\left\{\tilde{w}_{t}\right\}_{0}^{\infty}$, $\left\{\tilde{R}_{t}\right\}_{0}^{\infty},\left\{\tilde{r}_{t}\right\}_{0}^{\infty}$ such that\\
+(i) Given sequences $\left\{\tilde{w}_{t}\right\}_{0}^{\infty},\left\{\tilde{r}_{t}\right\}_{0}^{\infty}$, the sequences $\left\{\tilde{c}_{y, t}\right\}_{0}^{\infty},\left\{\tilde{c}_{o, t}\right\}_{0}^{\infty}$ solve the individual problems.\\
+(ii) Prices are competitive: $\tilde{w}_{t}=M P A L_{t}, \tilde{R}_{t}=M P K_{t}, \tilde{r}_{t}=\tilde{R}_{t}-\delta$ at all $t$.\\
+(iii) Allocations are feasible; equation (3.3) holds at all $t$.
+
+Since to obtain equilibrium sequences of capital to effective labor, we will use the equilibrium law of motion (equation 3.2), it is important to establish its connection with the feasibility condition in the definition of equilibrium (equation 3.3). We show below that the equilibrium law of motion implies the aggregate feasibility condition.
+
+Denote aggregate consumption of the young at $t$ by $C_{y, t}$. We know this is $C_{y, t}= L_{t}\left[W_{t}-s_{t}\right]$ from the budget constraint of the young. Similarly, aggregate consumption of the old at $t$ is given by $C_{o, t}=L_{t-1}\left(1+r_{t}\right) s_{t-1}$. Therefore, aggregate consumption\\
+in the economy at $t$ is
+
+$$
+C_{t}=C_{y, t}+C_{o, t}=L_{t} W_{t}-\underbrace{L_{t} s_{t}}_{K_{t+1}}+\underbrace{L_{t-1} s_{t-1}}_{K_{t}}+\underbrace{L_{t-1} s_{t-1} r_{t}}_{r_{t} K_{t}}
+$$
+
+where we have imposed the condition leading to the equilibrium law of motion; that is, $K_{t+1}=L_{t} s_{t}$ for all $t$. Hence,
+
+$$
+C_{t}=L_{t} W_{t}+K_{t}-K_{t+1}+r_{t} K_{t}
+$$
+
+But since prices are determined competitively, which is also a requirement of definition 11, we can apply Euler's Theorem by using the fact that $Y_{t}=F\left(K_{t}, A_{t} L_{t}\right)=w_{t} A_{t} L_{t}+ R_{t} K_{t}$ along with the no arbitrage condition $r_{t}=R_{t}-\delta=\mathrm{MPK}_{t}$ to get
+
+$$
+C_{t}=Y_{t}-K_{t+1}+K_{t}-\delta K_{t}
+$$
+
+and finally noting that investment is given by $I_{t}=K_{t+1}-K_{t}+\delta K_{t}$, we get
+
+$$
+Y_{t}=C_{t}+I_{t}
+$$
+
+which is the usual notion of feasibility or market clearing; that is, equation (3.3) in the definition of equilibrium. Therefore, this shows that ownership of the capital stock at $t$ by old people at $t$ and competitive restrictions imply the usual notion of feasibility. Since the converse is also true, these two notions of feasibility are equivalent.
+
+Exercise 13. Show that $Y_{t}=C_{t}+I_{t}$ and equilibrium restrictions imply that the capital stock at $t$ is held by old people at $t$.
+
+From now on, we may drop the "tilde" \~{} notation when it is understood that we are referring to equilibrium objects.
+
+Example 8. Consider the case of log utility and Cobb-Douglas production technology; $v(c)=\log c, Y=F(K, A L)=K^{\alpha}(A L)^{1-\alpha}$. It is easy to show that the saving rate function is $\mathcal{S}(\cdot)=\frac{\beta}{1+\beta}$. Imposing competitive prices and market clearing; we get the equilibrium law of motion for capital
+
+$$
+k_{t+1}=\frac{\beta(1-\alpha) k_{t}^{\alpha}}{(1+\beta)(1+n)(1+g)}
+$$
+
+Graphically, this law of motion corresponds to the top left panel of figure 3.1, and these dynamics will be the same as we saw in the Solow model; that is, monotone convergence to the unique stable steady state, starting from any intial level of capital $k_{0}$.
+
+It is straightforward to solve for the steady-state which is
+
+$$
+k^{*}=\left[\left(\frac{\beta}{1+\beta}\right) \frac{(1-\alpha)}{(1+n)(1+g)}\right]^{\frac{1}{1-\alpha}}
+$$
+
+Moreover, it can be verified that $\psi^{\prime}\left(k^{*}\right) \in(0,1)$. Check that the implications of this model are consistent with all observations of the balanced growth path facts.
+
+Exercise 14. Show that the model is consistent with the long-run growth regularities (Kaldor facts).
+
+Exercise 15. Show that along a balanced-growth path, the consumption levels of the old and the young grow at the rate $1+g$. Show that aggregate consumption grows at the rate $(1+n)(1+g)$.
+
+\subsection*{3.2 Understanding Model Mechanics}
+We now consider transitional dynamics when the economy is hit by shocks which either temporarily or permanently displace the economy from its current steady state. We consider three cases: (1) a "preference" shift, (2) a permanent change in aggregate productivity (TFP), and (3) a temporary change in TFP.
+
+Change in the discount factor Consider first the case in which there is a permanent increase in the discount factor $\beta$ which occurs at time $t_{0}$. There is no immediate affect on prices or the stock of capital since $K_{t_{0}}$ was determined at $t_{0}-1$, as well as the capital to effective labor ratio. However, saving at $t_{0}$ will be affected; in fact, individuals will save more than they would have given any level of current capital as they are now more patient. This shifts the law of motion upwards as shown in figure 3.2. The new steady state level of $k$ will be higher, and convergence will be monotone. The path for prices will be governed by the capital to effective labor ratio as depicted also in figure 3.2. Since the new steady state capital to effective labor ratio is higher, the wage converges to a higher steady state level, and the rental rate falls.
+
+Permanent increase in TFP Next we consider what happens when there are changes in aggregate productivity shocks. Our notion of productivity will be that of total factor productivity, or simply TFP. We denote TFP by the term $Z$, which enters the production function as $Y=Z F(K, A L)$. Consider first the case of a permanent\\
+increase in TFP, occurring at time $t_{0}$ from $Z$ to $Z^{\prime}$. This means that any given bundle of inputs will produce more output, at any point in time. This shifts the law of motion upwards as shown in figure 3.3.
+
+The dynamics for the stock of capital will be similar to the previous case: no change at $t_{0}$, then monotone convergence to the new higher steady state level. But now the effective wage is given by $Z\left[f(k)-k f^{\prime}(k)\right]$ which evidently jumps up at time $t_{0}$ due to the increase in TFP. Of course, since the TFP increase was permanent, the remaining dynamics of the wage will be governed by the capital to effective labor ratio, and hence monotonically increases to the new higher steady state level, see figure 3.3.
+
+Finally, the rental rate is given by $Z f^{\prime}(k)$ which will also jump up at $t_{0}$. But it must decline thereafter as the capital effective labor ratio is increasing. It may or may not return to its initial steady state level, but in a special case it certainly will (see exercise 16).
+
+Exercise 16. In the two-period OLG model with log-utility, and Cobb-Douglas technology, show that the steady state rental rate does not depend on the level of TFP.
+
+Exercise 17. Consider the general case of preferences with the elasticity of intertemporal substitution possibly different from 1. The production technology is Cobb-Douglas. Consider two levels of TFP, $Z_{H}$ and $Z_{L}$, with $Z_{H}>Z_{L}$. Show that in steady state, the rate of return on capital is the same under $Z_{H}$ or $Z_{L}$.
+
+Temporary increase in TFP Lastly, we consider the case where there is a one time increase in TFP. Specifically, it goes up for one period and then returns back to its original level; that is
+
+$$
+Z= \begin{cases}\bar{Z} & t<t_{0} \\ Z^{\prime} & t=t_{0} \\ \bar{Z} & t>t_{0}\end{cases}
+$$
+
+Refer to figure 3.4 for a graphical depiction of what follows. At time $t_{0}$, everything is the same as in the previous cases; the law of motion jumps up, the level of $k$ remains unchanged, and the wage and the rental rate jump up. Now, at $t_{0}+1$, the law of motion returns to its initial level, and the capital to effective labor ratio will monotonically decline to its original steady state. The path for wages will also monotonically decline back to its original steady state.
+
+The dynamics for the rental rate for capital services are interesting as well. In particular, we know that it has to return to its original steady state, and that it must increase as long as $k$ is decreasing. But currently, at time $t_{0}$, the rental rate is higher than its steady state level. So at $t_{0}+1$, when the TFP falls back to its original level, it must be the case that the rental rate falls below its original level. This happens due to both the increase in $k$ at $t_{0}+1$ as well as the the decrease in TFP at the same time. After this, it will monotonically increase towards its original steady state level.
+
+\subsection*{3.3 Golden Rule in OG}
+We will focus our attention on the golden rule of capital accumulation in the context of the OG model. As we saw earlier, the golden rule is the steady-state level of capital per effective worker that maximizes steady-state consumption per effective worker. To find this, start with the aggregate resource constraint
+
+
+\begin{equation*}
+L_{t} c_{y, t}+L_{t-1} c_{o, t}+K_{t+1}-K_{t}+\delta K_{t}=Y_{t}=A_{t} L_{t} f\left(k_{t}\right) \tag{3.4}
+\end{equation*}
+
+
+Now define $\bar{c}_{i, t}=c_{i, t} / A_{t}, i=y, o$, to be total consumption in units of labor efficiency for generation $i$ at time $t$ (evidently these are constant in the steady-state). Then equation (3.4) becomes
+
+$$
+\bar{c}_{y, t}+(1+n)^{-1} \bar{c}_{o, t}+(1+n)(1+g) k_{t+1}-k_{t}+\delta k_{t}=f\left(k_{t}\right)
+$$
+
+Now let $\bar{C}_{t}=\bar{c}_{y, t}+(1+n)^{-1} \bar{c}_{o, t}$ be total consumption in efficiency units. Consider now steady-states, with steady-states values for the capital to effective labor ratio denoted simply by $k$. Then clearly, for each $k$, there is a $\bar{C}(k)$ that satisfies the aggregate resource constraint. We now find the steady state level of $k$ which maximizes $\bar{C}(k)$ by solving
+
+$$
+\max _{k} f(k)-(1+n)(1+g) k-\delta k+k
+$$
+
+The FOC is $f^{\prime}(k)=\delta+(1+n)(1+g)-1$. Hence the golden rule level of $k$ must satisfy
+
+
+\begin{equation*}
+\underbrace{f^{\prime}\left(k_{G R}\right)-\delta}_{=r^{\star}}=(1+n)(1+g)-1 \tag{3.5}
+\end{equation*}
+
+
+where the LHS is simply the interest rate in the steady-state. So now we are left to wonder if a competitive environment will yield an equilibrium of this type. It turns out that maybe not. This leads us to the following definition.
+
+Definition 12. An allocation $\left\{\bar{C}_{t}, k_{t}\right\}_{t=0}^{\infty}$ is dynamically efficient if there is no other alternative and feasible allocation $\left\{\bar{C}_{t}^{\prime}, k_{t}^{\prime}\right\}_{t=0}^{\infty}, k_{0}^{\prime}=k_{0}$, with $\bar{C}_{t}^{\prime} \geq \bar{C}_{t}$ for all $t$, and strict inequality for some $t$.
+
+We now have an important result regarding dynamic efficiency with respect to the golden rule.
+
+Proposition 3.3.1. If $k^{*}>k_{G R}$, then the steady-state allocation is dynamically inefficient.
+
+Proof. A heuristic proof is as follows. Consider the resource constraint in the steadystate
+
+$$
+k^{*}(1+n)(1+g)-k^{*}+\delta k^{*}+\bar{C}^{*}=f\left(k^{*}\right)
+$$
+
+Suppose that we reduce the capital stock permanently in a 'small' amount, so that $k_{t+j}=k^{*}+\Delta_{k}$ for all $j>0$ where $\Delta_{k}<0$. Then the initial change in consumption is\\
+$\Delta \bar{C}_{t} \equiv \bar{C}_{t}^{\prime}-\bar{C}^{*}=-\Delta_{k}(1+n)(1+g)>0$. Now the rest of the consumption sequence obeys
+
+$$
+\Delta \bar{C}_{t+j} \cong \underbrace{[1+\overbrace{f^{\prime}\left(k^{*}\right)-\delta}^{r^{*}}-(1+n)(1+g)]}_{<0 \text { for } k^{*}>k_{G R}} \Delta_{k}>0
+$$
+
+Therefore, there is an alternative allocation that dominates the original one. For any $t$ and some $\Delta_{k}<0$, it is given by
+
+$$
+\begin{aligned}
+k_{t+j}^{\prime} & =k^{*}+\Delta_{k} \\
+\bar{C}_{t}^{\prime} & =\bar{C}^{*}-\Delta_{k}(1+n)(1+g) \\
+\bar{C}_{t+j}^{\prime} & =\bar{C}^{*}+\left[1+f^{\prime}\left(k^{*}\right)-\delta-(1+n)(1+g)\right] \Delta_{k}
+\end{aligned}
+$$
+
+Exercise 18. For a Cobb-Douglas technology and log utility, show that there are parameter values that admit steady-states which are efficient, and other parameters that admit steady-states which are dynamically inefficient.
+
+\subsection*{3.4 Public Pensions}
+The OLG model provides a natural framework for thinking about issues such as public pensions, or "social security" as it is usually referred to in the United States. A few reasons are: (1) Individuals have finite lives, (2) the model allows for a retirement period, and (3) there is scope for intergenerational linkages via market interactions.
+
+The policy that we will discuss is by no doubt a central determinant of individual saving. We will be interested in understanding how social security effects households' saving decisions. In particular, whether social security crowds out capital formation.
+
+The structure of the social security system in the United States is based on a "Pay As You Go" (PAYG)idea. Young people are taxed, in order to finance transfers to the old. These are transfers across generations, that occur within each time period. So, strictly speaking, the only way a given individual will receive benefits larger than the taxes he/she paid is if there was positive population growth, or wage growth, during that time. In practice this is more complicated due to heterogeneity in earnings and its interplay with the non-linearity of the benefit formulae, as well as the nonproportionality of taxes. But we will abstract from these issues (for now).
+
+\subsection*{3.4.1 A Simple PAYG System}
+Let us abstract from growth in labor efficiency for now ( $g=0$ ). Young people pay taxes $T$, and old people receive benefits $B$. The government balances its budget: $L_{t} T=L_{t-1} B$, or $(1+n) T=B$, all $t$. A young individual solves:
+
+$$
+\begin{array}{rl}
+\max _{c_{y, t}, c_{o, t+1}, s_{t}} & v\left(c_{y, t}\right)+\beta v\left(c_{o, t+1}\right) \\
+\text { s.t. } & c_{y, t}+s_{t}=w_{t}-T \\
+& c_{o, t+1}=(1+n) T+\left(1+r_{t+1}\right) s_{t}
+\end{array}
+$$
+
+We want of know the sign, and magnitude, of $\frac{\partial s_{t}}{\partial T}$. That is, the individual saving response to changes in the rate of return. The optimal solution to the household's problem yields the Euler equation $u^{\prime}\left(c_{y, t}\right)=\beta\left(1+r_{t+1}\right) u^{\prime}\left(c_{o, t+1}\right)$.
+
+Using the Implicit Function Theorem, we get
+
+$$
+\frac{\partial s_{t}}{\partial T}=-\frac{\beta u^{\prime \prime}\left(c_{o, t+1}\right)(1+n)\left(1+r_{t+1}\right)+u^{\prime \prime}\left(c_{y, t}\right)}{u^{\prime \prime}\left(c_{y, t}\right)+\beta u^{\prime \prime}\left(c_{o, t+1}\right)\left(1+r_{t+1}\right)^{2}}<0 .
+$$
+
+Exercise 19. Derive the optimal decision rule for saving when the utility function is logarithmic. Are savings independent of the interest rate? Explain.
+
+It is clear that social security crowds out private saving; this is since the social security will do some of our saving for us. But now we wonder if the loss in private saving is greater or less than the increase in taxes at the young age. This depends on the population growth. As we saw, pay as you go social security provides a rate of return equal to the growth rate in population. Then
+
+$$
+\frac{\partial s}{\partial T}= \begin{cases}<-1 & r<n(\text { Dynamic Inefficiency }) \\ =-1 & r=n(\text { Golden Rule }) \\ >-1 & r>n(\text { Dynamic Efficiency })\end{cases}
+$$
+
+The intuition is that if social security provides a lower return than private saving, then these two channels of saving are not perfectly substitutable, and households will decrease private saving by a smaller amount than they are being taxed. If the return from both channels is the same, then the change in savings is one-for-one with the\\
+increased taxes. If social security provides a higher return than private saving, then households will reduce their savings by more than the increase in the SS tax.
+
+Changes in the Social Security Tax The law of motion for the capital to effective labor ratio can be implicitly written as
+
+$$
+(1+n) k_{t+1}=\psi\left(k_{t}, T\right)
+$$
+
+where $T$ enters as social security taxes and transfers affect individual savings. Figure 3.5 illustrates how changes in the social security tax $T$ affect steady-states capital per worker. As the figure illustrates, an increase in $T$ leads to a lower value of capital per worker in steady state.
+
+\subsection*{3.4.2 PAYG Public Pensions: Proportional Taxes}
+We now solve explicitly, under some assumptions, for the case when social security taxes are proportional to labor earnings. This case is relevant as financing for PAYG public pensions has this form in most countries. This case is also relevant, as it allows us to accommodate for population growth and growth in labor efficiency.
+
+Exercise 20. Suppose that social security benefits are financed via a proportional rate $\theta \in(0,1)$ on labor earnings. Define a competitive equilibrium.
+
+Suppose now that $v(c)=\log (c)$ and the production technology is Cobb-Douglas\\
+with capital share $\alpha$. Social security taxes are proportional to labor earnings at the rate $\theta \in(0,1)$. We assume further that there is full depreciation, $\delta=1$.
+
+In this case, optimal individual savings are given by
+
+$$
+s_{t}=\left(\frac{\beta}{1+\beta}\right) W_{t}(1-\theta)-\left(\frac{B_{t+1}}{(1+\beta)\left(1+r_{t+1}\right)}\right)
+$$
+
+We now derive the law of motion for the capital to effective labor ratio. As before, $K_{t+1}=L_{t} s_{t}$. Furthermore, in equilibrium:
+
+$$
+\begin{gathered}
+B_{t}=\theta W_{t}(1+n) \\
+W_{t}=A_{t} w_{t}=A_{t}(1-\alpha) k_{t}^{\alpha} \\
+r_{t}=\alpha k_{t}^{\alpha-1}-1
+\end{gathered}
+$$
+
+It follows that using optimal individual savings, together with the equilibrium conditions in $K_{t+1}=L_{t} s_{t}$, we obtain
+
+$$
+k_{t+1}(1+n)(1+g)=\left(\frac{\beta}{1+\beta}\right)(1-\theta)(1-\alpha) k_{t}^{\alpha}-\left(\frac{(1+n)(1+g) \theta(1-\alpha) k_{t+1}^{\alpha}}{(1+\beta) \alpha k_{t+1}^{\alpha-1}}\right)
+$$
+
+Or,
+
+$$
+k_{t+1}(1+n)(1+g)=\left(\frac{\beta}{1+\beta}\right)(1-\theta)(1-\alpha) k_{t}^{\alpha}-\left(\frac{(1+n)(1+g) \theta(1-\alpha)}{(1+\beta) \alpha}\right) k_{t+1}
+$$
+
+It follows that, after algebra, the equilibrium law of motion for $k$ can be written as:
+
+
+\begin{equation*}
+k_{t+1}=\Gamma(\theta, .) k_{t}^{\alpha} \tag{3.6}
+\end{equation*}
+
+
+where $\Gamma(\theta,$.$) is a function of the social security \tan \theta$ and the other parameters of the problem, with $\Gamma_{\theta}<0$.
+
+From equation (3.6), it becomes clear that there is a unique steady state for $k, k^{*}$, and that the convergence to $k^{*}$ is monotone. Moreover, an increase in $\theta$ leads to a lower steady level of $k^{*}$. Hence, more generous social security transfers via a higher social security tax, reduce the stationary value of $k$.
+
+Exercise 21. What can be said of the effects of changes in $\theta$ when $\delta \in[0,1)$ ?.
+
+Exercise 22. Suppose now, in line with observations, that the pension benefit to the old is fixed at $\bar{B}$, and that this benefit is financed via payroll tax rates $\theta_{t}$. (i) Derive the equilibrium law of motion of the effective capital-labor ratio in this case. (ii) Suppose now that the rate of population growth declines permanently from $n_{H}$ to a lower value, $n_{L}$. Describe the dynamic effects on the effective capital-labor ratio. Is the tax rate on labor higher or lower in the new steady state?
+
+\subsection*{3.5 Heterogeneity}
+We will now extend the basic model in a couple of directions. We start by considering the case of heterogeneity at birth. We start by the standard notion that individuals are heterogeneous in their endowment of labor in efficiency units. We assume that at birth, there are finitely-many types $(N)$. Each individual has an endowment of $z_{i}$ units of labor efficiency and there are $L_{i}$ of each type, $i=1, \ldots N$. Hence, there is a fraction $\phi_{i} \equiv L_{i} / L$ of them in each cohort.
+
+How do these efficiency units map into an aggregate labor input? Assume that the aggregate technology is Cobb-Douglas, with capital share $\alpha$. Then, we write
+
+$$
+Y=K^{\alpha} H^{1-\alpha}
+$$
+
+whereby $H$ is the aggregate labor input.
+
+Perfect Substitutes If efficiency units are perfect substitutes in production, then
+
+$$
+H=A L\left(\sum_{i} \phi_{i} z_{i}\right)
+$$
+
+In this case, individual labor incomes are $W_{t} z_{i}=w_{t} A_{t} z_{i}$.\\
+We now derive the equilibrium law of motion of the capital to effective-labor ratio. Assume that preferences are logarithmic and that there are only two types, with $z_{S}$ and $z_{U}, z_{S}>z_{U}$, It follows that
+
+$$
+K_{t+1}=L_{t} A_{t}\left(\frac{\beta}{1+\beta}\right)(1-\alpha) k_{t}^{\alpha}\left[\phi z_{S}+(1-\phi) z_{U}\right], \quad k \equiv K / A H
+$$
+
+Or,
+
+$$
+k_{t+1}(1+n)(1+g)=\left(\frac{\beta}{1+\beta}\right)(1-\alpha) k_{t}^{\alpha}
+$$
+
+Note that this is the same law of motion that we obtain earlier. The upshot is that shares and efficiency units are built into the notion of the capital to effective labor ratio.
+
+Exercise 23. Suppose that the share of type- $S$ individuals permanently go up. What are the long-run effects on the equilibrium rate of return on capital? What are the long-run effects on output per worker? Explain.
+
+Imperfect Labor Substitution Instead of assuming that labor types are perfect substitutes, we now posit that they are imperfect substitutes in production. Thus, each labor type now commands a different rental price. Assume that labor services of different types are aggregated via a Cobb Douglas technology, nested into the CobbDouglas production technology assumed earlier. We assume that
+
+$$
+H \equiv A\left(L_{S} z_{S}\right)^{\gamma}\left(L_{U} z_{U}\right)^{1-\gamma}
+$$
+
+Or,
+
+$$
+H \equiv A L\left(\phi z_{S}\right)^{\gamma}\left((1-\phi) z_{U}\right)^{1-\gamma}
+$$
+
+We will work with a notion of capital-effective labor as before, $k=K / H$. It is key to first define individual labor earnings, $e_{i}$ :
+
+$$
+\begin{aligned}
+& e_{S}=A w_{S} z_{S} \\
+& e_{U}=A w_{U} z_{U}
+\end{aligned}
+$$
+
+In equilibrium, $w_{S}$ and $w_{U}$ are the marginal product of each labor type. Then,
+
+$$
+\begin{gathered}
+w_{S}=(1-\alpha) k^{\alpha} \gamma S^{\gamma-1} U^{1-\gamma} \\
+w_{U}=(1-\alpha) k^{\alpha}(1-\gamma) S^{\gamma} U^{-\gamma}
+\end{gathered}
+$$
+
+where $S$ and $U$ are the respective quantities available of labor of each type.\\
+We now derive the equilibrium law of motion for $k$.
+
+$$
+K_{t+1}=L_{t} A_{t}\left(\frac{\beta}{1+\beta}\right)(1-\alpha) k_{t}^{\alpha}\left[\phi \gamma S^{\gamma-1} U^{1-\gamma} z_{S}+(1-\phi)(1-\gamma) S^{\gamma} U^{-\gamma} z_{U}\right]
+$$
+
+Noting that $S=\phi z_{S}$ and $U=(1-\phi) z_{U}$, we have
+
+$$
+K_{t+1}==L_{t} A_{t}\left(\frac{\beta}{1+\beta}\right)(1-\alpha) k_{t}^{\alpha} H
+$$
+
+That is, the same law of motion as before:
+
+$$
+k_{t+1}(1+n)(1+g)=\left(\frac{\beta}{1+\beta}\right)(1-\alpha) k_{t}^{\alpha}
+$$
+
+It immediately follows that the dynamics for $k$ is the same as before. However, the transitional dynamics depends on the levels of efficiency units, the shares of each type and the importance of each labor type in production, governed by the parameter $\gamma$.
+
+Exercise 24. Suppose that the efficiency units of individuals of type $S, z_{S}$, permanently increase. Describe the dynamic effects on the capital to effective labor ratio. What are the long-run effects on the labor earnings of individuals of type $S$ and $U$. Explain.
+
+Exercise 25. Suppose - again - that the efficiency units of individuals of type $S$, $z_{S}$, permanently increase. Cristina, an economic reporter, argues that the share of aggregate income accruing to type-S individuals will permanently increase as well. Is she right?
+
+\subsection*{3.6 Endogenous Labor}
+So far, we have restricted the choice of work hours of individuals, and imposed that they devote all their available time when young to work. We now extend the model\\
+to account for an endogenous choice of work hours, via the tradeoff between work and leisure.
+
+We assume that individuals have one unit of available time, that can be divided between work and leisure (all other valued non-work activities). We assume that this choice is available to young individuals, so old ones cannot work (i.e. only enjoy leisure). Preferences are now represented by the utility function
+
+
+\begin{equation*}
+u\left(c_{y}, c_{o}\right)=v\left(c_{y}, z_{y}\right)+\beta v\left(c_{o}, z_{o}\right) \tag{3.7}
+\end{equation*}
+
+
+where $z$ stands for leisure. Individuals face when young the constraint that $z_{y, t}+ h_{y, t}=1$, where $h$ stands for work hours that command the rental price $W_{t}$. The aggregate technology is $Y=F(K, A H)$, where aggregate raw labor, $H$, is given by $H=L h$.
+
+We further restrict individual preferences. We posit that
+
+$$
+v(c, z) \equiv \ln (c)+B \frac{z^{1-\sigma}}{1-\sigma}
+$$
+
+As we discuss later on, these preferences are consistent with balanced growth. Therefore, young individuals maximize 3.7 subject to the standard budget constraints with endogenous labor, plus the constraint on time use:
+
+
+\begin{align*}
+c_{y, t}+s_{t} & =W_{t}  \tag{3.8}\\
+c_{o, t+1} & =s_{t}\left(1+r_{t+1}\right)  \tag{3.9}\\
+z_{y, t}+h_{y, t} & =1  \tag{3.10}\\
+z_{o, t+1} & =1 \tag{3.11}
+\end{align*}
+
+
+The solution is fully characterized by two first-order conditions, in conjunction with the budget constraint and the restriction on time use when young.
+
+
+\begin{align*}
+& \frac{c_{o, t+1}}{c_{y, t}}=\beta\left(1+r_{t+1}\right)  \tag{3.12}\\
+& \frac{W_{t}}{c_{y, t}}=B\left(1-h_{y, t}\right)^{-\sigma} \tag{3.13}
+\end{align*}
+
+
+The first condition is the standard one for the allocation of consumption and saving (Euler equation). The growth rate of consumption from young to old is fully determined by the discount factor and the rate of return on savings. The second one establishes that the marginal rate of substitution between leisure and consumption must equal the wage rate.
+
+The allocation of consumption over the life cycle implies a saving decision rule equivalent to the case log-utility case before:
+
+$$
+s_{t}=\left(\frac{\beta}{1+\beta}\right) W_{t} h_{t}
+$$
+
+i.e. savings are a fraction of current labor income, with the latter now being endogenous. Consumption at young age is also a fraction of labor income,
+
+$$
+c_{y, t}=\left(\frac{1}{1+\beta}\right) W_{t} h_{t}
+$$
+
+Using the condition characterizing the choice of labor (3.13), we then obtain:
+
+
+\begin{equation*}
+\frac{(1+\beta)}{h_{y, t}}=B\left(1-h_{y, t}\right)^{-\sigma} \tag{3.14}
+\end{equation*}
+
+
+The above implies that there is a unique, time invariant choice of work hours when young, $h_{y, t}=h$. This implies that income and substitution effects in the choice of work hours (leisure) fully cancel out.
+
+Competitive Equilibrium We now formally define the corresponding notion of competitive equilibrium for the economy with endogenous labor. To simplify notation from now on, we refer to the choice of labor at $t$ as simply $h_{t}$.
+
+Definition 13. A competitive equilibrium are sequences $\left\{\tilde{k}_{t}\right\}_{0}^{\infty},\left\{\tilde{c}_{y, t}\right\}_{0}^{\infty},\left\{\tilde{c}_{o, t}\right\}_{0}^{\infty},\left\{\tilde{h}_{t}\right\}_{0}^{\infty}$, $\left\{\tilde{w}_{t}\right\}_{0}^{\infty},\left\{\tilde{R}_{t}\right\}_{0}^{\infty},\left\{\tilde{r}_{t}\right\}_{0}^{\infty}$ such that\\
+(i) Given sequences $\left\{\tilde{w}_{t}\right\}_{0}^{\infty},\left\{\tilde{r}_{t}\right\}_{0}^{\infty}$, the sequences $\left\{\tilde{c}_{y, t}\right\}_{0}^{\infty},\left\{\tilde{c}_{o, t}\right\}_{0}^{\infty},\left\{\tilde{h}_{t}\right\}_{0}^{\infty}$ solve the individual problems.\\
+(ii) Prices are competitive: $\tilde{w}_{t}=M P A L_{t}, \tilde{R}_{t}=M P K_{t}, \tilde{r}_{t}=\tilde{R}_{t}-\delta$ at all $t$.\\
+(iii) Allocations are feasible: For all $t$,
+
+
+\begin{equation*}
+\left(\frac{L_{t} c_{y, t}+L_{t-1} c_{o, t}}{A_{t} L_{t}}\right)+(1+n)(1+g) k_{t+1}=f\left(k_{t}, h_{t}\right)+(1-\delta) k_{t} \tag{3.15}
+\end{equation*}
+
+
+We now derive the equilibrium law of motion for a relevant variable that determines all equilibrium prices and quantities. Since the aggregate labor input involves hours of work, we focus on the relevant capital to effective labor ratio for this economy: $k_{h} \equiv K /(L A h)$. Following the standard derivation, we obtain
+
+$$
+k_{h, t+1}(1+n)(1+g)=\frac{\beta}{1+\beta}\left[f\left(k_{h, t}-k_{h, t} f^{\prime}\left(k_{h, t}\right)\right]\right.
+$$
+
+When the technology is Cobb-Douglas, the law of motion becomes
+
+$$
+k_{h, t+1}(1+n)(1+g)=\frac{\beta}{1+\beta}(1-\alpha) k_{h, t}^{\alpha}
+$$
+
+Note that in steady state, this economy is consistent with a balanced growth path. In addition to the discussion before for the basic model with capital, hours of work are endogenous and constant over time.
+
+Exercise 26. Suppose the case in which the production technology is Cobb-Douglas. Suppose that the from $t_{0}$ onwards, the discount factor of individuals permanently goes up. Describe the effect over time on prices.
+
+Exercise 27. Suppose the case in which the production technology is Cobb-Douglas. Suppose that the from $t_{0}$ onwards, the weigh on leisure in preferences permanently increases. Economist $X$ argues that such a shift will lead to a new steady state with a higher rate of return on capital, and a lower level of output per worker. Is she right?
+
+\subsection*{3.7 Exercises}
+\begin{enumerate}
+  \item Consider the following version of the overlapping generations model with capital. Time is discrete $(t=0,1,2, \ldots)$. Individuals live for two periods, and work in only the first period of their lives. There are two types of individuals in this economy, males (M) and females ( $F$ ), who start and live their two-period lives in a household. Each household is comprised by one male and one female.
+\end{enumerate}
+
+The household maximizes the discounted sum of utilities of both members. Both males and females are equally weighted in the utility function. Males are endowed with one 1 unit of labor efficiency, while females are endowed with $\pi>0$ units of labor efficiency.
+
+The household values consumption in both periods, and dislikes market work of both members. Household consumption is a public good. A household born at $t$ chooses consumption levels $c_{1, t}, c_{2, t+1}$, household savings $s_{t}$, and labor supplied of both members, $l_{M, t}$ and $l_{F, t}$, to maximize
+
+$$
+2 \ln \left(c_{1, t}\right)-\frac{B}{1+\gamma} l_{M, t}^{1+\gamma}-\frac{B}{1+\gamma} l_{F, t}^{1+\gamma}+2 \beta \ln \left(c_{2, t+1}\right)
+$$
+
+with $B, \gamma, \beta>0$.\\
+There is a large, equal number of males and females in each generation. The size of each cohort is $N_{t}$, which grows at the constant gross rate $1+n$.
+
+Competitive firms have access to a Cobb-Douglas technology that uses capital and effective labor. Aggregate labor efficiency grows at the rate $1+g$. Capital depreciates at the rate $\delta \in(0,1]$ per period.
+
+\begin{enumerate}
+  \item Formulate the problem of a young household in period $t$. Obtain the first order conditions that characterize its solution.
+  \item Argue that this economy is consistent with a balanced growth path in which hours worked are constant. Explain.
+  \item Suppose now that due to a number of factors, labor efficiency of females goes from $\pi_{L}<1$ to full parity with males, $\pi=1$. Economist A argues that this will lead to higher growth rates in the long run. Is he correct? Explain.
+  \item Consider the following version of the overlapping generations model with capital. Time is discrete $(t=0,1,2, \ldots)$. Individuals live for two periods, and work in the market in only the first period of their lives. Competitive firms have access to a CobbDouglas technology that uses capital $(K)$ and labor services $(L)$. Labor efficiency grows\\
+at the constant (gross) rate $(1+g)$. For simplicity, assume that there is no growth in population.
+\end{enumerate}
+
+In this economy, individuals value regular consumption $c$, and home produced goods, $h$ (home cooking, cleaning, gardening, etc.) Home production requires only labor time, $l$. Individuals produce home goods according when young and old according to $h_{i, t}=A_{t}^{h} G\left(l_{i, t}\right), i=1,2$. The function $G$ is strictly increasing, concave and differentiable, and satisfies $G(0)=0$. Home goods are perishable and storage is not possible. $A_{t}^{h}$ stands for the level of productivity in the production of home goods, and grows at the gross rate $\left(1+g^{h}\right)$. The total endowment of time available for each individual is equal to 1 .
+
+An individual born at date $t$ of any type chooses consumption levels $c_{1, t}, c_{2, t+1}$, home goods $h_{1, t}, h_{2, t+1}$ and savings $s_{t}$, to maximize
+
+$$
+U(.)=\log \left(c_{1, t}\right)+\gamma \log \left(h_{1, t}\right)+\beta\left[\log \left(c_{2, t+1}\right)+\gamma \log \left(h_{2, t}\right)\right]
+$$
+
+\begin{enumerate}
+  \item Formulate the problem of a young individual of each type in period $t$. Derive the first order conditions that characterize optimal choices. Explain.
+  \item Argue that there is a unique balanced-growth in this economy in which time devoted to work at home is constant, independently of the growth rates of technical progress. What are the growth rates of relevant variables such as rental prices\\
+for labor and capital, aggregate market output and consumption of both goods? Explain.
+  \item Consider the following version of the overlapping generations model with capital. Time is discrete $(t=0,1,2 \ldots)$. Individuals live for two periods, only work when young, and there is no population growth. An individual born at time $t$ chooses consumption, savings and hours worked when young to maximize
+\end{enumerate}
+
+$$
+U\left(c_{y, t}, c_{o, t+1}\right)=\ln \left(c_{y, t}\right)+\beta \ln \left(c_{o, t+1}\right),
+$$
+
+where $\beta>0$.\\
+There are two types of individuals in this economy that are differentiated by the efficiency units of labor that they are endowed (born) with. Type- $H$ individuals are endowed with $z_{H}$, while type- $L$ individuals are endowed with $z_{L}$, where $z_{H}>z_{L}$. A measure $N_{i}, i=H, L$, of young individuals is born at each date so that the total size of each new cohort is $N=N_{H}+N_{L}$.
+
+Competitive firms have access to a Cobb-Douglas production technology that uses capital ( $K$ ) and labor services ( $E$ ). In turn, labor types are imperfect substitutes in production. Formally, output $Y$ is given by
+
+$$
+Y=K^{\alpha} E^{1-\alpha}, \quad \text { where } E=E_{H}^{\phi} E_{L}^{1-\phi}
+$$
+
+\begin{enumerate}
+  \item Formulate the problem of young individuals born at time $t$.
+  \item Derive the law of motion for the capital-labor ratio.
+  \item Suppose now at time $t=t_{0}-1$ the economy is in the steady state. At the start of $t_{0}$, newborn migrants enter the economy unexpectedly. These migrants have the same preferences and endowments of natives, and never leave. We assume that this changes the composition of the labor pool on a permanent basis. We now have $N_{H}^{\prime}>N_{H}$ and $N_{L}^{\prime}>N_{L}$, respectively, for all $t$.
+\end{enumerate}
+
+Describe the dynamic adjustment of the rate of return to capital.\\
+4. What are the long-run effects of the entry of migrants on labor earnings? Economist $A$ argues that labor earnings of both types decline. Is she right? Explain.\\
+4. Consider the following version of the overlapping generations model with capital. Time is discrete $(t=0,1,2, \ldots)$. Individuals live for two periods, and work in the market in only the first period of their lives. Competitive firms have access to a Cobb-Douglas technology that uses capital ( $K$ ) and labor services ( $L$ ). For simplicity, assume that there is no growth in population or in labor efficiency.
+
+In this economy, individuals value regular consumption $c$, and home produced goods, $h$ (home cooking, cleaning, gardening, etc.) Home production requires only labor time, $l$. Individuals produce home goods when young and old according to $h_{i, t}=G\left(l_{i, t}\right), i=1,2$. The function $G$ is strictly increasing, concave and differentiable,\\
+and satisfies $G(0)=0$. Home goods are perishable and storage is not possible. The total endowment of time available for each individual is equal to 1 .
+
+An individual born at date $t$ of any type chooses consumption levels $c_{1, t}, c_{2, t+1}$, home goods $h_{1, t}, h_{2, t+1}$ and savings $s_{t}$, to maximize
+
+$$
+U(.)=\ln \left(c_{1, t}\right)+\gamma \ln \left(h_{1, t}\right)+\beta\left[\ln \left(c_{2, t+1}\right)+\gamma \ln \left(h_{2, t+1}\right)\right],
+$$
+
+where $\beta>0$.
+
+\begin{enumerate}
+  \item Formulate the problem of a young individual in period $t$. Derive the first orderconditions that characterize optimal choices. Explain.
+  \item Assume from now on that there are two types of individuals born into this economy. Type- $L$ individuals have a valuation of home goods $\gamma_{L}$, while type- $H$ individuals have $\gamma_{H}$, with $\gamma_{L}<\gamma_{H}$. Type- $L$ individuals constitute a fraction $\pi$ of each cohort. Furthermore, the home technology is given by $G(l)=l^{\lambda}, \lambda \in(0,1)$.
+\end{enumerate}
+
+Derive the law of motion for the capital-to-labor ratio. Show that there is a unique steady state in this economy, in which capital-to-labor ratio is strictly positive.\\
+3. Consider two economies, $A$ and $B$. These economies differ in the relative fractions of type- $L$ individuals, with $\pi_{A}>\pi_{B}$. Given this observation, economist $X$ states that in steady state, GDP per worker will be higher in $A$. Shen then states that\\
+because type- $L$ individuals save more than type- $H$ individuals, the rate of return on capital will be lower in economy $A$. Is she right? Explain carefully.\\
+5. Consider the following version of the overlapping generations model with capital. The novelty in the current framework is that revenues from tax collections are used to finance public infrastructure, a productive input in production.
+
+Time is discrete $(t=0,1,2, \ldots)$. A cohort of size $L$ is born every period. There is no population growth. Individuals live for two periods, and work in only the first period of their lives, when they are endowed with one unit of productive time. An individual born at date $t$ chooses consumption levels $c_{1, t}, c_{2, t+1}$ and savings $s_{t}$, to maximize
+
+$$
+U\left(c_{1, t}, c_{2, t+1}\right)=\ln \left(c_{1, t}\right)+\beta \ln \left(c_{2, t+1}\right)
+$$
+
+Competitive firms have access to a production technology that uses capital and labor services, and publicly-provided infrastructure capital. All firms have access to infrastructure capital that is provided by a government. A firm that uses $l$ units of labor, $k$ units of capital, given $z$ units of public infrastructure, produces
+
+$$
+y=z^{\lambda} k^{\alpha} l^{1-\alpha}
+$$
+
+units of output, with $\lambda \in(0,1)$ and $\alpha \in(0,1)$. Capital depreciates at the rate $\delta_{k} \in [0,1]$.
+
+A government in this economy taxes the labor income of young individuals at the time-invariant rate $\tau \in(0,1)$ to finance aggregate investment in public infrastructure. Infrastructure capital depreciates at the rate $\delta_{z} \in[0,1]$. We assume that firms have access to a level of infrastructure capital equal to the per-worker level available in the economy.
+
+\begin{enumerate}
+  \item Formulate the problem of a young individual in period $t$. Obtain the first order conditions that characterize its solution. Solve for individual consumption levels and savings.
+  \item State clearly the government budget constraint in this economy. Define a competitive equilibrium.
+  \item Find the steady-state value for the standard capital-labor ratio.
+  \item Use your previous results to evaluate critically the following claim: "Higher rates rates of taxation are needed to finance public infrastructure and therefore, increase the long-run level of investment in private capital."
+\end{enumerate}
+
+\begin{figure}[h]
+\begin{center}
+\captionsetup{labelformat=empty}
+\caption{Figure 3.1: Possible laws of motion for OLG model}
+  \includegraphics[alt={},max width=\textwidth]{bc9b7ce4-b32f-4823-ae58-ff0a0514c3f7-38_1397_1464_698_330}
+\end{center}
+\end{figure}
+
+\begin{figure}[h]
+\begin{center}
+\captionsetup{labelformat=empty}
+\caption{Figure 3.2: Transition path after an increase in $\beta$}
+  \includegraphics[alt={},max width=\textwidth]{bc9b7ce4-b32f-4823-ae58-ff0a0514c3f7-39_1453_1462_672_330}
+\end{center}
+\end{figure}
+
+\begin{figure}[h]
+\begin{center}
+\captionsetup{labelformat=empty}
+\caption{Figure 3.3: Transition path after a permanent increase in TFP}
+  \includegraphics[alt={},max width=\textwidth]{bc9b7ce4-b32f-4823-ae58-ff0a0514c3f7-40_771_1475_667_326}
+\end{center}
+\end{figure}
+
+\begin{center}
+\includegraphics[max width=\textwidth, alt={}]{bc9b7ce4-b32f-4823-ae58-ff0a0514c3f7-40_723_725_1402_330}
+\end{center}
+
+\begin{figure}[h]
+\begin{center}
+\captionsetup{labelformat=empty}
+\caption{Figure 3.4: Transition path after a temporary increase in TFP}
+  \includegraphics[alt={},max width=\textwidth]{bc9b7ce4-b32f-4823-ae58-ff0a0514c3f7-41_1457_1457_670_333}
+\end{center}
+\end{figure}
+
+Figure 3.5: Law of motion after an increase in social security taxes under Pay As You Go\\
+\includegraphics[max width=\textwidth, alt={}, center]{bc9b7ce4-b32f-4823-ae58-ff0a0514c3f7-42_697_716_1110_700}
+
+
+\end{document}
