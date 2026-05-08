@@ -1,0 +1,295 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\graphicspath{ {./images/} }
+\usepackage{bbold}
+
+\begin{document}
+\section*{Bilateral trade}
+\section*{Model: Symmetric IPVM plus regularity (i.e, increasing $v_{i}(\cdot)$ )}
+\begin{itemize}
+  \item Classic auctions with appropriate reserve price maximize seller's expected revenue.
+  \item When maximizing expected seller's revenue, it is fitting to consider the seller as the mechanism designer and to assume that the seller knows her valuation.
+  \item Classic autions without reserve price maximize social surplus provided the seller's valuation is known.
+\end{itemize}
+
+\section*{Model: IPVM without symmetry or regularity}
+\begin{itemize}
+  \item Without symmetry or regularity results are "fewer."
+  \item The revenue maximizing DRM is known (Myerson (1981)). It is not obvious how to use it. The economic implications are not as developed.
+\end{itemize}
+
+\section*{Market design, efficiency of bilateral trade}
+\begin{itemize}
+  \item Are trading mechanisms "efficient" in the sense that trade takes place always if the buyer's valuation exceeds the seller's valuation and never otherwise?
+  \item Appropriate model:
+  \item Seller and buyer have private information (types);
+  \item the mechanism designer does not observe agents' types.
+  \item IPVM variation: a buyer and a seller with private information, $x_{b}, x_{s}$ respectively, r.v. in $[c, d]$.
+  \item Question. Is there an ex post efficient mechanism? That is, is there a mechanism that ensures that trade takes place if and only if $x_{b}>x_{s}$ ?
+\end{itemize}
+
+\section*{Fixed uninformed agent's valuation}
+\includegraphics[max width=\textwidth, alt={}, center]{39af411a-b5cd-4820-bf76-1645c3db63ba-05_1048_820_348_154}\\
+\includegraphics[max width=\textwidth, alt={}, center]{39af411a-b5cd-4820-bf76-1645c3db63ba-05_1050_815_348_1034}\\
+\includegraphics[max width=\textwidth, alt={}, center]{39af411a-b5cd-4820-bf76-1645c3db63ba-05_1045_815_351_1915}
+
+\section*{Bilateral private information}
+\begin{itemize}
+  \item Both buyer and seller observe their valuations $x_{b}$ and $x_{s}$ distributed according to pdfs following $f_{b}\left(x_{b}\right)$ and $f_{s}\left(x_{s}\right)$ respectively.
+  \item See Vickrey (1961). There is no mechanism with the following properties:\\
+i. truthtelling is a DS equilibrium;\\
+ii. no outside subsidies;\\
+iii. ex post Pareto efficiency.
+  \item Both d'Aspremont and Gérard-Varet (1979) and Arrow (1979) find mechanism with\\
+i. Bayesian IC;\\
+ii. no outside subsidies but no IR constraints,\\
+iii. ex post efficiency.
+  \item Myerson and Satterthwaite (1983) prove that no mechanism satisfies (i) Bayesian IC; (ii) IR and no outside subsidies; (iii) ex post efficiency.
+\end{itemize}
+
+\section*{Bilateral trade-Theorem}
+Theorem 1 (Myerson and Satterthwaite) IPVM with 2 agents, a buyer and a seller, with valuations $x_{b} \in[c, d]$ and $x_{s} \in[c, d]$ respectively. (Valuations are independently distributed, not necessarily identically.)
+
+There is no mechanism that is (i) Bayesian IC; (ii) satisfies IR (without outside resources); and (iii) is efficient.
+
+\begin{itemize}
+  \item The supports need to overlap but do not need to coincide.
+\end{itemize}
+
+\section*{Proof.}
+\begin{itemize}
+  \item Let $(\tilde{p}, \tilde{t})$ be a BIC mechanism where
+\end{itemize}
+
+$$
+(\tilde{p}, \tilde{t})=\left(p_{b}\left(x_{b}, x_{s}\right), t_{b}\left(x_{b}, x_{s}\right), p_{s}\left(x_{b}, x_{s}\right), t_{s}\left(x_{b}, x_{s}\right)\right)
+$$
+
+with $p_{b}\left(x_{b}, x_{s}\right)+p_{s}\left(x_{b}, x_{s}\right)=1$ and $t_{b}\left(x_{b}, x_{s}\right)+t_{s}\left(x_{b}, x_{s}\right)=0$.
+
+\begin{itemize}
+  \item ( $\tilde{p}, \tilde{t}$ ) may be described by two functions instead of four,
+  \item $p:[c, d]^{2} \rightarrow[0,1]$, and $t:[c, d]^{2} \rightarrow \mathbb{R}$ where
+  \item $p_{b}=p$ (probability that buyer gets the object),
+  \item $p_{s}=1-p_{b}$ (probability seller keeps object),
+  \item $t_{b}=t$ (payment from buyer to seller),\\
+$t_{s}=-t_{b}$ (amount received by seller).
+\end{itemize}
+
+Then,
+
+$$
+\begin{gathered}
+u_{b}\left(x_{b}, x_{s}\right)=p\left(x_{b}, x_{s}\right) x_{b}-t\left(x_{b}, x_{s}\right) \\
+u_{s}\left(x_{b}, x_{s}\right)=t\left(x_{b}, x_{s}\right)-p\left(x_{b}, x_{s}\right) x_{s} \\
+U_{b}\left(x_{b}\right)=E_{x_{s}}\left[u_{b}\left(x_{b}, x_{s}\right)\right]=Q_{b}\left(x_{b}\right) x_{b}-T_{b}\left(x_{b}\right) \\
+U_{s}\left(x_{s}\right)=E_{x_{b}}\left[u_{s}\left(x_{b}, x_{s}\right)\right]=T_{s}\left(x_{s}\right)-Q_{s}\left(x_{s}\right) x_{s}
+\end{gathered}
+$$
+
+where
+
+$$
+\begin{aligned}
+T_{s}\left(x_{s}\right) & =E_{x_{b}} t\left(x_{b}, x_{s}\right) \\
+Q_{s}\left(x_{s}\right) & =E_{x_{b}} p\left(x_{b}, x_{s}\right)
+\end{aligned}
+$$
+
+The mechanism must satisfy two constraints
+
+\begin{itemize}
+  \item Interim individual rationality\\
+$\left(\forall x_{b}\right) U_{b}\left(x_{b}\right) \geq 0$ and $\left(\forall x_{s}\right) U_{s}\left(x_{s}\right) \geq 0$.
+  \item Bayesian incentive compatibility (BIC),
+\end{itemize}
+
+
+\begin{align*}
+& U_{s}\left(x_{s}\right)=U_{s}(d)+\int_{x_{s}}^{d} Q_{s}(y) \mathrm{d} y  \tag{1}\\
+& U_{b}\left(x_{b}\right)=U_{b}(c)+\int_{c}^{x_{b}} Q_{b}(y) \mathrm{d} y
+\end{align*}
+
+
+When players observed $\left(x_{b}, x_{s}\right)$, total interim surplus
+
+$$
+U_{s}\left(x_{s}\right)+U_{b}\left(x_{b}\right)=Q_{b}\left(x_{b}\right) x_{b}-T_{b}\left(x_{b}\right)+T_{s}\left(x_{s}\right)-Q_{s}\left(x_{s}\right) x_{s} .
+$$
+
+Since $-E_{x_{b}} T_{b}\left(x_{b}\right)+E_{x_{s}} T_{s}\left(x_{s}\right)=0$, expected total surplus is
+
+
+\begin{align*}
+& E\left[U_{s}\left(x_{s}\right)+U_{b}\left(x_{b}\right)\right]=E\left[Q_{b}\left(x_{b}\right) x_{b}-Q_{s}\left(x_{s}\right) x_{s}\right] \\
+& =\int_{c}^{d} \int_{c}^{d}\left[Q_{b}\left(x_{b}\right) x_{b}-Q_{s}\left(x_{s}\right) x_{s}\right] f_{b}\left(x_{b}\right) f_{s}\left(x_{s}\right) \mathrm{d} x_{b} \mathrm{~d} x_{s} \\
+& E\left[U_{s}\left(x_{s}\right)+U_{b}\left(x_{b}\right)\right] \\
+& \quad=\int_{c}^{d} \int_{c}^{d} p\left(x_{b}, x_{s}\right)\left[x_{b}-x_{s}\right] f_{b}\left(x_{b}\right) f_{s}\left(x_{s}\right) \mathrm{d} x_{b} \mathrm{~d} x_{s} \tag{2}
+\end{align*}
+
+
+From Equation 1 (IC, integrability condition)
+
+$$
+\begin{aligned}
+E\left[U_{s}\left(x_{s}\right)\right. & \left.+U_{b}\left(x_{b}\right)\right]=U_{s}(d) \\
+& +\int_{c}^{d}\left[\int_{x_{s}}^{d} Q_{s}(y) \mathrm{d} y\right] f_{s}\left(x_{s}\right) \mathrm{d} x_{s} \\
+& +U_{b}(c)+\int_{c}^{d}\left[\int_{c}^{x_{b}} Q_{b}(z) \mathrm{d} z\right] f_{b}\left(x_{b}\right) \mathrm{d} x_{b}
+\end{aligned}
+$$
+
+Integrating by parts both terms,
+
+$$
+\begin{aligned}
+\int_{c}^{d} & {\left[\int_{c}^{x_{b}} Q_{b}(z) \mathrm{d} z\right] f_{b}\left(x_{b}\right) \mathrm{d} x_{b} } \\
+& =\int_{c}^{d} Q_{b}\left(x_{b}\right) \mathrm{d} x_{b}-\int_{c}^{d} F_{b}\left(x_{b}\right) Q_{b}\left(x_{b}\right) \mathrm{d} x_{b} \\
+& =\int_{c}^{d}\left[1-F_{b}\left(x_{b}\right)\right] Q_{b}\left(x_{b}\right) \mathrm{d} x_{b}
+\end{aligned}
+$$
+
+and
+
+$$
+\int_{c}^{d}\left[\int_{x_{s}}^{d} Q_{s}(y) \mathrm{d} y\right] f_{s}\left(x_{s}\right) \mathrm{d} x_{s}=\int_{c}^{d} F_{s}\left(x_{s}\right) Q_{s}\left(x_{s}\right) \mathrm{d} x_{s}
+$$
+
+$$
+\begin{aligned}
+& E\left[U_{s}\left(x_{s}\right)+U_{b}\left(x_{b}\right)\right]=U_{s}(d)+U_{b}(c)+ \\
+& \int_{c}^{d} \int_{c}^{d}\left\{F_{s}\left(x_{s}\right) f_{b}\left(x_{b}\right)+\left[1-F_{b}\left(x_{b}\right)\right] f\left(x_{s}\right)\right\} p\left(x_{b}, x_{s}\right) \mathrm{d} x_{b} \mathrm{~d} x_{s}
+\end{aligned}
+$$
+
+Equating the two expressions of total surplus, Equation 3 and Equation 2, and solving, we obtain
+
+$$
+\begin{aligned}
+& U_{s}(d)+U_{b}(c)= \\
+& =\int_{c}^{d} \int_{c}^{d}\left\{\left[x_{b}-\frac{1-F_{b}\left(x_{b}\right)}{f_{b}\left(x_{b}\right)}\right]-\left[x_{s}+\frac{F_{s}\left(x_{s}\right)}{f_{s}\left(x_{s}\right)}\right]\right\} \\
+& \quad p\left(x_{b}, x_{s}\right) f_{s} f_{b} \mathrm{~d} x_{b} \mathrm{~d} x_{s} \\
+& \geq 0
+\end{aligned}
+$$
+
+Where the inequality follows by IR. Suppose
+
+$$
+p\left(x_{b}, x_{s}\right)= \begin{cases}1 & \text { if } x_{b} \geq x_{s} \\ 0 & \text { otherwise }\end{cases}
+$$
+
+$$
+\begin{aligned}
+& \int_{c}^{d} \int_{c}^{d}\left\{\left[x_{b}-\frac{1-F_{b}\left(x_{b}\right)}{f_{b}\left(x_{b}\right)}\right]-\left[x_{s}+\frac{F_{s}\left(x_{s}\right)}{f_{s}\left(x_{s}\right)}\right]\right\} p\left(x_{b}, x_{s}\right) \\
+& \quad f_{s} \mathrm{~d} x_{s} f_{b} \mathrm{~d} x_{b} \\
+& \quad=\int_{c}^{d} \int_{c}^{x_{b} \wedge d}\left\{\left[x_{b}-\frac{1-F_{b}\left(x_{b}\right)}{f_{b}\left(x_{b}\right)}-x_{s}\right] f_{s}-F_{s}\left(x_{s}\right)\right\} f_{b} \mathrm{~d} x_{s} \mathrm{~d} x_{b}
+\end{aligned}
+$$
+
+where the RHS uses the definition of $p\left(x_{b}, x_{s}\right)$.
+
+$$
+\begin{aligned}
+= & \int_{c}^{d}\left[\left(x_{b}-\frac{1-F_{b}\left(x_{b}\right)}{f_{b}\left(x_{b}\right)}-x_{s}\right) F_{s}\left(x_{s}\right)\right]_{c}^{\left(x_{b} \wedge d\right)} f_{b} \mathrm{~d} x_{b} \\
+= & \int_{c}^{d}\left[\left(x_{b}-\frac{1-F_{b}\left(x_{b}\right)}{f_{b}\left(x_{b}\right)}-\left(x_{b} \wedge d\right)\right) F_{s}\left(x_{b} \wedge d\right)\right] f_{b} \mathrm{~d} x_{b} \\
+= & \int_{c}^{d}\left[-\left[1-F_{b}\left(x_{b}\right)\right] F_{s}\left(x_{b}\right)\right] \mathrm{d} x_{b} \\
+& \quad+\int_{c}^{d}\left[\left(x_{b}-d\right) f_{b}\left(x_{b}\right)+\left(F_{b}\left(x_{b}\right)-1\right)\right] \mathrm{d} x_{b}
+\end{aligned}
+$$
+
+QED
+
+\section*{Alternative proof}
+This proof is due to Williams (1999).
+
+\begin{enumerate}
+  \item Consider a DRM that satisfies BIC and ex post efficiency.
+\end{enumerate}
+
+\begin{itemize}
+  \item If $x_{s}<x_{b}$ then
+  \item Buyer pays $x_{s}$ to seller and gets object.
+  \item Seller gives up object and receives $x_{b}$.
+  \item If $x_{s}>x_{b}$ then
+  \item there is no transaction and no transfers.
+\end{itemize}
+
+Note it is a DS to report valuation truthfully.\\
+2. Corresponding expected transfers are
+
+\begin{itemize}
+  \item Buyer pays $T_{b}\left(x_{b}\right)=E_{x_{s}}\left[x_{s} \chi_{x_{s}<x_{b}}\left(x_{s}\right)\right]$.
+  \item Seller receives $T_{s}\left(x_{s}\right)=E_{x_{b}}\left[x_{b} \chi_{x_{s}<x_{b}}\left(x_{b}\right)\right]$.
+  \item Let $\left(p^{\prime}, t^{\prime}\right)$, be any mechanism that is ex post efficient. By the Expected Transfer Theorem, it must have the same expected transfers as the proposed mechanism up to a constant:
+  \item Buyer pays $T_{b}^{\prime}\left(x_{b}\right)=E_{x_{s}}\left[x_{s} \chi_{x_{s}<x_{b}}\left(x_{s}\right)\right]+b$.
+  \item Seller receives $T_{s}^{\prime}\left(x_{s}\right)=E_{x_{b}}\left[x_{b} \chi_{x_{s}<x_{b}}\left(x_{b}\right)\right]+s$.
+\end{itemize}
+
+\begin{enumerate}
+  \setcounter{enumi}{2}
+  \item Players expected payoffs in mechanism ( $p^{\prime}, t^{\prime}$ ).
+\end{enumerate}
+
+$$
+\begin{aligned}
+U_{b}^{\prime}\left(x_{b}\right) & =\overbrace{E_{x_{s}}\left[x_{b} \chi_{x_{s}<x_{b}}\right]}^{Q_{b}^{\prime}\left(x_{b}\right) \cdot x_{b}}-\overbrace{E_{x_{s}}\left[x_{s} \chi_{x_{s}<x_{b}}\left(x_{s}\right)\right]+b}^{T_{b}^{\prime}\left(x_{b}\right)} \\
+& =E_{x_{s}}\left[\left(x_{b}-x_{s}\right) \chi_{x_{s}<x_{b}}\right]+b \\
+U_{s}^{\prime}\left(x_{s}\right) & =T_{s}^{\prime}\left(x_{s}\right) \\
+& =\overbrace{E_{x_{b}}\left[x_{b} \chi_{x_{s}<x_{b}}\right]+s}-\overbrace{E_{x_{b}}\left[x_{s} \chi_{x_{s}<x_{b}}\right]}^{Q_{s}^{\prime}\left(x_{s}\right) \cdot x_{s}} \\
+& =E_{x_{b}}\left[\left(x_{b}-x_{s}\right) \chi_{x_{s}<x_{b}}\right]+s
+\end{aligned}
+$$
+
+\begin{itemize}
+  \item Using Individual Rationality we sign of $b$ and $s$ :
+\end{itemize}
+
+Recall that $x_{b}, x_{s} \in[c, d]$.\\
+Then
+
+\begin{itemize}
+  \item $U_{b}^{\prime}(c) \geq 0 \Rightarrow b \geq 0$.
+  \item $U_{s}^{\prime}(d) \geq 0 \Rightarrow s \geq 0$.
+\end{itemize}
+
+\begin{enumerate}
+  \setcounter{enumi}{3}
+  \item Total Ex Ante Payoff
+\end{enumerate}
+
+$$
+\begin{aligned}
+E\left[U_{b}^{\prime}\left(x_{b}\right)+U_{s}^{\prime}\left(x_{s}\right)\right] & =2 E\left[\left(x_{b}-x_{s}\right) \chi_{x_{s}<x_{b}}\right]+b+s \\
+& >E\left[\left(x_{b}-x_{s}\right) \chi_{x_{s}<x_{b}}\right]
+\end{aligned}
+$$
+
+Necessary payments to satisfy IR exceed the maximum total gains from trade (those prescribed by efficient outcome). QED
+
+\section*{Remarks}
+\begin{itemize}
+  \item To induce seller and buyer to reveal their information, the mechanims must provide them certain payoffs.
+  \item To satisfy IR constraints, those payoffs are high because IR requires a minimum payoff for certain types.
+  \item An expost efficient mechanism cannot get enough expected revenue to satisfy the IR constraints.
+  \item Balance budget is not possible.
+\end{itemize}
+
+\section*{References}
+Arrow, Kenneth J. 1979. "The Property Rights Doctrine and Demand Revelation Under Incomplete Information." In Economics and Human Welfare, by M. Boskin. New York: Academic Press. d'Aspremont, Claude, and Louis-André Gérard-Varet. 1979. "Incentives and Incomplete Information." Journal of Public Economics 11: 25-45.
+
+Myerson, Roger. 1981. "Optimal Auction Design." Mathematics of Operations Research 6: 58-73.\\
+Myerson, Roger, and Mark Satterthwaite. 1983. "Efficient Mechanisms for Bilateral Trading." Journal of Economic Theory 29: 265-81.\\
+Vickrey, W. 1961. "Counterspeculation, Auctions and Competitive Sealed Tenders." Journal of Finance 16: 8-37.
+
+Williams, Steven. 1999. "A Characterization of Efficient, Bayesian Incentive Compatible Mechanisms." Economic Theory 14: 155-80.
+
+
+\end{document}

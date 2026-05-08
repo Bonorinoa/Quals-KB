@@ -1,0 +1,234 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+\usepackage{bbold}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\graphicspath{ {./images/} }
+\usepackage{caption}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=blue, filecolor=magenta, urlcolor=cyan,}
+\urlstyle{same}
+
+\begin{document}
+\captionsetup{singlelinecheck=false}
+Signaling games
+
+\section*{Signaling game}
+\begin{itemize}
+  \item Two players, a sender and a receiver.
+  \item After observing her type, sender sends a message or signal to receiver.
+  \item The receiver observes the signal and responds with an action.
+  \item Players' payoffs depend on type, signal, and response.
+  \item A probability distribution, a move by nature, determines the sender's type at the beginning of the game. Interpretation: receiver's a priori beliefs.
+\end{itemize}
+
+\section*{Applications}
+\begin{itemize}
+  \item Information economics: Akerlof (1970), Spence (1973), and Rothschild and Stiglitz (1976) among many others.
+  \item Information transmission with cheap talk, Crawford and Sobel (1982), Kono and Kandori (2019).
+\end{itemize}
+
+Other: Chakraborty and Harbaugh (2010), Kamenica and Gentzkow (2011).
+
+\begin{itemize}
+  \item Game theory. Forward induction ideas in signaling games, Cho and Kreps (1987).
+\end{itemize}
+
+\section*{Other applications}
+\begin{itemize}
+  \item Advertising as signal of product quality, education as a signal of productivity, Milgrom and Roberts (1986), Bagwell and Riordan (1991).
+  \item Finance. Firm's debt-equity ratio and the Modigliani-Miller theorem, Leland and Pyle (1977), Myers and Majluf (1984), Ross (1977).
+  \item Marketing, accounting, and many more, Bagwell and Ramey (1994).
+  \item Political sciences, Martinelli and Matsui (2002).
+\end{itemize}
+
+\section*{Signaling game}
+Definition 1 (Signaling game) A signaling game is a 2-person, extensiveform game $\Gamma=\left[(T, P), A_{1}, A_{2}, U_{1}, U_{2}\right]$ where for $i=1,2$
+
+\begin{enumerate}
+  \item $T$ is a space with a probability distribution $P$.
+  \item $A_{i}$ is player $i$ 's action space.
+  \item $U_{i}: T \times A_{1} \times A_{2} \rightarrow \mathbb{R}$ is $i$ 's payoff function.
+  \item Player 1 observes her type $t \in T$ and chooses an action $a_{1} \in A_{1}$. Player 2 does not observe $t$. Player 2 observes $a_{1}$, makes an inference about player 1's type and chooses $a_{2} \in A_{2}$.
+\end{enumerate}
+
+\begin{itemize}
+  \item Implicitly it has been assumed that $T$ and $A_{i}$ are discrete. Many applications of interest use a continuum of types or actions.
+\end{itemize}
+
+\section*{Definitions: Type of equilibria}
+Usually defined for pure strategies.\\
+Definition 2 Let ( $\sigma_{1}, \sigma_{2}$ ) be an equilibrium of the signaling game $\Gamma$.
+
+\begin{itemize}
+  \item If $t, t^{\prime} \in T, t \neq t^{\prime} \Longrightarrow \operatorname{supp}\left[\sigma_{1}(t)\right] \cap \operatorname{supp}\left[\sigma_{1}\left(t^{\prime}\right)\right]=\emptyset$, then $\left(\sigma_{1}, \sigma_{2}\right)$ is a separating equilibrium.
+  \item If $t, t^{\prime} \in T \Longrightarrow \sigma_{1}(t)=\sigma_{1}\left(t^{\prime}\right)$, then ( $\sigma_{1}, \sigma_{2}$ ) is a pooling equilibrium.
+\end{itemize}
+
+\section*{Example: separating equilibrium}
+\begin{figure}[h]
+\begin{center}
+  \includegraphics[alt={},max width=\textwidth]{34b85785-f3dc-4f4b-a309-1124a5db79ee-08_1356_2545_354_258}
+\captionsetup{labelformat=empty}
+\caption{Figure 1}
+\end{center}
+\end{figure}
+
+\begin{itemize}
+  \item Separating (blue).
+  \item $s_{1}\left(h_{1}\right)=e, s_{1}\left(h_{1}^{\prime}\right)=e^{\prime}$
+  \item $s_{2}\left(h_{2}^{e}\right)=w, s_{2}\left(h_{2}^{e^{\prime}}\right)=w^{\prime}$
+  \item Find prior probabilities (i.e. the value of $\eta$ ) and the accompanying beliefs that make the strategy profile described above a WPBE.
+  \item Is the strategy profile described part of a Sequential equilibrium?
+\end{itemize}
+
+\section*{Example: pooling equilibrium}
+\begin{figure}[h]
+\begin{center}
+  \includegraphics[alt={},max width=\textwidth]{34b85785-f3dc-4f4b-a309-1124a5db79ee-10_1350_2529_357_271}
+\captionsetup{labelformat=empty}
+\caption{Figure 2}
+\end{center}
+\end{figure}
+
+\begin{itemize}
+  \item Pooling
+  \item $s_{1}\left(h_{1}\right)=s_{1}\left(h_{1}^{\prime}\right)=e$
+  \item $s_{2}\left(h_{2}^{e}\right)=w^{\prime}, s_{2}\left(h_{2}^{e^{\prime}}\right)=w$
+  \item Find prior probabilities (i.e. the value of $\eta$ ) and the accompanying beliefs that make the strategy profile described above a WPBE.
+  \item Is the strategy profile described part of a Sequential Equilibrium?
+\end{itemize}
+
+\section*{Non-existence infinite signaling game}
+\begin{itemize}
+  \item Two players, $i=1,2$.
+  \item Player 1 observes his type $t \in T=\{-1,1\}$ and sends a signal $x \in X =[-1,1]$.
+  \item Player 2 observes $x$ and responds by selecting $y \in Y=[-1,1]$.
+  \item $t$ follows the distribution $\rho(\{-1\})=\rho(\{1\})=1 / 2$.
+  \item Payoffs: $u_{1}(t, x, y)=-(t+x-y)^{2}$ and $u_{2}(x, y)=x y$.
+\end{itemize}
+
+See Manelli (1996).
+
+\section*{Example}
+\begin{center}
+\includegraphics[max width=\textwidth, alt={}]{34b85785-f3dc-4f4b-a309-1124a5db79ee-13_950_1204_387_149}
+\end{center}
+
+$$
+\begin{aligned}
+& u_{2}(x, y)=x y \\
+& \tilde{y}(x)=-1 \text { if } x<0 \\
+& \tilde{y}(x)=1 \text { if } x>0 \\
+& \tilde{y}(x) \in[-1,1] \text { if } x=0 \\
+& u_{1}(t, x, y)=-(t+x-y)^{2}
+\end{aligned}
+$$
+
+\begin{itemize}
+  \item $\tilde{y}(x)$ is 2's best response correspondence.
+  \item $t=-1 \Longrightarrow x \leq 0$, and as close to 0 as possible.
+  \item $t>1 \Longrightarrow x \geq 0$, and as close to 0 as possible.
+  \item Finite versions of the game have equilibria.
+  \item Equilibrium outcomes are probability distributions over terminal nodes.
+  \item Any sequence of equilibrium outcomes of increasingly finer discretizations of the infinite game will converge (in a subsequence) to a limit distribution. (Weak convergence of probabilities.)
+  \item The limit distribution need not be feasible in the limit game, i.e., no pair of strategies of the limit game will generate that limit distribution. If it is feasible, it is an equilibrium of the limit game.
+\end{itemize}
+
+\section*{Example, finite approximation}
+\begin{center}
+\includegraphics[max width=\textwidth, alt={}]{34b85785-f3dc-4f4b-a309-1124a5db79ee-15_1001_1704_340_151}
+\end{center}
+
+$$
+\begin{aligned}
+& u_{2}(x, y)=x y \\
+& \tilde{y}(x)=-1 \text { if } x<0 \\
+& \tilde{y}(x)=1 \text { if } x>0 \\
+& \tilde{y}(x) \in[1,-1] \text { if } x=0 \\
+& u_{1}(t, x, y)=-(t+x-y)^{2}
+\end{aligned}
+$$
+
+$$
+\tilde{y}(x)=\left\{\begin{aligned}
+-1 & \text { if } x \leq 1 / n \\
+1 & \text { if } x \geq 1 / n
+\end{aligned}\right.
+$$
+
+\begin{itemize}
+  \item The finite game has a sequential equilibrium:
+\end{itemize}
+
+$$
+\hat{x}^{n}(t)=\left\{\begin{aligned}
+-1 / n & \text { if } t=-1 \\
+1 / n & \text { if } t=1
+\end{aligned}\right.
+$$
+
+\begin{itemize}
+  \item The outcome is $\hat{\lambda}^{n}$ on $T \times X^{n} \times Y^{n}$ given by
+\end{itemize}
+
+$$
+\hat{\lambda}^{n}(\{(-1,-1 / n,-1)\})=\hat{\lambda}^{n}(\{(1,1 / n, 1)\})=1 / 2 .
+$$
+
+\begin{itemize}
+  \item The outcome is $\hat{\lambda}^{n}$ on $T \times X^{n} \times Y^{n}$ given by $\hat{\lambda}^{n}(\{(-1,-1 / n,-1)\})=\hat{\lambda}^{n}(\{(1,1 / n, 1)\})=1 / 2$.
+  \item $\hat{\lambda}^{n}$ converges weakly to $\hat{\lambda}$ on $T \times X \times Y$ where
+\end{itemize}
+
+$$
+\hat{\lambda}(\{(-1,0,-1)\})=\hat{\lambda}(\{(1,0,1)\})=1 / 2 .
+$$
+
+\begin{itemize}
+  \item No strategy pair in the limit game can generate $\hat{\lambda}$ :
+\end{itemize}
+
+Player 1 must play $\hat{x}(-1)=\hat{x}(1)=0$.\\
+Player 2, however, must respond to $x=0$ with $y=-1$ when $t=-1$ and with $y=1$ when $t=1$.
+
+\begin{itemize}
+  \item Coordination in the finite approximating games is lost in the limit game.
+\end{itemize}
+
+\section*{Correlation}
+\begin{itemize}
+  \item Some form of correlation must be added to the limit game to restore the lost coordination. Minimum necessary.
+  \item Signaling games: one adds cheap talk.
+  \item Standard Bayesian Game: public randomization device.
+  \item Stage games (repeated games): public randomization devices per stage.
+\end{itemize}
+
+\section*{References}
+Akerlof, George A. 1970. "The Market for "Lemons": Uncertainty and the Market Mechanism." Quarterly Journal of Economics 84: 488-500.\\
+Bagwell, Kyle, and Gary Ramey. 1994. "Coordination Economies, Advertising, and Search Behavior in Retail Markets." The American Economic Review 84 (3): 498-517.\\
+Bagwell, Kyle, and Michael H. Riordan. 1991. "High and Declining Prices Signal Product Quality." The American Economic Review 81 (1): 224-39.\\
+Chakraborty, A., and R. Harbaugh. 2010. "Persuasion by Cheap Talk." American Economic Review 100: 2361-82. \href{https://doi.org/10.1257/aer.100.5.2361}{https://doi.org/10.1257/aer.100.5.2361}.\\
+Cho, In-Koo, and David Kreps. 1987. "Signaling Games and Stable Equilibria." Quarterly Journal of Economics 102: 179-222.\\
+Crawford, Vincent P., and Joel Sobel. 1982. "Strategic Information Transmission." Econometrica 50 (6): 1431-51. \href{https://doi.org/10.2307/1913390}{https://doi.org/10.2307/1913390}.\\
+Kamenica, Emir, and Matthew Gentzkow. 2011. "Bayesian Persuasion." American Economic Review 101: 2590-2615. \href{https://doi.org/10.1257/aer.101.6.2590}{https://doi.org/10.1257/aer.101.6.2590}.\\
+Kono, Haruki, and Michihiro Kandori. 2019. "Corrigendum to Crawford and Sobel (1982) ‘Strategic Information Transmission'." Econometrica, Online Article Corrigendum.\\
+\href{https://doi.org/https://doi.org/10.3982/ECTA17617}{https://doi.org/https://doi.org/10.3982/ECTA17617}.\\
+Leland, Hayne E., and David H. Pyle. 1977. "Informational Asymmetries, Financial Structure, and Financial Intermediation." Journal of Finance 32 (2): 371-87.
+
+Manelli, Alejandro M. 1996. "Cheap Talk and Sequential Equilibria in Infinite Signaling Games." Econometrica 64 (4): 917-42.\\
+Martinelli, César, and Akihiko Matsui. 2002. "Policy Reversals and Electoral Competition with Privately Informed Parties." Journal of Public Economic Theory 4: 39-61.\\
+Milgrom, Paul, and John Roberts. 1986. "Price and Advertising Signals of Product Quality." The Journal of Political Economy 94 (4): 796-821.\\
+Myers, S., and N. Majluf. 1984. "Corporate Financing and Investment Decisions When Firms Have Information That Inverstors Don't Have." Journal of Financial Economics 13: 187-221.\\
+Ross, Stephen A. 1977. "The Determination of Financial Structure: The Incentive-Signaling Approach." The Bell Journal of Economics 8 (1): 23-40.\\
+Rothschild, Michael, and Joseph Stiglitz. 1976. "Equilibrium in Competitive Insurance Markets: An Essay on the Economics of Imperfect Information." The Quarterly Journal of Economics 90 (4): 629-49. \href{http://www.jstor.org/stable/1885326}{http://www.jstor.org/stable/1885326}.\\
+Spence, A. Michael. 1973. "Job Market Signaling." The Quarterly Journal of Economics 87 (3): 355-74. \href{https://doi.org/10.2307/1882010}{https://doi.org/10.2307/1882010}.
+
+
+\end{document}

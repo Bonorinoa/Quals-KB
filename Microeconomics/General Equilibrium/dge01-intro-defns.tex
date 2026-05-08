@@ -1,0 +1,351 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+\usepackage{bbold}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\graphicspath{ {./images/} }
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=blue, filecolor=magenta, urlcolor=cyan,}
+\urlstyle{same}
+
+\begin{document}
+Introduction
+
+\section*{Partial vs general equilibrium-Example}
+\begin{itemize}
+  \item Partial equilibrium analysis valid when applied to small-size markets; Vives (1987) shows a market is "small" if
+  \item Wealth effects are small: each consumer spends small fraction of income on the good.
+  \item Dispersed substitution effects: prices of other goods are essentially unaffected by changes in given market.
+\end{itemize}
+
+Somewhat arbitrary literature classification
+
+\begin{center}
+\begin{tabular}{lll}
+ & Price-taking & Strategic behavior \\
+\hline
+Partial eq. & Consumer/Producer theory & GT/IO/oligopoly \\
+\hline
+General eq. & Arrow-Debreu economies &  \\
+\hline
+\end{tabular}
+\end{center}
+
+\section*{Adam Smith (Smith 1776)}
+... every individual necessarily labours to render the annual revenue of the society as great as he can. He generally, indeed, neither intends to promote the public interest, nor knows how much he is promoting it. By preferring the support of domestic to that of foreign industry, he intends only his own security; and by directing that industry in such a manner as its produce may be of the greatest value, he intends only his own gain, and he is in this, as in many other cases, led by an invisible hand to promote an end which was no part of his intention. Nor is it always the worse for the society that it was no part of it. By pursuing his own interest he frequently promotes that of the society more effectually than when he really intends to promote it. I have never known much good done by those who affected to trade for the public good.
+
+\section*{Adam Smith}
+Laws and government may be considered in this and indeed in every case as a combination of the rich to oppress the poor, and preserve to themselves the inequality of the goods which would otherwise be soon destroyed by the attacks of the poor, who if not hindered by the government would soon reduce the others to an equality with themselves by open violence.
+
+Tuesday, February 2nd, 1763.\\
+Lectures in Jurisprudence (1762-63)
+
+\section*{Walrasian equilibrium, Pareto optimality}
+A Walrasian equilibrium (WE) (or competitive equilibrium) is a collection of prices, and an assignment of goods to consumers and of production plans to firms such that
+
+\begin{itemize}
+  \item for every consumer, the allocated bundle maximizes utility subject to the budget constraint given prices,
+  \item for every firm, the allocated production plan maximizes given prices,
+  \item markets clear, i.e. demand $=$ supply.
+\end{itemize}
+
+An allocation for consumers and a production plan for firms is Pareto optimal (PO) if it is not possible to rearrange production and consumption to make everyone better off. (Pareto 1896, 1897).
+
+Main questions
+
+\section*{1. Welfare properties of WE}
+(In favor of market economies: outcomes are WE and WE are PO.)
+
+\begin{itemize}
+  \item First Welfare Theorem. Every WE is Pareto optimal (Arrow-Debreu).
+  \item True in great generality.
+  \item Main assumption: price-taking behavior in definition of WE.
+  \item Fails under externalities, incomplete markets, overlapping generations.
+\end{itemize}
+
+\section*{and}
+and\\
+(WE do not favor certain PO allocations)
+
+\begin{itemize}
+  \item Second Welfare Theorem. Every Pareto optimal allocation is a WE provided income is appropriately redistributed. (Debreu 1959)
+  \item Even if PO cannot be computed, PO may be achieved by redistributing income and using FWT.
+  \item Requires convexity of preferences and technology. Approximate results without convexity and large economies.
+  \item Needs lump sum taxes for income transfers.
+\end{itemize}
+
+\section*{2. Existence}
+\begin{itemize}
+  \item Consistency.
+  \item Counting equations and unknowns. (Walras 1874, 1874b),
+  \item Scientific approach. (Wald 1934, 1935).
+  \item (Arrow and Debreu 1954), (Debreu 1959), (McKenzie 1954, 1954b, 1980).
+\end{itemize}
+
+Mathematical techniques:
+
+\begin{itemize}
+  \item von Neumann's Lemma.
+  \item Fixed Point Theorem (Kakutani 1941).
+  \item existence of Nash equilibrium (Nash 1950).
+\end{itemize}
+
+\section*{3. Uniqueness and policy.}
+\begin{itemize}
+  \item Comparative statics.
+  \item Uniqueness: Is there a unique WE?
+  \item Determinacy.
+  \item Hildenbrand, Grandmont and Quah.
+  \item For most economies, there are finitely many equilibria and the equilibria move smoothly with the parameters of the economy (Debreu 1970).
+\end{itemize}
+
+\section*{4. Price-taking assumption: Core-WE}
+\begin{itemize}
+  \item Edgeworth argued outcomes of market economies are allocations that exhaust all gains from trade among agents and groups of agents (Edgeworth 1881)).
+\end{itemize}
+
+If those outcomes are "nearly" WE, then the price-taking assumption in the definition of WE is justified.
+
+\begin{itemize}
+  \item Core convergence and core equivalence (Shubik 1959), (Debreu and Scarf 1963), (Aumann 1964), (Anderson 1978), (Manelli 1991).
+\end{itemize}
+
+\section*{Conclusion}
+\begin{itemize}
+  \item GE model as benchmark.
+  \item Achievements and methodology
+\end{itemize}
+
+\begin{enumerate}
+  \item Successful model of exchange: given endowments (or production and income) explains distribution.
+  \item Less successful model with production: firms, goods, technology are exogenous; no markets for shares. (Perhaps should be strategic?)
+  \item How to analyze effects of policy changes such as taxes.
+\end{enumerate}
+
+\begin{itemize}
+  \item Competitive applications: Finance, freshwater macro
+  \item Deviations
+  \item Distortions from monopoly or oligopoly: Industrial organization
+  \item Distortions from taxes: Public finance
+  \item Effects of welfare payments or taxes on labor supply: Labor economics
+  \item Effect of Externalities
+\end{itemize}
+
+Preliminaries
+
+\section*{Notation, definitions}
+\begin{itemize}
+  \item Let $r \in R, N \in \mathbb{N}, x=\left(x_{1}, \ldots, x_{N}\right) \in \mathbb{R}^{N}$ (coordinates in $x$ are indexed by $n=1, \ldots, N$ ).
+\end{itemize}
+
+$$
+\begin{aligned}
+x & =\left(x_{1}, \ldots, x_{N}\right) . \\
+x_{-n} & =\left(x_{1}, \ldots, x_{n-1}, x_{n+1}, \ldots, x_{N}\right) . \\
+\left(x_{-n}, r\right) & =\left(x_{1}, \ldots, x_{n-1}, r, x_{n+1}, \ldots, x_{N}\right) .
+\end{aligned}
+$$
+
+\begin{itemize}
+  \item $\forall x, y, z \in \mathbb{R}^{N}$,
+\end{itemize}
+
+$$
+\begin{array}{lll}
+x \geq y & \text { if } & (\forall n) x_{n} \geq y_{n} . \\
+x>y & \text { if } & x \geq y \wedge(\exists n) x_{n}>y_{n} . \\
+x \gg y & \text { if } & (\forall n) x_{n}>y_{n} .
+\end{array}
+$$
+
+\begin{itemize}
+  \item Let $A_{1}, A_{2}$ be subsets of a vector space $X$. Then,
+  \item $A_{1}+A_{2}=\left\{x_{1}+x_{2}: x_{1} \in A_{1}, x_{2} \in A_{2}\right\}$.
+  \item $\operatorname{co} A_{1}$ is the convex hull of $A_{1}$
+  \item Lemma. If $A_{1}, A_{2}$ are convex, then $A_{1}+A_{2}$ is convex.
+  \item For $x \in \mathbb{R}^{L},\|x\|_{\infty}=\max \left\{\left|x_{\ell}\right|: 1 \leq \ell \leq L\right\}$.
+\end{itemize}
+
+\section*{Binary relations}
+Binary relations are used to formalize preferences.\\
+Definition. A binary relation $R$ on the set $X$ is a set $R \subseteq X \times X$. One writes $x R y$ to indicate that $(x, y) \in R$.
+
+\begin{itemize}
+  \item A binary relation $R$ on a set $X$ is
+  \item complete if $\forall x, y \in X$ with $x \neq y, x R y$ or $y R x$.
+  \item reflexive if $\forall x \in X, x R x$.
+  \item irreflexive if $\forall x \in X, \neg(x R x)$.
+  \item transitive if $\forall x, y, z \in X, x R y \wedge y R z \Longrightarrow x R z$.
+  \item symmetric if $\forall x, y \in X, x R y \Longrightarrow y R x$.
+  \item asymmetric if $\forall x, y \in X$, if $x R y \Longrightarrow \neg(y R x)$.
+  \item antisymmetric if $\forall x, y \in X$, if $x R y \wedge y R x \Longrightarrow x=y$.
+  \item an equivalence relation if it is reflexive, symmetric, and transitive.
+\end{itemize}
+
+\section*{Binary relations}
+\begin{itemize}
+  \item Let $\succeq$ be complete and transitive.
+  \item Indifference: $x \sim y$ if $x \succeq y$ and $y \succeq x$.
+  \item Strict preference: $x \succ y$ if $x \succeq y$ and $\neg(y \succeq x)$.
+  \item The following properties require additional structure on $X$.
+  \item continuous if $\{(x, y) \mid x \succ y\}$ is relatively open in $X \times X$.
+  \item convex if $\{x \in X: x \succ y\}$ is convex $\forall y \in X$.
+  \item strongly (or strictly) convex if it is convex and $x, y \in X,(x \neq y \wedge x \sim y) \Longrightarrow \frac{x+y}{2} \succ x$.
+\end{itemize}
+
+\section*{Binary relations}
+\begin{itemize}
+  \item the binary relation $\succ$ is
+  \item strongly monotone if $x>y \Longrightarrow x \succ y$
+  \item (weakly) monotone if $x \gg y \Longrightarrow x \succ y$
+  \item locally nonsatiatied (LNS) if ( $\forall x \in X \wedge \forall \epsilon>0$ ),
+\end{itemize}
+
+$$
+\exists x^{\prime} \in X:\left(\left\|x^{\prime}-x\right\|<\epsilon \wedge x^{\prime} \succ x\right) .
+$$
+
+$L N S$ is a weakening of monotonicity. Important in economies with production because many inputs are not consumed.\\
+\includegraphics[max width=\textwidth, alt={}, center]{0d54c7a4-60d6-420c-9446-aa8fd2e0b843-23_1456_1380_342_150}
+
+\section*{Properties of preferences}
+\begin{itemize}
+  \item Let $\succeq$ be a complete, transitive, continuous and LNS relation on a closed subset $X$ of $\mathbb{R}^{L}$. Then $X$ must be unbounded.
+\end{itemize}
+
+\section*{Technology, production sets}
+\begin{itemize}
+  \item A production plan is a vector in a production set, $y=\left(y_{1}, y_{2}, \ldots, y_{L}\right) \in Y \subset \mathbb{R}^{L}$.
+  \item Convention: inputs are negative and outputs are positive.
+  \item Reason: $p \cdot y$ can be interpreted as profit.
+  \item Example. $Q=F(L), Q=2 L$. Let $Q=y_{2}$ and $-L=y_{1}$.
+\end{itemize}
+
+Model
+
+\section*{The Arrow-Debreu economy}
+Definition 1 Let $L, J, I \in \mathbb{N}$ be the number of goods, firms, and agents; indexed by $\ell, j$ and $i$ respectively. An Arrow-Debreu economy is a collection $\mathcal{E}=\left(L,\left\{Y_{j}\right\}_{j=1}^{J},\left\{X_{i}, \succeq_{i}\right\}_{i=1}^{I},\left\{\omega_{i},\left\{\theta_{i j}\right\}_{j=1}^{J}\right\}_{i=1}^{I}\right)$ where
+
+\begin{itemize}
+  \item $Y_{j} \subseteq \mathbb{R}^{L}$ is the technology available to firm $j$,
+  \item $X_{i} \subseteq \mathbb{R}^{L}$, is $i^{\prime} s$ consumption set.
+  \item $\succeq_{i} \subseteq X_{i} \times X_{i}$ is $i$ 's preference.
+  \item $\omega_{i} \in \mathbb{R}^{L}$ is $i$ 's endowment;
+  \item $\theta_{i j} \in[0,1]$ is $i$ 's share of firm $j$ 's profit and $\sum_{i=1}^{I} \theta_{i j}=1$.
+\end{itemize}
+
+\section*{Pure exchange economies}
+Definition 2 An Arrow-Debreu economy where there is no production, i.e. $\mathcal{E} =\left(L,\left\{X_{i}, \succeq_{i}\right\}_{i=1}^{I},\left\{\omega_{i},\right\}_{i=1}^{I}\right)$ is called a pure exchange economy or simply an exchange economy.
+
+\begin{itemize}
+  \item Endowments and shares determine the economy's ownership structure in an economy with production. In a pure exchange economy the ownership structure is given by the distribution of endowments.
+\end{itemize}
+
+\section*{Commonly used assumptions about firms}
+\begin{itemize}
+  \item $0 \in Y_{j}$
+  \item $Y_{j}$ is closed
+  \item $\mathbb{R}_{+}^{L} \cap Y_{j}=\{0\}$
+  \item $Y_{j}+Y_{j}=Y_{j}$ (Additivity)
+  \item $Y_{j}-\mathbb{R}_{+}^{L} \subseteq Y_{j}$ (Free disposal) or slightly weaker $-\mathbb{R}_{+}^{L} \subseteq Y_{j}$.
+  \item $Y_{j}$ is convex
+\end{itemize}
+
+\section*{Commonly used assumptions about agents}
+\begin{itemize}
+  \item Consumption sets $X_{i}$ are subsets of $\mathbb{R}_{+}^{L}$.
+  \item Preferences $\succeq_{i}$ are a binary relation on $X_{i}$ that are
+  \item complete,
+  \item reflexive,
+  \item transitive,
+  \item continuous,
+  \item convex.
+\end{itemize}
+
+\section*{Definitions}
+Fix an Arrow-Debreu economy $\mathcal{E}$.\\
+Definition 3 The aggregate endowment in $\mathcal{E}$ is $\bar{\omega}$ where $\bar{\omega}=\left(\bar{\omega}_{1}, \ldots, \bar{\omega}_{L}\right) =\sum_{i=1}^{I} \omega_{i}$.\\
+Definition 4 A pair $(x, y)=\left(x_{1}, \ldots, x_{I}, y_{1}, \ldots, y_{J}\right)$ in $\left(\mathbb{R}^{L}\right)^{I} \times\left(\mathbb{R}^{L}\right)^{J}$ is an allocation if
+
+\begin{itemize}
+  \item ( $\forall i) \quad x_{i} \in X_{i}$;
+  \item $(\forall j) \quad y_{j} \in Y_{j}$; and
+  \item $\sum_{i=1}^{I} x_{i}=\sum_{i=1}^{I} \omega_{i}+\sum_{j=1}^{J} y_{j}$ (feasibility).
+\end{itemize}
+
+\section*{Pareto optimality}
+Definition 5 (Pareto optimal allocation) An allocation $(x, y)$ is
+
+\begin{itemize}
+  \item (strongly) Pareto optimal if there is no allocation $\left(x^{\prime}, y^{\prime}\right)$ such that $\forall i, x_{i}^{\prime} \succeq_{i} x_{i}$ and $(\exists i) x_{i}^{\prime} \succ_{i} x_{i}$;
+  \item (weakly) Pareto optimal if there is no allocation $\left(x^{\prime}, y^{\prime}\right)$ such that $\forall i, x_{i}^{\prime} \succ_{i} x_{i}$.
+\end{itemize}
+
+If there is such an allocation $\left(x^{\prime}, y^{\prime}\right)$, we say that $\left(x^{\prime}, y^{\prime}\right)$ (weakly/strongly) Pareto dominates $(x, y)$.
+
+\section*{Budget and Demand sets}
+Definition 6 (Budget set) Given $p \in \mathbb{R}^{L}, y \in \prod_{j=1}^{J} Y_{j}$, and a transfer $t_{i} \in \mathbb{R}$, agent $i$ 's budget set is
+
+$$
+\begin{aligned}
+& B_{i}\left(p, y, \omega_{i}, t_{i}\right) \\
+& \quad=\left\{x_{i} \in X_{i}: p \cdot x_{i} \quad \leq p \cdot \omega_{i}+t_{i}+\sum_{j=1}^{J} \theta_{i j}\left(p \cdot y_{j}\right)\right\} .
+\end{aligned}
+$$
+
+Definition 7 (Demand set) Given $p \in \mathbb{R}^{L}, y \in \prod_{j=1}^{J} Y_{j}$, and a transfer $t_{i} \in \mathbb{R}$, agent $i$ 's demand set is
+
+$$
+\begin{aligned}
+& D_{i}\left(p, y, \omega_{i}, t_{i}\right) \\
+& \quad=\left\{x_{i}^{\prime} \in B_{i}\left(p, y, \omega_{i}, t_{i}\right): \forall x_{i} \in B_{i}\left(p, y, \omega_{i}, t_{i}\right), \quad x_{i}^{\prime} \succeq_{i} x_{i}\right\}
+\end{aligned}
+$$
+
+\section*{Walrasian Equilibrium}
+Definition 8 (Walrasian equilibrium) $\left(x^{*}, y^{*}, p^{*}, t^{*}\right) \in \mathbb{R}^{I L} \times \mathbb{R}^{J L} \times \mathbb{R}^{L} \times \mathbb{R}^{I}$ is a WE with transfers of the Arrow-Debreu economy $\mathcal{E}$ if 1. $p^{*} \in \mathbb{R}^{L}, t^{*}=\left(t_{1}^{*}, \ldots, t_{I}^{*}\right)$ and $\sum_{i=1}^{I} t_{i}^{*}=0$,\\
+2. $(\forall j)\left[y_{j}^{*} \in Y_{j} \wedge\left(\forall y_{j} \in Y_{j}\right) p^{*} \cdot y_{j}^{*} \geq p^{*} \cdot y_{j}\right]$ (price-taking profit maximization)\\
+3. $(\forall i) x_{i}^{*} \in D_{i}\left(p^{*}, y^{*}, \omega_{i}, t_{i}^{*}\right)$ (price-taking preference maximization)\\
+4. $\sum_{i=1}^{I} x_{i}^{*}=\sum_{i=1}^{I} \omega_{i}+\sum_{j=1}^{J} y_{j}^{*}$ (market clearing), i.e. $\left(x^{*}, y^{*}\right)$ is an allocation.
+
+If $(\forall i) \quad t_{i}^{*}=0$, then $\left(x^{*}, y^{*}, p^{*}\right)$ is called a WE.
+
+\section*{Remarks}
+\begin{itemize}
+  \item Assumption that firms maximize profit? Assuming complete markets and complete information: If share holders decide, they agree on profit maximization. (Mas-Colell, Whinston, and Green 1995, chap. 5).
+  \item Policy argument in favor of market economies has problems. Is a WE the outcome of a market economy?
+\end{itemize}
+
+\section*{References}
+Anderson, Robert M. 1978. "An Elementary Core Equivalence Theorem." Econometrica 46: 1483-87.\\
+Arrow, Kenneth J., and Gerard Debreu. 1954. "Existence of an Equilibrium for a Competitive Economy."\\
+Econometrica 22 (3): 265-90.\\
+Aumann, Robert J. 1964. "Markets with a Continuum of Traders." Econometrica 32: 39-50.\\
+Debreu, Gerard. 1959. The Theory of Value. New York: John Wiley.\\
+---. 1970. "Economies with a Finite Set of Equilibria." Econometrica 38: 387-92.\\
+Debreu, Gerard, and Herbert Scarf. 1963. "A Limit Theorem on the Core of an Economy." International Economic Review 4 (3): 235-46.\\
+Edgeworth, F. Y. 1881. Mathemathical Psychics: An Essay on the Mathematics to the Moral Sciences. London: Kegan Paul.\\
+Kakutani, Shizuo. 1941. "A Generalization of Brouwer's Fixed Point Theorem." Duke Mathematical Journal 8 (3): 457-59. \href{https://doi.org/10.1215/S0012-7094-41-00838-4}{https://doi.org/10.1215/S0012-7094-41-00838-4}.\\
+Manelli, Alejandro M. 1991. "Monotonic Preferences and Core Equivalence." Econometrica 59 (1): 12338. \href{https://doi.org/10.2307/2938243}{https://doi.org/10.2307/2938243}.
+
+Mas-Colell, Andreu, Michael Whinston, and Jerry Green. 1995. Microeconomic Theory. New York, Oxford: Oxford University Press.\\
+McKenzie, Lionel W. 1954. "On Equilibrium in Graham's Model of World Trade and Other Competitive Systems." Econometrica 22 (2): 147-61.
+
+Nash, John. 1950. "Equilibrium Points in n-Person Games." Proceedings of the National Academy of Science 36 (1): 48-49. \href{https://doi.org/https://doi.org/10.1073/pnas.36.1.48}{https://doi.org/https://doi.org/10.1073/pnas.36.1.48}.\\
+Pareto, Vilfredo. 1896. Cours d'économie Politique. Tome Premier. Lausanne, Switzerland: F. Rouge Éditeur, Librairie de l’Université 4, Rue Haldimand, 4. \href{https://archive.org/details/fp-01481/page/n3/mode/2up}{https://archive.org/details/fp-01481/page/n3/mode/2up}.\\
+Shubik, Martin. 1959. "Edgeworth Market Games." In Contributions to the Theory of Games, edited by A. W. Tucker and R. D. Luce, 4:267-78. Princeton: Princeton University Press.
+
+Smith, Adam. 1776. 11th ed. \href{https://www.gutenberg.org/ebooks/3300}{https://www.gutenberg.org/ebooks/3300}.\\
+Vives, Xavier. 1987. "Small Income Effects: A Marshallian Theory of Consumer Surplus and Downward Sloping Demand." Review of Economic Studies 54: 87-103.\\
+Wald, A. 1934. "Über Die Eindeutige Positive Lösbarkeit Neuen Produktionsgleichungen (i)." In Ergebnisse Eines Mathematischen Kolloquiums 1933-1934, edited by K. Menger. Leipzig; Vienna: Franz Deuticke.
+
+Walras, Leon. 1874. L'application Des Mathématiques à l'économie Politique Et Sociale.
+
+
+\end{document}

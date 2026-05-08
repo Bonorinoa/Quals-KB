@@ -1,0 +1,69 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+\usepackage{bbold}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\graphicspath{ {./images/} }
+
+\begin{document}
+Stability
+
+\section*{Stability}
+\begin{itemize}
+  \item Tâtonnement price dynamics is a nonlinear differential equation
+\end{itemize}
+
+$$
+\frac{d \hat{p}}{d t}=\hat{z}(\hat{p}) \text { on } \mathbb{R}_{++}^{L-1}
+$$
+
+\begin{itemize}
+  \item A solution is a function $\hat{p}:[0, \infty) \rightarrow \mathbb{R}_{++}^{L-1}$ where $\hat{p}(t)$ solves the differential equation.
+  \item $\hat{p}^{*}$ is an equilibrium point if $\hat{z}\left(\hat{p}^{*}\right)=0$.\\
+$\forall t, \hat{p}(t)=\hat{p}^{*}, \frac{d \hat{p}(t)}{d t}=\hat{z}\left(\hat{p}^{*}\right)=0$.
+  \item Do solutions converge to the WE price?
+\end{itemize}
+
+\section*{Stability definitions}
+Definition 1 (Locally stable) An equilibrium point $\hat{p}^{*}$ is locally stable (LS) if $\forall \epsilon>0, \exists \delta>0:\left[\left\|\hat{p}_{0}-\hat{p}^{*}\right\|<\delta\right]$ implies that any solution $\hat{p}(t), \hat{p}(0) =\hat{p}_{0}$ satisfies $\left\|\hat{p}(t)-\hat{p}^{*}\right\|<\epsilon$
+
+If $\hat{p}^{*}$ is not locally stable, it is unstable.\\
+Definition 2 (Locally Asymptotically stable) An equilibrium point $\hat{p}^{*}$ is locally asymptotically stable (LAS) if it is locally stable and every locally stable solution $\hat{p}(t), \hat{p}(0)=\hat{p}_{0}$ satisfies $\lim _{t \rightarrow \infty} \hat{p}(t)=\hat{p}^{*}$
+
+\begin{itemize}
+  \item Linear approximation: $\frac{d \hat{p}}{d t}=\left.D \hat{z}\right|_{\hat{p}^{*}}\left(\hat{p}-\hat{p}^{*}\right)$ suffices to identify LAS equilibria.
+\end{itemize}
+
+\section*{Tâtonnement dynamics}
+\begin{center}
+\includegraphics[max width=\textwidth, alt={}]{0a7d0f40-a9d5-47b6-a781-d1e6beb2d5fd-5_1399_2536_342_143}
+\end{center}
+
+\section*{Scarf example}
+\begin{itemize}
+  \item Scarf (1960), Good treatment in Takayama (1985), page 333.\\
+\includegraphics[max width=\textwidth, alt={}, center]{0a7d0f40-a9d5-47b6-a781-d1e6beb2d5fd-6_1282_1288_566_142}
+\end{itemize}
+
+\section*{Stability results}
+Theorem 1 (Hirsch and Smale) An equilibrium point $\hat{p}^{*}$ is locally asymptotically stable if and only if all eigenvalues of the Jacobian $D_{\hat{p}} \hat{z}$ evaluated at $\hat{p}^{*}$ have a negative real part.
+
+The proof is in Hirsch and Smale (1974), chapter 9.
+
+\begin{itemize}
+  \item If one eigenvalue has a positive real part, $\hat{p}^{*}$ is not LAS.
+\end{itemize}
+
+\section*{References}
+Hirsch, Morris W., and Stephen Smale. 1974. Differential Equations, Dynamical Systems, and Linear Algebra. San Diego, Ca: Academic Press, Inc.\\
+Scarf, H. 1960. "Some Examples of Global Instability of the Competitive Equilibrium." International Economic Review 1 (3): 157-72.\\
+Takayama, Akira. 1985. Mathematical Economics. Second edition. Cambridge University Press.
+
+
+\end{document}

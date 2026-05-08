@@ -1,0 +1,371 @@
+% This LaTeX document needs to be compiled with XeLaTeX.
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+\usepackage{bbold}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\graphicspath{ {./images/} }
+\usepackage[fallback]{xeCJK}
+\usepackage{polyglossia}
+\usepackage{fontspec}
+\IfFontExistsTF{Noto Serif CJK TC}
+{\setCJKmainfont{Noto Serif CJK TC}}
+{\IfFontExistsTF{STSong}
+  {\setCJKmainfont{STSong}}
+  {\IfFontExistsTF{Droid Sans Fallback}
+    {\setCJKmainfont{Droid Sans Fallback}}
+    {\setCJKmainfont{SimSun}}
+}}
+
+\setmainlanguage{english}
+\IfFontExistsTF{CMU Serif}
+{\setmainfont{CMU Serif}}
+{\IfFontExistsTF{DejaVu Sans}
+  {\setmainfont{DejaVu Sans}}
+  {\setmainfont{Georgia}}
+}
+
+\begin{document}
+Existence
+
+\section*{Existence of Walrasian Equilibria}
+Definition 1 (Simplex) The simplex in $\mathbb{R}^{L}$ is the set
+
+$$
+\Delta=\left\{p \in \mathbb{R}_{+}^{L}: \sum_{l=1}^{L} p_{l}=1\right\} .
+$$
+
+\begin{itemize}
+  \item Its relative interior is $\Delta^{\circ}=\{p \in \Delta: p \gg 0\}$.
+\end{itemize}
+
+Definition 2 (Aggregate excess demand) Let $\mathcal{E}$ be an exchange economy. Its aggregate excess demand is the correpondence $z: \Delta^{\circ} \rightarrow \mathbb{R}^{L}$,
+
+$$
+z(p)=\sum_{i=1}^{I}\left(D_{i}\left(p, \omega_{i}\right)-\omega_{i}\right)
+$$
+
+\begin{itemize}
+  \item If a WE does not exist under reasonable assumptions, there is no theory or application.
+\end{itemize}
+
+\section*{Intuition}
+$$
+z(p)=z\left(p_{1}, \ldots, p_{L}\right)=\left(z_{1}(p), \ldots, z_{\ell}(p), \ldots, z_{L}(p)\right)
+$$
+
+\begin{center}
+\includegraphics[max width=\textwidth, alt={}]{34ed76aa-6b27-4c64-9b49-973460283ccf-05_1059_2244_773_140}
+\end{center}
+
+\section*{Debreu-Gale-Kuhn-Nikaido Iemma}
+Lemma 1 (Debreu-Gale-Kuhn-Nikaido) Let $z: \Delta^{\circ} \rightarrow \mathbb{R}^{L}$ be a function satisfying
+
+\begin{enumerate}
+  \item Continuity
+  \item Walras' Law: $\left(\forall p \in \Delta^{\circ}\right) p \cdot z(p)=0$
+  \item Boundedness below: $\left(\exists x \in \mathbb{R}^{L}\right)\left(\forall p \in \Delta^{\circ}\right) z(p) \geq x$
+  \item Boundary Condition:
+\end{enumerate}
+
+$$
+\left[p^{n} \rightarrow p, p \in \Delta \backslash \Delta^{\circ}\right] \Longrightarrow\left|z\left(p^{n}\right)\right| \rightarrow \infty .
+$$
+
+Then $\exists p^{*} \in \Delta^{\circ}$ such that $z\left(p^{*}\right)=0$.
+
+\section*{Walras' Law}
+\begin{itemize}
+  \item Suppose agents spend their entire income:
+\end{itemize}
+
+$$
+\left(\forall p \in \Delta^{\circ}\right)(\forall i)\left[\forall x_{i} \in D_{i}\left(p, \omega_{i}\right)\right], p \cdot x_{i}=p \cdot \omega_{i}
+$$
+
+For an agent $i$, this follows from $L N S$ or monotonicity of $\succeq_{i}$.
+
+\begin{itemize}
+  \item Aggregating over consumers:
+\end{itemize}
+
+$$
+\left[\forall i, x_{i} \in D_{i}\left(p, \omega_{i}\right)\right] \Longrightarrow \sum_{i=1}^{I} p \cdot x_{i}=\sum_{i=1}^{I} p \cdot \omega_{i}
+$$
+
+Thus
+
+$$
+\begin{aligned}
+0 & =\sum_{i=1}^{I} p \cdot x_{i}-\sum_{i=1}^{I} p \cdot \omega_{i} \\
+& =p \cdot \sum_{i=1}^{I}\left(x_{i}-\omega_{i}\right) \\
+& =p \cdot \sum_{i=1}^{I}\left[D_{i}\left(p, \omega_{i}\right)-\omega_{i}\right] \\
+& =p \cdot z(p)
+\end{aligned}
+$$
+
+\section*{Walras' Law}
+\begin{itemize}
+  \item Suppose $p \gg 0$ and $p \cdot z(p)=0$.
+  \item To show that $p$ clears all markets, it suffices to show that it clears all but one market:
+  \item Suppose $\ell=2, \ldots, L, z_{\ell}(p)=0$.
+  \item Since $0=p \cdot z(p)=p_{1} \cdot z_{1}(p)+\sum_{\ell=2}^{L} p_{\ell} \cdot z_{\ell}(p)$
+  \item It follows $p_{1} \cdot z_{1}(p)=0$ and therefore $z_{1}(p)=0$.
+\end{itemize}
+
+\section*{Outline of proof DGKN}
+\begin{itemize}
+  \item Define a correspondence $\varphi: \Delta^{\circ} \rightarrow \Delta$ by $\varphi(p)=\{q \in \Delta: q \cdot z(p) \left.\geq q^{\prime} \cdot z(p), \forall q^{\prime} \in \Delta\right\}$.\\
+$\varphi$ identifies the goods in highest excess demand.
+  \item Extend the domain of $\varphi$ to $\Delta$ to make it have closed graph.
+  \item Verify that $p^{*} \in \varphi\left(p^{*}\right) \Longrightarrow p^{*} \in \Delta^{\circ} \wedge z\left(p^{*}\right)=0$.
+  \item Check that $\varphi$ satisfies the hypotheses of Kakutani's Theorem
+  \item By Kakutani's Theorem, $\exists p^{*} \in \Delta: p^{*} \in \varphi\left(p^{*}\right)$.
+\end{itemize}
+
+Graph proof for $L=2$
+
+Graph proof for $L=2$
+
+Graph proof for $L=2$
+
+Graph proof for $L=2$
+
+\section*{Proof of DGKN lemma}
+\begin{enumerate}
+  \item Define the correspondence $\varphi: \Delta \rightarrow \Delta$ by
+\end{enumerate}
+
+$$
+\begin{aligned}
+& \varphi(p)= \\
+& \left\{\begin{array}{l}
+\left\{q \in \Delta:\left(\forall q^{\prime} \in \Delta\right) q \cdot z(p) \geq q^{\prime} \cdot z(p)\right\} \text { if } p \in \Delta^{\circ} \\
+\{q \in \Delta: p \cdot q=0\} \text { if } p \in \Delta \backslash \Delta^{\circ}
+\end{array}\right.
+\end{aligned}
+$$
+
+\begin{itemize}
+  \item If $p \in \Delta^{\circ}, \varphi(p)$ picks prices that maximize the value of excess demand at $p$, that is to say, the goods with the largest excess demand at $p$, receive price 1.
+  \item If $p \notin \Delta^{\circ}, \varphi(p)$ picks prices orthogonal to $p$.
+\end{itemize}
+
+\begin{enumerate}
+  \setcounter{enumi}{1}
+  \item Claim: $p^{*} \in \varphi\left(p^{*}\right) \Longrightarrow p^{*} \in \Delta^{\circ} \wedge z\left(p^{*}\right)=0$.
+\end{enumerate}
+
+Proof. Suppose $p^{*} \in \varphi\left(p^{*}\right) \wedge p^{*} \in \Delta \backslash \Delta^{\circ}$.\\
+Then,
+
+$$
+\begin{aligned}
+& \forall q \in \varphi\left(p^{*}\right), p^{*} \cdot q=0(\text { definition of } \varphi) \\
+\Longrightarrow & p^{*} \cdot p^{*}=0\left(\text { because } p^{*} \in \varphi\left(p^{*}\right)\right) \\
+\Longrightarrow & p^{*}=0 \wedge p^{*} \notin \Delta, \text { a contradiction }
+\end{aligned}
+$$
+
+This proves $p^{*} \in \Delta^{\circ}$.
+
+Suppose $p^{*} \in \varphi\left(p^{*}\right) \wedge p^{*} \in \Delta^{\circ}$. Claim: $z\left(p^{*}\right)=0$.
+
+\begin{itemize}
+  \item If $z\left(p^{*}\right)<0$ then $p^{*} \cdot z\left(p^{*}\right)<0$, contradicting of Walras' Law. Then $z\left(p^{*}\right) \nless 0$ 。
+  \item Pick any $\ell \in\{1, \ldots, L\}$ and let $q=(0, \ldots, 0, \overbrace{1}^{\ell}, 0, \ldots, 0) \in \Delta$.
+  \item Then $z\left(p^{*}\right)_{\ell}=q_{\ell} z_{\ell}\left(p^{*}\right)=q \cdot z\left(p^{*}\right) \leq p^{*} \cdot z\left(p^{*}\right)=0$ because $p^{*} \in \varphi\left(p^{*}\right)$ and Walras' Law. Conclude that $(\forall \ell) z_{\ell}\left(p^{*}\right) \leq 0$.
+  \item Hence $z\left(p^{*}\right) \leq 0$ but $z(p *) \nless 0$, so $z\left(p^{*}\right)=0$.
+\end{itemize}
+
+This completes the proof of the claim.\\
+3. Verify that $\varphi$ satisfies the hypotheses of Kakutani's Fixed Point Theorem, i.e.
+
+\begin{itemize}
+  \item $\Delta$ is compact, convex, a nonempty subset.
+  \item $\varphi: \Delta \rightarrow \Delta$ is\\
+a. nonempty valued,\\
+b. convex valued, and\\
+c. has a closed graph. See the closed graph theorem for correspondences.\\
+3.a. $\varphi$ is nonempty valued:
+  \item Pick $p \in \Delta^{\circ}$. Then $q \cdot z(p)$ is a continuous function of $q \in \Delta$, a compact set. Weirstrass Theorem implies it achieves a maximum. Therefore $\varphi(p) \neq \emptyset$.
+  \item Pick $p \in \Delta \backslash \Delta^{\circ}$. Then $p_{\ell}=0$ for some $\ell$. Let $q =(0, \ldots, 0, \overbrace{1}^{\ell}, 0, \ldots, 0) \in \Delta$. Then $q \cdot p=0$ and therefore $\varphi(p) \neq \emptyset$.\\
+3.b. $\varphi$ is convex-valued: Check.\\
+3.c. $\varphi$ has a closed graph, that is to say
+\end{itemize}
+
+If $p^{n} \rightarrow p, q^{n} \in \varphi\left(p^{n}\right), q^{n} \rightarrow q$, then $q \in \varphi(p)$.
+
+\begin{itemize}
+  \item The proof considers three cases that depend on whether $p$ is in the interior of the simplex or in its boundary, and on how it is approached.
+\end{itemize}
+
+\begin{enumerate}
+  \item $p \in \Delta^{\circ}$. ( $p$ is in the interior; it can only be approached from the interior.)
+  \item $p \in \Delta \backslash \Delta^{\circ}$ and there is a subsequence $\left\{p^{n_{k}}\right\}$ of $\left\{p^{n}\right\}$ such that ( $\forall k$ ) $p^{n_{k}} \in \Delta^{\circ}$.\\
+( $p$ is in the boundary and it is approached from the interior.)
+  \item $p \in \Delta \backslash \Delta^{\circ}$ and $(\forall n) p^{n} \in \Delta \backslash \Delta^{\circ}$.\\
+( $p$ is in the boundary and it is approached from the boundary.)
+\end{enumerate}
+
+Case 1. $p \in \Delta^{\circ}$.
+
+\begin{itemize}
+  \item Then, $p^{n} \in \Delta^{\circ}$ for $n$ sufficiently large.
+  \item Since $z$ is continuous on $\Delta^{\circ}$, then $z\left(p^{n}\right) \rightarrow z(p)$.
+\end{itemize}
+
+Pick any $q^{\prime} \in \Delta$. Then
+
+$$
+\begin{aligned}
+q^{\prime} \cdot z(p)=q^{\prime} \cdot \lim _{n \rightarrow \infty} z\left(p^{n}\right) & =\lim _{n \rightarrow \infty} q^{\prime} \cdot z\left(p^{n}\right) \\
+& \leq \lim _{n \rightarrow \infty} q^{n} \cdot z\left(p^{n}\right)\left(\text { since } q^{n} \in \varphi\left(p^{n}\right)\right) \\
+& =\lim _{n \rightarrow \infty} q^{n} \cdot \lim _{n \rightarrow \infty} z\left(p^{n}\right)=q \cdot z(p)
+\end{aligned}
+$$
+
+Therefore $q \in \varphi(p)$.
+
+Case 2. $p \in \Delta \backslash \Delta^{\circ}$ and there is a subsequence $\left\{p^{n_{k}}\right\}$ of $\left\{p^{n}\right\}$ such that $(\forall k) p^{n_{k}} \in \Delta^{\circ}$.
+
+\begin{itemize}
+  \item Note that if $p \cdot q=0$, then $q \in \varphi(p)$ by definition of $\varphi$. Therefore it suffices to show that $p \cdot q=0$.
+  \item Let $p_{\ell^{\prime}}>0$ and let $\alpha=\frac{p_{\ell^{\prime}}}{2}$. Must show $q_{\ell^{\prime}}=0$.
+  \item For $k$ sufficiently large, $p_{\ell^{\prime}}^{n_{k}} \geq \alpha$. (This bounds the price.)
+  \item By Boundedness below, $\left(\exists x \in \mathbb{R}^{L}\right)\left(\forall n_{k}\right) z\left(p^{n_{k}}\right) \geq x$. Then
+\end{itemize}
+
+
+\begin{equation*}
+\left(\forall n_{k}\right)(\forall \ell)\left[-z_{\ell}\left(p^{n_{k}}\right) \leq-x_{\ell}\right] . \tag{1}
+\end{equation*}
+
+
+(This bounds the bundle.)
+
+Using Equation 1 in the first inequality below,
+
+$$
+\begin{aligned}
+p_{\ell^{\prime}}^{n_{k}} z_{\ell^{\prime}}\left(p^{n_{k}}\right) & =\overbrace{p^{n_{k}} \cdot z\left(p^{n_{k}}\right)}^{0}-\sum_{\ell \neq \ell^{\prime}} p_{\ell}^{n_{k}} z_{\ell}\left(p^{n_{k}}\right) \\
+& \leq-\sum_{\ell \neq \ell^{\prime}} p_{\ell}^{n_{k}} x_{\ell} \\
+& \leq \sum_{\ell \neq \ell^{\prime}} p_{\ell}^{n_{k}}\|x\|_{\infty} \quad\left(\text { since } \forall \ell,\left|x_{\ell}\right| \leq\|x\|_{\infty}\right) \\
+& \leq\|x\|_{\infty} \quad\left(\text { since } \sum_{\ell \neq \ell^{\prime}} p_{\ell}^{n_{k}} \leq 1\right)
+\end{aligned}
+$$
+
+\begin{itemize}
+  \item Then $z_{\ell^{\prime}}\left(p^{n_{k}}\right) \leq\|x\|_{\infty} / \alpha$ since $p_{\ell^{\prime}}^{n_{k}}>\alpha$.
+  \item Since $z$ satisfies the Boundary Condition and is bounded below, there is a sequence $h^{k}$ with $h^{k} \in\{1, \ldots, L\}$ such that $z_{h^{k}}\left(p^{n_{k}}\right) \rightarrow \infty$.
+  \item Then for sufficiently large $k, z_{\ell^{\prime}}\left(p^{n_{k}}\right)<z_{h^{k}}\left(p^{n_{k}}\right)$.
+  \item This implies $q_{\ell^{\prime}}^{n_{k}}=0$ and therefore $q_{\ell^{\prime}}=0$.
+  \item Therefore $p_{\ell^{\prime}}>0 \Longrightarrow q_{\ell^{\prime}}=0$.
+  \item Then $q \cdot p=0$ and $q \in \varphi(p)$.
+\end{itemize}
+
+This completes the proof in case 2.
+
+Case 3. $p \in \Delta \backslash \Delta^{\circ}$ and $(\forall n) p^{n} \in \Delta \backslash \Delta^{\circ}$.
+
+\begin{itemize}
+  \item Then, $\forall n, q^{n} \cdot p^{n}=0$
+  \item Therefore,
+\end{itemize}
+
+$$
+q \cdot p=\left(\lim _{n \rightarrow \infty} q^{n}\right) \cdot\left(\lim _{n \rightarrow \infty} p^{n}\right)=\lim _{n \rightarrow \infty} q^{n} \cdot p^{n}=0
+$$
+
+\begin{itemize}
+  \item Then $q \in \varphi(p)$
+\end{itemize}
+
+This completes case 3 and thus, $\varphi$ has a closed graph.\\
+By Kakutani's Fixed Point Theorem, $\exists p^{*} \in \Delta: p^{*} \in \varphi\left(p^{*}\right)$.\\
+This implies, $p^{*} \in \Delta^{\circ} \wedge z\left(p^{*}\right)=0$.\\
+QED。
+
+\section*{Existence in pure exchange economies}
+Corollary 1 (Exchange economies) In a pure exchange economy where consumption sets are the positive orthant, with complete, transitive, continuous, strictly convex, and strongly monotone preferences, and with strictly positive aggregate endowment (i.e. $\bar{\omega} \gg 0$ ), there is a Walrasian equilibrium.
+
+\section*{Proof of corollary}
+Define $z: \Delta^{\circ} \rightarrow \mathbb{R}^{L}$ by $z(p)=\sum_{i=1}^{I} D_{i}(p)-\bar{\omega}$.\\
+Verify $z$ satisfies hypotheses of DGKN Lemma.
+
+\begin{itemize}
+  \item $z$ is a continuous function defined on $\Delta^{\circ}$.
+  \item Walras Law holds because of strong monotonicity.
+  \item Boundedness below: $D_{i} \geq 0$, then $D_{i}-\omega_{i} \geq-\omega_{i}$. Thus $z_{i} \geq-\omega_{i}$ and $z \geq-\bar{\omega}$.
+  \item Boundary condition: Check.
+\end{itemize}
+
+Since $z$ satisfies the hypotheses of DGKN Lemma, $\exists p^{*} \in \Delta^{\circ}$ such that $z\left(p^{*}\right)=0$. Let $x_{i}^{*}=D_{i}\left(p^{*}\right)$. Then $\left(p^{*}, x^{*}\right)$ is a WE.
+
+\section*{Remarks}
+\begin{itemize}
+  \item Without LNS (and thus without monotonicity), it can be shown that $\exists p^{*} \in \Delta, x_{i}^{*}$ is in the quasi-demand of agent $i$, and $\sum_{i=1}^{I} x_{i}^{*} \leq \bar{\omega}$.
+\end{itemize}
+
+Thus, quasi-Walrasian equilibrium exists. For some goods, demand may be less than supply.\\
+If in addition $(\forall i) \omega_{i} \gg 0$, then $p^{*} \cdot \omega_{i}>0, x_{i}^{*} \in D_{i}\left(p^{*}\right)$, and $\sum_{i=1}^{I} x_{i}^{*} \leq \bar{\omega}$.
+
+\begin{itemize}
+  \item If one agent, say $i=1$, has strongly monotone preferences and $\omega_{1} \gg 0$, then $p^{*} \gg 0$ and then $x_{i}^{*} \in D_{i}\left(p^{*}\right)$ for every $i$ and $\sum_{i=1}^{I} x_{i}^{*} \leq \bar{\omega}$.
+\end{itemize}
+
+If in addition all agents exhibit LNS, then $\sum_{i=1}^{I} x_{i}^{*}=\bar{\omega}$.
+
+\section*{More remarks}
+\begin{itemize}
+  \item LNS does not imply that the allocation is exact; some prices may be zero.
+  \item Strict convexity can be replaced by weak convexity: Demand becomes a correspondence.
+\end{itemize}
+
+No decentralization property.
+
+\begin{itemize}
+  \item With nonconvexities WE may not exist.
+\end{itemize}
+
+With nonconvexities there are approximate WE in large economies, i.e. economies with many relatively small agents.
+
+No WE because of lack of income.
+
+\section*{Weak convexity; lack of decentralization}
+\begin{center}
+\includegraphics[max width=\textwidth, alt={}]{34ed76aa-6b27-4c64-9b49-973460283ccf-31_1575_2563_351_160}
+\end{center}
+
+\section*{CRS and lack of decentralization}
+\begin{center}
+\includegraphics[max width=\textwidth, alt={}]{34ed76aa-6b27-4c64-9b49-973460283ccf-32_1488_2432_348_150}
+\end{center}
+
+\section*{Failure of convexity}
+\begin{center}
+\includegraphics[max width=\textwidth, alt={}]{34ed76aa-6b27-4c64-9b49-973460283ccf-33_1575_2566_351_160}
+\end{center}
+
+\section*{Failure of convexity in production}
+\begin{center}
+\includegraphics[max width=\textwidth, alt={}]{34ed76aa-6b27-4c64-9b49-973460283ccf-34_1414_2361_348_147}
+\end{center}
+
+\section*{Failure of convexity in production}
+\begin{center}
+\includegraphics[max width=\textwidth, alt={}]{34ed76aa-6b27-4c64-9b49-973460283ccf-35_1414_2358_348_150}
+\end{center}
+
+Non-convexities: approximate equilibria
+
+\section*{References}
+Mas-Colell, Andreu, Michael Whinston, and Jerry Green. 1995. Microeconomic Theory. New York, Oxford: Oxford University Press.
+
+
+\end{document}

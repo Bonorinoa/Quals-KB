@@ -1,0 +1,160 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\graphicspath{ {./images/} }
+\usepackage{caption}
+
+\begin{document}
+\captionsetup{singlelinecheck=false}
+\section*{Sequential equilibrium (SE)}
+Let $(\sigma, \mu)$ be an assessment in a finite extensive form $\Gamma$.\\
+Definition $1(\sigma, \mu)$ is a consistent assessment if there is a sequence of assessments $\left\{\sigma^{n}, \mu^{n}\right\}$ such that
+
+\begin{enumerate}
+  \item $\forall i, \sigma_{i}^{n}$ is a completely-mixed behavior strategy.
+  \item $\mu^{n}$ is obtained from $\sigma^{n}$ using Bayes rule.
+  \item $\sigma^{n} \rightarrow \sigma$ in the Euclidean metric, and $\mu^{n} \rightarrow \mu$.
+\end{enumerate}
+
+Definition $2(\sigma, \mu)$ is a sequential equilibrium if it is sequentially rational and consistent.
+
+\section*{Example revisited}
+\begin{figure}[h]
+\begin{center}
+  \includegraphics[alt={},max width=\textwidth]{2b53a53e-d6be-4e77-a63e-7c3986e9adb3-03_1292_1122_421_206}
+\captionsetup{labelformat=empty}
+\caption{Figure 1}
+\end{center}
+\end{figure}
+
+First WPBE and SE (blue). Affectionately ( $R, B$ ).
+
+$$
+\begin{array}{ll}
+\sigma_{1}\left(h_{1}\right)=(0,1) ;(L, R) . & \mu_{1}\left(h d \mid h_{1}\right)=\frac{1}{2} \\
+\sigma_{2}\left(h_{2}\right)=(0,1) ;(T, B) . & \mu_{2}\left(h d, R \mid h_{2}\right)=\frac{1}{2}
+\end{array}
+$$
+
+Second WPBE but not SE (red). Affectionately $(L, T)$.
+
+$$
+\begin{array}{ll}
+\sigma_{1}\left(h_{1}\right)=(1,0) ;(L, R) . & \mu_{1}\left(h d \mid h_{1}\right)=\frac{1}{2} \\
+\sigma_{2}\left(h_{2}\right)=(1,0) ;(T, B) . & \mu_{2}\left(h d, R \mid h_{2}\right)=\frac{9}{10}
+\end{array}
+$$
+
+\section*{( $R, B$ ) is a SE}
+\begin{itemize}
+  \item The proposed assessment is sequentially rational; it is a WPBE.
+  \item It remains to show that it is consistent.
+\end{itemize}
+
+$$
+\begin{aligned}
+\sigma_{1}^{n} & =\left(\frac{1}{n}, 1-\frac{1}{n}\right), \sigma_{1}^{n} \rightarrow \sigma_{1}=(0,1) \\
+\sigma_{2}^{n} & =\left(\frac{1}{n}, 1-\frac{1}{n}\right), \sigma_{2}^{n} \rightarrow \sigma_{2}=(0,1) \\
+\mu_{1}^{n}\left(\cdot \mid h_{1}\right) & =\left(\frac{1}{2}, \frac{1}{2}\right), d \mu_{1}^{n} \rightarrow \mu_{1}=\left(\frac{1}{2}, \frac{1}{2}\right)
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+& \mu_{2}^{n}\left((h d, R) \mid h_{2}\right)=\frac{P_{\sigma^{n}}(h d, R)}{P_{\sigma^{n}}\left(h_{2}\right)} \\
+& \quad=\frac{P_{\sigma^{n}}(h d) \sigma_{1}^{n}\left(R \mid h_{1}\right)}{P_{\sigma^{n}}(h d) \sigma_{1}^{n}\left(R \mid h_{1}\right)+P_{\sigma^{n}}(t l) \sigma_{1}^{n}\left(R \mid h_{1}\right)} \\
+& \quad=\frac{\frac{1}{2} \times\left(1-\frac{1}{n}\right)}{\frac{1}{2} \times\left(1-\frac{1}{n}\right)+\frac{1}{2} \times\left(1-\frac{1}{n}\right)} \\
+& \quad=\frac{1}{2}
+\end{aligned}
+$$
+
+Thus, $\mu_{2}^{n} \rightarrow \mu_{2}=\left(\frac{1}{2}, \frac{1}{2}\right)$.
+
+\section*{( $L, T$ ) is not a SE}
+\begin{itemize}
+  \item Assessment $(L, T)$ is sequentially rational; it is a WPBE.
+  \item It remains to show that it is consistent. Let $\$ x \_n, y \_n \$$ be any two sequences in $(0,1)$ such that as $n \rightarrow \infty, x_{n} \rightarrow 0$ and $y_{n} \rightarrow 0$.
+\end{itemize}
+
+$$
+\begin{array}{rlrl}
+\sigma_{1}^{n} & =\left(1-x_{n}, x_{n}\right), & \sigma_{1}^{n} \rightarrow \sigma_{1}=(1,0) \\
+\sigma_{2}^{n} & =\left(1-y_{n}, y_{n}\right), & \sigma_{2}^{n} \rightarrow \sigma_{2}=(1,0) \\
+\mu_{1}^{n}\left(\cdot \mid h_{1}\right) & =\left(\frac{1}{2}, \frac{1}{2}\right), \quad \mu_{1}^{n} \rightarrow \mu_{1}=\left(\frac{1}{2}, \frac{1}{2}\right)
+\end{array}
+$$
+
+$$
+\begin{aligned}
+\mu_{2}^{n}\left((h d, R) \mid h_{2}\right) & =\frac{P_{\sigma^{n}}(h d, R)}{P_{\sigma^{n}}\left(h_{2}\right)} \\
+& =\frac{\frac{1}{2} x_{n}}{\frac{1}{2} x_{n}+\frac{1}{2} x_{n}} \\
+& =\frac{1}{2}
+\end{aligned}
+$$
+
+\begin{itemize}
+  \item Thus, $\mu_{2}^{n} \rightarrow \mu_{2}=\left(\frac{1}{2}, \frac{1}{2}\right)$.
+  \item No perturbation leads to the desired beliefs.
+  \item With $\mu_{2}=\left(\frac{1}{2}, \frac{1}{2}\right)$, player 2 cannot justify playing $T$.
+  \item ( $L, T$ ) is not a SE.
+  \item The previous analysis shows that
+\end{itemize}
+
+$$
+\begin{array}{ll}
+\sigma_{1}\left(h_{1}\right)=(1,0) ;(L, R) . & \mu_{1}\left(h d \mid h_{1}\right)=\frac{1}{2} \\
+\sigma_{2}\left(h_{2}\right)=(1,0) ;(T, B) . & \mu_{2}\left(h d, R \mid h_{2}\right)=\frac{9}{10}
+\end{array}
+$$
+
+is not a SE
+
+\begin{itemize}
+  \item Is there any SE in which ( $L, T$ ) is played?
+\end{itemize}
+
+To answer, one must find beliefs $\mu_{2}$ that justify player 2's moving $T$.
+
+$$
+\begin{aligned}
+E\left[U_{2} \mid h_{2}, \sigma_{1}, T, \mu_{2}\right] & \geq E\left[U_{2} \mid h_{2}, \sigma_{1}, B, \mu_{2}\right] \\
+\mu_{2}\left(h d \mid h_{2}\right) 5+\mu_{2}\left(t l \mid h_{2}\right) 5 & \geq \mu_{2}\left(h d \mid h_{2}\right) 2+\mu_{2}\left(t l \mid h_{2}\right) 10
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+E\left[U_{2} \mid h_{2}, \sigma_{1}, T, \mu_{2}\right] & \geq E\left[U_{2} \mid h_{2}, \sigma_{1}, B, \mu_{2}\right] \\
+5 & \geq \mu_{2}\left(h d \mid h_{2}\right) 2+\left(1-\mu_{2}\left(h d \mid h_{2}\right)\right) 10 \\
+5 & \geq-\mu_{2}\left(h d \mid h_{2}\right) 8+10 \\
+\mu_{2}\left(h d \mid h_{2}\right) 8 & \geq 5 \\
+\mu_{2}\left(h d \mid h_{2}\right) & \geq \frac{5}{8}
+\end{aligned}
+$$
+
+\begin{itemize}
+  \item Only beliefs $\mu_{2}\left(h d \mid h_{2}\right)=\frac{1}{2}$ are part of a consistent assessment with strategy profile ( $L, T$ ).
+  \item Thus ( $L, T$ ) is never part of a SE.
+\end{itemize}
+
+\section*{Observations}
+Theorem 1 Let $\sigma$ be an extensive-form (ˋˋtrembling hand") perfect equilibrium in an extensive-form game of perfect recall. Then $\sigma$ can be completed to a sequential equilibrium: there is a belief system $\mu$ such that $(\sigma, \mu)$ is a sequential equilibrium.
+
+Corollary 1 Every finite extensive-form game with perfect recall has a sequential equilibrium.
+
+\begin{itemize}
+  \item See Maschler, Solan, and Zamir (2013), Theorem 7.57 and Corollary 7.58, page 280.
+\end{itemize}
+
+\section*{References}
+Maschler, Michael, Eilon Solan, and Shmuel Zamir. 2013. Game Theory. Translated by Ziv Hellman. 1st ed. Cambridge University Press.
+
+
+\end{document}

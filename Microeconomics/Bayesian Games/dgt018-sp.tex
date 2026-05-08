@@ -1,0 +1,145 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\graphicspath{ {./images/} }
+
+\begin{document}
+Equilibrium refinements in extensive-form games
+
+\section*{Subgame perfection and non-credible threats}
+\begin{center}
+\begin{tabular}{lll}
+ & $\mathbf{T}$ & $\mathbf{B}$ \\
+\hline
+u & 2,2 & $[2,2]$ \\
+\hline
+d & $[3,1]$ & 1,0 \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{itemize}
+  \item Two Nash equilibria
+  \item $(d, T)$.
+  \item $(u, B)$. Credible?
+  \item Subgame perfection eliminates noncredible threats in games of perfect information.
+\end{itemize}
+
+\section*{Subgame of a game}
+\begin{itemize}
+  \item Let $x$ be a node in ( $X, \succ$ ), the game tree in an extensive form game $\Gamma$. The set of nodes $X^{\prime}=\{y: y \succ x\}$ is a subgame, denoted by $\Gamma(x)$, if $X^{\prime}$ with the structure inherited from $\Gamma$, is an extensive form game.
+\end{itemize}
+
+\section*{Remarks}
+\begin{enumerate}
+  \item The information set containing $x$ must be a singleton.
+  \item For every information set $u$ in $\Gamma$, either $u \subset S$ or $u \cap X^{\prime}=\emptyset$.
+\end{enumerate}
+
+Let $\Gamma$ be an extensive form game with $I$ players.
+
+\begin{itemize}
+  \item For any node $x$, a behavior-stragtegy profile $\sigma=\left(\sigma_{1}, \ldots, \sigma_{I}\right)$ determines the probability $P_{\sigma}(x)$ that $x$ will be reached.
+\end{itemize}
+
+See Maschler, Solan, and Zamir (2013), page 254.\\
+Definition 1 (Equilibrium path) Given $\Gamma$ and a behavior strategy profile $\sigma$, the path of play according to $\sigma$ is the set of nodes that are reached with strictly positive probability when players move according to $\sigma$.
+
+If $\sigma$ is an equilibrium, the path of play is termed the equilibrium path.
+
+\section*{Path of play and equilibrium path}
+\section*{Matching pennies with outside option}
+\begin{center}
+\includegraphics[max width=\textwidth, alt={}]{4c633bb9-8b10-4905-874e-56542c304c8f-07_1202_1205_446_172}
+\end{center}
+
+Matching pennies. NE: $\sigma_{1}=(1 / 2,1 / 2)=\sigma_{2}$
+
+\begin{itemize}
+  \item Given $\Gamma, \mathcal{U}_{i}$ is the set of player $i$ 's information sets in $\Gamma$.
+\end{itemize}
+
+Definition 2 An information set $h_{i} \in \mathcal{U}_{i}$ is said to be in the path of play for a profile $\sigma$, if it is reached with positive probability according to $\sigma$, i.e.\\
+$P_{\sigma}\left(h_{i}\right)>0$.
+
+\section*{NE and Subgame Perfect equilibrium}
+Theorem 1 If a strategy profile $\sigma$ is a NE of an extensive form game $\Gamma$, then $\sigma$ induces a NE in any subgame $\Gamma(x)$ where $x$ is in the equilibrium path of $\Gamma$ (that is to say $P_{\sigma}(x)>0$ ).
+
+For instance, Maschler, Solan, and Zamir (2013), Theorem 7.5, page 254.\\
+Definition 3 (Subgame perfect) A strategy profile $\sigma$ is a Subgame Perfect Equilibrium (SPE) of an extensive form game $\Gamma$ if $\sigma$ induces a NE in every subgame of $\Gamma$.
+
+Theorem 2 Every SPE of $\Gamma$ is also a NE.
+
+\section*{Sequential games and subgame perfection}
+$$
+\begin{array}{lll} 
+& L_{2} & H_{2} \\
+\hline L_{1} & 4,4 & 2,8 \\
+\hline H_{1} & 8,2 & 1,1
+\end{array}
+$$
+
+\includegraphics[max width=\textwidth, alt={}, center]{4c633bb9-8b10-4905-874e-56542c304c8f-10_1030_784_862_184}\\
+\includegraphics[max width=\textwidth, alt={}, center]{4c633bb9-8b10-4905-874e-56542c304c8f-10_1042_787_850_1413}
+
+Each player $i$ has a single information set; thus $S_{i}=\left\{L_{i}, H_{i}\right\}$.\\
+\includegraphics[max width=\textwidth, alt={}, center]{4c633bb9-8b10-4905-874e-56542c304c8f-12_1055_797_193_177}\\
+\includegraphics[max width=\textwidth, alt={}, center]{4c633bb9-8b10-4905-874e-56542c304c8f-12_1075_817_177_1405}
+
+\section*{Subgame perfection-Example}
+\begin{center}
+\begin{tabular}{ccccc}
+ & $\left(H_{2}, H_{2}\right)$ & $\left(H_{2}, L_{2}\right)$ & $\left(L_{2}, H_{2}\right)$ & $\left(L_{2}, L_{2}\right)$ \\
+\hline
+$H_{1}$ & 4,4 & 4,4 & 2,8 & $[2,8]$ \\
+\hline
+$L_{1}$ & $[8,2]$ & 1,1 & $[8,2]$ & 1,1 \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\includegraphics[max width=\textwidth, alt={}]{4c633bb9-8b10-4905-874e-56542c304c8f-13_1055_1479_844_218}
+\end{center}
+
+Strategy player 2: $\left(H_{2}, L_{2}\right)$ indicates $H_{2}$ if one played $H_{1}$.
+
+\section*{Completely mixed}
+\section*{Definition 4 (Completely mixed)}
+\begin{itemize}
+  \item A mixed strategy $\mu_{i}$ for player $i$ in a finite normal form game is completely mixed if $\mu_{i}(s)>0$ for every pure strategy $s$ of player $i$.
+  \item A strategy profile $\mu$ is completely mixed if $\mu_{i}$ is completely mixed for every $i$.
+  \item A behavioral strategy $\sigma_{i}$ for player $i$ in a finite extensive form game is completely mixed if for every information set $h \in \mathcal{U}_{i}$, and every action $a \in C(h), \sigma_{i}(a \mid h)>0$.
+  \item A strategy profile $\sigma$ is completely mixed if $\sigma_{i}$ is completely mixed for every $i$.
+\end{itemize}
+
+\section*{Completely mixed NE and SPE}
+Theorem 3 Every NE in completely mixed strategies of a finite extensiveform game is a SPE.
+
+See Maschler, Solan, and Zamir (2013), Corollary 7.7.\\
+Theorem 4 Every finite extensive-form game with perfect information has a SPE in pure strategies.
+
+Proof is a backward induction argument.\\
+See Maschler, Solan, and Zamir (2013), Theorem 7.9.
+
+\section*{Example: Entry deterrence}
+\includegraphics[max width=\textwidth, alt={}, center]{4c633bb9-8b10-4905-874e-56542c304c8f-17_1350_2401_409_178}\\
+\includegraphics[max width=\textwidth, alt={}, center]{4c633bb9-8b10-4905-874e-56542c304c8f-18_1350_2398_261_181}
+
+\section*{Grab the Dollar}
+\begin{center}
+\includegraphics[max width=\textwidth, alt={}]{4c633bb9-8b10-4905-874e-56542c304c8f-19_577_2521_566_227}
+\end{center}
+
+\section*{References}
+Maschler, Michael, Eilon Solan, and Shmuel Zamir. 2013. Game Theory. Translated by Ziv Hellman. 1st ed. Cambridge University Press.
+
+
+\end{document}

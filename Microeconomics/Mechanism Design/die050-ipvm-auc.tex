@@ -1,0 +1,237 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\graphicspath{ {./images/} }
+\usepackage{bbold}
+
+\begin{document}
+Auctions
+
+\section*{Tentative map of the auction literature}
+\begin{itemize}
+  \item An auction is any "institution" used to buy or sell goods or services.
+  \item There are two main models, IPVM and Affiliation, and two set of questions, properties of certain auctions and the search for an optimal mechanism.
+\end{itemize}
+
+IPVM Affiliation\\
+Ad-hoc auctions\\
+Optimal mechanism
+
+\section*{Auction examples}
+Auctions differ on (a) how the winner of the object is selected and (b) how much bidders pay.
+
+\begin{itemize}
+  \item English Auction (EA). Single unit.
+  \item Second-Price Sealed-Bid Auction (SPA). Single unit.
+  \item First-Price Sealed-Bid Auction (FPA). Single unit.
+  \item Dutch Auction (DA). Single unit.
+  \item Uniform or discriminatory price auctions. Multi units.
+  \item Multi-unit Vickrey Auction.
+  \item Ausubel Auction. Multiple units.
+\end{itemize}
+
+FPA and SPA are examples of Bayesian games.
+
+\section*{Variations within an auction}
+\begin{itemize}
+  \item Reserve prices
+  \item Entry fee.
+  \item Limited time for submitting bids.
+  \item Payment contingent variables other than bids (royalties).
+  \item Minimum accepted increment to standing bid.
+  \item Sale of shares of the object instead of the unity.
+\end{itemize}
+
+\section*{Variations}
+\begin{itemize}
+  \item Variations in models: (non)symmetry, risk-aversion, collusion, budgetconstrained bidders, single vs multi-unit auctions, (non) independence, etc.
+  \item Variations in objective: efficiency vs seller's revenue, etc.
+\end{itemize}
+
+Four basic auctions and the IPVM
+
+\section*{Independent private-values model (IPVM)}
+\begin{itemize}
+  \item A seller of a single, indivisible object; $I$ potential buyers indexed by $i$.
+  \item Private values: $i$ privately observes her valuation $x_{i} \in X_{i} . X_{i}=[0,1]$ is a normalization.
+  \item Independent valuations, $\left\{x_{i}\right\}_{i}^{I}$ are independently distributed.
+  \item Symmetry (SIPVM). $\left\{x_{i}\right\}_{i}^{I}$ are identically distributed, with a strictly positive, density function $f>0$. (*)
+  \item Preferences: $i$ observes $x_{i}$, gets object with probability $q_{i}$, and pays $m_{i}$.
+\end{itemize}
+
+$$
+\begin{aligned}
+V_{i}(x, q, m) & =V_{i}\left(x_{1}, \ldots, x_{I}, q_{1}, q_{2}, \ldots, q_{I}, m_{1}, \ldots, m_{I}\right) \\
+& =x_{i} \cdot q_{i}-m_{i}
+\end{aligned}
+$$
+
+\section*{At most demand for a single unit}
+\begin{center}
+\includegraphics[max width=\textwidth, alt={}]{be33ae83-f987-40a1-a184-899d958468f9-09_1499_2576_350_152}
+\end{center}
+
+\section*{The tool: Bayesian games}
+A Basian game $\Gamma=\left\{\left(X_{i}, \mathcal{X}_{i}, \mu_{i}\right), A_{i}, V_{i}\right\}_{i=1}^{I}$ is defined by
+
+\begin{itemize}
+  \item $I$ is the number of players.
+  \item $\left(X_{i}, X_{i}, \mu_{i}\right)$ is a probability space that represents player i's private information.
+  \item $A_{i}$ is player i's action space.
+  \item $V_{i}: \prod X_{i} \times \prod A_{i} \rightarrow \mathbb{R}$\\
+indicates player i's payoffs given type and action profiles respectively.
+\end{itemize}
+
+\section*{Solution Concepts}
+\section*{Notation}
+\begin{itemize}
+  \item $x=\left(x_{1}, \ldots, x_{I}\right), x_{-i}=\left(x_{1}, \ldots, x_{i-1}, x_{i+1}, x_{I}\right)$.
+  \item $X_{1}, X_{2}, \ldots, X_{I}$ sets, $X=\prod_{i=1}^{I} X$.
+  \item First order statistic: $x^{(1)}=\max \left\{x_{i}\right\}_{i=1}^{I}$.
+  \item Second order statistic: $x^{(2)}$.
+\end{itemize}
+
+\section*{Second-price, sealed-bid auction (SPA)}
+Theorem 1 (SPA) IPVM. The strategy profile $\left\{b_{i}\left(x_{i}\right)=x_{i}\right\}_{i=1}^{I}$ is a weakly dominant-strategy equilibrium (WDSE) of the SPA.
+
+Proof. Let $b_{-i}$ be the vector of $i$ 's oponents bids.
+
+$$
+u_{i}\left(x_{i}, b_{i}, b_{-i}^{(1)}\right)= \begin{cases}0 & \text { if } b_{i}<b_{-i}^{(1)} \\ \left(x_{i}-b_{-i}^{(1)}\right) & \text { if } b_{i}>b_{-i}^{(1)} \\ \left(x_{i}-b_{-i}^{(1)}\right) P(\text { tie }) & \text { if } b_{i}=b_{-i}^{(1)}\end{cases}
+$$
+
+\begin{itemize}
+  \item $x_{i}<b_{-i}^{(1)} \Longrightarrow i^{\prime} s$ best response is to lose, thus $b_{i}=x_{i}<b_{-i}^{(1)}$.
+  \item $x_{i}>b_{-i}^{(1)} \Longrightarrow i^{\prime} s$ best response is to win, thus $b_{i}=x_{i}>b_{-i}^{(1)}$.
+  \item $x_{i}=b_{-i}^{(1)} \Longrightarrow i$ is indifferent, thus $b_{i}=x_{i}$. QED
+\end{itemize}
+
+\section*{SPA, remarks}
+\begin{itemize}
+  \item Weakly dominant strategy equilibrium (WDSE) means a strong recommendation.
+\end{itemize}
+
+Principle: winner's payment does not depend on winner's bid.
+
+\begin{itemize}
+  \item Result is stronger than WDSE of the implicit game. (Continuum technicality.)
+  \item Where is independence used? And symmetry?
+  \item Are there other BNE?
+  \item Solution is efficient.
+\end{itemize}
+
+\section*{English auction}
+Theorem 2 (English auction, clock format) IPVM. The profile $\left\{b_{i}\left(x_{i}\right)=x_{i}\right\}_{i=1}^{I}$ is a weakly dominant strategy equilibrium of the EA.
+
+\begin{itemize}
+  \item The proof is straightforward.
+  \item Experimental evidence.
+\end{itemize}
+
+\section*{First-price, sealed-bid auction (FPA)}
+How to bid?
+
+\begin{itemize}
+  \item Bidder i's expected payoff if value is $x_{i}$ and bid is $b_{i}$
+\end{itemize}
+
+$$
+=P(\text { Win }) \times\left(x_{i}-b_{i}\right)+P(\text { Not Win }) \times 0
+$$
+
+where Win means that the bidder gets the object.
+
+\begin{itemize}
+  \item Then one might expect,
+  \item $b_{i}<x_{i}$, the bid is lower than the valuation.
+  \item Unlikely to have a dominant strategy: how much less? Depends on beliefs about $b_{-i}$.
+  \item FPA might not be efficient. (False)
+\end{itemize}
+
+Theorem 3 (First-price, sealed-bid auction (FPA)) Symmetric IPVM. The strategy profile
+
+$$
+\left.\left\{b_{i}\left(x_{i}\right)=\int_{0}^{x_{i}} y \frac{(I-1) F(y)^{I-2} f(y)}{F\left(x_{i}\right)^{I-1}} \mathrm{~d} y\right\}\right\}_{i=1}^{I}
+$$
+
+is a BNE of the FPA. It is the unique symmetric BNE ; it is the unique equilibrium in pure strategies.
+
+See Maskin and Riley (2000), Maskin and Riley (2003), Lebrun (1996), Lizzeri and Persico (2000).
+
+\begin{itemize}
+  \item $F\left(x_{i}\right)^{I-1}$ is the cdf of $x_{-i}^{(1)}$, FOS for $(I-1)$ i.i.d. variables.
+  \item $(I-1) F(y)^{I-2} f(y)$ is the pdf of FOS $x_{-i}^{(1)}$.
+\end{itemize}
+
+Lemma 1 Alternative formulations of $b\left(x_{i}\right)$ in FPA:
+
+\begin{enumerate}
+  \item $b_{i}\left(x_{i}\right)=E\left[x_{-i}^{(1)} \mid x_{-i}^{(1)} \leq x_{i}\right]$.
+  \item $b_{i}\left(x_{i}\right)=x_{i}-\int_{0}^{x_{i}} \frac{F(y)^{I-1}}{F\left(x_{i}\right)^{I-1}} \mathrm{~d} y$
+\end{enumerate}
+
+\begin{itemize}
+  \item $F\left(x_{i}\right)^{I-1}$ is cdf of $x_{-i}^{(1)}$, FOS for $(I-1)$ i.i.d. variables.
+  \item Example $(\forall i) F\left(x_{i}\right)=x_{i}$, the uniform on $[0,1]$ :\\
+$b_{i}\left(x_{i}\right)=x_{i}-\frac{x_{i}-0}{I}$.
+\end{itemize}
+
+$$
+\begin{aligned}
+& b_{i} \\
+& \stackrel{\circ}{=} 5
+\end{aligned}
+$$
+
+\begin{center}
+\includegraphics[max width=\textwidth, alt={}]{be33ae83-f987-40a1-a184-899d958468f9-20_357_2598_1122_141}
+\end{center}
+
+\section*{Dutch Auction (DA)}
+\begin{itemize}
+  \item In its clock format, strategically equivalent to FPA.
+  \item $b_{i}\left(x_{i}\right)=$ price at which to stop the clock
+\end{itemize}
+
+Aside:
+
+\begin{itemize}
+  \item DA dynamic version of FPA; EA dynamic version of SPA.
+  \item Ausubel auction (multi-unit) dynamic version of multi-unit Vickrey auction.
+\end{itemize}
+
+\section*{Seller's preferred auction}
+Theorem 4 (Revenue equivalence) Symmetric IPVM. The SPA, EA, FPA, and DA all generate the same seller's expected revenue.
+
+Proof.
+
+$$
+\begin{aligned}
+E\left[\text { Revenue }_{F P A}\right] & =E\left[b\left(x^{(1)}\right)\right] \\
+& =E\left[E\left[x_{-i}^{(1)} \mid x_{-i}^{(1)} \leq x_{i}, x_{i}=x^{(1)}\right]\right] \\
+& =E\left[E\left[x^{(2)} \mid x^{(1)}=x_{i}\right]\right] \\
+& =E\left[x^{(2)}\right] \\
+& =E\left[\text { Revenue }_{S P A}\right]
+\end{aligned}
+$$
+
+\begin{itemize}
+  \item See Myerson (1981), Vickrey (1961).
+\end{itemize}
+
+\section*{References}
+Lebrun, B. 1996. "Existence of an Equilibrium in First-Price Auctions." Economic Theory 7: 421-43.\\
+Lizzeri, A., and Nicola Persico. 2000. "Uniqueness and Existence of Equilibrium in Auctions with a Reserve Price." Games and Economic Behavior 30 (1): 83-114.\\
+Maskin, Eric S., and John Riley. 2000. "Equilibrium in Sealed High-Bid Auctions." Review of Economic Studies 67 (3): 439-54.\\
+Maskin, Eric S., and John Riley. 2003. "Uniqueness of Equilibrium in Sealed High-Bid Auctions." Games and Economic Behavior 45: 395-409.\\
+Myerson, Roger. 1981. "Optimal Auction Design." Mathematics of Operations Research 6: 58-73. Vickrey, W. 1961. "Counterspeculation, Auctions and Competitive Sealed Tenders." Journal of Finance 16: 8-37.
+
+
+\end{document}

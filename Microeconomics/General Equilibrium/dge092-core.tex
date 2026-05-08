@@ -1,0 +1,482 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\graphicspath{ {./images/} }
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+\usepackage{bbold}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=blue, filecolor=magenta, urlcolor=cyan,}
+\urlstyle{same}
+
+\begin{document}
+Validity of the price-taking assumption, the core
+
+\section*{Price-taking assumption}
+At least two approaches
+
+\begin{itemize}
+  \item Theory of price formation. Non-cooperative approach.
+  \item Postulate outcome of markets in terms of allocations and compare to WE.
+\end{itemize}
+
+Edgeworth (1881) argued that the main features of markets are
+
+\begin{enumerate}
+  \item Trade is voluntary, and
+  \item All gains from trade are exhausted.\\
+->
+\end{enumerate}
+
+\section*{Two Walrasian equilibria}
+\begin{center}
+\includegraphics[max width=\textwidth, alt={}]{4d2af055-4df4-470c-97b3-a4dbb9433e89-04_1575_2566_351_160}
+\end{center}
+
+\section*{Edgeworth conjecture}
+\begin{center}
+\includegraphics[max width=\textwidth, alt={}]{4d2af055-4df4-470c-97b3-a4dbb9433e89-05_1578_2576_348_154}
+\end{center}
+
+\section*{Edgeworth conjecture 2}
+\begin{center}
+\includegraphics[max width=\textwidth, alt={}]{4d2af055-4df4-470c-97b3-a4dbb9433e89-06_1575_2569_351_157}
+\end{center}
+
+\section*{Edgeworth conjecture 3}
+\begin{center}
+\includegraphics[max width=\textwidth, alt={}]{4d2af055-4df4-470c-97b3-a4dbb9433e89-07_1575_2569_351_157}
+\end{center}
+
+\section*{Edgeworth conjecture 4}
+\begin{center}
+\includegraphics[max width=\textwidth, alt={}]{4d2af055-4df4-470c-97b3-a4dbb9433e89-08_1578_2573_348_157}
+\end{center}
+
+\section*{Edgeworth conjecture 5}
+\begin{center}
+\includegraphics[max width=\textwidth, alt={}]{4d2af055-4df4-470c-97b3-a4dbb9433e89-09_1581_2576_348_154}
+\end{center}
+
+\section*{Edgeworth conjecture 6}
+\begin{center}
+\includegraphics[max width=\textwidth, alt={}]{4d2af055-4df4-470c-97b3-a4dbb9433e89-10_1581_2573_348_157}
+\end{center}
+
+\section*{Two agents of each type}
+\begin{itemize}
+  \item The economy has now 4 agents: $i_{1}, i_{2}$ and $j_{1}, j_{2}$ are "replicas" of $i$ and $j$ respectively.
+  \item $B^{\prime \prime}$ is not a "market outcome" because it does not exaust all gains from trade.
+  \item If $i_{1}, i_{2}$ and $j_{1}$ trade, $i_{1}, i_{2}$ may obtain $B^{\prime}$ while $j_{1}$ obtains $B^{\prime \prime}$.
+  \item $2 \times\left(\omega_{i}-B^{\prime}\right)=\omega_{j}-B^{\prime \prime}$. Feasibility.
+  \item $j_{1}$ consumes $B^{\prime \prime}$ and is as well off as before.
+  \item $i_{1}$ and $i_{2}$ consume $B^{\prime}$ are better off than at $B^{\prime \prime}$.
+\end{itemize}
+
+\section*{The core of an economy}
+Fix a pure exchange economy $\mathcal{E}=\left(L,\left\{X_{i}, \succeq_{i}, \omega_{i}\right\}_{i=1}^{I}\right)$.\\
+Definition 1 Let $\mathcal{J}=\{1,2, \ldots I\}$. Every $A \subseteq \mathcal{J}$ is a coalition. $\mathcal{J}$ is known as the grand coalition.
+
+Definition $2 A \subseteq \mathcal{J}$ blocks an allocation $x$ if $(\forall i \in A)\left(\exists x_{i}^{\prime} \in X_{i}\right)$
+
+\begin{enumerate}
+  \item $\sum_{i \in A} x_{i}^{\prime}=\sum_{i \in A} \omega_{i}$,
+  \item $x_{i}^{\prime} \succeq_{i} x_{i}$, and
+  \item $\left(\exists i^{\prime} \in A\right) x_{i^{\prime}}^{\prime} \succ_{i^{\prime}} x_{i^{\prime}}$.
+\end{enumerate}
+
+Definition 3 (Core) The core of $\mathcal{E}$, denoted $\mathcal{C}(\mathcal{E}$ ), is the set of allocations that cannot be blocked by any coalition.
+
+Notation.
+
+\begin{itemize}
+  \item Occasionally, $f: \mathcal{J} \rightarrow \mathbb{R}^{L}$ is used to denote a consumption assignment.\\
+For instance, if $f \in \mathcal{C}(\mathcal{E})$, $f$ maps $i \mapsto f(i) \in X_{i}$. Thus the bundle $x_{i}$ assigned to agent $i$ is denoted $f(i)=x_{i}$ or $x(i)$.
+  \item When the economy studied is clear, $\mathcal{C}$ may be used instead of $\mathcal{C}(\mathcal{E})$, to denote its core.
+\end{itemize}
+
+\section*{The core}
+Theorem 1 If an allocation is in the core then it is Pareto optimal.\\
+Proof. Let $x \in \mathcal{C}(\mathcal{E})$. $\mathcal{J}$ does not block $x$.\\
+This means $x$ is P.O.
+
+Theorem 2 If preferences are monotone, then every WE allocation is in the core.
+
+Proof.
+
+\begin{itemize}
+  \item Let $\left(\left\{x_{i}\right\}_{i \in \mathcal{J}}, p\right)$ be a Walrasian equilibrium.
+  \item Suppose $x=\left\{x_{i}\right\}_{i \in \mathcal{J}} \notin \mathcal{C}(\mathcal{E})$. Then $(\exists B \subseteq \mathcal{J})$ :
+  \item $\exists\left\{y_{i}\right\}_{i \in B}: \sum_{i \in B} y_{i}=\sum_{i \in B} \omega_{i}$,
+  \item $(\forall i \in B) y_{i} \succeq_{i} x_{i}$ and
+  \item $(\exists j \in B) y_{j} \succ_{j} x_{j}$
+  \item $(\forall i \in B) p \cdot y_{i} \geq p \cdot x_{i}$ and $p \cdot y_{j}>p \cdot x_{j}$
+\end{itemize}
+
+QED.
+
+$$
+\begin{aligned}
+\sum_{i \in B} p \cdot y_{i} & >\sum_{i \in B} p \cdot x_{i} \\
+p \cdot \sum_{i \in B} y_{i} & >\sum_{i \in B} p \cdot x_{i} \\
+& =\sum_{i \in B} p \cdot \omega_{i} \quad\left(\text { by } x_{i} \in D_{i}\left(p, \omega_{i}\right) \wedge p \cdot x_{i}=p \cdot \omega_{i}\right) \\
+& =p \cdot \sum_{i \in B} \omega_{i} \\
+& =p \cdot \sum_{i \in B} y_{i}
+\end{aligned}
+$$
+
+The $3^{r d}$ line uses monotonicity. The contradiction completes the proof.
+
+\section*{Replica sequences of economies}
+\begin{itemize}
+  \item Let $T$ be a finite set of consumers, that is of pairs $\left(\succeq_{t}, \omega_{t}\right) . T$ is a pure exchange economy.
+  \item Let $T_{n}$ be the $n^{\text {th }}$ replica of $T$, that is to say, the economy where there are $n$ agents of each type $\left(\succeq_{t}, \omega_{t}\right) \in T$.
+\end{itemize}
+
+\section*{Debreu and Scarf}
+\begin{itemize}
+  \item Debreu and Scarf (1963)
+  \item Suppose that preferences are strongly convex, locally non-satiated, complete, and transitive.
+  \item Equal Treatment Theorem (Debreu and Scarf 1963). In any core allocation of $T_{n}$, agents of the same type must receive the same core allocation.
+  \item Theorem (Debreu and Scarf 1963). If an allocation belongs to the core of $T_{n}$ for all $n$, then it is a Walrasian quasi-equilibrium.
+  \item The modern definition of the core is due to Gillies (1959).
+  \item Debreu and Scarf (1963) first formalize and prove a general form of Edgeworth's conjecture for replica sequences of economies.
+  \item Aumann (1964) formulates the problem with a continuum of agents and shows that the core coincides with the set of Walrasian equilibria. Aumann assumed monotonicity but it is immediate from his proof, that LNS suffices to show that core allocations are Walrasian quasi-equilibria.
+\end{itemize}
+
+\section*{Core convergence}
+\begin{itemize}
+  \item The following is based on Anderson (1978).
+  \item Given a finite set $\mathcal{J},|\mathcal{J}|$ is the number of elements in $\mathcal{J}$.
+\end{itemize}
+
+Definition 4 Let $\mathcal{P}$ the the set of binary relations $\succ$ on $\mathbb{R}_{+}^{L}$ that satisfy
+
+\begin{enumerate}
+  \item Weak monotonicity: $x \gg y \Longrightarrow x \succ y$
+  \item Free disposal: $x \gg y$ and $y \succ z \Longrightarrow x \succ z$
+\end{enumerate}
+
+\section*{Core convergence}
+Theorem 3 (Anderson) Let $\left\{\mathbb{R}_{+}^{L}, \succ_{i}, \omega_{i}\right\}_{i \in \mathcal{J}}$ be a pure exchange economy with finitely many agents and $(\forall i \in \mathcal{J}) \succ_{i} \in \mathcal{P}$.\\
+Let
+
+$$
+M=\sup \left\{\left\|\sum_{\mathcal{H}} \omega_{j}\right\|_{\infty}: \mathcal{H} \subseteq \mathcal{J},|\mathcal{H}|=L\right\} .
+$$
+
+If $f \in \mathcal{C}$, then \$p:\$
+
+\begin{enumerate}
+  \item $\frac{1}{|\mathcal{J}|} \sum_{i \in \mathcal{J}}\left|p \cdot\left(f(i)-\omega_{i}\right)\right| \leq \frac{4 M}{|\mathcal{J}|}$
+  \item $\frac{1}{|\mathcal{J}|} \sum_{i \in \mathcal{J}}\left|\inf \left\{p \cdot\left(x-\omega_{i}\right): x \succ_{i} f(i)\right\}\right| \leq \frac{4 M}{|\mathcal{J}|}$
+\end{enumerate}
+
+\section*{Demand}
+\begin{center}
+\includegraphics[max width=\textwidth, alt={}]{4d2af055-4df4-470c-97b3-a4dbb9433e89-22_1343_1563_342_155}
+\end{center}
+
+\begin{itemize}
+  \item $x_{i}^{*}$ must be affordable; any $x \succ_{i} x_{i}^{*}$ must be too expensive.
+\end{itemize}
+
+\section*{Almost demand}
+\begin{center}
+\includegraphics[max width=\textwidth, alt={}]{4d2af055-4df4-470c-97b3-a4dbb9433e89-23_1528_2590_340_143}
+\end{center}
+
+\section*{Shapley-Folkman theorem, preliminaries}
+\begin{itemize}
+  \item Let $A_{1}, A_{2}$ be subsets of a vector space $X$. Then,
+  \item $A_{1}+A_{2}=\left\{x_{1}+x_{2}: x_{1} \in A_{1}, x_{2} \in A_{2}\right\}$.
+  \item $\operatorname{co} A_{1}$ is the convex hull of $A_{1}$
+  \item If $A_{1}, A_{2}$ are convex, then $A_{1}+A_{2}$ is convex.
+  \item For $x \in \mathbb{R}^{L},\|x\|_{\infty}=\max \left\{\left|x_{\ell}\right|: 1 \leq \ell \leq L\right\}$.
+\end{itemize}
+
+Theorem 4 (Shapley-Folkman) Let $\mathcal{J}=\{1,2, \ldots, I\},(\forall i \in \mathcal{J}) A_{i}$\\
+$\subseteq \mathbb{R}^{L}, A=\sum_{i \in \mathcal{J}} A_{i}$.\\
+Then $(\forall x \in \operatorname{co} A)(\exists B \subseteq \mathcal{J})$ such that
+
+\begin{enumerate}
+  \item $|B| \leq L$
+  \item $x=a_{1}+\cdots+a_{I}$\\
+where $(\forall i \in \mathcal{J} \backslash B) a_{i} \in A_{i}$ and $(\forall i \in B) a_{i} \in \operatorname{co} A_{i}$.
+\end{enumerate}
+
+\begin{itemize}
+  \item A version of the theorem appears in Starr (1969). Shapley and Folkman provided its proof in a private communication.
+\end{itemize}
+
+\section*{Example}
+\begin{itemize}
+  \item For $i=1,2,3, A_{i} \subset \mathbb{R}^{2}$, $A_{i}$ is not convex.
+  \item Note that $\operatorname{co}\left(A_{1}+A_{2}+A_{3}\right)=\operatorname{co} A_{1}+\operatorname{co} A_{2}+\operatorname{co} A_{3}$.
+  \item Pick $x \in \operatorname{co}\left(A_{1}+A_{2}+A_{3}\right)$.
+  \item Then $x=a_{1}+a_{2}+a_{3}, a_{i} \in \operatorname{co} A_{i}$.
+  \item There are $b_{1}, b_{2}, b_{3}$ such that
+  \item $b_{1} \in A_{1}$,
+  \item $b_{2} \in \operatorname{co} A_{2}$,
+  \item $b_{3} \in \operatorname{co} A_{3}$ and
+  \item $x=b_{1}+b_{2}+b_{3}$.
+\end{itemize}
+
+Picture 1\\
+\includegraphics[max width=\textwidth, alt={}, center]{4d2af055-4df4-470c-97b3-a4dbb9433e89-27_1237_2182_460_553}
+
+Picture 2\\
+\includegraphics[max width=\textwidth, alt={}, center]{4d2af055-4df4-470c-97b3-a4dbb9433e89-28_1243_2182_452_548}
+
+Picture 3\\
+\includegraphics[max width=\textwidth, alt={}, center]{4d2af055-4df4-470c-97b3-a4dbb9433e89-29_1243_2182_452_548}
+
+Picture 4\\
+\includegraphics[max width=\textwidth, alt={}, center]{4d2af055-4df4-470c-97b3-a4dbb9433e89-30_1243_2182_452_548}
+
+\section*{Proof of core theorem}
+Define
+
+\begin{itemize}
+  \item $\forall i \in \mathcal{J}, \varphi(i)=\left\{x-\omega_{i}: x \succ_{i} f(i)\right\} \cup\{0\}$
+  \item $\Phi=\frac{1}{|\mathcal{J}|} \sum_{i \in \mathcal{J}} \varphi(i)$\\
+\includegraphics[max width=\textwidth, alt={}, center]{4d2af055-4df4-470c-97b3-a4dbb9433e89-32_1379_2605_186_135}
+\end{itemize}
+
+Claim. $G \ll 0 \Longrightarrow G \notin \Phi$.
+
+\begin{itemize}
+  \item Suppose not. Then $\exists g: \mathcal{J} \rightarrow \mathbb{R}^{L}$ such that
+\end{itemize}
+
+$$
+(\forall i \in \mathcal{J})\left[g(i) \in \varphi(i) \wedge G=\frac{1}{|\mathcal{J}|} \sum_{i \in \mathcal{J}} g(i) \ll 0\right]
+$$
+
+\begin{itemize}
+  \item Let $B=\{i \in \mathcal{J}: g(i) \neq 0\}$ and define
+\end{itemize}
+
+$$
+(\forall i \in B) h(i)=g(i)+\omega_{i}-G \frac{|\mathcal{J}|}{|B|}
+$$
+
+\begin{itemize}
+  \item $(\forall i \in B) \backslash\left[h(i) \gg g(i)+\omega_{i} \succ_{i} f(i)\right] \Longrightarrow h(i) \succ_{i} f(i)$
+\end{itemize}
+
+$$
+\begin{aligned}
+\sum_{B} h(i) & =\sum_{B} g(i)+\sum_{B} \omega_{i}-|B| \frac{|\mathcal{J}| G}{|B|} \\
+& =|\mathcal{J}| G+\sum_{B} \omega_{i}-|\mathcal{J}| G=\sum_{B} \omega_{i}
+\end{aligned}
+$$
+
+then $f \notin \mathcal{C}$.\\
+\includegraphics[max width=\textwidth, alt={}, center]{4d2af055-4df4-470c-97b3-a4dbb9433e89-35_1699_1967_190_152}
+
+Let $u=(1, \ldots, 1)^{\prime}$.\\
+Claim. $\operatorname{co}(\Phi) \cap\left\{v \in \mathbb{R}^{L}: v \ll-\frac{M}{|\mathcal{J}|} u\right\}=\emptyset$\\
+By SFT,
+
+$$
+(\forall x \in \operatorname{co}(\Phi))\left(\exists g: \mathcal{J} \mapsto \mathbb{R}^{L}\right)(\exists B \subset \mathcal{J},|B| \leq L)
+$$
+
+such that
+
+
+\begin{align*}
+x= & \frac{1}{|\mathcal{J}|} \sum_{i \in \mathcal{J} \backslash B} g(i)+\frac{1}{|\mathcal{J}|} \sum_{i \in B} g(i) \\
+& (\forall i \in \mathcal{J} \backslash B) g(i) \in \varphi(i)  \tag{1}\\
+& (\forall i \in B) g(i) \in \operatorname{co}(\varphi(i))
+\end{align*}
+
+
+\begin{itemize}
+  \item $x=\frac{1}{|\mathcal{J}|} \sum_{i \in \mathcal{J} \backslash B} g(i) \frac{1}{|\mathcal{J}|} \sum_{i \in B} g(i)$.
+  \item Let $y=\frac{1}{|\mathcal{J}|} \sum_{i \in \mathcal{J} \backslash B} g(i)$.
+\end{itemize}
+
+By Equation $1, y \in \Phi$.
+
+$$
+y-x=-\frac{1}{|\mathcal{J}|} \sum_{i \in B} g(i) \leq \frac{1}{|\mathcal{J}|} \sum_{i \in B} \omega_{i} \leq \frac{M}{|\mathcal{J}|} u
+$$
+
+\section*{Because}
+$\varphi(i) \geq-\omega_{i} \Longrightarrow \operatorname{co}(\varphi(i)) \geq-\omega_{i}$,\\
+$g(i) \in \varphi(i) \Longrightarrow g(i) \geq-\omega_{i} \Longrightarrow-g(i) \leq \omega_{i}$;\\
+and\\
+$\sum_{i \in B} \omega_{i} \leq M u$ by assumption.
+
+Second claim\\
+\includegraphics[max width=\textwidth, alt={}, center]{4d2af055-4df4-470c-97b3-a4dbb9433e89-39_1699_1965_42_152}
+
+\begin{itemize}
+  \item By SHT and weak monotone preferences, $\exists p \in \Delta: \inf p \cdot \Phi \geq \sup \{p \left.\cdot v: v \ll-\frac{M}{|\mathcal{J}|} u\right\}$
+  \item $0 \geq \inf p \cdot \Phi \geq-\frac{M}{|\mathcal{J}|}$ because $0 \in \Phi$ and $p \cdot u=1$.
+  \item $(\forall m>0) f(i)-\omega_{i}+\frac{u}{m} \in \varphi(i) \subset \Phi$ (by weak monotonicity).
+\end{itemize}
+
+Then
+
+$$
+(\forall i \in I) \quad p \cdot\left[f(i)-\omega_{i}\right] \geq \inf p \cdot \varphi(i) .
+$$
+
+\begin{itemize}
+  \item Let $S=\left\{i \in \mathcal{J}: p \cdot\left[f(i)-\omega_{i}\right]<0\right\}$.
+\end{itemize}
+
+$$
+0>\frac{1}{|\mathcal{J}|} \sum_{i \in S} p \cdot\left[f(i)-\omega_{i}\right] \geq \frac{1}{|\mathcal{J}|} \sum_{i \in S} \inf p \cdot \varphi(i) \geq-\frac{M}{|\mathcal{J}|}
+$$
+
+Equivalently
+
+
+\begin{align*}
+0 & <-\frac{1}{|\mathcal{J}|} \sum_{i \in S} p \cdot\left[f(i)-\omega_{i}\right] \\
+& \leq-\frac{1}{|\mathcal{J}|} \sum_{i \in S} \inf p \cdot \varphi(i) \leq \frac{M}{|\mathcal{J}|} \tag{2}
+\end{align*}
+
+
+\begin{itemize}
+  \item Since $f$ is an allocation, $\frac{1}{|\mathcal{J}|} \sum_{i \in \mathcal{J}} p \cdot\left[f(i)-\omega_{i}\right]=0$. Thus $-\sum_{i \in S} p \cdot\left[f(i)-\omega_{i}\right]=\sum_{i \in I \backslash S} p \cdot\left[f(i)-\omega_{i}\right]$.
+\end{itemize}
+
+Then
+
+$$
+\begin{aligned}
+\frac{1}{|\mathcal{J}|} \sum_{i \in \mathcal{J}}\left|p \cdot\left[f(i)-\omega_{i}\right]\right| & =\frac{2}{|\mathcal{J}|} \sum_{i \in S}\left|p \cdot\left[f(i)-\omega_{i}\right]\right| \\
+& \leq \frac{2 M}{|\mathcal{J}|}
+\end{aligned}
+$$
+
+\begin{itemize}
+  \item This completes the proof of 1.
+  \item Since $0 \in \varphi(i), 0 \geq \frac{1}{|\mathcal{J}|} \sum_{i \in \mathcal{J}} \inf p \cdot \varphi(i)=\inf p \cdot \Phi \geq-\frac{M}{|\mathcal{J}|}$.
+\end{itemize}
+
+Then
+
+$$
+\begin{aligned}
+& \frac{1}{|\mathcal{J}|} \sum_{i \in \mathcal{J}}\left|\inf \left\{p \cdot\left[x-\omega_{i}\right]: x \succ_{i} f(i)\right\}\right| \\
+& \quad \leq-\frac{1}{|\mathcal{J}|} \sum_{i \in S}[\inf p \cdot \varphi(i)]+\frac{1}{|\mathcal{J}|} \sum_{i \notin S}\left|p \cdot\left[f(i)-\omega_{i}\right]\right| \leq \frac{2 M}{|\mathcal{J}|}
+\end{aligned}
+$$
+
+Since $(\forall i \in S) p \cdot\left[f(i)-\omega_{i}\right]<0, \inf \left\{p \cdot\left[x-\omega_{i}\right]: x \succ_{i} f(i)\right\}<0$. Thus, first term may be written in absolute value. Apply Equation 2.
+
+QED
+
+\section*{Distinct traders because of preferences}
+\begin{itemize}
+  \item 2 examples:
+\end{itemize}
+
+\begin{enumerate}
+  \item Convex but non-monotone preferences.
+  \item Non-convex, non-monotone preferences but uniformly bounded core allocations with respect to the size of the economy.
+\end{enumerate}
+
+\begin{itemize}
+  \item The examples are in (Manelli 1991b). See also (Manelli 1991a).
+\end{itemize}
+
+\section*{Non-monotone preferences}
+\begin{itemize}
+  \item Preferences are are cone monotone (sometimes called "proper").
+  \item Let $V=\left\{v \in \mathbb{R}^{2}: \alpha(m, 1)+\beta(1, m), \alpha, \beta \in \mathbb{R}_{++}, m>1\right\}$.
+  \item In a first reading, think of $m=2$.
+\end{itemize}
+
+\section*{Example, non-monotone preferences}
+$2\left[\begin{array}{l}{ }^{3} \\ 1- \\ 0 \frac{R^{2}}{0}\end{array}\right.$\\
+\includegraphics[max width=\textwidth, alt={}, center]{4d2af055-4df4-470c-97b3-a4dbb9433e89-46_1283_1176_385_1543}
+
+\section*{1. Convex, cone-monotone preferences}
+\begin{itemize}
+  \item Sequence of economies with 3 "groups" of agents and 2 goods.
+\end{itemize}
+
+$$
+\mathcal{E}^{n}=\left\{\begin{array}{l}
+\text { agent } 1, \omega_{1}=(0,0), \succ_{1}^{n} \\
+\text { agent } 2, \omega_{2}=(0,0), \succ_{2}^{n} \\
+\mathrm{n} \text { agents type } 3, \omega_{3}=(1,1), \succ_{3}
+\end{array}\right.
+$$
+
+\begin{itemize}
+  \item Agents 1's and 2's preferences change with the economy, their endowments do not.
+  \item The $n$ agents of type 3 always have the same endowment and preferences.
+  \item $\forall n>1, M=\sup \left\{\|\omega(3)+\omega(3)\|_{\infty}=2\right\}$
+  \item $\frac{M}{n} \rightarrow 0$ as $n \rightarrow \infty$.
+\end{itemize}
+
+\section*{Core allocation in example 1}
+\begin{itemize}
+  \item Let
+\end{itemize}
+
+$$
+f^{n}(i)= \begin{cases}(n, 0), & \text { if } i=1 \\ \left(0, \frac{n}{m}\right), & \text { if } i=2 \\ \left(0, \frac{m-1}{m}\right), & \text { if } i \text { is in group } 3\end{cases}
+$$
+
+\begin{itemize}
+  \item Assume preferences satisfy $\left\{x: x \succ_{i} f^{n}(i)\right\}=f^{n}(i)+V$.
+  \item Recall $\varphi(i)=\left\{f^{n}(i)-\omega_{i}+V\right\} \cup\{0\}$.
+  \item $f^{n}$ is in the core.\\
+$f^{n}(i), n=1, m=2$\\
+\includegraphics[max width=\textwidth, alt={}, center]{4d2af055-4df4-470c-97b3-a4dbb9433e89-50_1730_2599_32_138}\\
+$f^{n}(i), n=1, m=2, \operatorname{co}(\Phi) / n$\\
+\includegraphics[max width=\textwidth, alt={}, center]{4d2af055-4df4-470c-97b3-a4dbb9433e89-52_1741_2604_21_136}\\
+$f^{n}(i), n=3, m=2$\\
+\includegraphics[max width=\textwidth, alt={}, center]{4d2af055-4df4-470c-97b3-a4dbb9433e89-54_1722_2592_40_138}\\
+$f^{n}(i), n=3, m=2, \operatorname{co}(\Phi)$\\
+\includegraphics[max width=\textwidth, alt={}, center]{4d2af055-4df4-470c-97b3-a4dbb9433e89-56_1729_2601_40_138}
+\end{itemize}
+
+\section*{2. Non-convex, cone-monotone preferences}
+\begin{itemize}
+  \item The $n^{\text {th }}$ economy has $n-1$ agents in group $1, n$ agents in group 2 , and a single agent in group 3.
+  \item All agents in all economies have endowment $\omega=(1,1)$.
+  \item The core allocations are $f(1)=(0,0.5), f(2)=(2,1.5)$, and $f(3) =(0,0.5)$. Core allocations are bounded independently of $n$.
+  \item Preferences satisfy the following conditions,
+  \item $\left\{x: x \succ_{1}(0,0.5)\right\}=(0,0.5)+V$
+  \item $\left\{x: x \succ_{2}(1,1.5)\right\}=(2,1.5)+V$
+  \item $\left\{x: x \succ_{3}(0,0.5)\right\}=\{(0,0.5)+V\} \cup\left\{(n+1,1)+\mathbb{R}_{++}^{2}\right.$
+\end{itemize}
+
+\section*{Non-convex, non-monotone, bounded core}
+\begin{center}
+\includegraphics[max width=\textwidth, alt={}]{4d2af055-4df4-470c-97b3-a4dbb9433e89-58_1448_2590_347_140}
+\end{center}
+
+\section*{Convex hull, bounded core}
+\begin{center}
+\includegraphics[max width=\textwidth, alt={}]{4d2af055-4df4-470c-97b3-a4dbb9433e89-59_1486_2601_333_136}
+\end{center}
+
+\section*{References}
+Anderson, Robert M. 1978. "An Elementary Core Equivalence Theorem." Econometrica 46: 1483-87.\\
+Aumann, Robert J. 1964. "Markets with a Continuum of Traders." Econometrica 32: 39-50.\\
+Debreu, Gerard, and Herbert Scarf. 1963. "A Limit Theorem on the Core of an Economy." International Economic Review 4 (3): 235-46.\\
+Edgeworth, F. Y. 1881. Mathemathical Psychics: An Essay on the Mathematics to the Moral Sciences. London: Kegan Paul.\\
+Gillies, Donald B. 1959. "Solutions to General Non-Zero-Sum Games." In Contributions to the Theory of Games IV, edited by A. W. Tucker and R. D. Luce, 47-85. Annals of Mathematics Studies 40. Princeton: Princeton University Press.\\
+Manelli, Alejandro M. 1991a. "Core Convergence Without Monotone Preferences and Free Disposal." Journal of Economic Theory 55: 400-415. \href{https://doi.org/10.1016/0022-0531(91)90046-7}{https://doi.org/10.1016/0022-0531(91)90046-7}.\\
+---. 1991b. "Monotonic Preferences and Core Equivalence." Econometrica 59 (1): 123-38.\\
+\href{https://doi.org/10.2307/2938243}{https://doi.org/10.2307/2938243}.\\
+Starr, Ross. 1969. "Quasi-Equilibria in Markets with Non-Convex Preferences." Econometrica 17: 25-38.
+
+
+\end{document}

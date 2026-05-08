@@ -1,0 +1,172 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+\usepackage{bbold}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\graphicspath{ {./images/} }
+
+\begin{document}
+Mechanism design
+
+\section*{Some references}
+See Myerson (1981), Mas-Colell et al. (1995), Krishna (2010), and Menezes and Monteiro (2005).
+
+\section*{Mechanism design in IPVM}
+\begin{itemize}
+  \item Goal. What is the best way to transfer the object?
+  \item best? Objective function. Among possibilities:
+  \item seller's expected revenue.
+  \item aggregate surplus (buyers surplus).
+  \item way? Mechanisms. Problem: too many.
+  \item How to formalize the notion of mechanism so as to cover as many as possible transaction forms while still keeping the optimization problem tractable?
+  \item How to solve the optimization program?
+\end{itemize}
+
+\section*{Definitions}
+Definition 1 (Environment) An environment is an $E =\left[O,\left\{\left(X_{i}, X_{i}, \mu_{i}\right), V_{i}\right\}_{i=1}^{I}\right]$ where $O$ is a set of outcomes, $\left(X_{i}, X_{i}, \mu_{i}\right)$ is the space of agent $i$ 's private information, and $V_{i}: X \times O \rightarrow \mathbb{R}$ is i's payoffs given a realization of information and an outcome.
+
+Definition 2 (Mechanism) Given $E$, a mechanism (or game form) is an $M =\left\{\left\{S_{i}\right\}_{i=1}^{I}, g: \prod_{i=1}^{I} S_{i} \rightarrow O\right\}$ where $S_{i}$ is player $i$ 's set of available messages or signals, and $g$ is a function, termed the outcome function, that assigns to each message profile an outcome.
+
+\section*{Environment}
+\begin{center}
+\includegraphics[max width=\textwidth, alt={}]{9c2e101e-e880-4708-a228-aa1599e90ecf-06_744_2569_351_153}
+\end{center}
+
+\section*{Environment and mechanism}
+\begin{center}
+\includegraphics[max width=\textwidth, alt={}]{9c2e101e-e880-4708-a228-aa1599e90ecf-07_1467_2573_355_153}
+\end{center}
+
+\begin{itemize}
+  \item Given an environment $E$, every mechanism $M$ induces a Bayesian game $\Gamma_{M}=\left\{\left(X_{i}, X_{i}, \mu_{i}\right), S_{i}, u_{i}\right\}_{i=1}^{I}$,
+  \item Player $i$ observes private information $x_{i} \in X_{i}$ and chooses an action $s_{i} \in S_{i}$.\\
+A strategy for player $i$ is a function $\phi_{i}: X_{i} \rightarrow S_{i}$
+  \item Given an action profile $s, g(s) \in O$ is the outcome of the game.
+  \item Player $i$ 's payoff is $u_{i}(x, s)=V_{i}(x, g(s))$.
+\end{itemize}
+
+$$
+u_{i}\left(x_{1}, \ldots, x_{n}, q_{1}, q_{2}, \ldots, q_{n}, m_{1}, \ldots, m_{n}\right)=x_{i} \cdot q_{i}-m_{i}
+$$
+
+\section*{Direct mechanism}
+Definition 3 (Direct mechanism) A mechanism $M=\left[\left\{S_{i}\right\}_{i=1}^{I}, g\right]$ is direct if $S_{i}=X_{i}$ for every $i$.
+
+\begin{itemize}
+  \item Bidders observe their types and report $x^{\prime}$ individually and independently.
+  \item Given a report profile $x^{\prime}=\left(x_{1}^{\prime}, \ldots, x_{I}^{\prime}\right)$, the function $g$ determines the outcome $g\left(x^{\prime}\right) \in O$.
+\end{itemize}
+
+Definition 4 (Direct revelation mechanism) If the game $\Gamma_{M}$ induced by a direct mechanism $M$ has an equilibrium $\left\{\phi_{i}\right\}_{i=1}^{I}$ where for every $i$ and every $x_{i} \in X_{i}, \phi\left(x_{i}\right)=x_{i}$, then $M$ is a direct revelation mechanism (DRM).
+
+\begin{itemize}
+  \item BNE versus DSE.
+\end{itemize}
+
+\section*{Example: application to the IPVM}
+\begin{itemize}
+  \item $O=\left\{(q, m): q \in[0,1]^{I}, \sum_{i=1}^{I} q_{i} \leq 1, m \in \mathbb{R}^{I}\right\}$
+  \item A mechanism $M=\left[\left\{S_{i}\right\}_{i=1}^{I}, g: \prod_{i=1}^{I} S_{i} \rightarrow O\right]$ :
+  \item A signaling space $S_{i}$ per agent, $s_{i} \in S_{i}, s=\left(s_{1}, s_{2}, \ldots, s_{I}\right)$.
+  \item $g(s)=(q(s), t(s))$,
+  \item $q(s)=\left(q_{1}(s), \ldots, q_{I}(s)\right), \sum_{i=1}^{I} q(s) \leq 1$,
+  \item $t(s)=\left(t_{1}(s), \ldots, t_{I}(s)\right)$.
+\end{itemize}
+
+Example FPA: mechanisms that is not direct, $x_{i} \in[0,1]$
+
+\begin{itemize}
+  \item $S_{i}=\mathbb{R}, b_{i} \in \mathbb{R}$ is $i$ 's bid.
+  \item $g(b)=g\left(b_{1}, \ldots, b_{I}\right)=\left\{q_{i}(b), t_{i}(b)\right\}_{i=1}^{I}$
+  \item $q_{i}(b)= \begin{cases}1 & \text { if } b_{i}>b_{-i}^{(1)} \\ 0 & \text { if } b_{i}<b_{-i}^{(1)} \\ . & \text { if } b_{i}=b_{-i}^{(1)}\end{cases}$
+  \item $t_{i}(b)=b_{i} q_{i}(b)$.
+\end{itemize}
+
+Example SPA: (it can be seen as a direct mechanism)
+
+\begin{itemize}
+  \item $S_{i}=X_{i}=[0,1], b_{i} \in X_{i}=[0,1]$ is $i$ 's report (and bid).
+  \item $q_{i}(b)$ as in the FPA.
+  \item $t_{i}(b)= \begin{cases}b_{-i}^{(1)} & \text { if } b_{-i}^{(1)}<b_{i} \\ 0 & \text { if } b_{-i}^{(1)}>b_{i} \\ \cdot & \text { if } b_{-i}^{(1)}=b_{i}\end{cases}$
+\end{itemize}
+
+\section*{Revelation principle}
+Theorem 1 (Revelation principle) Let $\phi$ be an equilibrium of $\Gamma_{M}$, the game induced by a mechanism $M$. Then there exists an equilibrium $\phi^{\prime}$ of (the game induced by) a direct mechanism $g^{\prime}$ such that the $\phi^{\prime}$ and $\phi$ generate the same outcome and for every $\forall i \wedge x_{i} \in X_{i}, \phi_{i}^{\prime}\left(x_{i}\right)=x_{i}$.
+
+\section*{Proof 1}
+\begin{center}
+\includegraphics[max width=\textwidth, alt={}]{9c2e101e-e880-4708-a228-aa1599e90ecf-14_655_2380_387_169}
+\end{center}
+
+\section*{Proof 2}
+\begin{center}
+\includegraphics[max width=\textwidth, alt={}]{9c2e101e-e880-4708-a228-aa1599e90ecf-15_1233_2380_387_169}
+\end{center}
+
+\section*{Proof 3}
+\begin{center}
+\includegraphics[max width=\textwidth, alt={}]{9c2e101e-e880-4708-a228-aa1599e90ecf-16_1233_2380_387_169}
+\end{center}
+
+\section*{Proof 4}
+\begin{center}
+\includegraphics[max width=\textwidth, alt={}]{9c2e101e-e880-4708-a228-aa1599e90ecf-17_1237_2400_383_149}
+\end{center}
+
+\section*{Proof 5}
+\begin{center}
+\includegraphics[max width=\textwidth, alt={}]{9c2e101e-e880-4708-a228-aa1599e90ecf-18_1245_2396_367_153}
+\end{center}
+
+Proof(Sketch).
+
+\begin{itemize}
+  \item Define DRM
+  \item $(\forall i) S_{i}=X_{i}=[0,1]$.
+  \item $\left(\forall i, \forall x \in X=[0,1]^{I}\right)$
+\end{itemize}
+
+$$
+q_{i}^{\prime}\left(x_{-i}, x_{i}\right)=q_{i}\left(\phi_{1}\left(x_{1}\right), \cdots, \phi_{I}\left(x_{I}\right)\right)
+$$
+
+and
+
+$$
+t_{i}^{\prime}\left(x_{-i}, x_{i}\right)=t_{i}\left(\phi_{-i}\left(x_{-i}\right), \phi_{i}\left(x_{i}\right)\right)
+$$
+
+\begin{itemize}
+  \item Check that $\left(q^{\prime}, t^{\prime}\right)$ generate the same outcome as $(q, t)$ and that truthtelling is a BNE under ( $q^{\prime}, t^{\prime}$ ) to complete the proof.
+\end{itemize}
+
+\section*{Modeling question}
+\begin{itemize}
+  \item Modeling question: model of mechanisms must be broad and tractable.
+  \item Revelation Principle implies two simplifications
+\end{itemize}
+
+\begin{enumerate}
+  \item We may restrict attention to direct mechanisms, message space is space of private information.
+  \item We may farther restrict attention to direct mechanisms that have truthful revelation in equilibrium.
+\end{enumerate}
+
+\begin{itemize}
+  \item It is clear how to use (1); how does one take advantage of (2)?
+  \item Remark. Careful with use of Revelation Principle.
+\end{itemize}
+
+\section*{References}
+Krishna, Vijay. 2010. Auction Theory. 2nd ed. Elsevier, Academic Press.\\
+Mas-Colell, Andreu, Michael Whinston, and Jerry Green. 1995. Microeconomic Theory. Oxford University Press.\\
+Menezes, Flavio M., and Paulo K. Monteiro. 2005. An Introduction to Auction Theory. Oxford University Press.\\
+Myerson, Roger. 1981. "Optimal Auction Design." Mathematics of Operations Research 6: 58-73.
+
+
+\end{document}

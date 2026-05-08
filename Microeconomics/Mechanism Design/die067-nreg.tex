@@ -1,0 +1,417 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+\usepackage{bbold}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\graphicspath{ {./images/} }
+\usepackage{caption}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=blue, filecolor=magenta, urlcolor=cyan,}
+\urlstyle{same}
+
+\begin{document}
+\captionsetup{singlelinecheck=false}
+\section*{Preliminaries—nonincreasing virtual utility}
+\begin{itemize}
+  \item General IPVM model, not necessarily symmetric and without assuming the regularity condition.
+  \item $X_{i}=\left[\underline{x}_{i}, \bar{x}_{i}\right]$ type space agent $i, x_{i} \in X_{i}$.
+  \item $X=\prod_{i=1}^{I} X_{i}$ space of type profiles, $x \in X$.
+  \item $F_{i}\left(x_{i}\right)$ and $f_{i}\left(x_{i}\right)$ are agent $i$ 's cdf and respective pdf; $\left(\forall x_{i} \in X_{i}\right) f_{i}\left(x_{i}\right)>0$.
+  \item $f(x)=f_{1}\left(x_{1}\right) \times f_{2}\left(x_{2}\right) \times \cdots \times f_{I}\left(x_{i}\right)$.
+\end{itemize}
+
+\section*{Issue}
+\begin{itemize}
+  \item Seller's expected revenue (SER): $\sum_{i=1}^{I} \int_{\underline{x}_{i}}^{\bar{x}_{i}} v_{i}\left(x_{i}\right) Q_{i}\left(x_{i}\right) f_{i}\left(x_{i}\right) \mathrm{d} x_{i}$.
+  \item The objective function, SER, is maximized by allocating the object to the bidder with the highest, non-negative, virtual valuation. Under regularity, this yields allocation rules $Q_{i}\left(x_{i}\right)$ that are monotone and thus satisfy IC.
+  \item Issue: when $v_{i}\left(x_{i}\right)$ violates regularity-that is to say, $v_{i}$ is not weakly increasing-the $Q_{i}\left(x_{i}\right)$ obtained as described above may violate IC.
+\end{itemize}
+
+The solution obtained in the regular case does no satisfy IC in the absence of regularity.
+
+\begin{itemize}
+  \item To address this issue, Myerson generalizes the "ironing" procedure in Mussa and Rosen (1978). For an interesting application see Loertscher and Muir (2025).
+\end{itemize}
+
+\section*{Approach}
+\begin{itemize}
+  \item Transform the irregularvirtual utility-that is to say the distribution that generates it-so that
+  \item regularity is restored and
+  \item monotone allocations $Q_{i}$ generate no less revenue against the new distribution than against the original one.
+  \item Roughly, the steps described identify an increasing proxy $\bar{v}_{i}$ to use as $v_{i}$ 's surrogate to solve the optimization.
+  \item Technically, the transformation identifies the "multipliers" in the complementary slackness conditions of the implicit linear program.
+  \item Variable of optimization: $\left\{p_{i}\right\}_{i=1}^{I}, Q_{i}\left(x_{i}\right)=E_{-i}\left(p_{i}\left(x_{i}, x_{-i}\right)\right)$.
+\end{itemize}
+
+\section*{Constructing $\bar{v}_{i}$}
+\begin{itemize}
+  \item Define $w_{i}:[0,1] \rightarrow \mathbb{R}$, by $w_{i}=v_{i} \circ F_{i}^{-1}$.
+  \item Let $W_{i}(q)=\int_{0}^{q} w_{i}(r) \mathrm{d} r$. Note that $q, r \in[0,1]$.
+  \item Let $\bar{W}_{i}$ be the highest convex function on $[0,1]$ such that $\bar{W}_{i} \leq W_{i}$.
+  \item Define $\bar{w}_{i}(p)=\frac{\mathrm{d} \bar{W}_{i}(p)}{\mathrm{d} p}$ where the derivative is extended rightcontinuously where necessary.
+  \item Finally, define $\bar{v}_{i}\left(x_{i}\right)=\bar{w}_{i}\left(F_{i}\left(x_{i}\right)\right)$.
+\end{itemize}
+
+Theorem 1 IPVM. In the optimal mechanism the object is sold to the bidder with highest $\bar{v}_{i}\left(x_{i}\right)$ provided it is nonnegative.
+
+Proof. Define $v_{i}:\left[\underline{x}_{i}, \bar{x}_{i}\right] \rightarrow \mathbb{R}$ and $w_{i}:[0,1] \rightarrow \mathbb{R}$ by
+
+$$
+\begin{aligned}
+& v_{i}\left(x_{i}\right)=x_{i}-\frac{1-F_{i}\left(x_{i}\right)}{f_{i}\left(x_{i}\right)}, \quad(\text { virtual utility }) \\
+& w_{i}(q)=F_{i}^{-1}(q)-\frac{1-q}{f_{i}\left(F_{i}^{-1}(q)\right)}
+\end{aligned}
+$$
+
+Note that $F_{i}:\left[\underline{x}_{i}, \bar{x}_{i}\right] \rightarrow[0,1]$ and $w_{i}=v_{i} \circ F_{i}^{-1}$ and define
+
+$$
+\begin{aligned}
+\left(\forall x_{i} \in\left[\underline{x}_{i}, \bar{x}_{i}\right]\right) V_{i}\left(x_{i}\right) & =\int_{\underline{x}_{i}}^{x_{i}} v_{i}(y) f_{i}(y) \mathrm{d} y \\
+(\forall q \in[0,1]) W_{i}(q) & =\int_{0}^{q} w_{i}(r) \mathrm{d} r
+\end{aligned}
+$$
+
+\begin{itemize}
+  \item Observation on $v_{i}$ and $w_{i}$\\
+$\left(\forall x_{i} \in\left[\underline{x}_{i}, \bar{x}_{i}\right]\right), V_{i}\left(x_{i}\right)=W_{i}\left(F_{i}\left(x_{i}\right)\right)$,
+\end{itemize}
+
+$$
+\begin{aligned}
+W_{i}\left(F_{i}\left(x_{i}\right)\right)=\int_{0}^{F_{i}\left(x_{i}\right)} w_{i}(r) \mathrm{d} r & =\int_{F_{i}\left(\underline{x}_{i}\right)}^{F_{i}\left(x_{i}\right)}\left[F_{i}^{-1}(r)-\frac{1-r}{f_{i}\left(F_{i}^{-1}(r)\right)}\right] \\
+& =\int_{F_{i}^{-1}\left(F_{i}\left(\underline{x}_{i}\right)\right)}^{F_{i}^{-1}\left(F_{i}\left(x_{i}\right)\right)}\left[y-\frac{1-f_{i}(y)}{f_{i}(y)}\right] f_{i}(y) \\
+& =\int_{\underline{x}_{i}}^{x_{i}} v_{i}(y) f_{i}(y) \mathrm{d} y=V_{i}\left(x_{i}\right)
+\end{aligned}
+$$
+
+where $F_{i}(y)=r$; thus $F_{i}^{-1}(r)=y$ and $\mathrm{d} r=f_{i}(y) \mathrm{d} y$ are used in the second line.
+
+\begin{itemize}
+  \item Let $\bar{W}_{i}=\operatorname{co} W_{i}$, that is
+\end{itemize}
+
+$$
+\bar{W}_{i}(q)=\inf \left\{\alpha:(q, \alpha) \in \operatorname{co}\left(\operatorname{epi} W_{i}\right)\right\} .
+$$
+
+by construction $\bar{W}_{i}$ is convex and $\bar{W}_{i} \leq W_{i}$\\
+See Rockafellar (1970), page 33, Theorem 5.3, and page 36 for definition of convex hull of a function.\\
+Define $\bar{w}_{i}(q)=\frac{\mathrm{d} \bar{W}_{i}(q)}{\mathrm{d} q}$ where the derivative is extended rightcontinuously if necessary.
+
+\begin{itemize}
+  \item $\bar{w}_{i}(q)$ is nondecreasing.
+  \item Surrogate virtual utility. Define
+\end{itemize}
+
+$$
+\left(\forall x_{i} \in\left[\underline{x}_{i}, \bar{x}_{i}\right]\right) \bar{v}_{i}\left(x_{i}\right)=\bar{w}_{i}\left(F_{i}\left(x_{i}\right)\right) .
+$$
+
+$\bar{v}_{i}\left(x_{i}\right)$ is weakly increasing because $\bar{w}_{i}$ is weakly increasing and $F_{i}$ is strictly increasing.
+
+Let $Y(x)=\left\{i: \bar{v}_{i}\left(x_{i}\right)=\max _{j}\left\{\bar{v}_{j}\left(x_{j}\right)\right\} \wedge \bar{v}_{i}\left(x_{i}\right)>0\right\}$ and
+
+$$
+\bar{p}_{i}\left(x_{i}, x_{-i}\right)= \begin{cases}\frac{1}{|Y(x)|} & \text { if } i \in Y(x) \\ 0 & \text { otherwise }\end{cases}
+$$
+
+Note: If $\bar{v}_{i}\left(x_{i}\right)$ is constant in a neighborhood of $x_{i}$, then $\bar{p}_{i}\left(x_{i}, x_{-i}\right)$ does not change with $x_{i}$ in that neighborhood.
+
+$$
+\begin{aligned}
+E \sum_{i=1}^{I} T_{i}= & \int_{X} \sum_{i=1}^{I} \overbrace{v_{i}\left(x_{i}\right)}^{w_{i}\left(F_{i}\left(x_{i}\right)\right)} p_{i}\left(x_{i}, x_{-i}\right) f_{i}\left(x_{i}\right) f_{-i}\left(x_{-i}\right) \mathrm{d} x_{i} \mathrm{~d} x_{-i} \\
+= & \int_{X} \sum_{i=1}^{I} \bar{v}_{i}\left(x_{i}\right) p_{i}(x) f(x) \mathrm{d} x_{\text {(term 1) }} \\
+& \quad+\int_{X} \sum_{i=1}^{I}\left[v_{i}\left(x_{i}\right)-\bar{v}_{i}\left(x_{i}\right)\right] p_{i}(x) f(x) \mathrm{d} x_{\text {(term 2) }}
+\end{aligned}
+$$
+
+Then to show that $\bar{p}=\left\{\bar{p}_{i}\right\}_{i=1}^{I}$ maximizes the OF, one must establish two conditions,
+
+\begin{enumerate}
+  \item ( $\forall p$ ) that satisfies IC, term 2 must be negative, and
+  \item $\bar{p}$ maximizes term 1 and makes term $2=0$.
+\end{enumerate}
+
+\section*{Condition 1}
+$$
+\begin{aligned}
+& \int_{\underline{x}_{i}}^{\bar{x}_{i}} \int_{X_{-i}}\left[v_{i}\left(x_{i}\right)-\bar{v}_{i}\left(x_{i}\right)\right] p_{i}\left(x_{i}, x_{-i}\right) f_{i}\left(x_{i}\right) f_{-i}\left(x_{-i}\right) \mathrm{d} x \\
+& =\int_{\underline{x}_{i}}^{\bar{x}_{i}} \int_{X_{-i}}\left[w_{i}\left(F_{i}\left(x_{i}\right)\right)-\bar{w}_{i}\left(F_{i}\left(x_{i}\right)\right)\right] p_{i}\left(x_{i}, x_{-i}\right) f_{i}\left(x_{i}\right) f_{-i}\left(x_{-i}\right) \mathrm{d} x \\
+& =\int_{\underline{x}_{i}}^{\bar{x}_{i}} \overbrace{Q_{i}\left(x_{i}\right)}^{u} \overbrace{\left[w_{i}\left(F_{i}\left(x_{i}\right)\right)-\bar{w}_{i}\left(F_{i}\left(x_{i}\right)\right)\right] f_{i}\left(x_{i}\right) \mathrm{d} x_{i}}^{\mathcal{V}^{\prime}} \text { (integrate) } \\
+& =\left.\left[W_{i}\left(F_{i}\left(x_{i}\right)\right)-\bar{W}_{i}\left(F_{i}\left(x_{i}\right)\right)\right] Q_{i}\left(x_{i}\right)\right|_{\underline{x}_{i}} ^{\bar{x}_{i}}(\text { evaluates to zero }) \\
+& \quad-\int_{\underline{x}_{i}}^{\bar{x}_{i}}\left[W_{i}\left(F_{i}\left(x_{i}\right)\right)-\bar{W}_{i}\left(F_{i}\left(x_{i}\right)\right)\right] \mathrm{d} Q_{i}\left(x_{i}\right)
+\end{aligned}
+$$
+
+Using $W_{i}(1)-\bar{W}_{i}(1)=0=W_{i}(0)-\bar{W}_{i}(0)$,
+
+$$
+\begin{aligned}
+\int_{\underline{x}_{i}}^{\bar{x}_{i}} \int_{X_{-i}} & {\left[v_{i}\left(x_{i}\right)-\bar{v}_{i}\left(x_{i}\right)\right] p_{i}\left(x_{i}, x_{-i}\right) f_{i}\left(x_{i}\right) f_{-i}\left(x_{-i}\right) \mathrm{d} x } \\
+& =-\int_{\underline{x}_{i}}^{\bar{x}_{i}}\left[W_{i}\left(F_{i}\left(x_{i}\right)\right)-\bar{W}_{i}\left(F_{i}\left(x_{i}\right)\right)\right] \mathrm{d} Q_{i}\left(x_{i}\right) \\
+& \leq 0
+\end{aligned}
+$$
+
+By construction $W_{i} \geq \bar{W}_{i}$. Hence for any $Q_{i}\left(x_{i} \mid p_{i}\right)$ increasing,
+
+$$
+\sum_{i=1}^{I} \int_{\underline{x}_{i}}^{\bar{x}_{i}}\left[W_{i}\left(F_{i}\left(x_{i}\right)\right)-\bar{W}_{i}\left(F_{i}\left(x_{i}\right)\right)\right] \mathrm{d} Q_{i}\left(x_{i} \mid p_{i}\right) \geq 0
+$$
+
+Condition 1 is established.
+
+\section*{Condition 2}
+Recall that seller's expected revenue can be written
+
+$$
+\begin{aligned}
+E \sum_{i=1}^{I} T_{i}= & \int_{X} \sum_{i=1}^{I} \bar{v}_{i}\left(x_{i}\right) p_{i}(x) f(x) \mathrm{d} x \\
+& -\sum_{i=1}^{I} \int_{\underline{x}_{i}}^{\bar{x}_{i}}\left[W_{i}\left(F_{i}\left(x_{i}\right)\right)-\bar{W}_{i}\left(F_{i}\left(x_{i}\right)\right)\right] \mathrm{d} Q_{i}\left(x_{i} \mid p_{i}\right)
+\end{aligned}
+$$
+
+$$
+\bar{p} \in \arg \max _{\left\{p_{i}\right\}_{i=1}^{I}} \int_{X} \sum_{i=1}^{I} \bar{v}_{i}\left(x_{i}\right) p_{i}(x) f(x) \mathrm{d} x
+$$
+
+This is so by definition of $\bar{p}, \bar{p}_{i}\left(x_{i}\right) \in Y(x)$, that is to say $\bar{p}$ places full weight on bidders whose virtual utility is
+
+$$
+\bar{v}_{i}\left(x_{i}\right)=\max \left\{0,(\forall 1 \leq j \leq I) \bar{v}_{j}\left(x_{j}\right)\right\}
+$$
+
+\begin{itemize}
+  \item Since $\bar{W}_{i}$ is the convex hull of $W_{i}$ (co $W_{i}$ ), then
+\end{itemize}
+
+$$
+\bar{W}_{i}(p)<W_{i}(p) \Longrightarrow \frac{\mathrm{d} \bar{w}_{i}(p)}{\mathrm{d} p}=0 .
+$$
+
+Therefore $\bar{v}_{i}\left(x_{i}\right)=\bar{w}_{i}\left(F\left(x_{i}\right)\right)$ and $\bar{p}_{i}\left(x_{i} \mid \bar{p}\right)$ must be constant in a neighborhood of $x_{i}=F_{i}^{-1}(p)$. This implies that
+
+$$
+\int_{\underline{x}_{i}}^{\bar{x}_{i}}\left[W\left(F_{i}\left(x_{i}\right)\right)-\bar{W}_{i}\left(F_{i}\left(x_{i}\right)\right)\right] \mathrm{d} \bar{Q}_{i}\left(x_{i} \mid \bar{p}\right)=0
+$$
+
+This establishes condition 2. QED\\
+graphs
+
+\section*{Observation, $v_{i}\left(x_{i}\right)$ is not increasing}
+\begin{figure}[h]
+\begin{center}
+  \includegraphics[alt={},max width=\textwidth]{a9eb0626-e37c-4c10-a6e2-1c5eaecfd44a-17_1279_2560_385_227}
+\captionsetup{labelformat=empty}
+\caption{Figure 1}
+\end{center}
+\end{figure}
+
+\begin{itemize}
+  \item Given the non-regular $v_{i}\left(x_{i}\right)$ in Figure 1 , let $Q_{i}^{\prime}$ be a BIC, DRM. Define
+\end{itemize}
+
+$$
+Q_{i}\left(x_{i}\right)= \begin{cases}Q_{i}^{\prime}\left(x_{i}\right) & \text { if } x_{i} \in[0, a) \cup(b, 2.5] \\ \frac{\int_{a}^{b} Q_{i}^{\prime}(z) f_{i}(z) \mathrm{d} z}{F_{i}(b)-F_{i}(a)} & \text { if } x_{i} \in[a, b]\end{cases}
+$$
+
+Thus, $\left(\forall x_{i} \in[a, b]\right), Q_{i}\left(x_{i}\right)$ is a constant
+
+$$
+Q_{i}\left(x_{i}\right)=\frac{\int_{a}^{b} Q_{i}^{\prime}(z) f_{i}(z) \mathrm{d} z}{F_{i}(b)-F_{i}(a)}=E_{x_{i}}\left[Q_{i}^{\prime}\left(x_{i}\right) \mid x_{i} \in[a, b]\right]
+$$
+
+$Q_{i}$ has two useful properties, (a) it generates weakly more revenue than $Q_{i}^{\prime}$ provided $v_{i}\left(x_{i}\right)$ is non-increasing in $[a, b]$, and (b) it is a BIC direct revelation mechanism. See Fu (2017).
+
+\section*{(a) revenue claim}
+$$
+\begin{aligned}
+& \int_{a}^{b} Q_{i}\left(x_{i}\right) v_{i}\left(x_{i}\right) f_{i}\left(x_{i}\right) \mathrm{d} x_{i} \\
+& =E_{x_{i}}\left[Q_{i}^{\prime}\left(x_{i}\right) \mid x_{i} \in[a, b]\right] \int_{a}^{b} v_{i}\left(x_{i}\right) f_{i}\left(x_{i}\right) \mathrm{d} x_{i} \\
+& =E_{x_{i}}\left[Q_{i}^{\prime}\left(x_{i}\right) \mid x_{i} \in[a, b]\right] E_{x_{i}}\left[v_{i}\left(x_{i}\right) \mid x_{i} \in[a, b]\right]\left(F_{i}(b)-F_{i}(a)\right) \\
+& \geq E_{x_{i}}\left[Q_{i}^{\prime}\left(x_{i}\right) v_{i}\left(x_{i}\right) \mid x_{i} \in[a, b]\right]\left(F_{i}(b)-F_{i}(a)\right) \\
+& =\int_{a}^{b} Q_{i}^{\prime}\left(x_{i}\right) v_{i}\left(x_{i}\right) f_{i}\left(x_{i}\right) \mathrm{d} x_{i}
+\end{aligned}
+$$
+
+\begin{itemize}
+  \item Harris inequality.
+  \item $Q_{i}$ is BIC DRM
+\end{itemize}
+
+\section*{(b) $Q_{i}$ is a BIC DRM}
+\begin{itemize}
+  \item $Q_{i}\left(x_{i}\right)$ is non-decreasing because $Q_{i}^{\prime}$ is non-decreasing.
+  \item To show it is a mechanism, one must construct for each $i, p_{i}\left(x_{i}, x_{-i}\right)$ so that $Q_{i}\left(x_{i}\right)=E_{x_{-i}} p_{i}\left(x_{i}, x_{-i}\right)$ and $(\forall x \in X) \sum_{i=1}^{I} p_{i}(x) \leq 1$.\\
+Alternatively, let $\left\{p_{i}^{\prime}\right\}_{i=1}^{I}$ be the allocation generating $\left\{Q_{i}^{\prime}\right\}_{i=1}^{I}$.
+  \item if $i$ reporst $x_{i} \notin[a, b]$, the $p\left(x_{i}, x_{-i}\right)=p_{i}^{\prime}\left(x_{i}, x_{-i}\right)$.
+  \item if $i$ reports $x_{i} \in[a, b]$, randomly select $x_{i}^{\prime} \in[a, b]$ using $\frac{f_{i}(z)}{F_{i}(b)-F_{i}(a)}$ and allocate $p\left(x_{i}, x_{-i}\right)=p^{\prime}\left(x_{i}^{\prime}, x_{-i}\right)$.
+  \item Or use Border (1991).
+  \item Jointly (a) and (b) imply that attention can be restricted to mechanisms with flat $Q_{i}\left(x_{i}\right)$ on $x_{i} \in[a, b]$.
+  \item Since $Q_{i}\left(x_{i}\right)$ is constant on $[a, b]$, its revenue against $v_{i}\left(x_{i}\right)$ equals its revenue against $\bar{v}_{i}([a, b]):=E_{x_{i}}\left[v_{i}\left(x_{i}\right) \mid x_{i} \in[a, b]\right]$.
+\end{itemize}
+
+\begin{figure}[h]
+\begin{center}
+  \includegraphics[alt={},max width=\textwidth]{a9eb0626-e37c-4c10-a6e2-1c5eaecfd44a-21_1143_2593_529_210}
+\captionsetup{labelformat=empty}
+\caption{Figure 2}
+\end{center}
+\end{figure}
+
+\begin{figure}[h]
+\begin{center}
+  \includegraphics[alt={},max width=\textwidth]{a9eb0626-e37c-4c10-a6e2-1c5eaecfd44a-22_1493_2566_190_225}
+\captionsetup{labelformat=empty}
+\caption{Figure 3}
+\end{center}
+\end{figure}
+
+\begin{figure}[h]
+\begin{center}
+  \includegraphics[alt={},max width=\textwidth]{a9eb0626-e37c-4c10-a6e2-1c5eaecfd44a-23_1493_2566_190_225}
+\captionsetup{labelformat=empty}
+\caption{Figure 4}
+\end{center}
+\end{figure}
+
+\section*{The extent of ironing}
+\begin{itemize}
+  \item How is $\left[a^{\prime}, b^{\prime}\right]$ determine? Is $a^{\prime}=\underline{x}_{i}, b^{\prime}=\bar{x}_{i}$ valid?
+\end{itemize}
+
+For any $[a, b] \subseteq X_{i}$, let
+
+$$
+\bar{v}_{i}([a, b]):=E_{x_{i}}\left[v_{i}\left(x_{i}\right) \mid x_{i} \in[a, b]\right]=\int_{a}^{b} \frac{v_{i}\left(x_{i}\right) f_{i}\left(x_{i}\right) d x_{i}}{F_{i}(b)-F_{i}(a)} .
+$$
+
+Ironing is extended as much as possible provided $v_{i}$ remains decreasing in the ironed region. This leads to two conditions,
+
+
+\begin{gather*}
+v_{i}\left(a^{\prime}\right) \leq \bar{v}_{i}\left(\left[a^{\prime}, b^{\prime}\right]\right) \leq v_{i}\left(b^{\prime}\right)  \tag{1}\\
+\forall[c, d] \subseteq\left[a^{\prime}, b^{\prime}\right], v_{i}(c) \geq \bar{v}_{i}([c, d]) \geq v_{i}(d) \tag{2}
+\end{gather*}
+
+
+Define $w_{i}=v_{i} \circ F_{i}^{-1}$. Then
+
+$$
+w_{i}(q)=v_{i}\left(F_{i}^{-1}(q)\right)
+$$
+
+For $q=F_{i}\left(x_{i}\right)$,
+
+$$
+\begin{gathered}
+W_{i}(q)=\int_{0}^{F_{i}\left(x_{i}\right)} w_{i}(r) \mathrm{d} r=\int_{\underline{x}_{i}}^{x_{i}} v_{i}(y) f_{i}(y) \mathrm{d} y \\
+\left.\frac{\mathrm{~d} W_{i}(q)}{\mathrm{d} q}\right|_{F_{i}\left(x_{i}\right)=q}=w_{i}\left(F_{i}\left(x_{i}\right)\right)=v_{i}\left(x_{i}\right)
+\end{gathered}
+$$
+
+\section*{Restating the extent of ironing}
+Let $W_{i}=\frac{\mathrm{d} W_{i}}{\mathrm{~d} q}$.\\
+Inequality 1
+
+$$
+\begin{array}{ll}
+v_{i}\left(a^{\prime}\right) & \leq \bar{v}_{i}\left(\left[a^{\prime}, b^{\prime}\right]\right) \leq v_{i}\left(b^{\prime}\right) \\
+\left.W_{i}^{\prime}\right|_{F_{i}\left(a^{\prime}\right)=q} & \leq \bar{v}_{i}\left(\left[a^{\prime}, b^{\prime}\right]\right) \leq\left. W_{i}^{\prime}\right|_{F_{i}\left(b^{\prime}\right)=q}
+\end{array}
+$$
+
+\section*{Inequality 2}
+$\forall[c, d] \subseteq\left[a^{\prime}, b^{\prime}\right]$,
+
+$$
+\begin{array}{ll}
+v_{i}(c) & \geq \bar{v}_{i}([c, d]) \geq v_{i}(d) \\
+\left.W_{i}^{\prime}\right|_{F_{i}(c)=q} & \geq \bar{v}_{i}([c, d]) \geq\left. W_{i}^{\prime}\right|_{F_{i}(d)=q}
+\end{array}
+$$
+
+\section*{Convex hull}
+\begin{center}
+\includegraphics[max width=\textwidth, alt={}]{a9eb0626-e37c-4c10-a6e2-1c5eaecfd44a-27_1445_2583_348_147}
+\end{center}
+
+\begin{itemize}
+  \item Slope of green line: $\bar{v}_{i}\left(\left[a^{\prime}, b^{\prime}\right]\right)=\frac{\int_{F_{i}\left(a^{\prime}\right)}^{F_{i}\left(b^{\prime}\right)} w(r) \mathrm{d} r}{F_{i}\left(b^{\prime}\right)-F_{i}\left(a^{\prime}\right)}=\frac{\int_{a^{\prime}}^{b^{\prime}} v\left(x_{i}\right) f_{i}\left(x_{i}\right) \mathrm{d} x_{i}}{F_{i}\left(b^{\prime}\right)-F_{i}\left(a^{\prime}\right)}$\\
+\includegraphics[max width=\textwidth, alt={}, center]{a9eb0626-e37c-4c10-a6e2-1c5eaecfd44a-29_1384_1341_184_150}
+  \item Slope of green line: $\bar{v}_{i}\left(\left[a^{\prime}, b^{\prime}\right]\right)=\frac{\int_{F_{i}\left(a^{\prime}\right)}^{F_{i}\left(b^{\prime}\right)} w(r) \mathrm{d} r}{F_{i}\left(b^{\prime}\right)-F_{i}\left(a^{\prime}\right)}=\frac{\int_{a^{\prime}}^{b^{\prime}} v\left(x_{i}\right) f_{i}\left(x_{i}\right) \mathrm{d} x_{i}}{F_{i}\left(b^{\prime}\right)-F_{i}\left(a^{\prime}\right)}$\\
+\includegraphics[max width=\textwidth, alt={}, center]{a9eb0626-e37c-4c10-a6e2-1c5eaecfd44a-30_1604_2092_173_136}
+\end{itemize}
+
+Alternative approach: linear program, dual variable and slack conditions
+
+$$
+\mathcal{L}=\sum_{i=1}^{I}\left\langle p_{i}, v_{i} f\right\rangle+\langle 1, \gamma\rangle-\sum_{i=1}^{I}\left\langle p_{i}, \gamma\right\rangle+\sum_{i=1}^{I}\left\langle D E_{-i} p_{i}, \alpha_{i}\right\rangle
+$$
+
+or, rearranging terms,
+
+$$
+\mathcal{L}=\langle 1, \gamma\rangle+\sum_{i=1}^{I}\left[\left\langle p_{i}, v_{i} f-\gamma\right\rangle+\left\langle D E_{-i} p_{i}, \alpha_{i}\right\rangle\right],
+$$
+
+where multipliers $\alpha_{i}, \gamma$ lie in the appropriate dual spaces.
+
+\section*{The dual}
+Given the interiority assumption, a feasible $\left\{\bar{p}_{i}\right\}_{i=1}^{I}$ is a maximum of the primal if and only if $\left(\exists \gamma \in \prod_{i}^{I} \underline{x}_{i}^{*},\left\{\alpha_{i}\right\}_{i \in I} \in\left[L_{\infty}^{*}([0,1])\right]^{I}\right)$ such that
+
+$$
+\sum_{i=1}^{I}\left\langle\bar{p}_{i}, v_{i} f\right\rangle=\langle 1, \gamma\rangle
+$$
+
+and
+
+$$
+\begin{aligned}
+\left(\forall i \in I, \forall g \in \underline{x}_{i}\right)\left\langle g, \gamma-v_{i}\right\rangle-\left\langle D E_{-i} g, \alpha_{i}\right\rangle & \geq 0 \\
+\left(\forall g \in L_{\infty}\left([0,1]^{I}\right)_{+}\right) & \langle g, \gamma\rangle \\
+\left(\forall i \in I, \forall g \in L_{\infty}([0,1])_{+}\right) & \left\langle g, \alpha_{i}\right\rangle \\
+& \geq 0
+\end{aligned}
+$$
+
+\section*{Plus complementary slackness}
+Complementary slackness implies, in addition, that if $\left\{\bar{p}_{i}\right\}_{i=1}^{I}$ is a solution to \{\} then
+
+$$
+\begin{array}{ll}
+(\forall i \in I) & \left\langle D E_{-i} \bar{p}_{i}, \alpha_{i}\right\rangle=0 \\
+(\forall i \in I) & \left\langle\bar{p}_{i}, v_{i} f-\gamma\right\rangle+\left\langle D E_{-i} \bar{p}_{i}, \alpha_{i}\right\rangle=0 \text { and } \\
+& \left\langle 1-\sum_{i=1}^{I} \bar{p}_{i}, \gamma\right\rangle=0 .
+\end{array}
+$$
+
+( $\forall i \in I$ ), ( $\forall x \in X$ ) define
+
+$$
+\begin{aligned}
+\alpha_{i}\left(x_{i}\right) & =\int_{\underline{x}_{i}}^{x_{i}}\left[v_{i}\left(z_{i}\right)-\bar{v}_{i}\left(z_{i}\right)\right] f_{i}\left(z_{i}\right) \mathrm{d} z_{i}=W_{i}\left(F_{i}\left(x_{i}\right)\right)-\bar{W}\left(F_{i}\left(x_{i}\right)\right. \\
+\gamma(x) & = \begin{cases}{\left[v_{i}\left(x_{i}\right)-\bar{v}_{i}\left(x_{i}\right)\right] f_{i}\left(x_{i}\right) f_{-i}\left(x_{-i}\right)} & \text { if } \bar{p}_{i}\left(x_{i}, x_{-i}\right)>0 \\
+0 & \text { otherwise }\end{cases} \\
+\bar{p}_{i}(x) & = \begin{cases}\frac{1}{|Y(x)|} & \text { if } i \in Y(x) \\
+0 & \text { otherwise }\end{cases}
+\end{aligned}
+$$
+
+\section*{References}
+Border, Kim C. 1991. "Implementation of Reduced Form Auctions: A Geometric Approach." Econometrica 59 (4): 1175-87.\\
+Fu, Hu. 2017. "Notes on Myerson's Revenue Optimal Mechanisms."\\
+\href{https://fuhuthu.com/notes/notes.htm}{https://fuhuthu.com/notes/notes.htm}.\\
+Loertscher, Simon, and Ellen V. Muir. 2025. "Optimal Labor Procurement Under Minimum Wages and Monopsony Power." \href{https://ellenmuir.net/papers/Loertscher-Muir-EWR-2025.pdf}{https://ellenmuir.net/papers/Loertscher-Muir-EWR-2025.pdf}.\\
+Mussa, Michael, and S. Rosen. 1978. "Monopoly and Product Quality." Journal of Economic Theory 18: 301-17.\\
+Rockafellar, R. Tyrrell. 1970. Convex Analysis. Number 28 in Princeton Mathematical Series. Princeton University Press.
+
+
+\end{document}

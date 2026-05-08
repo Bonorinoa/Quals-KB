@@ -1,0 +1,123 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\graphicspath{ {./images/} }
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+\usepackage{bbold}
+\usepackage{caption}
+
+\begin{document}
+\captionsetup{singlelinecheck=false}
+Uniqueness, Determinacy, Genericity, Stability
+
+\section*{Uniqueness, Determinacy, Genericity}
+\begin{itemize}
+  \item Comparative statics (CS): How does a WE change when the underlying parameters of the economy change?
+  \item Meaningful comparative statics in two cases,
+  \item Uniqueness of equilibria and
+  \item Local uniqueness plus a nice transition.\\
+\includegraphics[max width=\textwidth, alt={}, center]{5e8d08d5-9594-42e7-ba77-0f861991fae4-04_857_780_181_145}\\
+\includegraphics[max width=\textwidth, alt={}, center]{5e8d08d5-9594-42e7-ba77-0f861991fae4-04_841_768_185_973}\\
+\includegraphics[max width=\textwidth, alt={}, center]{5e8d08d5-9594-42e7-ba77-0f861991fae4-04_853_776_185_1797}
+\end{itemize}
+
+\section*{1. Uniqueness of WE and comparative statics}
+\begin{itemize}
+  \item If WE is unique (before and after a change in parameters), the policy change is univocally associated to a given change in the Walrasian equilibrium.
+  \item There are no uniqueness results under reasonable assumptions on individual preferences.
+  \item See Mas-Colell, Whinston, and Green (1995), 17.F.
+\end{itemize}
+
+\section*{2. Local uniqueness and comparative statics}
+Let $E q(\mathcal{E})$ be the set of equilibrium prices of the economy $\mathcal{E}$.\\
+2.a. Local uniqueness of WE: $\forall p^{*} \in E q(\mathcal{E}), \exists \delta>0$ such that there is no equilibrium price $q^{*} \in \Delta$ with $q^{*} \neq p^{*},\left\|q^{*}-p^{*}\right\|<\delta$ and\\
+2.b. For sufficiently small change in parameters, the number of equilibria is unchanged and each equilibrium moves nicely (i.e. continuously or differentiably) as the parameter changes.
+
+These requirements are not sufficient for a meaningul comparative static exercise.
+
+\section*{Main findings}
+\begin{enumerate}
+  \item Identification of a class of economies (called regular) where 2.a and 2.b hold (i.e. there are finitely many WE and the WE vary nicely with the parameters of the economy.
+  \item Genericity: "A large number of economies are within the identified class" Debreu (1970) using Sard's Theorem.
+  \item Link to stability of equilibria. Index Theorem (Poincar'e-Hopf Theorem).
+\end{enumerate}
+
+\section*{Preliminaries}
+Definition $\mathbf{1}$ Let $\mathcal{E}$ be a pure exchange economy. Agent $i$ 's excess demand is $z: \mathbb{R}_{++}^{L} \times \mathbb{R}^{L}$,
+
+$$
+z_{i}\left(p, \omega_{i}\right)=D_{i}\left(p, \omega_{i}\right)-\omega_{i}
+$$
+
+The aggregate excess demand is $z: \mathbb{R}_{++}^{L} \times \mathbb{R}^{L I}$,
+
+$$
+\begin{aligned}
+z(p, \omega) & =\sum_{i=1}^{I} z_{i}\left(p, \omega_{i}\right)=\sum_{i=1}^{I} D_{i}\left(p, \omega_{i}\right)-\bar{\omega} \\
+z_{\ell}(p, \omega) & =\sum_{i=1}^{I} z_{i \ell}\left(p, \omega_{i}\right)
+\end{aligned}
+$$
+
+\section*{Local uniqueness and CS, example}
+$L=2$; Walras' law; $\left(\forall p \in \mathbb{R}_{++}^{2}\right) \hat{p}=\frac{p_{1}}{p_{2}}$ and $\hat{z}(\hat{p}, \omega)=z_{1}\left(\frac{p_{1}}{p_{2}}, 1, \omega\right)$.\\
+\includegraphics[max width=\textwidth, alt={}, center]{5e8d08d5-9594-42e7-ba77-0f861991fae4-09_1410_2543_512_140}
+
+\section*{Local uniqueness but}
+\begin{center}
+\includegraphics[max width=\textwidth, alt={}]{5e8d08d5-9594-42e7-ba77-0f861991fae4-10_1396_2536_345_143}
+\end{center}
+
+\begin{figure}[h]
+\begin{center}
+\captionsetup{labelformat=empty}
+\caption{No local uniqueness}
+  \includegraphics[alt={},max width=\textwidth]{5e8d08d5-9594-42e7-ba77-0f861991fae4-11_1399_2536_342_143}
+\end{center}
+\end{figure}
+
+\section*{Local uniqueness-Maintained assumptions}
+\begin{itemize}
+  \item Let $\mathcal{E}$ be a pure exchange economy and $z$ its aggregate excess demand.
+  \item $z$ satisfies the assumptions of the DGKN Lemma.
+  \item $z$ is homogeneous of degree zero,
+\end{itemize}
+
+$$
+\left(\forall p \in \mathbb{R}_{++}^{L}, \forall \alpha>0\right) \quad z(\alpha p)=z(p)
+$$
+
+\begin{itemize}
+  \item $z \in C^{1}$.
+\end{itemize}
+
+\section*{Preliminaries}
+\begin{itemize}
+  \item Normalize prices so that $p_{L}=1$, let $\hat{p}=\left(p_{1}, \ldots, p_{L-1}\right) \in \mathbb{R}_{++}^{L-1}$.
+  \item Let $\hat{z}: \mathbb{R}_{++}^{L-1} \rightarrow \mathbb{R}^{L-1}$ be $\hat{z}(\hat{p})=\left(z_{1}(\hat{p}, 1), \ldots, z_{L-1}(\hat{p}, 1)\right)$.
+  \item \hspace{0pt} [Walras' law and $p \gg 0] \Longrightarrow(\hat{z}(\hat{p})=0 \Longleftrightarrow z(\hat{p}, 1)=0)$
+  \item The Jacobian matrix of $\hat{z}, D \hat{z}$ is $L-1 \times L-1$.
+\end{itemize}
+
+\section*{Regularity}
+Definition 2 (Regular) An equilibrium price $p^{*}$ of the economy $\mathcal{E}$ is regular if $\left.\operatorname{det} D \hat{z}\right|_{\hat{p}^{*}} \neq 0 . \backslash$\\
+The economy $\mathcal{E}$ is regular if all its equilibrium prices $p^{*}$ are regular.
+
+\section*{Finitely many equilibria}
+Theorem 1 Under the maintained hypotheses, every regular economy has finitely many equilibrium prices (up to normalization).
+
+\begin{itemize}
+  \item See Mas-Colell, Whinston, and Green (1995), Proposition 17.D.1.
+  \item This implies that the Walrasian equilibrium prices are locally unique.
+\end{itemize}
+
+\section*{References}
+Debreu, Gerard. 1970. "Economies with a Finite Set of Equilibria." Econometrica 38: 387-92. Mas-Colell, Andreu, Michael Whinston, and Jerry Green. 1995. Microeconomic Theory. New York, Oxford: Oxford University Press.
+
+
+\end{document}

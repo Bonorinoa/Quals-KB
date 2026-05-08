@@ -1,0 +1,117 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+\usepackage{bbold}
+\usepackage{caption}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\graphicspath{ {./images/} }
+
+\begin{document}
+\captionsetup{singlelinecheck=false}
+Second Welfare Theorem, an application
+
+\section*{Negishi's approach}
+\begin{itemize}
+  \item Use the welfare theorems to identify WE.
+  \item Analysis is in utility space, not commodity space.
+  \item Useful with many goods and few agents.
+  \item Proposed by Negishi (Negishi 1960).
+  \item Employed by Arrow and Hahn (Arrow and Hahn 1971) and many others.
+  \item Overview in Macolell-etal, (Mas-Colell, Whinston, and Green 1995, "16.E, 17.Appendix A")
+\end{itemize}
+
+\section*{Preliminaries}
+\begin{itemize}
+  \item Let $\mathcal{E}$ be an Arrow-Debreu economy.
+  \item $(\forall i)\left(\exists u_{i}, u_{i}: X_{i} \rightarrow \mathbb{R}\right)$ such that
+\end{itemize}
+
+$$
+\left(\forall x_{i}, x_{i}^{\prime} \in X_{i}\right) \quad\left[x_{i} \succeq_{i} x_{i}^{\prime} \Longleftrightarrow u_{i}\left(x_{i}\right) \geq u_{i}\left(x_{i}^{\prime}\right)\right] .
+$$
+
+\begin{itemize}
+  \item Let $x=\left(x_{1}, \ldots, x_{i}, \ldots, x_{I}\right)$.
+  \item $u(x)$ denotes the vector $\left(u_{1}\left(x_{1}\right), \ldots, u_{I}\left(x_{I}\right)\right)$.
+  \item Let $u: \mathbb{R}_{+}^{L I} \rightarrow \mathbb{R}^{I}$ be the map $x \mapsto\left(u_{1}\left(x_{1}\right), \ldots, u_{I}\left(x_{I}\right)\right)$.
+\end{itemize}
+
+\section*{Utility possibility set}
+Definition 1 The utility possibility set is
+
+$$
+U=\left\{u \in \mathbb{R}^{I}: \exists \text { an allocation } x \text { with } u \leq u(x)\right\}
+$$
+
+and its Pareto frontier is
+
+$$
+P=\left\{u \in U: \nexists u^{\prime} \in U, u^{\prime}>u\right\} .
+$$
+
+An allocation $x^{*}$ is Pareto optimal if and only if $u\left(x^{*}\right) \in P$.\\
+Similar definitions apply to economies with production.
+
+\section*{Utility possibility set}
+\begin{figure}[h]
+\begin{center}
+\captionsetup{labelformat=empty}
+\caption{Utility set: utilities normalized}
+  \includegraphics[alt={},max width=\textwidth]{502add65-2db5-4878-b75f-d85c1cc8d7d7-06_1430_2080_425_166}
+\end{center}
+\end{figure}
+
+\section*{Social welfare function}
+\begin{itemize}
+  \item Suppose society's values are summarized by a function
+\end{itemize}
+
+$$
+W(u)=W\left(u_{1}, \ldots, u_{I}\right) .
+$$
+
+\begin{itemize}
+  \item Pick $a \in \mathbb{R}^{I}$ with $(\forall i) a_{i} \geq 0$. Define
+\end{itemize}
+
+$$
+W(u)=\sum_{i=1}^{I} a_{i} u_{i}=a \cdot u
+$$
+
+\section*{Lemmas}
+Lemma 1 If $\exists a \in \mathbb{R}_{++}^{I}$ and $u^{*} \in U$ such that $(\forall u \in U) a \cdot u^{*} \geq a \cdot u$, then $u^{*} \in P$.
+
+Lemma 2 If $U$ is convex, then for any $u^{*} \in P,\left(\exists a \in \mathbb{R}_{+}^{I}\right) a \neq 0$ and $(\forall u \in U) a \cdot u^{*} \geq a \cdot u$.
+
+\section*{Lemma 1 and Lemma 2}
+\includegraphics[max width=\textwidth, alt={}, center]{502add65-2db5-4878-b75f-d85c1cc8d7d7-09_1352_1269_389_157}\\
+\includegraphics[max width=\textwidth, alt={}, center]{502add65-2db5-4878-b75f-d85c1cc8d7d7-09_1350_1267_387_1456}
+
+\section*{Stylized method}
+\begin{itemize}
+  \item Let $\Delta=\left\{s \in \mathbb{R}_{+}^{I}: \sum_{i} s_{i}=1\right\}$.
+  \item Fix $a \in \Delta$, pick $u(a) \in U$ so that $u(a) \in P$.
+  \item $u(a)$ is derived from an allocation $(x(a), y(a))$.
+  \item The Weak Second Welfare Theorem implies
+  \item $\exists p(a), y_{j}(a)$ maximizes firm $j$ 's profit and,
+  \item $x_{i}(a)$ is in $i$ 's quasi demand.
+  \item Identify transfer: $(\forall i), t_{i}=p(a) \cdot\left[\omega_{i}-x_{i}(a)\right]$.
+  \item If $(\exists a)$ such that $(\forall i) t_{i}=0$. This identifies a WE.
+\end{itemize}
+
+Note Arrow's exceptional economy.
+
+\section*{References}
+Arrow, Kenneth, and Frank H. Hahn. 1971. General Competitive Analysis. 1st ed. Vol. 12. North Holland.\\
+Mas-Colell, Andreu, Michael Whinston, and Jerry Green. 1995. Microeconomic Theory. New York, Oxford: Oxford University Press.\\
+Negishi, T. 1960. "Welfare Economics and the Existence of Equilibrium for a Competitive Economy."\\
+Metroeconomica 12: 92-97.
+
+
+\end{document}

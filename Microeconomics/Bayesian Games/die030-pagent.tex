@@ -1,0 +1,677 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+\usepackage{bbold}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\graphicspath{ {./images/} }
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=blue, filecolor=magenta, urlcolor=cyan,}
+\urlstyle{same}
+
+\begin{document}
+Moral hazard-Principal agent model
+
+\section*{Principal-Agent. Introduction}
+\begin{itemize}
+  \item The principal ˋ"controls" an operation in which the agent participates.
+  \item The agent's actions have consequences for the principal.
+  \item The principal does not observe perfectly the agent's actions.
+  \item The principal designs an incentive system to best align the agent's actions with the principal's objectives.
+  \item Example: An owner (principal) hires an agent to manage a restaurant; the manager may work hard or not; the owner cannot perfectly monitor the manager's effort.
+  \item Moral hazard: Asymmetry of information arises from a "hidden" actionan agent's action that is not perfectly observable by the principal.
+\end{itemize}
+
+Adverse selection: Asymmetry of information arises from information only available to one party-private information.
+
+\section*{Applications}
+\begin{itemize}
+  \item See Bolton and Dewatripont (2005).
+  \item Survey, The theory of contracts, Hart and Holmström (1987).
+  \item Managerial theory of the firm; Jensent and Meckling (1976), Grossman and Hart (1983).
+  \item Optimal contracts between landlords and tenants, sharecroping.
+  \item Efficiency wage theories.
+  \item Financial intermediation; Diamond (1984).
+  \item Theoretical Accounting; Demski and Kreps (1982).
+\end{itemize}
+
+\section*{Models}
+There are at least three representations of the agency model (Hart and Holmström (1987)).
+
+\begin{itemize}
+  \item The state space formulation,
+  \item The parametrized formulation,
+  \item The abstract formulation.
+\end{itemize}
+
+\section*{State space formulation, a worker}
+\begin{itemize}
+  \item The owner of a firm, the principal, hires a worker or manager, the agent.
+  \item The firm's technology produces a publicly observable output $y$.
+  \item $y=y(\theta, e)$ where $y$ : $\Theta \times A \rightarrow \mathbb{R}$.
+\end{itemize}
+
+For simplicity $y=\theta+e$.
+
+\begin{itemize}
+  \item $\theta \in \mathbb{R}$, unobservable random variable with density $f(\theta)>0$
+  \item $e \in A \subset \mathbb{R}$ agent's effort level, unobservable to principal.
+  \item $t: \mathbb{R} \rightarrow \mathbb{R}$, money transfer $t(y)$ from the principal to the agent when output is $y$; compensation package.
+  \item Principal's utility: $U_{p}(y-t(y)), U_{p}^{\prime}>0, U_{p}^{\prime \prime} \leq 0$.
+  \item Agent's utility: $U_{a}(t)-\Psi(e)$, where $U_{a}^{\prime}>0, U_{a}^{\prime \prime} \leq 0$ (concave), and $\Psi^{\prime}>0$ and $\Psi^{\prime \prime} \geq 0$ (convex).\\
+$\Psi(e)$ is the cost to the agent of exerting effort $e$.\\
+It is common in the literature to assume that the agent's utility is separable in income and effort.
+  \item $\bar{U}_{a}$ is the agent's reservation utility.
+\end{itemize}
+
+\section*{The principal-agent model-Timing}
+\begin{enumerate}
+  \item The principal proposes a contract $t(y)$ where $y$ is observable output and $t$ is the payment to the agent.
+  \item If the agent rejects the contract, the game ends. Players receive their reservation utility.
+  \item If agent accepts, agent chooses his action (effort level) $e \in A$. The choice $e$ is not contractable.
+  \item Output $y(\theta, e)$ is realized and observed, where $\theta$ is an unobserved random variable with known distribution.
+  \item The agent receives $t(y)$, the principal receives $y-t(y)$ and the game ends.
+\end{enumerate}
+
+\section*{Complete information. Benchmark}
+\begin{itemize}
+  \item The principal's problem is to find a function $t$ (that depends only on the observable variable $y$ and that maximizes the principal's utility inducing the agent to participate in the process (i.e. IR).
+  \item For comparison, it is useful to consider the complete information case, i.e. the effort level $e \in A$ is observable and contractable.
+\end{itemize}
+
+\section*{Principal's problem, full information}
+$$
+\begin{aligned}
+\max _{t, e} & E_{\theta} U_{p}(y-t(y)) \\
+\text { s.t. } & y=y(\theta+e) \\
+(I R) \quad & E\left[U_{a}(t)-\Psi(e)\right] \geq \bar{U}_{a} \\
+& e \in A \\
+& t \in L^{1}(\mathbb{R})
+\end{aligned}
+$$
+
+In an equivalent formulation the Principal chooses a transfer function $t(y, e)$.
+
+For definition of $L_{1}$, see for instance Royden (1968).
+
+\section*{First order conditions}
+$$
+\begin{aligned}
+\mathcal{L}(t, e, \lambda)= & \int U_{p}(y-t(y)) f(\theta) \mathrm{d} \theta \\
+& +\lambda\left[\int U_{a}(t(y)) f(\theta) \mathrm{d} \theta-\Psi(e)-\bar{U}_{a}\right]
+\end{aligned}
+$$
+
+First order conditions with respect to $t$ and $e$,
+
+
+\begin{gather*}
+0=-U_{p}^{\prime} f+\lambda U_{a}^{\prime} f  \tag{1}\\
+0=\int U_{p}^{\prime} \times \underbrace{\left(\frac{\partial y(\theta, e)}{\partial e}\right)}_{\frac{\partial(\theta+e)}{\partial e}=1} f \mathrm{~d} \theta-\lambda \Psi^{\prime}(e) \tag{2}
+\end{gather*}
+
+
+FOC with respect to $t$ and $e$,
+
+$$
+\begin{aligned}
+0 & =-U_{p}^{\prime} f+\lambda U_{a}^{\prime} f \\
+U_{p}^{\prime} & =\lambda U_{a}^{\prime}
+\end{aligned}
+$$
+
+where $f$ is eliminated because $f>0$.
+
+$$
+0=\int U_{p}^{\prime} f \mathrm{~d} \theta-\lambda \Psi^{\prime}(e)
+$$
+
+\section*{Aside: order of derivation and integration}
+Let $f: X \times A \rightarrow \mathbb{R}$ such that $\forall x \in X, f(x, \cdot)$ is differentiable with respect to $a$; and $\forall a \in A, f(\cdot, a)$ is integrable. For a distribution $\mu$ on $X$, define $G(a)=\int f(x, a) \mathrm{d} \mu$, then $\frac{\mathrm{d} G}{\mathrm{~d} a}=\lim _{h \rightarrow 0} \frac{G(a+h)-G(a)}{|h|}$.
+
+$$
+\begin{aligned}
+\frac{\mathrm{d} G}{\mathrm{~d} a} & =\lim _{h \rightarrow 0} \int \frac{f(x, a+h)-f(x, a)}{|h|} \mathrm{d} \mu \\
+& =? \int \lim _{h \rightarrow 0} \frac{f(x, a+h)-f(x, a)}{|h|} \mathrm{d} \mu \\
+& =\int \frac{\mathrm{d} f(x, a)}{\mathrm{d} a} \mathrm{~d} \mu
+\end{aligned}
+$$
+
+\begin{itemize}
+  \item Let $g^{h}(x, a)=\frac{f(x, a+h)-f(x, a)}{|h|}$.
+  \item Since $f$ is differentiable wrt $a$, for fix $a \lim _{h \rightarrow 0} g^{h}(x, a)=\frac{\mathrm{d} f(x, a)}{\mathrm{d} a}$ pointwise.
+  \item The Dominated Convergence Theorem completes the argument.
+\end{itemize}
+
+\section*{Aside: Gateaux directional derivative}
+Definition $\mathbf{1}$ (Gateaux differential) Let $X$ be a vector space, $Y$ a normed space, and $T: X \rightarrow Y$. The Gateaux differential of $T$ at $x \in X$ with increment $h \in X$ is
+
+$$
+\gamma T(x ; h)=\lim _{\alpha \downarrow 0} \frac{1}{\alpha}[T(x+\alpha h)-T(x)]
+$$
+
+if it exists.\\
+If the limit exists for every $h \in X$, the function $T$ is said to be Gateaux differentiable at $x$.
+
+\section*{RN principal, RA agent, observable $e$}
+Risk-neutral principal, risk-averse agent, observable $e$.
+
+\begin{itemize}
+  \item Wlog let $U_{p}(y-t)=y-t(y)$ and $U_{p}^{\prime}=1$.
+\end{itemize}
+
+Then Equation 1, FOC w.r.t $t$, becomes
+
+$$
+\begin{aligned}
+-U_{p}^{\prime}+\lambda U_{a}^{\prime} & =0 \\
+\lambda & =\frac{U_{p}^{\prime}}{U_{a}^{\prime}} \\
+U_{a}^{\prime}(t(y)) & =\frac{1}{\lambda} \forall y
+\end{aligned}
+$$
+
+\begin{itemize}
+  \item Then optimal contract $t(y)=k$, a constant.
+\end{itemize}
+
+FOC w.r.t. $e$ used to determine the optimal $e^{*}$.
+
+$$
+\begin{aligned}
+0 & =\int U_{p}^{\prime} \times\left(\frac{\partial y(\theta, e)}{\partial e}\right) f \mathrm{~d} \theta-\lambda \Psi^{\prime}(e) \\
+0 & =1-\lambda \Psi^{\prime}(e) \text { because } U_{p}^{\prime}=1 \\
+\Psi^{\prime}(e) & =\frac{1}{\lambda}
+\end{aligned}
+$$
+
+Since $\frac{1}{\lambda}=U_{a}^{\prime}(t(y))$, the optimal effort level $e^{*}$ is the solution to
+
+$$
+\Psi^{\prime}\left(e^{*}\right)=U_{a}^{\prime}(t(y))=U_{a}^{\prime}(k)
+$$
+
+\section*{Inefficiency of $t(y)=k$ with unobservable $e$}
+$$
+\begin{aligned}
+& \max _{e \in A} E U_{a}(t)-\Psi(e) \\
+& \max _{e \in A} E U_{a}(k)-\Psi(e)
+\end{aligned}
+$$
+
+The FOC wrt to " $e$ " is
+
+$$
+-\Psi^{\prime}(e)=0
+$$
+
+QED
+
+\begin{itemize}
+  \item The optimal contract under imperfect information was not derived.
+  \item Thus, previous slide does not "prove" that the first best cannot be achieved under imperfect information.
+  \item That conclusion follows, however, because the only way to provide complete insurance to the risk-averse agent is with a constant $t(y)=k$.
+  \item Constant transfer would necessarily elicit lower effort level than it is optimal under complete information.
+\end{itemize}
+
+\section*{RA principal, RN agent, observable $e$}
+\begin{itemize}
+  \item W.I.o.g. let $U_{a}(t(y))=t(y)$ and $U_{a}^{\prime}=1$.
+\end{itemize}
+
+From FOC Equation 1 , since $f>0$, it follows that
+
+$$
+\forall y, U_{p}^{\prime}(y-t(y))=\lambda
+$$
+
+This implies that $y-t(y)=K$, a constant.
+
+\begin{itemize}
+  \item From FOC Equation 2, $1-\Psi^{\prime}\left(e^{*}\right)=0$.
+  \item Single instrument and single objective, risk sharing. With incomplete information there are two objectives, risk sharing and correct incentives to work.
+\end{itemize}
+
+Theorem 1 Suppose the effort level $e \in A$ is not observable by the principal, the principal is risk averse (RA-P) and the agent is risk neutral (RN-A). Then, there exists a contract that achieves the first best solution, i.e., the solution of the complete information case.
+
+\begin{itemize}
+  \item Intuition: Since the agent is risk neutral, risk sharing is not an issue. Thus $t(y)$ need only elicit the correct effort level from the agent.
+\end{itemize}
+
+\section*{RA-Principal, RN-A, unobservable $e$}
+\begin{itemize}
+  \item Let $e^{*}, t^{*}(y)$ be the optimal solution under complete information.
+  \item Then, $y-t^{*}(y)=K$ and therefore $t^{*}(y)=y-K$.
+  \item The value of $K$ must be determined.
+\end{itemize}
+
+The value of $K$ is obtained from IR.
+
+$$
+\begin{aligned}
+E U_{a}(t(y))-\Psi\left(e^{*}\right) & =\bar{U}_{a} \\
+E U_{a}(t(y)) & =\Psi\left(e^{*}\right)+\bar{U}_{a} \\
+E t(y) & =\Psi\left(e^{*}\right)+\bar{U}_{a} \\
+E y-K & =\Psi\left(e^{*}\right)+\bar{U}_{a} \\
+e^{*}+E \theta-K & =\Psi\left(e^{*}\right)+\bar{U}_{a} \\
+e^{*}+E \theta-\Psi\left(e^{*}\right)-\bar{U}_{a} & =K
+\end{aligned}
+$$
+
+Therefore
+
+$$
+t^{*}(y)=y-K=y+\bar{U}_{a}+\Psi\left(e^{*}\right)-e^{*}-E \theta
+$$
+
+It remains to verify that with $t^{*}$, agent chooses $e^{*}$.
+
+$$
+\begin{aligned}
+& \max _{e \in A} E U_{a}(t)-\Psi(e) \\
+& \max _{e \in A} E t^{*}(y)-\Psi(e) \\
+& \max _{e \in A} E y+\bar{U}_{a}+\Psi\left(e^{*}\right)-e^{*}-E \theta-\Psi(e) \\
+& \max _{e \in A} E \theta+e+\bar{U}_{a}+\Psi\left(e^{*}\right)-e^{*}-E \theta-\Psi(e)
+\end{aligned}
+$$
+
+The FOC wrt to " $e$ " is, $1-\Psi^{\prime}(e)=0$.\\
+QED
+
+\section*{Preliminaries.}
+\begin{itemize}
+  \item For the definitions and basic results on stochastic dominance see, for instance, Mas-Colell et al. (1995), page 195-197.
+  \item First- and second-order stochastic dominance were introduced to economics in Rothschild and Stiglitz (1976).
+  \item See also Marshall et al. (2010), Chapter 17, pages 707-712.
+\end{itemize}
+
+\section*{FOSD}
+Definition 2 (First-order stochastic dominance) Let $\mu, \nu$ be two probability measures on $X \subset \mathbb{R}$.
+
+We say that $\mu$ first-order stochastically dominates $\nu$ if for every nondecreasing function $u: \mathbb{R} \rightarrow \mathbb{R}, \int u(x) d \mu \geq \int u(x) d \nu$.
+
+Theorem 2 The cummulative distribution function (cdf) $F$ first-order stochastically dominates the cdf $G$ if and only if $(\forall x) F(x) \leq G(x)$.
+
+\section*{FOSD}
+$\frac{1}{\frac{x}{1}}$\\
+$\frac{1}{\frac{x}{10}}$\\
+1.0\\
+0.9\\
+0.8\\
+0.7\\
+0.6\\
+0.5\\
+0.5\\
+0.4\\
+0.4\\
+0.3\\
+0.3\\
+"
+
+$$
+\begin{aligned}
+& F>_{F O S D} G \\
+& (\forall x), 1-F(x)>1-G(x)
+\end{aligned}
+$$
+
+\section*{SOSD}
+Definition 3 (Second-Order Stochastic Dominance) Let $F, G$ be two cdf with the same mean. $F$ second-order stochastically dominates (or is less risky than) $G$ if for every nondecreasing concave function $u: \mathbb{R}_{+} \rightarrow \mathbb{R}$, $\int u(x) d F(x) \geq \int u(x) d G(x)$.
+
+Definition 4 (Mean-Preserving Spread) Let $F$ be the cdf corresponding to a random variable $x$. For any realization $x$, let $H_{x}(z)$ be the cdf corrsponding to a random variable $z$ and suppose $\int z d H_{x}(z)=0$. Consider the new random variable $y=x+z(x)$ and let $G$ be its cdf. Then we say that $G$ is a mean-preserving spread of $F$.
+
+Theorem 3 Let $F, G$ be two cdfs with the same mean. The following statements are equivalent.
+
+\begin{enumerate}
+  \item $F$ second-order stochastically dominates $G$.
+  \item $G$ is a mean-preserving spread of $F$.
+  \item $\int_{0}^{x} G(t) d t \geq \int_{0}^{x} F(t) d t, \forall x$.
+\end{enumerate}
+
+\section*{Parametrized distribution approach}
+\begin{itemize}
+  \item It provides intuitive necessary conditions for the optimal mechanism.
+  \item Output is a random variable $y \in[\underline{y}, \bar{y}]$ with twice continuously differentiable cdf $F(y, e)$ and density $f(y, e)$.
+  \item First order stochastic dominance FOSD implies that $e^{\prime}>e \Longrightarrow F\left(x, e^{\prime}\right) \leq F(x, e)$.
+\end{itemize}
+
+Higher values of $e$ yield probabilistically higher $y$.
+
+\begin{itemize}
+  \item $\frac{f\left(y, e^{\prime}\right)}{f(y, e)}$ must be bounded, see Mirrlees (1999).
+\end{itemize}
+
+\section*{FOSD in parametrized model}
+\includegraphics[max width=\textwidth, alt={}, center]{3d1c6c7a-b07a-4a39-a63c-3f3bd6173ea1-32_1499_1459_347_145}\\
+( $e^{\prime}>e$ ) implies\\
+$\left.F\left(\cdot, e^{\prime}\right)\right\rangle_{\text {FOSD }} F(\cdot, e)$\\
+$(\forall y) 1-F\left(y, e^{\prime}\right)>1-F(y, e)$
+
+\section*{Principal's problem}
+$$
+\max _{t(y), e} \int U_{p}(y-t(y)) f(y, e) d y
+$$
+
+s.t.
+
+
+\begin{equation*}
+\int U_{a}(t(y)) f(y, e) d y-\Psi(e) \geq \bar{U}_{a} \tag{IR}
+\end{equation*}
+
+
+(IC) $\quad e \in \arg \max _{e^{\prime} \in A}\left\{\int U_{a}(t(y)) f\left(y, e^{\prime}\right) d y-\Psi\left(e^{\prime}\right)\right\}$
+
+The IC constraint can be replaced by the first and second order conditions of the implicit agent's maximization problem:
+
+
+\begin{align*}
+& \int U_{a}(t(y)) \frac{\partial f(y, e)}{\partial e} d y=\Psi^{\prime}(e)  \tag{3}\\
+& \int U_{a}(t(y)) \frac{\partial^{2} f(y, e)}{\partial e^{2}} d y \leq \Psi^{\prime \prime}(e) \tag{4}
+\end{align*}
+
+
+\section*{First order approach}
+\begin{itemize}
+  \item Some authors ignore SOC (Equation 4) and use only FOC (Equation 3), for instance Holmström (1979), Shavell (1979).
+  \item The first order approach is not legitimate; it may identify a minimum instead of a maximum, or the equivalent of an inflection point.
+  \item We will first follow the first order approach, then illustrate why it may lead to incorrect results, and finally give conditions under which it is valid.
+\end{itemize}
+
+\section*{FOA. Program}
+Replacing the IC constraint in the seller's problem by the first-order condition of the agent's problem one obtains a modified program,
+
+$$
+\begin{aligned}
+& \max _{t(y), e} \int U_{p}(y-t(y)) f(y, e) d y \\
+& \text { s.t. } \\
+& \quad \int U_{a}(t(y)) f(y, e) d y-\Psi(e) \geq \bar{U}_{a} \\
+& \quad \int U_{a}(t(y)) \frac{\partial f(y, e)}{\partial e} d y=\Psi^{\prime}(e)
+\end{aligned}
+$$
+
+\section*{FOA. Lagrangean}
+$$
+\begin{aligned}
+\mathcal{L}(t, e, \lambda, \mu)= & \int\left\{U_{p}(y-t(y)) f(y, e)\right. \\
+& +\lambda\left[U_{a}(t(y)) f(y, e)-\Psi(e)-\bar{U}_{a}\right] \\
+& \left.+\mu\left[U_{a}(t(y)) f_{e}(y, e)-\Psi^{\prime}(e)\right]\right\} d y
+\end{aligned}
+$$
+
+where $\lambda$ and $\mu$ are the multipliers of the IR and IC constraints respectively.
+
+FOA. First order condition, $t(\cdot)$
+
+$$
+\begin{aligned}
+& -U_{p}^{\prime}(y-t(y)) f(y, e)+\lambda U_{a}^{\prime}(t(y)) f(y, e) \\
+& \quad+\mu U_{a}^{\prime}(t(y)) f_{e}(y, e)=0
+\end{aligned}
+$$
+
+Dividing by $U_{a}^{\prime}(t(y)) f(y, e)$ yields the necessary condition
+
+
+\begin{equation*}
+\frac{U_{p}^{\prime}(y-t(y))}{U_{a}^{\prime}(t(y))}=\lambda+\mu \frac{f_{e}(y, e)}{f(y, e)} . \tag{5}
+\end{equation*}
+
+
+\section*{Observation 1}
+\begin{itemize}
+  \item Grossman and Hart (1983) propose a two-step method for solving PA problems in the parametrized distribution approach.
+\end{itemize}
+
+\begin{enumerate}
+  \item For each $e$, find $t(y)$ that minimizes expected $t(y)$ subject to agent's IR and IC.
+  \item Find $e$ that maximizes expected output minus the expected cost.
+\end{enumerate}
+
+\section*{Observation 2}
+\begin{itemize}
+  \item If the "surrogate" IC constraint is not binding, $\mu=0$. Then Equation 5 becomes
+\end{itemize}
+
+$$
+\frac{U_{p}^{\prime}(y-t(y))}{U_{a}^{\prime}(t(y))}=\lambda
+$$
+
+This is a necessary and sufficient condition for optimal risk sharing (Borch (1962)).
+
+\begin{itemize}
+  \item Intuition. The multiplier $\lambda$ is the utility cost to the principal of providing more utility to the agent.\\
+\includegraphics[max width=\textwidth, alt={}, center]{3d1c6c7a-b07a-4a39-a63c-3f3bd6173ea1-41_1412_1418_184_150}
+\end{itemize}
+
+$$
+\lambda=\frac{U_{p}^{\prime}}{U_{a}^{\prime}}=\frac{d U_{p} / d t}{d U_{a} / d t}=\frac{d U_{p}}{d U_{a}}
+$$
+
+\section*{Observation 3}
+\begin{itemize}
+  \item Under the maintain assumptions, if $F_{e}(y, e) \leq 0$ with strict inequality for some values of $e$, then $\mu>0$.
+  \item Proof. Differentiate the Lagrangean with respect to $e$. Make use of second order condition on the Agent's problem.
+  \item There is a tradeoff between optimal risk sharing and the provision of incentives for the agent.
+\end{itemize}
+
+\section*{Observation 4}
+\begin{itemize}
+  \item Interpretation of Equation 5 by analogy with two action case.
+  \item There are only two effort levels $e_{l}<e_{h}$.
+  \item If the principal wishes to implement $e=e_{l}$, the problem is simple: $t$ must be such that IR is satisfied.
+  \item If the principal wishes to implement $e=e_{h}$, in addition to IR, $t$ must satisfy IC.
+\end{itemize}
+
+$$
+\begin{aligned}
+& \int U_{a}(t(y)) f\left(y, e_{h}\right) d y-\Psi\left(e_{h}\right) \\
+& \geq \int U_{a}(t(y)) f(y, e l) d y-\Psi(e l) \\
+& \int U_{a}(t(y))\left[f\left(y, e_{h}\right)-f(y, e l)\right] d y \\
+& \quad-\left[\Psi\left(e_{h}\right)-\Psi(e l)\right] \geq 0
+\end{aligned}
+$$
+
+\begin{itemize}
+  \item Replace IC by equation above and differentiate new Lagrangean w.r.t.t.
+\end{itemize}
+
+Assuming principal wants $e=e_{h}$, then
+
+$$
+\begin{aligned}
+\mathcal{L}= & \int\left\{U_{p} f\left(y, e_{h}\right)+\lambda\left[U_{a} f\left(y, e_{h}\right)-\Psi\left(e_{h}\right)-\bar{U}_{a}\right]\right. \\
+& \left.+\mu \int U_{a}(t(y))\left[f\left(y, e_{h}\right)-f\left(y, e_{l}\right)\right]\right\} d y \\
+& -\mu\left[\Psi\left(e_{h}\right)-\Psi\left(e_{l}\right)\right]
+\end{aligned}
+$$
+
+FOC w.r.t. $t$
+
+$$
+-U_{p}^{\prime} f\left(y, e_{h}\right)+\lambda U_{a}^{\prime} f\left(y, e_{h}\right)+\mu U_{a}^{\prime}\left[f\left(y, e_{h}\right)-f\left(y, e_{l}\right)\right]=0
+$$
+
+from which one obtains the necessary condition
+
+$$
+\frac{U_{p}^{\prime}(y-t(y))}{U_{a}^{\prime}(t(y))}=\lambda+\mu\left[1-\frac{f\left(y, e_{l}\right)}{f\left(y, e_{h}\right)}\right]
+$$
+
+If principal is risk neutral, $U_{p}^{\prime}=1$. Then
+
+$$
+\frac{1}{U_{a}^{\prime}(t(y))}=\lambda+\mu\left[1-\frac{f\left(y, e_{l}\right)}{f\left(y, e_{h}\right)}\right]
+$$
+
+\begin{itemize}
+  \item The equation "says" that $t(y)$ varies with $y$.
+  \item When $\frac{f\left(y, e_{l}\right)}{f\left(y, e_{h}\right)}<1$ then $e_{h}$ is more likely than $e_{l}$.
+\end{itemize}
+
+$$
+\frac{1}{U_{a}^{\prime}(t(y))}=\lambda+\mu\left[1-\frac{f\left(y, e_{l}\right)}{f\left(y, e_{h}\right)}\right]
+$$
+
+\begin{itemize}
+  \item Intuition. Suppose higher $y\left\}\right.$ that $e_{h}$ is more likely than $e_{l}$, then $\frac{f\left(y, e_{l}\right)}{f\left(y, e_{h}\right)}$ becomes smaller.
+  \item This means RHS is larger.
+  \item In turn this must imply that $U_{a}^{\prime}$ is smaller.
+  \item Smaller $U_{a}^{\prime}$ means larger $t(y)$ because $U_{a}$ is concave.
+\end{itemize}
+
+\section*{Observation 5}
+\begin{itemize}
+  \item $\frac{f\left(y, e_{l}\right)}{f\left(y, e_{h}\right)}$ is the likelihood ratio; it indicates the likelihood that the agent chooses $e_{l}$ relative to $e_{h}$.
+  \item Agent is punished when outcomes move beliefs about $e_{h}$ down and rewarded in opposite case.
+  \item Agency problem is not an inference problem in the statistical sense. The principal gains no new information about the action taken by the agent from observing $y$ because, by contract design, the principal already knows the action implemented.
+  \item The optimal contract reflects the inference principle.
+\end{itemize}
+
+\section*{Observation 6}
+\begin{center}
+\begin{tabular}{llll}
+$f(y, e)$ & $y_{l}$ & $y_{m}$ & $y_{h}$ \\
+\hline
+$e_{h}$ & 0 & 0.5 & 0.5 \\
+\hline
+$e_{l}$ & 0.5 & 0.1 & 0.4 \\
+\hline
+$\frac{f\left(y, e_{l}\right)}{f\left(y, e_{h}\right)}$ & $\infty$ & 0.20 & 0.8 \\
+\hline
+\end{tabular}
+\end{center}
+
+\includegraphics[max width=\textwidth, alt={}, center]{3d1c6c7a-b07a-4a39-a63c-3f3bd6173ea1-49_866_797_1045_153}\\
+$t(y)$ depends on likelihood ratio. Even under FOSD optimal contract need not be monotone.
+
+Optimal contract: $t(y l)<t(y h)<t(y m)$
+
+\section*{Monotone optimal contract}
+\begin{itemize}
+  \item FOC condition for optimality is
+\end{itemize}
+
+$$
+\frac{1}{U_{a}^{\prime}(t(y))}=\lambda+\mu\left[1-\frac{f\left(y, e_{l}\right)}{f\left(y, e_{h}\right)}\right]
+$$
+
+\begin{itemize}
+  \item $t(y)$ is monotone nondecreasing in $y$ if and only if $\frac{d\left[\frac{f\left(y, e_{l}\right)}{f\left(y, e_{h}\right)}\right]}{d y} \leq 0$.
+\end{itemize}
+
+\section*{Monotone and linear contracts}
+\begin{itemize}
+  \item Monotone contracts require MLRP, a strong assumption.
+  \item If agent can "reduce" output at no cost/effort, then transfer function ought to be monotone; otherwise the agent would artificially reduce output when necessary.
+\end{itemize}
+
+In example: reduce $y_{h}$ to $y_{m}$ when the outcome is $y_{h}$.
+
+\begin{itemize}
+  \item Linear contracts
+  \item 
+1.
+
+
+  \item 2 .
+\end{itemize}
+
+\section*{Value of Information: Statistics preliminaries}
+Definition 5 Let $S \subset \mathbb{R}^{n}$ be a sample space. A model is a family of probability distributions $\left\{P_{\theta}: \theta \in \Theta\right\}$ where $(\forall \theta \in \Theta) P_{\theta}$ is a probability distribution on $S$ and $\Theta$ is a set, called the parameter set.
+
+A model is regular if ( $\forall \theta \in \Theta$ ) either
+
+\begin{enumerate}
+  \item $P_{\theta}$ is $\mathbb{C}^{0}$ and has density $p(x, \theta)$.
+  \item $P_{\theta}$ is discrete with frequency $p(x, \theta)$ and $\exists\left\{x_{1}, x_{2}, \ldots\right\} \subseteq S$ such that $\sum_{i=1}^{\infty} p\left(x_{i}, \theta\right)=1$.
+\end{enumerate}
+
+Note: (1) requires that every $P_{\theta}$ be absolutely continuous.
+
+\section*{Statistic preliminaries}
+Definition 6 A statistic in the model is any function $T: S \rightarrow W$ where $W$ is a space.
+
+\begin{itemize}
+  \item $W$ is often some Euclidean space or even $\mathbb{R}$.
+\end{itemize}
+
+Definition 7 A statistic $T$ is a reduction of data if ( $\exists x, x^{\prime} \in S, x \neq x^{\prime}$ ) and $T(x)=T\left(x^{\prime}\right)$.
+
+\begin{itemize}
+  \item Any statistic that is a reduction of data causes a loss of information.
+  \item A statistic $T$ is sufficient for a parameter of interest, if observing the realization $T(x)=t$, does not imply a loss of information about the parameter of interest.
+\end{itemize}
+
+\section*{Statistic preliminaries}
+Definition 8 The statistics $T: S \rightarrow W$ is sufficient for $\theta$ if $\left(\exists Q: \mathbb{R}^{n}\right. \times W \rightarrow[0,1])(\forall \theta \in \Theta)(\forall t \in W)\left[P_{\theta}(x \mid T(x)=t)=Q(x, t)\right]$.
+
+\begin{itemize}
+  \item The probability of $x$ given $T(x)=t$, does not depend on $\theta$. Equivalently, once $t$ is observed, knowing the sample realization $x$ (such $T(x)=t$ ) does not contain additional information about $\theta$ (or $P_{\theta}$ ) provided the model is valid.
+  \item Determining directly whether a statistic is sufficient for a parameter is often difficult because conditional probabilities must be computed.
+\end{itemize}
+
+\section*{Statistic preliminaries}
+Theorem 4 (Factorization theorem) $T$ is sufficient for $\theta$ if and only if ( $\exists g : W \times \Theta \rightarrow \mathbb{R})(\exists h: S \rightarrow \mathbb{R})$ such that $(\forall x \in S)(\forall \theta \in \Theta)$
+
+$$
+p(x, \theta)=g(T(x), \theta) h(x)
+$$
+
+\begin{itemize}
+  \item The Factorization theorem holds in more general environments than the regular models presented here. For a general treatment, see Lehmann (1997).
+\end{itemize}
+
+\section*{Value of information}
+\begin{itemize}
+  \item The optimal contract exploits the correlation between $y$ and $e$. Suppose there is another variable $x$ that is correlated with $e$.
+  \item Would a transfer $t(x, y)$ dominate the optimal $t(y)$ ? Yes, whenever $x$ gives information about $e$ that is not contained in $y$.
+\end{itemize}
+
+This results is due to Holmström (1979).
+
+\section*{Value of information in principal agent model}
+Theorem 5 Let $t(y)$ be an optimal transfer function for which the agent's choice of action is unique and interior in $A$. Then, there exist $t(x, y)$ (where $x$ is another observable variable) which strictly pareto dominates $t(y)$ if and only if $x$ is informative about $e$.
+
+Definition $9 x$ is informative about $e$ whenever $y$ is not a sufficient statistic for $(x, y)$ with respect to $e$.
+
+The result is due to Holmström (1979); the paper contains a useful discussion and the proof of the theorem.
+
+\section*{Mirrlees and the FOA}
+\begin{itemize}
+  \item See Mirrlees (1999). This paper was written in 1975. It was broadly read as a working paper.
+  \item See Rogerson (1985).
+  \item See Jewitt (1988).
+  \item See Conlon (2009).
+  \item See Chade and Swinkels (2019).
+\end{itemize}
+
+\section*{References}
+Bolton, Patrick, and Dewatripont. 2005. Contract Theory. MIT Press.\\
+Borch, Karl. 1962. "Equilibrium in a Reinsurance Market." Econometrica 30 (3): 424-44.\\
+\href{https://doi.org/10.2307/1909887}{https://doi.org/10.2307/1909887}.\\
+Chade, Hector, and Jeroen Swinkels. 2019. "The No-Upward-Crossing Condition, Comparative Statics, and the Moral Hazard Problem." Unpublished manuscript.\\
+Conlon, J. 2009. "Two New Conditions Supporting the First-Order Approach to Multisignal PrincipalAgent Problems." Econometrica 77: 249-78.\\
+Demski, Joel S., and David M. Kreps. 1982. "Models in Managerial Accounting." Journal of Accounting Research 20: 117-48.\\
+Diamond, Douglas W. 1984. "Financial Intermediation and Delegated Monitoring." The Review of Economic Studies 51: 393-414. \href{https://doi.org/https://doi.org/10.2307/2297430}{https://doi.org/https://doi.org/10.2307/2297430}.\\
+Grossman, Sanford, and Oliver Hart. 1983. "An Analysis of the Principal-Agent Problem." Econometrica 51: 7-45.\\
+Hart, Oliver, and Bengt Holmström. 1987. "The Theory of Contracts." In Advances in Economic Theory, Fifth World Congress, edited by Truman Bewley. Cambridge University Press.\\
+Holmström, Bengt. 1979. "Moral Hazard and Observability." Bell Journal of Economics 10: 74-91. Jensent, Michael C., and William H. Meckling. 1976. Jounral of Finance 3: 305-60.
+
+Jewitt, Ian. 1988. "Justifying the First-Order Approach to Principal-Agent Problems." Econometrica, 1177-90.\\
+Lehmann, E. L. 1997. Testing Statistical Hypotheses. 2nd ed. Springer Texts in Statistics. Springer. \href{https://doi.org/10.1007/978-1-4757-1923-9}{https://doi.org/10.1007/978-1-4757-1923-9}.\\
+Marshall, Albert W., Ingram Olkin, and Barry C. Arnold. 2010. Inequalities: Theory of Majorization and Its Applications. 2nd ed. Springer. \href{https://doi.org/10.1007/978-0-387-68276-1}{https://doi.org/10.1007/978-0-387-68276-1}.\\
+Mas-Colell, Andreu, Michael Whinston, and Jerry Green. 1995. Microeconomic Theory. Oxford University Press.\\
+Milgrom, Paul R. 1981. "Good News and Bad News: Representation Theorems and Applications." The Bell Journal of Economics 12 (2): 380-91.\\
+Mirrlees, James A. 1999. "The Theory of Moral Hazard and Unobservable Behaviour: Part i." The Review of Economic Studies 66 (1): 3-21.\\
+Rogerson, W. 1985. "The First-Order Approach to Principal-Agents Problems." Econometrica 53: 135767.
+
+Rothschild, Michael, and Joseph Stiglitz. 1976. "Equilibrium in Competitive Insurance Markets: An Essay on the Economics of Imperfect Information." The Quarterly Journal of Economics 90 (4): 629-49. \href{http://www.jstor.org/stable/1885326}{http://www.jstor.org/stable/1885326}.\\
+Royden, Halsey Lawrence. 1968. Real Analysis. 2nd ed. McMillan Publishing Co. Shavell, Steven. 1979. "On Moral Hazard and Insurance*." The Quarterly Journal of Economics 93 (4): 541-62. \href{https://doi.org/10.2307/1884469}{https://doi.org/10.2307/1884469}.
+
+
+\end{document}

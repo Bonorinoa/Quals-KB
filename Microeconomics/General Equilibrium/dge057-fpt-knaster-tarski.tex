@@ -1,0 +1,179 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\graphicspath{ {./images/} }
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=blue, filecolor=magenta, urlcolor=cyan,}
+\urlstyle{same}
+
+\begin{document}
+More on fixed point theorems
+
+\section*{Tarski FPT}
+A fixed point theorem that is not based on continuity.
+
+\section*{Preliminaries}
+\begin{itemize}
+  \item A binary relation $R$ on a set $X$ is a set $R \subseteq X \times X$. $x R y$ means $(x, y) \in R$.
+  \item A partial order, denoted by $\geq$, is a binary relation that is reflexive, transitive, and antisymmetric, that is $(\forall x, y \in X),[x \geq y \wedge y \geq x] \Longrightarrow x=y$.
+  \item A set $X$ with a partial order $\geq$ is a partially ordered set, denoted $(X, \leq)$.
+  \item Henceforth, fix $(X, Z)$.
+  \item $(\forall x, y \in X)[x>y$ means $x \geq y$ and $x \neq y]$.
+  \item $(\forall A \subseteq X)(A, \geq)$ is the partially ordered set where $\geq$ is the restriction of $\geq$ to $A$.
+\end{itemize}
+
+\section*{Standard order}
+\begin{center}
+\includegraphics[max width=\textwidth, alt={}]{dac9e040-f2c0-40bc-b325-1126486cb2f3-05_1458_1403_351_147}
+\end{center}
+
+\section*{Partial order, not complete}
+\includegraphics[max width=\textwidth, alt={}, center]{dac9e040-f2c0-40bc-b325-1126486cb2f3-06_1257_1203_354_150}\\
+\includegraphics[max width=\textwidth, alt={}, center]{dac9e040-f2c0-40bc-b325-1126486cb2f3-06_1254_1206_357_1416}
+
+\section*{Partial order, complete}
+\includegraphics[max width=\textwidth, alt={}, center]{dac9e040-f2c0-40bc-b325-1126486cb2f3-07_1257_1203_354_150}\\
+\includegraphics[max width=\textwidth, alt={}, center]{dac9e040-f2c0-40bc-b325-1126486cb2f3-07_1257_1206_354_1416}
+
+\begin{itemize}
+  \item A binary relation $R$ is total if
+\end{itemize}
+
+$$
+x \neq y \Longrightarrow[(x R y) \vee(y R x)] .
+$$
+
+A total binary relation is "almost" complete; the only possibly missing pairs are some $(x, x)$.
+
+\begin{itemize}
+  \item $C \subseteq X$ is a chain in $(X, \geq)$ if $(C, \geq)$ is total, i.e.
+\end{itemize}
+
+$$
+(\forall x, y \in X)(x \geq y) \vee(y \geq x) .
+$$
+
+\section*{Upper bound, maximal, greatest}
+\begin{itemize}
+  \item Let $A \subseteq X$.
+  \item $x \in X$ is an upper bound for $A$ if $(\forall y \in A) x \geq y$.
+  \item $x \in A$ is maximal in $A$ if $(\nexists y \in A) y \geq x$.
+  \item $x \in A$ is a greatest element of $A$ if ( $\forall y \in A$ ) $x \geq y$.
+  \item A nonempty subset of $X$ has at most one greatest element. If a greatest element exists, it is maximal.
+  \item Lower bound, minimal element, and least element, are defined analogously.
+\end{itemize}
+
+\section*{Supremum, infimum}
+\begin{itemize}
+  \item $x \in X$ is the supremum of $A$, denoted $x=\bigwedge A$ if it is its least upper bound.
+  \item The Infimum of $A$ is defined analogously and denoted $x=\bigvee A$.
+  \item Suprema and infima, often abreviated sup and inf, need not exist.
+  \item $x \vee y$ is the sup and $x \wedge y$ is the inf of $\{x, y\}$.
+  \item For linear orders $x \vee y=\max \{x, y\}$ and $x \wedge y=\min \{x, y\}$.
+\end{itemize}
+
+\section*{Zorn's lemma and the axiom of choice}
+Definition 1 (Axiom of choice) If $\left\{A_{i}\right\}_{i \in I}$ is a collection of non-empty sets indexed by $i \in I$ where $I$ is non-empty. Then there is a function $f: I \rightarrow \bigcup_{i \in I} A_{i}$ such that $(\forall i \in I) f(i) \in A_{i}$.
+
+Lemma 1 (Zorn) If every chain in a partially ordered set $X$ has an upper bound, then $X$ has a maximal element.
+
+\begin{itemize}
+  \item The axiom of choice and Zorn's lemma are equivalent.
+\end{itemize}
+
+\section*{Monotone functions}
+\begin{itemize}
+  \item Let $\left(X, \geq_{X}\right)$ and $\left(Y, \geq_{Y}\right)$ be two partially ordered sets.
+  \item A function $f: X \rightarrow Y$ is monotone if $x \geq_{X} z \Longrightarrow f(x) \geq_{Y} f(z)$.
+  \item $f$ is strictly monotone if $x>_{X} z \Longrightarrow f(x)>_{Y} f(y)$.
+  \item Monotone functions are also called increasing or nondecreasing functions.
+  \item Decreasing or nonincreasing functions and strictly decreasing functions are defined analogously.
+\end{itemize}
+
+\section*{Knaster-Tarski}
+See (Knaster 1928), (Tarski 1955), and (Aliprantis and Border 2006).\\
+Theorem 1 (Knaster-Tarski Fixed Point Theorem) Let ( $X, \geq$ ) be a partially ordered set with the property that every chain in $X$ has a supremum. Let $f: X \rightarrow X$ be monotone, and assume that there exists $a \in X$ with $a \leq f(a)$. Then the set of fixed points of $f$ is nonempty and has a maximal fixed point.
+
+\section*{Proof}
+\begin{itemize}
+  \item Let $P=\{x \in X: x \leq f(x)\}$.
+  \item $(P, \geq)$ is partially ordered, $a \in P$.
+  \item Let $C$ be a chain in $P$, and $b=\wedge P . b \in X$.
+  \item $(\forall c \in C) c \leq b$. Then $f(c) \leq f(b)$.
+  \item $(\forall c \in C) c \leq f(c)$ because $c \in C \subseteq P$.
+  \item It follows that $f(b)$ is an upper bound for $C$.
+  \item Since $b$ is the least such upper bound, $b \leq f(b)$. Therefore, $b \in P$.
+  \item Thus the supremum of any chain in $P$ belongs to $P$.
+  \item Zorn's Lemma implies $P$ has a maximal element, say $x^{\prime}$.
+  \item Now $x^{\prime} \leq f\left(x^{\prime}\right)$, since $x^{\prime} \in P$.
+  \item Since $f$ is monotone, $f\left(x^{\prime}\right) \leq f\left(f\left(x^{\prime}\right)\right)$.
+  \item This means that $f\left(x^{\prime}\right)$ belongs to $P$.
+  \item Since $x^{\prime}$ is a maximal element of $P, x^{\prime}=f\left(x^{\prime}\right)$.
+  \item Furthermore, if $x$ is a fixed point of $f$, then $x \in P$.
+  \item This shows that $x^{\prime}$ is a maximal fixed point of $f$.
+\end{itemize}
+
+QED
+
+\section*{Why is $[(\exists a) a \leq f(a)]$ necessary?}
+\begin{center}
+\includegraphics[max width=\textwidth, alt={}]{dac9e040-f2c0-40bc-b325-1126486cb2f3-16_1458_1397_381_150}
+\end{center}
+
+\section*{Related result}
+\begin{itemize}
+  \item Tarski (1955) has a related fixed-point theorem.
+  \item It strengthens the hypotheses to require ( $X, \geq$ ) to be a complete lattice, and draws the stronger conclusion that the set of fixed points is also a complete lattice.
+\end{itemize}
+
+\section*{Lattice}
+\begin{itemize}
+  \item A lattice is a partially ordered set in which every pair of elements has a supremum and an infimum.
+  \item It follows by induction that every finite set in a lattice has a supremum and an infimum.
+  \item $S$ is a sublattice of a lattice $L$ if $S \subseteq L$ and
+\end{itemize}
+
+$$
+(\forall a, b \in S)[(a \wedge b \in S) \wedge(a \vee b \in S)] .
+$$
+
+\begin{itemize}
+  \item A complete lattice is a lattice in which every nonempty subset $A$ has a $\sup \bigvee A$ and an $\inf \bigwedge A$.
+  \item The infimum of a complete lattice is denoted 0 , and the supremum is denoted 1 .
+\end{itemize}
+
+\section*{Tarski fixed-point theorem}
+Theorem 2 (Tarski) If ( $X, \geq$ ) is a complete lattice, and $f: X \rightarrow X$ is monotone, then the set $F$ of fixed points of $f$ is nonempty and ( $F, \geq$ ), is itself a complete lattice.
+
+\begin{itemize}
+  \item The theorem has been extended to cover increasing correspondences. See Smithson (1971), Vives (1990), and Zhou (1994); Echenique (2005) provides simple, constructive proofs.
+\end{itemize}
+
+\section*{Interpretation}
+\begin{itemize}
+  \item $F$ is a complete lattice but may not be a sublattice of $X$.
+  \item Example. $X=\left\{0,1, a, b, b^{\prime}\right\}$ with the partial order $\geq$ defined by $1 \geq a \geq b \geq 0$ and $1 \geq a \geq b^{\prime} \geq 0$ (and all comparisons implied by transitivity and reflexivity).
+  \item $b$ and $b^{\prime}$ are not comparable.
+  \item Define $f: X \rightarrow X$, $f(x)=x$ for $x \neq a$ and $f(a)=1$. $f$ is monotone.
+  \item $F=\left\{0, b, b^{\prime}, 1\right\}$ is a complete lattice.
+  \item Let $B=\left\{b, b^{\prime}\right\}$. $\bigvee B=1$ if $B$ in lattice $F$; $\bigvee B=a$ if $B$ in lattice $X$.
+\end{itemize}
+
+\section*{References}
+Aliprantis, Charalambos D., and Kim C. Border. 2006. Infinite Dimensional Analysis, a Hitchhiker's Guide. Third edition. Berlin-Heidelberg: Springer-Verlag.\\
+Echenique, Federico. 2005. "A Short and Constructive Proof of Tarski's Fixed-Point Theorem." International Journal of Game Theory 33: 215-18. \href{https://doi.org/10.1007/s001820400192}{https://doi.org/10.1007/s001820400192}.\\
+Knaster, B. 1928. "Une Théorème Sur Les Fonctions d'ensembles." Annales de La Societé Polonaise de Mathématique 6: 133-34.\\
+Smithson, R. E. 1971. "Fixed Points of Order Preserving Multifunctions." Proceedings of the American Mathematical Society 28: 304-10.\\
+Tarski, Alfred. 1955. "A Lattice-Theoretica Fixedpoint Theorem and Its Applications." Pacific Journal of Mathematics 5 (2): 285-309.\\
+Vives, Xavier. 1990. "Nash Equilibrium with Strategic Complementarities." Journal of Mathematical Economics 19: 305-21.\\
+Zhou, Lin. 1994. "The Set of Nash Equilibria of a Supermodular Game Is a Complete Lattice." Games and Economic Behavior 7 (2): 295-300.
+
+
+\end{document}

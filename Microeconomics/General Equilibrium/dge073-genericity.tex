@@ -1,0 +1,114 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+\usepackage{bbold}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\graphicspath{ {./images/} }
+
+\begin{document}
+Genericity
+
+\section*{Genericity}
+Intuitively:
+
+\begin{itemize}
+  \item Observation: Regular economies have "good properties."
+  \item Question: Are regular economies the norm or the exception?
+  \item Goal: To show that almost all economies are regular.
+\end{itemize}
+
+Almost all economies
+
+\section*{Preliminaries.}
+\begin{itemize}
+  \item For all $\ell \in\{1,2, \ldots, L\}$, let $a_{\ell}, b_{\ell} \in \mathbb{R}$.
+  \item $I$ is a rectangle in $\mathbb{R}^{L}$ if
+\end{itemize}
+
+$$
+I=\left[a_{1}, b_{1}\right] \times\left[a_{2}, b_{2}\right] \times \cdots \times\left[a_{L}, b_{L}\right] .
+$$
+
+\begin{itemize}
+  \item The volume of $I$ is $\operatorname{vol}(I)=\prod_{\ell=1}^{L}\left|b_{\ell}-a_{\ell}\right|$.
+\end{itemize}
+
+\section*{Lebesgue measure zero}
+\begin{itemize}
+  \item Let $A \subseteq \mathbb{R}^{L}$.
+  \item $A$ has Lebesgue measure zero, denoted by $\lambda(A)=0$, if $\forall \epsilon>0$, there is a countable collection of rectangles, $I_{1}, I_{2}, \ldots$ such that
+\end{itemize}
+
+$$
+\sum_{k=1}^{\infty} \operatorname{vol}\left(I_{k}\right)<\epsilon \text { and } A \subseteq \bigcup_{k=1}^{\infty} I_{k} .
+$$
+
+\section*{Example}
+\begin{center}
+\includegraphics[max width=\textwidth, alt={}]{b1dcad1f-233b-4e49-8ae6-0d6c6e7c25fe-07_218_1849_349_148}
+\end{center}
+
+\begin{itemize}
+  \item Let $A=[0,5], A \subset \mathbb{R}^{2}$.
+  \item For each $n$, construct $n$ rectangles $I_{n}$. Both horizontal sides of each $I_{n}$ have length $\frac{b-a}{n}$. Both vertical sides of each $I_{n}$ have length $1 / n$.
+  \item $(\forall n) A \subseteq \bigcup_{j=1}^{n} I_{n}$.
+  \item And
+\end{itemize}
+
+$$
+(\forall \epsilon>0)(\exists N)\left[n>N \Longrightarrow \frac{b-a}{n} n \times \frac{1}{n}<\epsilon\right] .
+$$
+
+\section*{Some properties}
+\begin{itemize}
+  \item If $A_{n}$ has Lebesgue measure zero for all $n=1,2, \ldots$, then $\bigcup_{n=1}^{\infty} A_{n}$ has Lebesgue measure zero.
+  \item Let $P(x)$ be a proposition about the elements $x \in X \subseteq \mathbb{R}^{L}$.
+  \item If $P(x)$ is true $\forall x \in X \backslash A$, and $A$ has Lebesgue measure zero, we say that $P(\cdot)$ holds almost everywhere in $X$ or that $P(\cdot)$ holds for almost all $x \in X$.
+\end{itemize}
+
+\section*{Topological notion of genericity}
+\begin{itemize}
+  \item Let $P(x)$ be a proposition about the elements $x \in X \subseteq \mathbb{R}^{L}$.
+  \item $P(x)$ is generically true if $P(x)$ is true $\forall x \in G \subset X$, where $G$ is an open and dense subset of $X$.
+  \item Open. $\forall x \in G, \exists \epsilon_{x}>0:\left[y \in B\left(x, \epsilon_{x}\right) \Longrightarrow y \in G\right]$.
+  \item Dense. $\forall y \in X, \forall \epsilon>0, \exists x \in G: y \in B(x, \epsilon)$.
+\end{itemize}
+
+\section*{Basic definitions}
+\begin{itemize}
+  \item Let $z$ be homogeneous of degree zero.
+  \item Normalize prices so that $p_{L}=1$, and let $\hat{p}=\left(p_{1}, \ldots, p_{L-1}\right) \in \mathbb{R}_{++}^{L-1}$.
+  \item Let $\hat{z}: \mathbb{R}_{++}^{L-1} \rightarrow \mathbb{R}^{L-1}$ be $\hat{z}(\hat{p})=\left(z_{1}(\hat{p}, 1), \ldots, z_{L-1}(\hat{p}, 1)\right)$.
+  \item Let $F: \mathbb{R}_{+}^{L-1} \times \mathbb{R}_{+}^{L I} \mapsto \mathbb{R}^{L-1}$ be $F(\hat{p}, \omega)=\hat{z}(\hat{p})$ when the endowment assignment is $\omega$.
+\end{itemize}
+
+Definition 1 The equilibrium correspondence $E: \mathbb{R}_{+}^{L I} \rightarrow \mathbb{R}_{++}^{L-1}$ is
+
+$$
+E(\omega)=\left\{\hat{p} \in \mathbb{R}_{++}^{L-1}: F(\hat{p}, \omega)=0\right\}
+$$
+
+\section*{Most economies are regular}
+Theorem 1 (Debreu) Let $\{\succeq\}_{i=1}^{I}$ be such that $D_{i}\left(p, \omega_{i}\right)$ is a $C^{1}$ function of ( $p, \omega_{i}$ ), and aggregate excess demand satisfies the hypotheses of the DGKN Lemma. Then there is a closed set $A \subset \mathbb{R}_{+}^{L I}$ of Lebesgue measure zero such that whenever $\omega^{\prime} \in\left(\mathbb{R}_{+}^{L I} \backslash A\right)$
+
+\begin{itemize}
+  \item the economy with preferences $\preceq_{1}, \ldots, \preceq_{I}$ and endowment $\omega^{\prime}$ is regular, so $E\left(\omega^{\prime}\right)$ is finite and odd, and
+  \item if $E\left(\omega^{\prime}\right)=\left\{\hat{p}_{1}^{*}, \ldots, \hat{p}_{N}^{*}\right\}$, then there is an open set $O \ni \omega^{\prime}$, and $C^{1}$ functions $h_{1}, \ldots, h_{N}$ such that
+\end{itemize}
+
+$$
+\omega \in O \Longrightarrow E(\omega)=\left\{h_{1}(\omega), \ldots, h_{N}(\omega)\right\} .
+$$
+
+\begin{center}
+\includegraphics[max width=\textwidth, alt={}]{b1dcad1f-233b-4e49-8ae6-0d6c6e7c25fe-12_1413_2541_176_140}
+\end{center}
+
+
+\end{document}

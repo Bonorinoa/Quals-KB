@@ -1,0 +1,282 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+\usepackage{bbold}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\graphicspath{ {./images/} }
+
+\begin{document}
+Equilibrium refinements in extensive-form games
+
+Trembling hand perfection
+
+\section*{Normal-Form Perfect Equilibrium}
+Trembling hand in choosing a pure strategy. Fix a finite, normal-form game $\Gamma=\left\{S_{i}, u_{i}\right\}_{i=1}^{I}$.\\
+Definition 1 A perturbation is a function $\epsilon: \bigcup_{i=1}^{I} S_{i} \rightarrow(0,1)$ such that $\forall i \in I, \sum_{s_{i} \in S_{i}} \epsilon\left(s_{i}\right)<1$.\\
+Definition 2 Given $\Gamma$ and a perturbation $\epsilon$, define $\Gamma(\epsilon)=\left\{M_{i}(\epsilon), u_{i}\right\}_{i=1}^{I}$ where $M_{i}(\epsilon)=\left\{\mu \in M\left(S_{i}\right): \forall s_{i} \in S_{i}, \mu\left(s_{i}\right) \geq \epsilon\left(s_{i}\right)\right\}$ and $u_{i}$ is extended to $M\left(S_{i}\right)$.\\
+$\Gamma(\epsilon)$ is the perturbed game with perturbation $\epsilon$.
+
+\begin{itemize}
+  \item $\Gamma(\epsilon)$ is well defined if $\forall i, M_{i}(\epsilon) \neq \emptyset$.
+\end{itemize}
+
+\section*{Example}
+\begin{itemize}
+  \item Consider a normal-form game with two players that we identify as Alice indexed by $\alpha$, and Bob indexed by $\beta: \Gamma=\left[S_{\alpha}, S_{\beta}, u_{\alpha}, u_{\beta}\right]$,
+  \item $a$ is a generic element of $S_{\alpha}, b$ is a generic element of $S_{\beta}$.
+  \item $u_{\alpha}: S_{\alpha} \times S_{\beta} \rightarrow \mathbb{R}$.
+  \item Let $S_{\alpha}$ contain tree strategies, $S_{\alpha}=\left\{a_{1}, a_{2}, a_{3}\right\}$.
+  \item $M\left(S_{\alpha}\right)=\left\{p=\left(p_{1}, p_{2}, p_{3}\right) \in \mathbb{R}_{+}^{3}: \sum_{i=1}^{3} p_{i}=1\right\}$ is the set of mixed strategies available to Alice.
+  \item $M\left(S_{\beta}\right)=\left\{q \in \mathbb{R}_{+}^{N}: \sum_{i=1}^{N} q_{i}=1\right\}$ is the set of of mixed strategies available to Bob.
+  \item Extend the payoff function to mixed strategies, $\left(\forall b \in S_{\beta}\right)\left(\forall p \in M\left(S_{\alpha}\right)\right)$,
+\end{itemize}
+
+$$
+\begin{aligned}
+& u_{\alpha}(p, b)=u_{\alpha}\left(a_{1}, b\right) p_{1}+u_{\alpha}\left(a_{2}, b\right) p_{2}+u_{\alpha}\left(a_{3}, b\right) p_{3} \\
+& u_{\alpha}(p, b)=\sum_{i=1}^{3} u_{a}\left(a_{i}, b\right) p_{i}
+\end{aligned}
+$$
+
+\begin{itemize}
+  \item Similar arguments applied to Bob yield
+\end{itemize}
+
+$$
+u_{\alpha}(p, q)=\sum_{a \in S_{\alpha}} \sum_{b \in S_{\beta}} u_{a}(a, b) p_{a} q_{b}
+$$
+
+\section*{Example}
+\begin{center}
+\includegraphics[max width=\textwidth, alt={}]{f44e9f96-45d8-4803-aeeb-6fcb841fbabe-07_1172_1859_359_153}
+\end{center}
+
+\begin{itemize}
+  \item $u_{\alpha}(p, b)$ is restricted to $p$ in the smaller triangle; for $i=1,2,3$, $p_{i} \geq \epsilon\left(a_{i}\right)>0$.
+\end{itemize}
+
+$$
+\begin{aligned}
+& a_{1} \sim \overbrace{(1,0,0)}^{p} \rightarrow a_{1}^{\prime} \sim\left(1-\epsilon\left(a_{1}\right)-\epsilon\left(a_{2}\right), \epsilon\left(a_{2}\right), \epsilon\left(a_{3}\right)\right) \\
+& a_{2} \sim(0,1,0) \rightarrow a_{2}^{\prime} \sim\left(\epsilon\left(a_{1}\right), 1-\epsilon\left(a_{1}\right)-\epsilon\left(a_{3}\right), \epsilon(3)\right) \\
+& a_{3} \sim(0,0,1) \rightarrow a_{3}^{\prime} \sim\left(\epsilon\left(a_{1}\right), \epsilon\left(a_{2}\right), 1-\epsilon\left(a_{1}\right)-\epsilon\left(a_{2}\right)\right)
+\end{aligned}
+$$
+
+\section*{Example. Two-player, two-strategy game}
+\begin{center}
+\begin{tabular}{crcc}
+\multicolumn{4}{c}{$\mathbf{L}$} \\
+\hline
+u & 1,1 & 0,3 & $\left(1-p_{1}\right)$ \\
+\hline
+d & $-3,0$ & 0,0 & $\left(p_{1}\right)$ \\
+\hline
+ & $\left(1-q_{1}\right)$ & $q_{1}$ &  \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{itemize}
+  \item Two NE, $(u, L)$ and $(d, R)$. Let the perturbation be
+\end{itemize}
+
+\begin{center}
+\begin{tabular}{cc}
+Strategy & $\epsilon(\cdot)$ \\
+\hline
+u & $1 / 8$ \\
+\hline
+d & $1 / 4$ \\
+\hline
+L & $1 / 16$ \\
+\hline
+R & $1 / 32$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\section*{Relevant mixed strategies for $\Gamma(\epsilon)$}
+\begin{center}
+\includegraphics[max width=\textwidth, alt={}]{f44e9f96-45d8-4803-aeeb-6fcb841fbabe-10_1412_1412_495_150}
+\end{center}
+
+\section*{Example: Player 1's best response}
+$$
+\begin{aligned}
+& u_{1}(p, R)=\left(1-p_{1}\right) \times 0+p_{1} \times 0 \\
+& u_{1}(p, L)=\left(1-p_{1}\right) \times-3+p_{1} \times 1
+\end{aligned}
+$$
+
+\begin{center}
+\includegraphics[max width=\textwidth, alt={}]{f44e9f96-45d8-4803-aeeb-6fcb841fbabe-11_1033_2576_744_157}
+\end{center}
+
+\section*{Normal-form perfect equlibrium}
+Definition 3 (NFPE) Let $\Gamma=\left\{S_{i}, u_{i}\right\}_{i=1}^{I}$ be a finite normal-form game. A strategy profile $\mu$ is a Normal-Form Perfect Equilibrium (NFPE) if there is a sequence of perturbations $\epsilon^{n}:\left\|\epsilon^{n}\right\|_{\infty} \rightarrow 0$ and a NE $\mu^{n}$ of $\Gamma\left(\epsilon^{n}\right)$ such that $\lim _{n \rightarrow \infty} \mu^{n}=\mu$.
+
+\section*{Example}
+\begin{center}
+\begin{tabular}{lrrc}
+\multicolumn{4}{c}{$\mathbf{L}$} \\
+\cline { 1 - 4 }
+u & 1,1 & 0,3 & $\left(1-p_{1}\right)$ \\
+\hline
+d & $-3,0$ & 0,0 & $\left(p_{1}\right)$ \\
+\hline
+ & $\left(1-q_{1}\right)$ & $q_{1}$ &  \\
+\hline
+\end{tabular}
+\end{center}
+
+( $d, R$ ) is NE but is not NFPE.
+
+\begin{itemize}
+  \item $(d, R)$ in $\Gamma$ is
+\end{itemize}
+
+$$
+\begin{aligned}
+& \bar{\mu}_{1}(u)=0=\left(1-p_{1}\right) \\
+& \bar{\mu}_{2}(L)=0=\left(1-q_{1}\right)
+\end{aligned}
+$$
+
+Denote $\bar{\mu}_{1}$ as $(0,1), \bar{\mu}_{2}$ as $(0,1)$.
+
+\begin{itemize}
+  \item Let $\epsilon^{n}$ be any sequence of perturbations, $\left\|\epsilon^{n}\right\|_{\infty} \rightarrow 0$.
+  \item Let $\mu^{n}=\left(\mu_{1}^{n}, \mu_{2}^{n}\right)$ be strategies in $\Gamma\left(\epsilon^{n}\right), \mu_{i}^{n}\left(s_{i}\right)>\epsilon^{n}\left(s_{i}\right)>0$.
+  \item Let $\mu^{n} \rightarrow \bar{\mu}=[(0,1),(0,1)]$.
+\end{itemize}
+
+$$
+\begin{aligned}
+E\left[U_{1} \mid u, \mu_{2}^{n}\right] & =\mu_{2}^{n}(L) \times 1+\mu_{2}^{n}(R) \times 0 \\
+E\left[U_{1} \mid d, \mu_{2}^{n}\right] & =\mu_{2}^{n}(L) \times(-3)+\mu_{2}^{n}(R) \times 0
+\end{aligned}
+$$
+
+\begin{itemize}
+  \item $\forall \mu_{2}^{n}(L)>0, E\left[U_{1} \mid u, \mu_{2}^{n}\right]>E\left[U_{1} \mid d, \mu_{2}^{n}\right]$
+  \item Then if $\mu_{1}^{n} \in B R\left(\mu_{2}^{n}\right), \mu_{1}^{n}=(1,0) \nrightarrow(0,1)$
+\end{itemize}
+
+\section*{Some properties of normal-form PE}
+NFPE is commonly named Perfect Equlibrium.\\
+Every NFPE is a NE.\\
+Theorem 1 Every finite normal-form game has a NFPE.\\
+Corollary 1 Every finite extensive-form game has a NFPE of its normalform representation.
+
+Theorem 2 Every NE in completely mixed strategies is a NFPE.
+
+Lemma 1 A NFPE does not use weakly dominated strategies.\\
+Lemma 2 A strategy profile $\mu$ in a two person finite normal-form game is a NFPE if it is a NE and for $i=1,2, \mu_{i}$ puts no mass on any weakly dominated strategy.
+
+\section*{Example 3-player game}
+\begin{itemize}
+  \item Player 1's action space is $\{T, B\}$; Player 2's is $\{L, R\}$.
+  \item Player 3 chooses "the game," her action space is $\{\ell, r\}$.
+\end{itemize}
+
+\begin{center}
+\begin{tabular}{llllllll}
+ &  & $\mathbf{L}$ & $\mathbf{R}$ &  &  & $\mathbf{L}$ & $\mathbf{R}$ \\
+\hline
+$3 . \ell$ & T & $1,1,1$ & $1,0,1$ & $3 . \mathrm{r}$ & T & $1,1,0$ & $0,0,0$ \\
+\hline
+ & B & $1,1,1$ & $0,0,1$ &  & B & $0,1,0$ & $1,0,0$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{itemize}
+  \item ( $B, L, \ell$ ) is a NE in undominated strategies; it is not NFPE.
+  \item $2 . L, 3 . \ell, 1 . B$ are undominated trivially. The profile is a NE; deviating will decrease the respective players' payoffs.
+  \item Exercise: Is $(T, L, \ell)$ a NE? Is it a NFPE?
+\end{itemize}
+
+\section*{( $B, L, \ell$ ) is not a NFPE}
+\begin{itemize}
+  \item Let $\mu_{2}^{n}, \mu_{3}^{n}$ be any pair of completely mixed strategies such that
+\end{itemize}
+
+$$
+\begin{aligned}
+\left(\mu_{2}^{n}(L), \mu_{2}^{n}(R)\right) & \rightarrow(1,0) & & \mathrm{L} \text { in the limit } \\
+\left(\mu_{3}^{n}(\ell), \mu_{3}^{n}(r)\right) & \rightarrow(1,0) & & \ell \text { in the limit }
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+E\left[U_{1} \mid\right. & \left.T, \mu_{2}^{n}, \mu_{3}^{n}\right]-E\left[U_{1} \mid B, \mu_{2}^{n}, \mu_{3}^{n}\right] \\
+& =\sum_{s_{2}, s_{3}}\left[U_{1}\left(T, s_{2}, s_{3}\right)-U_{1}\left(B, s_{2}, s_{3}\right)\right] \mu_{2}^{n}\left(s_{2}\right) \mu_{3}^{n}\left(s_{3}\right) \\
+& =(1-1) \mu_{2}^{n}(L) \mu_{3}^{n}(\ell)+(1-0) \mu_{2}^{n}(L) \mu_{3}^{n}(r) \\
+& \quad+(1-0) \mu_{2}^{n}(R) \mu_{3}^{n}(\ell)+(0-1) \mu_{2}^{n}(R) \mu_{3}^{n}(r) \\
+& =\mu_{2}^{n}(R) \mu_{3}^{n}(\ell)-\mu_{2}^{n}(R) \mu_{3}^{n}(r)+\mu_{2}^{n}(L) \mu_{3}^{n}(r) \\
+& =\mu_{2}^{n}(R)\left[\mu_{3}^{n}(\ell)-\mu_{3}^{n}(r)\right]+\mu_{2}^{n}(L) \mu_{3}^{n}(r)>0
+\end{aligned}
+$$
+
+because $\forall\left\{\left(\mu_{2}^{n}, \mu_{3}^{n}\right)\right\}_{n \geq 1}, \exists N: n>N \Longrightarrow \mu_{3}^{n}(\ell)-\mu_{3}^{n}(r)>0$.
+
+\begin{center}
+\begin{tabular}{llllllll}
+ &  & $\mathbf{L}$ & $\mathbf{R}$ &  &  & $\mathbf{L}$ & $\mathbf{R}$ \\
+\hline
+$3 . \ell$ & T & $1,1,1$ & $1,0,1$ & $3 . \mathrm{r}$ & T & $1,1,0$ & $0,0,0$ \\
+\hline
+ & B & $1,1,1$ & $0,0,1$ &  & B & $0,1,0$ & $1,0,0$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\section*{Extensive-form Perfect Equilibrium}
+\begin{itemize}
+  \item Trembles (mistakes) in different information sets are independent. Fix an extensive form game
+\end{itemize}
+
+$$
+\Gamma=\left[\mathcal{J},(X,<),\left\{\mathcal{P}_{i}\right\}_{i=0}^{I},\left\{\mathcal{U}_{i}\right\}_{i=1}^{I},\left\{\mathcal{C}_{h}\right\}_{h \in \mathcal{U}_{i}, i \geq 1},\left\{P_{x}\right\}_{x \in \mathcal{P}_{0}}, V\right]
+$$
+
+Definition 4 A function $\epsilon: \bigcup_{h \in \bigcup \mathcal{U}_{i}} \mathcal{C}_{h} \rightarrow(0,1)$ is perturbation of $\Gamma$ if
+
+$$
+(\forall i \in I),\left(\forall h \in \mathcal{U}_{i}\right), \sum_{a \in C_{h}} \epsilon(a)<1 .
+$$
+
+Definition 5 Given an extensive-form game $\Gamma$ and a perturbation $\epsilon, \Gamma(\epsilon)$ is the extensive form game $\Gamma$ modified so that behavior strategies are limited to $\Sigma_{i}(\epsilon)=\left\{\sigma_{i} \in \Sigma_{i}: \forall h \in \mathcal{U}_{i}, \forall a \in \mathcal{C}_{h}, \sigma_{i}(a \mid h) \geq \epsilon(a)\right\}$.\\
+$\Gamma(\epsilon)$ is called the perturbed game with perturbation $\epsilon$.
+
+\begin{itemize}
+  \item $\Gamma(\epsilon)$ is well defined if $\forall i, \Sigma_{i}(\epsilon) \neq \emptyset$.
+\end{itemize}
+
+\section*{Extensive-form Perfect Equlibrium}
+Definition 6 (EFPE) Let $\Gamma$ be a finite extensive-form game. A behaviorstrategy profile $\sigma$ is an Extensive-Form Perfect Equilibrium (EFPE) if there is a sequence of perturbations $\epsilon^{n}$ such that $\left\|\epsilon^{n}\right\|_{\infty} \rightarrow 0$ and a NE $\sigma^{n}$ of $\Gamma\left(\epsilon^{n}\right)$ such that $\lim _{n \rightarrow \infty} \sigma^{n}=\sigma$.
+
+Theorem 3 Every EFPE of $\Gamma$ is a SPE of $\Gamma$.\\
+Theorem 4 Every finite extensive-form game with perfect recall has an extensive-form PE.
+
+\section*{Comments}
+NFPE and EFPE differ from each other.
+
+\begin{itemize}
+  \item An NFPE is a profile of distributions over pure strategies, an EFPE is a profile of functions mapping information sets to distributions over choices.
+  \item An EFPE may fail to be NFPE (Exercise 7.36 in MSZ). An NFPE may fail to be EFPE (Exercise 7.37 MSZ).
+  \item In EF games where each player has a single information set both NFPE and EFPE coincide.
+\end{itemize}
+
+References
+
+
+\end{document}

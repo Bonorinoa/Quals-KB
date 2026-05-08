@@ -1,0 +1,496 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\graphicspath{ {./images/} }
+\usepackage{bbold}
+
+\DeclareUnicodeCharacter{27F9}{\ifmmode\Longrightarrow\else{$\Longrightarrow$}\fi}
+
+\begin{document}
+\section*{Some basic game theory}
+ECN 714\\
+$2$
+
+Bayesian games
+
+\section*{Introduction}
+\begin{itemize}
+  \item In many games of economic interest, players may have imprecise information about some aspects of the game.
+  \item For instance, a player may not be certain about her oponents' exact payoffs.
+  \item A "representation" of the strategic situation described is necessary.
+\end{itemize}
+
+\section*{Example}
+\begin{itemize}
+  \item Players 1 and 2 choose actions simultaneously and independently; Player 1 chooses Up or Down, player 2 chooses Left or Right.
+  \item Player 2 knows the game's payoffs.
+\end{itemize}
+
+\begin{center}
+\begin{tabular}{lll}
+ & $L$ & $\mathbf{R}$ \\
+\hline
+$U$ & 1,2 & 0,1 \\
+\hline
+D & 0,4 & 1,3 \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{itemize}
+  \item Player 1 knows her own payoffs but she is not certain about 2's payoffs.
+\end{itemize}
+
+\section*{Player 1 as a Bayesian player}
+\begin{itemize}
+  \item Player 1 knows his own payoffs but she is not certain about 2's payoffs.
+\end{itemize}
+
+$$
+\begin{array}{ccc} 
+& \mathbf{L} & \mathbf{R} \\
+\hline \mathrm{U} & 1 & 0 \\
+\hline \mathrm{D} & 0 & 1
+\end{array}
+$$
+
+\begin{itemize}
+  \item Player 1 believes that player 2's payoffs are either
+\end{itemize}
+
+\begin{center}
+\begin{tabular}{lllllll}
+ & $\mathbf{L}$ & $\mathbf{R}$ &  &  & $\mathbf{L}$ & $\mathbf{R}$ \\
+\hline
+U & 2 & 1 & or & U & 3 & 4 \\
+\hline
+D & 4 & 3 &  & D & 1 & 2 \\
+\hline
+\end{tabular}
+\end{center}
+
+and assigns probability 0.6 to the first alternative and 0.4 to the second one.
+
+\begin{itemize}
+  \item Combine payoffs in a table, let states be $t=a$ and $t=b$ and player 1's beliefs are $p_{a}=0.6$ and $p_{b}=0.4$.
+\end{itemize}
+
+\begin{center}
+\begin{tabular}{ccc}
+\multicolumn{3}{c}{$t=a, p_{a}=.6$} \\
+\hline
+ & $L$ & R \\
+\hline
+$U$ & 1,2 & 0,1 \\
+\hline
+D & 0,4 & 1,3 \\
+ & $t=b, p_{b}=.4$ &  \\
+\hline
+ & L & $R$ \\
+\hline
+U & 1,3 & 0,4 \\
+\hline
+$D$ & 0,1 & 1,2 \\
+\hline
+\end{tabular}
+\end{center}
+
+\section*{Benchmark: complete information}
+\begin{itemize}
+  \item Complete information: both players know whether $t=a$ or $t=b$.
+  \item Strategies are functions:\\
+$\left[s_{1}(a)=U, s_{1}(b)=D\right],\left[s_{2}(a)=L, s_{2}(b)=R\right]$
+  \item Solution:
+\end{itemize}
+
+If $t=a$ then a NE is $(U, L)$.\\
+If $t=b$ then a NE is $(D, R)$.
+
+\begin{itemize}
+  \item If listed probabilities are correct, an outside observer will see $60 \%$ of the time ( $U, L$ ) and 40\% of the time ( $D, R$ ).
+\end{itemize}
+
+\section*{Incomplete information}
+\begin{itemize}
+  \item Player 1 does not observe $t$; player 2 does. From 1's viewpoint, 2's strategies are functions.
+  \item If $t=a, 2$ plays $L$ because $L$ is dominant.
+  \item If $t=b, 2$ plays $R$ because $R$ is dominant.
+  \item Player 1 has two strategies $U$ and $D$. Single information set.
+\end{itemize}
+
+$$
+\begin{aligned}
+u^{1}(U) & =0.6 \times 1+0.4 \times 0=0.6 \\
+u^{1}(D) & =0.6 \times 0+0.4 \times 1=0.4
+\end{aligned}
+$$
+
+Hence, player 1 chooses $U$.
+
+\section*{Conclusions}
+\begin{itemize}
+  \item The intuitive outcome of the game was identified.
+  \item Under incomplete information, since player 1 does not know the state $t$, she can no longer change her action depending on it.
+  \item An outside observer would see player 1 choosing $U$ every time, and player 2 changing so that 60\% of time he plays $L$ and 40\% of the time he plays $R$.
+  \item The incomplete information game is not a combination of the two complete information games.
+\end{itemize}
+
+\section*{Bayesian games}
+\begin{itemize}
+  \item Goal: to obtain a game representation and a solution concept to generalize the example.
+  \item Incomplete information is modeled by adding a move by nature before the game begins to the extensive form representation.\\
+Nature thus determines the realization of players' private information. Harsanyi (1967), Harsanyi (1968a), Harsanyi (1968b).
+  \item Uncertainty about payoffs or other elements is a move by nature that takes place at the root of the game.
+  \item To model a player that is not certain about its opponents, a Bayesian game creates types for the opponents (not for the player that lacks the information.) Each type represents a possible realization of the information.
+  \item A Bayesian game is the normal form representation of the game played before the private information is revealed.
+  \item A Bayesian Nash equilibrium (BNE) is a Nash equilibrium of the normal form game described.
+\end{itemize}
+
+\section*{Harsanyi's idea applied to the example}
+\includegraphics[max width=\textwidth, alt={}, center]{07361299-5ece-411c-bdba-048b086fbf1e-13_1393_1264_348_175}\\
+\includegraphics[max width=\textwidth, alt={}, center]{07361299-5ece-411c-bdba-048b086fbf1e-13_1396_1279_348_1463}
+
+\section*{Bayesian games-definitions}
+Definition 1 (Private information) Private information is the information that an agent has that is not available to any other agent.
+
+\begin{itemize}
+  \item Intuitively in a Bayesian game, players first observe their private information or type.
+  \item Players have beliefs about opponents' types. In the example, player 1's beliefs are that player 2 has payoffs "a" with probability 0.6 and payoffs "b" with probability 0.4 .
+  \item Each player simultaneously and idependently chooses his or her action.
+  \item Final payoffs are determined by realization of information and actions chosen.
+\end{itemize}
+
+Definition 2 (Bayesian game) A Bayesian game $\Gamma$\\
+$=\left[\mathcal{J},\left\{T_{i}, A_{i}, U_{i}, \beta_{i}\right\}_{i \in \mathcal{J}}\right]$ is a collection of
+
+\begin{enumerate}
+  \item $\mathcal{J}$, finite set of players.
+  \item $T_{i}$, set of player $i$ 's private information or types.
+  \item $A_{i}$, set of actions available to player $i$.
+  \item $U_{i}: T \times A \longrightarrow \mathbb{R}$, player $i$ 's payoff function, where $T=\prod_{i \in \mathcal{J}} T_{i}$ and $A=\prod_{i \in \mathcal{J}} A_{i}$.
+  \item $\beta_{i}: T_{i} \rightarrow M\left(T_{-i}\right)$, player $i$ 's beliefs about the other players' private information.\\
+$M\left(T_{-i}\right)$ is set of probability distritubions over $T_{-i}$.
+\end{enumerate}
+
+\begin{itemize}
+  \item When $T_{-i}$ is finite, $\beta_{i}\left(t_{-i} \mid t_{i}\right)$ is the probability that $i$ assigns to $t_{-i}$ when $i$ 's information is $t_{i}$.
+  \item More generally, $\beta_{i}\left(\cdot \mid t_{i}\right)$ is a probability distribution on $T_{-i}$ for each $t_{i}$.
+\end{itemize}
+
+\section*{Beliefs}
+Definition 3 (Consistent beliefs) Beliefs are consistent with a probability $P$ on $T$ if for all $i \in N$, and for all $\left(t_{-i}, t_{i}\right) \in T$,
+
+$$
+\beta_{i}\left(t_{-i} \mid t_{i}\right)=\frac{P\left(t_{-i}, t_{i}\right)}{\sum_{t_{-i} \in T_{-i}} P\left(t_{-i}, t_{i}\right)} .
+$$
+
+Definition 4 (Common prior) When beliefs are consistent with a given probability distribution $P$, it is said that players have a common prior $P$.
+
+\section*{Beliefs and common prior}
+\begin{center}
+\includegraphics[max width=\textwidth, alt={}]{07361299-5ece-411c-bdba-048b086fbf1e-18_1550_2286_354_163}
+\end{center}
+
+Two players, $T_{1}=\{i, u\}$, say informed or uninformed; and $T_{2}=\{a, b\}$. Then,
+
+$$
+\begin{array}{llll}
+P\left(t_{1}, t_{2}\right) & t_{2}=a & t_{2}=b & \sum_{t_{2} \in T_{2}} \\
+\hline t_{1}=i & P(i, a) & P(i, b) & P_{T_{1}}(i) \\
+\hline t_{1}=u & P(u, a) & P(u, b) & P_{T_{1}}(u) \\
+\hline \sum_{t_{1} \in T_{1}} & P_{T_{2}}(a) & P_{T_{2}}(b) & 1 \\
+& \sum_{t_{1} \in T_{1}, t_{2} \in T_{2}} P\left(t_{1}, t_{2}\right)=1 &
+\end{array}
+$$
+
+\section*{Example: Consistent beliefs}
+\begin{center}
+\begin{tabular}{llll}
+ & a & b & $\sum_{a, b}$ \\
+\hline
+i & 0 & 0 & 0 \\
+\hline
+u & 0.6 & 0.4 & 1 \\
+\hline
+$\sum_{i, u}$ & 0.6 & 0.4 &  \\
+\hline
+\end{tabular}
+\end{center}
+
+$$
+\begin{aligned}
+& \beta_{2}\left(t_{1}=i \mid a\right)=\frac{P(i, a)}{P(i, a)+P(u, a)}=\frac{0}{0+.6}=0 \\
+& \beta_{2}\left(t_{1}=i \mid b\right)=\frac{P(i, b)}{P(i, b)+P(u, b)}=\frac{0}{0+.4}=0
+\end{aligned}
+$$
+
+$\beta_{1}\left(t_{2}=a \mid i\right)=$ not defined by Bayes rule.
+
+$$
+\begin{aligned}
+& \beta_{1}\left(t_{2}=a \mid u\right)=\frac{P(u, a)}{P(u, a)+P(u, b)}=\frac{.6}{1}=.6 \\
+& \beta_{1}\left(t_{2}=b \mid u\right)=\frac{P(u, b)}{P(u, a)+P(u, b)}=\frac{.4}{1}=.4
+\end{aligned}
+$$
+
+\section*{Beliefs that are not consistent}
+\begin{center}
+\begin{tabular}{llll}
+ & $\mathbf{a}$ & $\mathbf{b}$ & $\sum_{a, b}$ \\
+\hline
+i & 0.06 & 0.04 & 0.10 \\
+\hline
+u & 0.54 & 0.36 & .90 \\
+\hline
+$\sum_{i, u}$ & 0.6 & 0.40 &  \\
+\hline
+\end{tabular}
+\end{center}
+
+$$
+\begin{aligned}
+\beta_{1}\left(t_{2}=a \mid i\right) & =0.6 \\
+\beta_{1}\left(t_{2}=b \mid i\right) & =0.4 \\
+\beta_{1}\left(t_{2}=a \mid u\right) & =0.54 / 0.9=0.6 \\
+\beta_{1}\left(t_{2}=b \mid u\right) & =0.36 / 0.9=0.4
+\end{aligned}
+$$
+
+\section*{Strategies}
+Fix a Bayesian game $\Gamma$.
+
+\begin{itemize}
+  \item A pure strategy $s_{i}$ for player $i$ is any function $s_{i}: T_{i} \rightarrow A_{i}$. The set of player $i$ 's pure strategies is denoted by $S_{i}$.
+  \item A mixed strategy for player $i$ is a probability distribution $\mu_{i} \in M\left(S_{i}\right)$, the set of probability distributions on $S_{i}$.
+  \item A behavior strategy for player $i$ is any function $\sigma_{i}: T_{i} \rightarrow M\left(A_{i}\right)$. The set of player $i$ 's behavior strategies is denoted by $\Sigma_{i}$.
+  \item A strategy profile a strategy profile is a collection of strategies, one for each player in the game.
+\end{itemize}
+
+\section*{Observations}
+Let $\Gamma$ be a Bayesian game with two players.\\
+A pure-strategy profile $\left(s_{1}^{\prime}, s_{2}^{\prime}\right)$ is a Bayesian Nash equilibrum (BNE) if ( $\forall i \in \mathcal{J})\left(\forall t_{i} \in T_{i}\right)\left(\forall s_{i} \in S_{i}\right)(\forall j \neq i)$,
+
+
+\begin{align*}
+& \sum_{t_{j} \in T_{j}} u_{i}\left(t_{j}, t_{i}, s_{j}^{\prime}\left(t_{j}\right), s_{i}^{\prime}\left(t_{i}\right)\right) \beta_{i}\left(t_{j} \mid t_{i}\right) \geq \\
+& \quad \sum_{t_{j} \in T_{j}} u_{i}\left(t_{j}, t_{i}, s_{j}^{\prime}\left(t_{j}\right), s_{i}\left(t_{i}\right)\right) \beta_{i}\left(t_{j} \mid t_{i}\right) . \tag{1}
+\end{align*}
+
+
+\begin{itemize}
+  \item Note that $s_{i}\left(t_{i}\right)$ could be any element of $A_{i}$
+\end{itemize}
+
+\section*{Observations 2}
+Thus equivalently,
+
+$$
+\begin{aligned}
+\sum_{t_{j} \in T_{j}} u_{i}\left(t_{j}, t_{i},\right. & \left.s_{j}^{\prime}\left(t_{j}\right), s_{i}^{\prime}\left(t_{i}\right)\right) \beta_{i}\left(t_{j} \mid t_{i}\right) \geq \\
+& \sum_{t_{j} \in T_{j}} u_{i}\left(t_{j}, t_{i}, s_{j}^{\prime}\left(t_{j}\right), a_{i}\right) \beta_{i}\left(t_{j} \mid t_{i}\right), \forall a_{i} \in A_{i}
+\end{aligned}
+$$
+
+\begin{itemize}
+  \item Notation: Using expectations
+\end{itemize}
+
+$$
+E\left[u_{i} \mid t_{i}, s_{i}^{\prime}, s_{j}^{\prime}, \beta_{i}\right]=\sum_{t_{j} \in T_{j}} u_{i}\left(t_{j}, t_{i}, s_{j}^{\prime}\left(t_{j}\right), s_{i}^{\prime}\left(t_{i}\right)\right) \beta_{i}\left(t_{j} \mid t_{i}\right) .
+$$
+
+\section*{Observations 3}
+Let
+
+$$
+\begin{aligned}
+E\left[u_{i} \mid s_{i}^{\prime}, s_{j}^{\prime}\right]=\sum_{t_{i} \in T_{i}} \sum_{t_{j} \in T_{j}} u_{i}\left(t_{j}, t_{i}, s_{j}^{\prime}\left(t_{j}\right), s_{i}^{\prime}\left(t_{i}\right)\right) & \\
+\beta_{i}\left(t_{j} \mid t_{i}\right) P_{T_{i}}\left(t_{i}\right) &
+\end{aligned}
+$$
+
+where $P_{T_{i}}$ is the marginal of $P$ on $T_{i}$.
+
+\begin{itemize}
+  \item Then, $\left(s_{i}^{\prime}, s_{j}^{\prime}\right)$ is a BNE if
+\end{itemize}
+
+
+\begin{equation*}
+E\left[u_{i} \mid s_{i}^{\prime}, s_{j}^{\prime}\right] \geq E\left[u_{i} \mid s_{i}, s_{j}^{\prime}\right], \forall s_{i} \in S_{i} . \tag{2}
+\end{equation*}
+
+
+\begin{itemize}
+  \item The inequality in Equation 1 implies the inequality in Equation 2. When $P_{T_{i}}\left(t_{i}\right)>0$ for every $t_{i}$, both inequalities are equivalent.
+\end{itemize}
+
+\section*{Dominant strategy}
+\begin{itemize}
+  \item A pure strategy $s_{i}$ is (weakly) dominant for player $i$ in $\Gamma$, if
+\end{itemize}
+
+$$
+\forall s_{-i}, E\left[U_{i} \mid s_{-i}, s_{i}\right] \geq E\left[U_{i} \mid s_{-i}, s_{i}^{\prime}\right], \forall s_{i}^{\prime}
+$$
+
+\begin{itemize}
+  \item A profile $s=\left\{s_{i}\right\}_{i=1}^{I}$ is a (weakly) dominant strategy equilibrium if $s_{i}$ is (weakly) dominant for $i=1, \ldots, n$.
+\end{itemize}
+
+\section*{Baysian Nash equilibrium}
+Definition 5 (Bayesian Nash equilibrium) A behavior strategy profile $\sigma^{\prime} =\left(\sigma_{1}^{\prime}, \ldots, \sigma_{N}^{\prime}\right)$ is a Bayesian Nash equilibrum (BNE) if ( $\left.\forall i \in \mathcal{J}\right)\left(\forall t_{i}\right. \left.\in T_{i}\right)\left(\forall \sigma_{i} \in \Sigma_{i}\right)$,
+
+$$
+E\left[u_{i} \mid t_{i}, \sigma_{i}^{\prime}, \sigma_{-i}^{\prime}, \beta_{i}\right] \geq E\left[u_{i} \mid t_{i}, \sigma_{i}, \sigma_{-i}^{\prime}, \beta_{i}\right] .
+$$
+
+Note that
+
+$$
+\begin{aligned}
+E\left[U_{i} \mid t_{i}, \sigma_{i}, \sigma_{-i}^{\prime}, \beta_{i}\right]= & \sum_{t_{-i} \in T_{-i}} \sum_{a_{1} \in A_{1}} \ldots \sum_{a_{I} \in A_{I}} u_{i}\left(t_{-i}, t_{i}, a_{1}, \ldots, a_{I}\right) \\
+& \left(\prod_{j \neq i} \sigma_{j}^{\prime}\left(a_{j} \mid t_{j}\right)\right) \sigma_{i}\left(a_{i} \mid t_{i}\right) \beta_{i}\left(t_{-i} \mid t_{i}\right) .
+\end{aligned}
+$$
+
+\section*{Universal type space}
+Difficulty with incomplete information. Refer to leading example.
+
+\begin{itemize}
+  \item Player 2 observes $t_{2}$, player 1 does not. Player 1 must have beliefs about $t_{2}$.
+  \item Depending on 1's beliefs, 2's preferred strategy may change.
+  \item In the example, 2 has a dominant strategy in each game where a game is defined for each realization of $t_{2}$. So this is not an issue. It is in general.
+  \item Player 2 does not observe 1's beliefs; 2 must form beliefs about player 1's beliefs.
+  \item Player 1 optimal action may depend on player 2's choices. In turn these choices may depend on player 2's beliefs. Thus player 1 must form beliefs, about player 2's beliefs about player 1's beliefs.
+  \item Continue ad infinitum.
+\end{itemize}
+
+See Brandenburger and Dekel (1993)\} and Mertens and Zamir (1985).
+
+\section*{Example: auction, stylized representation}
+\begin{center}
+\includegraphics[max width=\textwidth, alt={}]{07361299-5ece-411c-bdba-048b086fbf1e-32_1559_2289_351_163}
+\end{center}
+
+\section*{Independent private values model (IPVM)}
+A standard model in trading environments.
+
+\begin{itemize}
+  \item A seller has a single, indivisible object.
+  \item There are $I$ potential buyers or bidders.
+  \item Bidder $i$ privately observes her valuation $x_{i} \in[0,1]$ for the object.
+  \item Preferences: If $i$ receives the object and pays an amount $m, i$ 's payoff is $x_{i}-m$. Expected utility is assumed.
+  \item Beliefs: Variables $x_{i}$ are i.i.d.. Each $x_{i}$ has density $f$, assumed to be strictly positive and with full support. This is also a symmetry assumption, i.e. bidders are ex ante equal.
+\end{itemize}
+
+\section*{Notation}
+\begin{itemize}
+  \item $x=\left(x_{1}, \ldots, x_{I}\right), x_{-i}=\left(x_{1}, \ldots, x_{i-1}, x_{i+1}, x_{I}\right)$.
+  \item $X_{1}, X_{2}, \ldots, X_{I}$ sets, $X=\prod_{i=1}^{I} X$.
+  \item $M\left(X_{i}\right)$ is the set of probability distributions on $X_{i}$.
+  \item First order statistic: $x^{(1)}=\max \left\{x_{i}\right\}_{i=1}^{I}$;
+  \item Second order statistic: $x^{(2)}$
+\end{itemize}
+
+\section*{Classic auctions}
+\begin{itemize}
+  \item Sealed-bid, second-price auction (SPA).
+  \item Bidders simultaneously and independently submit their bids in sealed envelopes.
+  \item Envelopes are collected and opened.
+  \item Highest bidder, the winner, is assigned the object. Ties in determining the highest bidder are resolved according to some predetermined procedure.
+  \item The winner pays the second-highest bid.
+  \item Strategies?
+\end{itemize}
+
+\section*{Second-price, sealed-bid auction (SPA)}
+Theorem 1 (SPA) IPVM. The strategy profile $\left\{b_{i}\left(x_{i}\right)=x_{i}\right\}_{i=1}^{I}$ is a weakly dominant-strategy equilibrium (WDSE) of the SPA.
+
+Proof. Let $b_{-i}$ be the vector of $i$ 's oponents bids.
+
+$$
+u_{i}\left(x_{i}, b_{i}, b_{-i}^{(1)}\right)= \begin{cases}0 & \text { if } b_{i}<b_{-i}^{(1)} \\ \left(x_{i}-b_{-i}^{(1)}\right) & \text { if } b_{i}>b_{-i}^{(1)} \\ \left(x_{i}-b_{-i}^{(1)}\right) P(\text { tie }) & \text { if } b_{i}=b_{-i}^{(1)}\end{cases}
+$$
+
+\begin{itemize}
+  \item $x_{i}<b_{-i}^{(1)} \Longrightarrow i^{\prime} s$ best response is to lose, thus $b_{i}=x_{i}<b_{-i}^{(1)}$.
+  \item $x_{i}>b_{-i}^{(1)} \Longrightarrow i^{\prime} s$ best response is to win, thus $b_{i}=x_{i}>b_{-i}^{(1)}$.
+  \item $x_{i}=b_{-i}^{(1)} \Longrightarrow i$ is indifferent, thus $b_{i}=x_{i}$. QED
+\end{itemize}
+
+\section*{SPA-Remarks}
+\begin{itemize}
+  \item Weakly dominant strategy equilibrium (WDSE) means a strong recommendation.
+\end{itemize}
+
+Principle: winner's payment does not depend on winner's bid.
+
+\begin{itemize}
+  \item Result is stronger than WDSE of the implicit game. (Continuum technicality.)
+  \item Where is independence used? And symmetry?
+  \item Are there other BNE?
+  \item Solution is efficient.
+\end{itemize}
+
+\section*{Classic auctions}
+\begin{itemize}
+  \item Sealed-bid second-price auction (SPA)
+  \item Sealed-bid first-price auction (FPA): Bidders submit their bids in sealed envelopes simultaneously and independently. Envelopes are opened. Highest bidder gets the object and pays his or her own bid.
+  \item English auction
+  \item Dutch auction
+\end{itemize}
+
+\section*{Existence of BNE}
+Finite Bayesian games. Existence of BNE is a consequence of the general existence of NE in finite games.
+
+Existence proofs use a fixed point argument.
+
+\begin{itemize}
+  \item Primitive payoff function: $U_{i}\left(x_{1}, x_{2}, a_{1}, a_{2}\right)$
+  \item Behavior strategy: $\sigma_{i}: X_{i} \rightarrow M\left(A_{i}\right)$
+  \item Best response correspondence:\\
+$\psi_{i}\left(\sigma_{-i}\right)=\arg \max _{\sigma_{i}} E\left[U_{i} \mid \sigma_{i}, \sigma_{-i}\right]$
+  \item $\psi(\sigma)=\prod_{i=1}^{I} \psi_{i}\left(\sigma_{-i}\right)$.
+  \item Theorem of the Maximum (Berge): Continuity of primitive function implies upper-hemicontinuity of the argmax.\\
+In this case, continuity of $E\left[U_{i} \mid \sigma_{1}, \sigma_{2}\right]$ implies uhc of $\psi$.\\
+See for instance, Aliprantis and Border (2006), page 569.
+  \item uhc and convex-valued $\psi$ plus compactness of domain ⟹ fixed point, therefore existence.
+\end{itemize}
+
+\section*{BNE in infinite games}
+\begin{itemize}
+  \item No general existence result for BNE in infinite games, games where type or action spaces have the cardinality of the continuum.
+  \item Advantages of continuum model
+  \item Modeling. Perhaps more appropriate, bids and uncertainty. Bids in practice are discrete. Should results depend on whether permitted bids are in pennies or nickels?
+  \item Technical.
+  \item Avoid complications of multiplicity of equilibria from mixing between discrete alternatives.
+  \item Calculus.
+\end{itemize}
+
+\section*{BNE in infinite games}
+\begin{itemize}
+  \item Difficulty with continuum model.
+  \item $\left.E\left[U_{i} \mid \sigma_{1}, \sigma_{2}\right)\right]=\int_{X_{1} \times X_{2}} \int_{A_{1}} \int_{A_{2}} U_{i}(x, a) \mathrm{d} \sigma_{1}\left(x_{1}\right) \mathrm{d} \sigma_{2}\left(x_{2}\right) \mathrm{d} \mu$
+  \item Topology (metric) that makes $\psi$ uhc, has too many open sets to make the domain of $\psi$ compact and viceversa.
+  \item Additional questions.
+  \item Existence of pure strategy equilibria or purification of mixed strategy equilibria.
+  \item Approximation discrete-continuum.
+\end{itemize}
+
+\section*{References}
+Aliprantis, Charalambos D., and Kim C. Border. 2006. Infinite Dimensional Analysis, a Hitchhiker's Guide. Third edition. Berlin-Heidelberg: Springer-Verlag.\\
+Brandenburger, Adam, and Eddie Dekel. 1993. "Hierarchies of Beliefs and Common Knowledge." Journal of Economic Theory 59: 189-98.\\
+Harsanyi, John. 1967. "Games with Incomplete Information Played by Bayesian Players. Part i: The Basic Model." Management Science 14: 159-82.\\
+---. 1968a. "Games with Incomplete Information Played by Bayesian Players. Part II: Bayesian Equilibrium Points." Management Science 14: 320-34.\\
+---. 1968b. "Games with Incomplete Information Played by Bayesian Players. Part III: The Basic Probability Distribution of the Game." Management Science 14: 486-502.\\
+Mertens, J.-F., and S. Zamir. 1985. "Formulation of Bayesian Analysis for Games with Incomplete Information." International Journal of Game Theory 10: 619-32.
+
+
+\end{document}

@@ -1,0 +1,142 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\graphicspath{ {./images/} }
+\usepackage{caption}
+
+\DeclareUnicodeCharacter{2192}{\ifmmode\rightarrow\else{$\rightarrow$}\fi}
+
+\begin{document}
+\captionsetup{singlelinecheck=false}
+Welfare Theorems
+
+\section*{Welfare Theorems}
+\section*{Heuristacally}
+\begin{itemize}
+  \item First Welfare Theorem: Every Walrasian Equilibrium (WE) is Pareto Optimal (PO).
+  \item Second Welfare Theorem: If preferences and technology are convex, every PO allocation can be supported as a WE after an appropriate redistribution of endowements.
+\end{itemize}
+
+First Welfare Theorem
+
+\section*{First Welfare Theorem}
+Theorem 1 (First Welfare Theorem) Let $\left(x^{*}, y^{*}, p^{*}\right)$ be a WE of the ArrowDebreu economy $\mathcal{E}$. If preferences are, complete, transitive, and locally nonsatiated then $\left(x^{*}, y^{*}\right)$ is PO .
+
+Proof. We begin with two implications of preference maximization which we label (a) and (b).
+
+\section*{Implication (a)}
+Claim. It follows from preference maximization that
+
+$$
+x_{i}^{\prime} \succ_{i} x_{i}^{*} \Longrightarrow p^{*} \cdot x_{i}^{\prime}>p^{*} \cdot x_{i}^{*}
+$$
+
+To prove this, arguing by contradiction:
+
+\begin{itemize}
+  \item Suppose $x_{i}^{\prime} \succ_{i} x_{i}^{*}$ and $p^{*} \cdot x_{i}^{\prime} \leq p^{*} \cdot x_{i}^{*}$.
+  \item Since $x_{i}^{*} \in B_{i} \wedge p^{*} \cdot x_{i}^{\prime} \leq p^{*} \cdot x_{i}^{*}$ then $x_{i}^{\prime} \in B_{i}\left(p^{*}, y^{*}\right)$
+  \item Since $x_{i}^{*} \in D_{i}\left(p^{*}, y^{*}\right),\left(\forall x_{i} \in B_{i}\left(p^{*}, y^{*}\right)\right) x_{i}^{*} \succeq_{i} x_{i}$; a contradiction.
+\end{itemize}
+
+\section*{Implication (b)}
+Claim. $x_{i}^{\prime} \succeq_{i} x_{i}^{*} \Longrightarrow p^{*} \cdot x_{i}^{\prime} \geq p^{*} \cdot x_{i}^{*}$
+
+\begin{itemize}
+  \item By contradiction: Suppose $x_{i}^{\prime} \succeq_{i} x_{i}^{*} \wedge p^{*} \cdot x_{i}^{\prime}<p^{*} \cdot x_{i}^{*}$.
+  \item $\exists \epsilon>0:\left(\forall z,\left\|z-x_{i}^{\prime}\right\|<\epsilon\right) p^{*} \cdot z<p^{*} \cdot x_{i}^{*}$ (by continuity of "dot product".)
+  \item LNS $\Longrightarrow \exists x_{i}^{\prime \prime} \in X_{i}:\left\|x_{i}^{\prime \prime}-x_{i}^{\prime}\right\|<\epsilon, x_{i}^{\prime \prime} \succ_{i} x_{i}^{\prime}$.
+  \item Then, $p^{*} \cdot x_{i}^{\prime \prime}<p^{*} \cdot x_{i}^{*} \wedge x_{i}^{\prime \prime} \succ_{i} x_{i}^{\prime} \succeq_{i} x_{i}^{*}$. Thus $x_{i}^{\prime \prime} \succ_{i} x_{i}^{*}$ (by completeness, transitivity $\succeq_{i}$; needs proof).
+  \item Then $x_{i}^{*} \notin D_{i}\left(p^{*}, y^{*}\right)$, a contradiction.
+\end{itemize}
+
+→
+
+Lemma. Suppose preferences $\succeq_{i}$ are transitive and complete. Then $x_{i}^{\prime \prime} \succ_{i} x_{i}^{\prime} \succeq_{i} x_{i}^{*} \Longrightarrow x_{i}^{\prime \prime} \succ x_{i}^{*}$.
+
+Proof.
+
+\begin{itemize}
+  \item By transitivity $x_{i}^{\prime \prime} \succeq_{i} x_{i}^{*}$.
+  \item Suppose $x_{i}^{\prime \prime} \not_{i} x_{i}^{*}$. By completeness, $x_{i}^{*} \succeq_{i} x_{i}^{\prime \prime}$.
+  \item Contradiction: $x_{i}^{\prime} \succeq_{i} x_{i}^{*}$ and $x_{i}^{*} \succeq_{i} x_{i}^{\prime \prime}$. Then by transitivity $x_{i}^{\prime} \succeq_{i} x_{i}^{\prime \prime}$.
+  \item We have shown (a) and (b): If a bundle is at least as desirable it cannot be cheaper; if it is more desirable it is more expensive than the demand bundle.
+\end{itemize}
+
+\section*{Proof of First Welfare theorem}
+Arguing by contradiction, suppose exists an allocation $\left(x^{\prime}, y^{\prime}\right)$ that Pareto dominates $\left(x^{*}, y^{*}\right)$, i.e.
+
+$$
+\begin{gathered}
+\exists\left(x^{\prime}, y^{\prime}\right) \mid \sum_{i=1}^{I} x_{i}^{\prime}=\bar{\omega}+\sum_{j=1}^{J} y_{j}^{\prime} \\
+\forall i, x_{i}^{\prime} \succeq_{i} x_{i}^{*} \text { and } \\
+\exists i, x_{i}^{\prime} \succ_{i} x_{i}^{*} \\
+(a) \wedge(b) \Longrightarrow \sum_{i=1}^{I} p^{*} \cdot x_{i}^{\prime}>\sum_{i=1}^{I} p^{*} \cdot x_{i}^{*}
+\end{gathered}
+$$
+
+$$
+\begin{aligned}
+& \sum_{i=1}^{I} \sum_{\ell=1}^{L} p_{\ell}^{*} x_{i \ell}^{\prime}>\sum_{i=1}^{I} \sum_{\ell=1}^{L} p_{\ell}^{*} x_{i \ell}^{*} \\
+& \sum_{\ell=1}^{L} \sum_{i=1}^{I} p_{\ell}^{*} x_{i \ell}^{\prime}>\sum_{\ell=1}^{L} \sum_{i=1}^{I} p_{\ell}^{*} x_{i \ell}^{*} \\
+& \sum_{\ell=1}^{L} p_{\ell}^{*} \sum_{i=1}^{I} x_{i \ell}^{\prime}>\sum_{\ell=1}^{L} p_{\ell}^{*} \sum_{i=1}^{I} x_{i \ell}^{*}
+\end{aligned}
+$$
+
+\begin{itemize}
+  \item (i.e., in aggregate, $x_{i}^{\prime}$ must be more expensive than $x_{i}^{*}$ )
+\end{itemize}
+
+$$
+\begin{aligned}
+p^{*} \cdot \sum_{i=1}^{I} x_{i}^{\prime} & >p^{*} \cdot \sum_{i=1}^{I} x_{i}^{*} \\
+& =p^{*} \cdot \bar{\omega}+p^{*} \cdot \sum_{j=1}^{J} y_{j}^{*} \\
+& \geq p^{*} \cdot \bar{\omega}+\sum_{j=1}^{J}\left(p^{*} \cdot y_{j}^{\prime}\right)=p^{*} \cdot \sum_{i=1}^{I} x_{i}^{\prime}
+\end{aligned}
+$$
+
+(by profit maximization)
+
+\section*{First Welfare Theorem, remarks}
+\begin{center}
+\includegraphics[max width=\textwidth, alt={}]{ed29c4b2-8372-41fc-aa5d-53e0c43b5f7a-13_1294_1147_348_144}
+\end{center}
+
+\begin{figure}[h]
+\begin{center}
+\captionsetup{labelformat=empty}
+\caption{Consumption}
+  \includegraphics[alt={},max width=\textwidth]{ed29c4b2-8372-41fc-aa5d-53e0c43b5f7a-13_1178_1181_458_1324}
+\end{center}
+\end{figure}
+
+Without LNS
+
+To interpret FWT as endoresement of market economies, additional assumptions are necessary.
+
+\begin{itemize}
+  \item Complete markets: there are markets for all goods.
+  \item WE is the outcome of a market economy (this includes the price-taking assumption).
+  \item No externalities.
+  \item FWT says nothing about distribution. A PO allocation may imply very little utility for many consumers.
+  \item May fail in overlapping generations economies Samuelson (1958). Good summary in Weil (2008).
+\end{itemize}
+
+When there are double infinity of agents and goods, the order of summation cannot be changed.
+
+As a technical reference see, for instance, Fubini's theorem, Rudin (1987), Theorem 8.8, and counterexample 8.9. See also Tonelli's Theorem.
+
+\section*{References}
+Rudin, Walter. 1987. Real and Complex Analysis. 3rd ed. McGraw-Hill.\\
+Samuelson, Paul Antony. 1958. "An Exact Consumption-Loan Model of Interest with or Without the Social Contrivance of Money." Journal of Political Economy 66 (6): 467-82.\\
+Weil, Philippe. 2008. "Overlapping Generations and the First Welfare Theorem." Journal of Economic Perspective 22 (4): 115-34.
+
+
+\end{document}

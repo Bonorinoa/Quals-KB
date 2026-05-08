@@ -1,0 +1,159 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+\usepackage{caption}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\graphicspath{ {./images/} }
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=blue, filecolor=magenta, urlcolor=cyan,}
+\urlstyle{same}
+
+\begin{document}
+\captionsetup{singlelinecheck=false}
+\section*{The insurance problem}
+See Rothschild and Stiglitz (1976).
+
+\section*{Outline of the game}
+\begin{itemize}
+  \item Nature determines whether player 1 is low or high risk.
+  \item Player 1 privately observes propensity for accident.
+  \item Player 2, the insurance market or insurance firm, offers insurance contracts.
+  \item Player 1 chooses a contract or remain uninsured.
+\end{itemize}
+
+\section*{Player 1: agent}
+\begin{itemize}
+  \item The agent has an accident with probability $\eta ; \eta$ is private information. There are two states, accident or no accident.
+  \item The agent may be low or high risk, identified by
+\end{itemize}
+
+$$
+\eta \in\left\{\eta_{\ell}, \eta_{h}\right\}, 0<\eta_{\ell}<\eta_{h}<1 .
+$$
+
+\begin{itemize}
+  \item The probability that an agent is type $\eta_{h}$ is $\lambda \in(0,1)$.
+  \item Agents are strictly risk averse with utility $U$.
+  \item In case of accident, the agent incurs a loss $\ell$. Thus, wealth is a pair $\left(w_{a}, w_{n}\right)=(w-\ell, w)$ indicating wealth in each state.
+\end{itemize}
+
+\section*{Player 2: firms or market}
+\begin{itemize}
+  \item An insurance contract is a pair $(r, c) ; r$ is the premium and $c$ is compensation net of premium if an accident takes place.
+  \item Profit of a contract $(r, c)$ sold to an agent of type $\eta$ is
+\end{itemize}
+
+$$
+\pi(r, c, \eta)=(1-\eta) r+\eta c .
+$$
+
+\begin{itemize}
+  \item Zero-profit condition: $r=\frac{-\eta}{1-\eta} c$
+\end{itemize}
+
+\section*{Player 2; modelng alternatives}
+\begin{enumerate}
+  \item Competitive insurance market characterized by zero-profit condition; short run and long run.
+  \item At least two risk-neutral firms offering contracts under Bertrand competition.
+\end{enumerate}
+
+\section*{Agent's problem}
+\begin{itemize}
+  \item Given $(r, c)$, the agent's wealth is $\left(w_{a}, w_{n}\right)=(w-\ell+c, w-r)$.
+  \item The agent's utility is
+\end{itemize}
+
+$$
+V(w, r, c)=(1-\eta) U(w-r)+\eta U(w-\ell+c) .
+$$
+
+\begin{itemize}
+  \item The marginal rate of substitution
+\end{itemize}
+
+$$
+\begin{aligned}
+\bar{V} & =(1-\eta) U\left(w_{n}\right)+\eta U\left(w_{a}\right) \\
+d \bar{V} & =(1-\eta) U^{\prime}\left(w_{n}\right) d w_{n}+\eta U^{\prime}\left(w_{a}\right) d w_{a} \\
+\left.\frac{d w_{n}}{d w_{a}}\right|_{\bar{V}} & =-\frac{\eta}{(1-\eta)} \frac{U^{\prime}\left(w_{a}\right)}{U^{\prime}\left(w_{n}\right)}
+\end{aligned}
+$$
+
+\begin{figure}[h]
+\begin{center}
+\captionsetup{labelformat=empty}
+\caption{Zero profit contracts}
+  \includegraphics[alt={},max width=\textwidth]{bb528156-8e57-44e0-a960-ff9920347f43-08_1454_2012_348_154}
+\end{center}
+\end{figure}
+
+\section*{Preferences for insurance contracts}
+\begin{center}
+\includegraphics[max width=\textwidth, alt={}]{bb528156-8e57-44e0-a960-ff9920347f43-09_1457_2018_348_154}
+\end{center}
+
+\section*{Separating equilibrium with full-insurance?}
+\begin{center}
+\includegraphics[max width=\textwidth, alt={}]{bb528156-8e57-44e0-a960-ff9920347f43-10_1451_1589_342_716}
+\end{center}
+
+\begin{itemize}
+  \item Figure 1 denotes a Pareto optimal allocation-full insurance for both high-risk type and low-risk type, and zero profits for the competitive insurance industry-under full and symmetric information.
+  \item It is not feasible under the information structure of the example.
+  \item The insurance industry is not able to distinguish between high- and low-risk types. High-risk agents purchase the low-risk bundle.
+  \item High-risk agents purchasing the low-risk bundle generate negative profit for the insurance firm.
+\end{itemize}
+
+\section*{A separating equilibrium}
+\begin{center}
+\includegraphics[max width=\textwidth, alt={}]{bb528156-8e57-44e0-a960-ff9920347f43-12_1458_1598_340_707}
+\end{center}
+
+\begin{itemize}
+  \item Figure 2 depicts a separating equilibrium.
+  \item High-risk agents get full insurance at high-risk price.
+  \item Low-risk agents are offered partial insurance at the low-risk price.
+  \item The insurance offered to low-risk agents is partial to prevent highrisk agent from pretending to be low-risk.
+\end{itemize}
+
+\section*{No separating equilibria}
+\begin{center}
+\includegraphics[max width=\textwidth, alt={}]{bb528156-8e57-44e0-a960-ff9920347f43-14_1448_1587_345_716}
+\end{center}
+
+\section*{Pooling equilibria?}
+\begin{center}
+\includegraphics[max width=\textwidth, alt={}]{bb528156-8e57-44e0-a960-ff9920347f43-15_1451_1591_342_714}
+\end{center}
+
+\begin{itemize}
+  \item Figure 4 depicts a situation where no pooling equilibrium exists. At pooling prices,
+  \item low-risk agents have no demand for insurance.
+  \item high-risk agents are willing to buy more than full insurance.
+  \item a competitive insurance market would make negative profit.
+  \item A possible outcome is depicted in Figure 2.
+  \item There could be full insurance for the high-risk type and partial insurance for the low-risk type at lower prices.
+\end{itemize}
+
+\section*{A pooling equilibrium with partial insurance?}
+\begin{center}
+\includegraphics[max width=\textwidth, alt={}]{bb528156-8e57-44e0-a960-ff9920347f43-17_1446_1584_345_716}
+\end{center}
+
+\begin{itemize}
+  \item Figure 5 appears to show a pooling equilibrium with partial insurance for both types.
+  \item Note however that a competitor could offer the contract depicted by $x$ in the figure.
+  \item Contract $x$ would be both profitable and attract only the low-risk agents; thus generating positive profit for the new firm.
+\end{itemize}
+
+\section*{References}
+Rothschild, Michael, and Joseph Stiglitz. 1976. "Equilibrium in Competitive Insurance Markets: An Essay on the Economics of Imperfect Information." The Quarterly Journal of Economics 90 (4): 629-49. \href{http://www.jstor.org/stable/1885326}{http://www.jstor.org/stable/1885326}.
+
+
+\end{document}

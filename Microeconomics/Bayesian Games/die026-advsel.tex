@@ -1,0 +1,203 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\graphicspath{ {./images/} }
+
+\begin{document}
+Adverse selection
+
+\section*{Asymmetric information}
+\begin{itemize}
+  \item Asymmetry of information often breaks optimality properties of markets. Two main phenomena with many variations.
+  \item Adverse selection (hidden information).
+  \item Moral hazard (hidden action).
+\end{itemize}
+
+\section*{Adverse selection}
+\begin{itemize}
+  \item An agent's trading decisions depend on her private information. The informed agent's actions then reveal information. This affects, adversely, the uninformed side.
+  \item Ex: Agents have private information about their innate health needs and then choose among insurance policies.
+  \item Common models: signaling, screening, mechanism design in various models.
+\end{itemize}
+
+\section*{Moral hazard}
+\begin{itemize}
+  \item An agent's actions cannot be freely monitored, but affect other agent's utility.
+  \item Example: The success of a firm depends on its manager's effort. Effort is unobservable by the owner. It may not be possible to induce the manager to provide the desired effort level.
+  \item Common model: principal-agent.
+\end{itemize}
+
+\section*{Adverse selection}
+\begin{itemize}
+  \item Topics:
+  \item Adverse selection and market inefficiency.
+  \item Akerlof's "Market for lemmons".
+  \item Second best outcome: Constrained optimality
+  \item Signaling models
+  \item Screening models
+\end{itemize}
+
+\section*{The market for lemons}
+I wrote "The Market for Lemons," (a 13-page paper for which I was awarded the Prize in Economics) during my first year as assistant professor at Berkeley, in 1966-67. It concerns how horse traders respond to the natural question: "if he wants to sell that horse, do I really want to buy it?" Such questioning is fundamental to the market for horses and used cars, but it is also at least minimally present in every market transaction. - George Akerlof
+
+George Akerlof, Writing the Market for Lemons: A Personal and Interpretive Essay.\\
+link\_to\_essay
+
+\section*{Market for lemons}
+\begin{itemize}
+  \item Objective: Asymmetry of information causes markets to fail. Often markets require regulation for efficiency.
+  \item Market for used cars.
+  \item Asymmetry of information: The seller has better information than the buyer about the "quality" of the car.
+  \item See Akerlof (1970).
+\end{itemize}
+
+\section*{Example}
+\begin{itemize}
+  \item Depending on its quality a car is worth $x$ in $\{10,12,14,16,18,20\}$ where $x$ is in expressed in thousands.
+  \item Seller knows quality $x$ of her car but buyer does not.
+  \item Seller only sells if the price $p \geq x$.
+  \item Buyer only buys if $p \leq E(x)$.
+  \item All values of $x$ are equally likely.
+  \item What is the market price $p$ and what type of cars will be traded?
+\end{itemize}
+
+Suppose $p>20$.
+
+\begin{itemize}
+  \item Sellers wish to sell since $(\forall x) p>20 \geq x$.
+  \item Buyer does not buy:
+\end{itemize}
+
+$$
+E(x)=\frac{1}{6} 10+\frac{1}{6} 12+\frac{1}{6} 14+\frac{1}{6} 16+\frac{1}{6} 18+\frac{1}{6} 20=15
+$$
+
+\begin{itemize}
+  \item and $p>20>15=E(x)$.
+\end{itemize}
+
+Suppose $p=15$.
+
+\begin{itemize}
+  \item Sellers with $x \leq 15$ wish to sell. Sellers with $x>15$ do not.
+  \item Buyers anticipate that sellers with $x>15$ do not sell.
+\end{itemize}
+
+$$
+E(x)=\frac{1}{3} 10+\frac{1}{3} 12+\frac{1}{3} 14=12
+$$
+
+Since $p=15>12=E(x)$, buyers do not buy $(E(x)-p<0)$.
+
+\section*{Example}
+Suppose $p=10$.
+
+\begin{itemize}
+  \item Sellers of lemons $(x=10)$ wish to sell. Sellers with $x>10$ do not.
+  \item Buyers anticipate that sellers with $x>10$ do not sell.
+\end{itemize}
+
+$$
+E(x)=\frac{1}{1} 10=10
+$$
+
+\begin{itemize}
+  \item Buyers buy lemons; $p=10=E(x)$, knowing what they buy.
+\end{itemize}
+
+\section*{Model}
+\begin{itemize}
+  \item The seller observes her type $x \in\left[x^{\prime}, x^{\prime \prime}\right] ; x$ is the value to the seller.
+  \item The yype $x$ distributed according to density $f(x)$.
+  \item The buyer does not observe $x$.
+  \item The buyer is willing to pay $v(x)$ for car $x$; buyer is expected utility maximizer.
+  \item Positive gains from trade: $\left(\forall x \in\left(x^{\prime}, x^{\prime \prime}\right]\right) v(x)>x$ and $v\left(x^{\prime}\right)=x^{\prime}$.
+  \item The functions $f$ and $v$ and the structure of the model are common knowledge.\\
+(Both buyer and seller believe $x$ is distributed according to $f$, common prior assumption.)
+\end{itemize}
+
+\section*{Benchmark: Complete information}
+\begin{itemize}
+  \item $x$ is publicly observed before any transaction is arranged.
+  \item Market outcome:
+  \item Seller sells only if $p \geq x$.
+  \item Buyer buys only if $v(x) \geq p$.
+  \item Provided $v(x) \geq p \geq x$, trade takes place.
+  \item Gains from trade are realized and divided among participants.
+\end{itemize}
+
+\section*{Incomplete information}
+The buyer's expected value of a car depends on the buyer's beliefs about the cars in the market.
+
+If types in market are $\left[x^{\prime}, x\right] \subseteq\left[x^{\prime}, x^{\prime \prime}\right]$, the buyer's expected value of a car is
+
+$$
+B(x)=\frac{\int_{x^{\prime}}^{x} v(z) f(z) d z}{\int_{x^{\prime}}^{x} f(z) d z}
+$$
+
+\begin{itemize}
+  \item Set price $p$. Then $x>p \Longrightarrow[x$ is not in the market $]$.
+  \item The buyer's expected value of the car when price is $p$
+\end{itemize}
+
+$$
+B(p)=\frac{\int_{x^{\prime}}^{p} v(z) f(z) d z}{\int_{x^{\prime}}^{p} f(z) d z}
+$$
+
+\section*{Graph, lemons example}
+\begin{center}
+\includegraphics[max width=\textwidth, alt={}]{12d3571a-bf70-4859-959b-c133841dd5ee-17_1460_2578_347_155}
+\end{center}
+
+\section*{Graph, lemons example 2}
+\begin{center}
+\includegraphics[max width=\textwidth, alt={}]{12d3571a-bf70-4859-959b-c133841dd5ee-18_1457_2573_350_157}
+\end{center}
+
+\section*{Graph, Not lemons}
+\begin{center}
+\includegraphics[max width=\textwidth, alt={}]{12d3571a-bf70-4859-959b-c133841dd5ee-19_1408_2573_347_157}
+\end{center}
+
+\section*{Other possibilities}
+\begin{center}
+\includegraphics[max width=\textwidth, alt={}]{12d3571a-bf70-4859-959b-c133841dd5ee-20_1459_1363_350_162}
+\end{center}
+
+\section*{Constrained Pareto optimal solution}
+\begin{center}
+\includegraphics[max width=\textwidth, alt={}]{12d3571a-bf70-4859-959b-c133841dd5ee-21_1521_1773_345_159}
+\end{center}
+
+\section*{Responses to adverse selection}
+-What can the seller do?\\
+The seller, the informed party, can try to signal her information. (Signaling model)
+
+\begin{itemize}
+  \item What can the buyer, the uninformed party, do?
+\end{itemize}
+
+Could the buyer buy the information he is missing from the seller? How?
+
+\section*{Signaling and screening}
+\begin{itemize}
+  \item Adverse selection leads to inefficiencies. Sometimes these inefficiencies originate on the inability of the uninformed party to separate the different types.\\
+Signaling or screening practices.
+  \item Signaling. The good type tries to separate from the bad type using signals.
+  \item Screening. The uninformed party proposes contracts, such as multiple product lines, to screen consumers of different types.
+\end{itemize}
+
+Ex. Third degree price discrimination, insurance, etc.
+
+\section*{References}
+Akerlof, George A. 1970. "The Market for "Lemons": Uncertainty and the Market Mechanism." Quarterly Journal of Economics 84: 488-500.
+
+
+\end{document}

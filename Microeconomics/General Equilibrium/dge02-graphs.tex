@@ -1,0 +1,201 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+\usepackage{bbold}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\graphicspath{ {./images/} }
+\usepackage{caption}
+
+\begin{document}
+\captionsetup{singlelinecheck=false}
+Basic graphs
+
+\section*{Edgeworth box}
+\begin{itemize}
+  \item It is a graphic representation of an exchange economy; no production.
+  \item 2 goods: $L=2, \ell=1,2$; commodity space is $\mathbb{R}^{2}$.
+  \item 2 consumers: $I=2, i=1,2$.
+  \item Consumption sets $X_{i}=\mathbb{R}_{+}^{2}$,
+  \item Preferences $\succeq_{i}$ complete, reflexive, transitive, continuous, convex, strongly monotone.
+  \item $\omega_{i}=\left(\omega_{i 1}, \omega_{i 2}\right) \in \mathbb{R}_{+}^{2}, \omega_{i \ell}$ is $i$ 's endowment of good $\ell$.
+  \item Aggregate endowment $\bar{\omega}=\omega_{1}+\omega_{2}$.
+  \item Allocation $\left(x_{1}, x_{2}\right) \in \mathbb{R}_{+}^{4}$ to graph in 2 dimensions.
+\end{itemize}
+
+\section*{Graphing an Edgeworth box}
+\includegraphics[max width=\textwidth, alt={}, center]{99655b76-8fa5-4fed-86b2-fc92a1963771-04_1563_1284_350_227}\\
+\includegraphics[max width=\textwidth, alt={}, center]{99655b76-8fa5-4fed-86b2-fc92a1963771-04_1566_1235_349_1554}
+
+Elements of an Edgeworth box
+
+Edgeworth box
+
+\section*{Allocations}
+\begin{itemize}
+  \item A (feasible) allocation is an element $x$ in $\left(\mathbb{R}_{+}^{2}\right)^{2}$ with $x_{1}+x_{2}=\bar{\omega}$.
+  \item It is sometimes called an exact allocation as opposed to requiring $x_{1} +x_{2} \leq \bar{\omega}$.
+  \item Every exact allocation is a point in the Edgeworth Box and vice versa.
+  \item A price $p \in \mathbb{R}_{+}^{2}$ is represented as a hyperplane in $\mathbb{R}^{2}$, a straight line.
+  \item Budget set: $B_{i}\left(p, \omega_{i}\right)=\left\{x \in \mathbb{R}_{+}^{2}: p \cdot x \leq p \cdot \omega_{i}\right\}$. Note that $B_{i}\left(p, \omega_{i}\right)$ may extend outside the Edgeworth box.
+\end{itemize}
+
+\section*{Pareto optimality-Planner's problem}
+\begin{center}
+\includegraphics[max width=\textwidth, alt={}]{99655b76-8fa5-4fed-86b2-fc92a1963771-08_1350_2463_347_155}
+\end{center}
+
+\section*{Graph explanation}
+The previous graph illustrates the following points.
+
+\begin{itemize}
+  \item Interior optimal allocation without differentiable indifference curves, a kink Pareto optima.
+  \item Interior Pareto optimal allocation with differentiable preferences.
+  \item Corner Pareto optimal allocation; the allocation is at the boundary of player $j$ 's consumption set. This may occur with or without differentiable preferences.
+  \item With differentialbe preferences, first order conditions characterize Pareto optimality at an interior point, see Mas-Colell, Whinston, and Green (1995), 16.F, page 561.
+\end{itemize}
+
+\section*{Pareto optimality in the Edgeworth box}
+\begin{itemize}
+  \item If preferences are smooth, interior Pareto optimal allocations may be computed by equating Marginal Rates of Substitutions $M R S_{1} =M R S_{2}$.
+  \item If a PO allocation lies on the boundary of the Edgeworth box, tangency may fail, i.e. $M R S_{1} \neq M R S_{2}$. This is common as agents typically consume a small fraction of available goods.
+  \item If preferences are not smooth, Pareto optima allocations need not be points of tangency, i.e. $M R S_{1} \neq M R S_{2}$.
+\end{itemize}
+
+\section*{Edgeworth box, decentralization}
+\begin{center}
+\includegraphics[max width=\textwidth, alt={}]{99655b76-8fa5-4fed-86b2-fc92a1963771-11_1450_1948_350_164}
+\end{center}
+
+\section*{Edgeworth box, i's and j's problem}
+\begin{center}
+\includegraphics[max width=\textwidth, alt={}]{99655b76-8fa5-4fed-86b2-fc92a1963771-12_1450_1953_350_162}
+\end{center}
+
+\section*{Edgeworth box, WE}
+\begin{center}
+\includegraphics[max width=\textwidth, alt={}]{99655b76-8fa5-4fed-86b2-fc92a1963771-13_1462_1955_345_162}
+\end{center}
+
+Robinson's economy
+
+\section*{Robinson's economy}
+\begin{itemize}
+  \item Graphical representation of production economies.
+  \item One firm, one agent (Robinson), and two goods, leisure $x_{1}$ and yams $x_{2}$.
+  \item Robinson's consumption set:\\
+$X_{R}=\left\{\left(x_{1}, x_{2}\right):(\forall i) x_{i} \geq 0, x_{1} \leq 24\right\}$.
+  \item Robinson's endowment: $\omega=\left(24, \omega_{2}\right)$.
+  \item Preferences are complete, transitive, continuous, strongly monotone, strictly convex, (and as differentiable as convenient).
+\end{itemize}
+
+\section*{Robinson's firm, assumptions}
+\begin{itemize}
+  \item The single firm has technology $Y$.
+  \item Robinson is the sole owner of the firm.
+  \item $0 \in Y$. Inactivity (i.e. no production) is possible.
+  \item $Y+\mathbb{R}_{-}^{L} \subset Y$. Free disposal.
+  \item $\mathbb{R}_{+}^{L} \cap Y=\{0\}$. No free production.
+  \item $Y$ is convex. DRS or CRS.
+  \item $y \in Y, y \neq 0 \Longrightarrow-y \notin Y$. Irreversibility.
+  \item And sufficiently differentiable when convenient.
+\end{itemize}
+
+Robinson's economy, building the graph\\
+\includegraphics[max width=\textwidth, alt={}, center]{99655b76-8fa5-4fed-86b2-fc92a1963771-18_1967_2569_40_154}
+
+\section*{Robinson, planner's problem 1}
+\begin{center}
+\includegraphics[max width=\textwidth, alt={}]{99655b76-8fa5-4fed-86b2-fc92a1963771-19_1436_2496_357_150}
+\end{center}
+
+\section*{Robinson, planner's problem 2}
+\begin{center}
+\includegraphics[max width=\textwidth, alt={}]{99655b76-8fa5-4fed-86b2-fc92a1963771-20_1452_2576_341_150}
+\end{center}
+
+\section*{Robinson, planner's problem 3}
+\begin{center}
+\includegraphics[max width=\textwidth, alt={}]{99655b76-8fa5-4fed-86b2-fc92a1963771-21_1449_2595_335_135}
+\end{center}
+
+\section*{Decentralized problem}
+\begin{figure}[h]
+\begin{center}
+\captionsetup{labelformat=empty}
+\caption{The firm}
+  \includegraphics[alt={},max width=\textwidth]{99655b76-8fa5-4fed-86b2-fc92a1963771-22_1323_1205_412_157}
+\end{center}
+\end{figure}
+
+\begin{figure}[h]
+\begin{center}
+\captionsetup{labelformat=empty}
+\caption{The consumer}
+  \includegraphics[alt={},max width=\textwidth]{99655b76-8fa5-4fed-86b2-fc92a1963771-22_1323_1338_418_1392}
+\end{center}
+\end{figure}
+
+\section*{The firm's problem}
+$$
+\pi(p)=\max _{y \in Y} p \cdot y=\max _{y \in Y} p_{2} y_{2}+p_{1} y_{1}=\max _{y \in Y} p_{2} y_{2}-p_{1}\left|y_{1}\right|
+$$
+
+The isoprofit line corresponding to $\pi(p)$ is
+
+$$
+\begin{gathered}
+\left\{y \in \mathbb{R}^{2}: \pi(p)=p \cdot y\right\} \text { or equivalently } \\
+\left\{\left(y_{1}, y_{2}\right) \in \mathbb{R}^{2}: y_{2}=\frac{\pi(p)}{p_{2}}+\frac{p_{1}}{p_{2}}\left|y_{1}\right|\right\} \\
+y_{2}^{*}=\frac{\pi(p)}{p_{2}}+\frac{p_{1}}{p_{2}}\left|y_{1}^{*}\right|=\pi(p)+p_{1}\left|y_{1}^{*}\right|=\pi(p)=\pi^{*}
+\end{gathered}
+$$
+
+normalizing $p_{2}=1$ and choosing $y_{1}=0$ in the profit line.
+
+\section*{Decentralized problem and WE}
+\begin{figure}[h]
+\begin{center}
+\captionsetup{labelformat=empty}
+\caption{The firm}
+  \includegraphics[alt={},max width=\textwidth]{99655b76-8fa5-4fed-86b2-fc92a1963771-24_1329_1168_406_154}
+\end{center}
+\end{figure}
+
+\begin{figure}[h]
+\begin{center}
+\captionsetup{labelformat=empty}
+\caption{The consumer}
+  \includegraphics[alt={},max width=\textwidth]{99655b76-8fa5-4fed-86b2-fc92a1963771-24_1320_1368_418_1358}
+\end{center}
+\end{figure}
+
+\section*{Not a WE}
+\begin{center}
+\includegraphics[max width=\textwidth, alt={}]{99655b76-8fa5-4fed-86b2-fc92a1963771-25_1534_2006_348_154}
+\end{center}
+
+\section*{A WE}
+\begin{center}
+\includegraphics[max width=\textwidth, alt={}]{99655b76-8fa5-4fed-86b2-fc92a1963771-26_1578_2016_329_147}
+\end{center}
+
+\section*{Remarks}
+\begin{itemize}
+  \item The illustration of the welfare theorems also provides a method to identify WE; Negishi approach, (Negishi 1960).
+  \item If $Y$ is CRS in Robinson's economy, equilibrium prices are solely determined by technology provided the good is produced in equilibrium. CRS firms must earn zero profit.
+\end{itemize}
+
+Preferences do not affect prices or distribution of income.
+
+\section*{References}
+Mas-Colell, Andreu, Michael Whinston, and Jerry Green. 1995. Microeconomic Theory. New York, Oxford: Oxford University Press.\\
+Negishi, T. 1960. "Welfare Economics and the Existence of Equilibrium for a Competitive Economy." Metroeconomica 12: 92-97.
+
+
+\end{document}

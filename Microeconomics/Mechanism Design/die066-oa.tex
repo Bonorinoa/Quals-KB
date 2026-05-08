@@ -1,0 +1,270 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\graphicspath{ {./images/} }
+
+\begin{document}
+Optimal mechanism
+
+\section*{Optimal mechanism, IPVM}
+\begin{itemize}
+  \item What's optimal? For the seller, to maximize expected revenue; for society, to maximize social surplus.
+  \item Social surplus: The four classic auctions without reserve price maximize expected social surplus.
+  \item Myerson (1981) identifies mechanism that maximizes seller's expected revenue.
+  \item $X_{i}=\left[\underline{x}_{i}, \bar{x}_{i}\right]$; we'll use $\underline{x}_{i}=0$ and $\bar{x}_{i}=1$; one good, $I$ bidders; $x_{i} \in X_{i}$ distributed according to cdf $F_{i}\left(x_{i}\right)$ with pdf $f_{i}\left(x_{i}\right)$ such that $\left(\forall x_{i} \in X_{i}\right) f_{i}\left(x_{i}\right)>0$.
+  \item See Monteiro and Svaiter (2010) for weaker distributional assumptions.
+\end{itemize}
+
+\section*{Optimal mechanism}
+Objective function
+
+$$
+\begin{aligned}
+& \max _{\left\{p_{i}, t_{i}\right\}_{1}^{I}} E\left(\sum_{i=1}^{I} T_{i}\left(x_{i}\right)\right) \\
+& \forall i, \quad p_{i} \in L^{1}\left([0,1]^{I}\right), t_{i} \in L^{1}\left([0,1]^{I}\right) \\
+& \forall p_{i} \geq 0 \\
+& \text { subject to }
+\end{aligned}
+$$
+
+\section*{Optimal mechanism}
+Constraints
+
+$$
+\begin{aligned}
+& (1 G) \sum_{i=1}^{I} p_{i} \leq 1 \\
+& (I C) \forall i \forall x_{i}, \quad U_{i}\left(x_{i}\right) \geq U_{i}\left(x_{i}^{\prime} \mid x_{i}\right) \forall x_{i}^{\prime} \in x_{i} \\
+& (I R) \forall i \forall x_{i}, \quad U_{i}\left(x_{i}\right) \geq 0 \\
+& E\left(\sum_{i=1}^{n} T_{i}\left(x_{i}\right)\right) \geq 0 .
+\end{aligned}
+$$
+
+\section*{Optimal mechanism}
+Defining constraints
+
+$$
+\begin{array}{ll}
+\forall i \forall x_{i} \forall x_{i}^{\prime} & \\
+& Q_{i}\left(x_{i}\right)=E_{x_{-i}} p_{i}\left(x_{-i}, x_{i}\right) \\
+& T_{i}\left(x_{i}\right)=E_{x_{-i}} t_{i}\left(x_{-i}, x_{i}\right) \\
+& U_{i}\left(x_{i}^{\prime} \mid x_{i}\right)=Q_{i}\left(x_{i}^{\prime}\right) \cdot x_{i}-T_{i}\left(x_{i}^{\prime}\right) \\
+& U_{i}\left(x_{i}\right)=U_{i}\left(x_{i} \mid x_{i}\right)
+\end{array}
+$$
+
+\section*{The program}
+$$
+\begin{array}{cl}
+\max _{\left\{p_{i}\right\}_{i=1}^{I}} & E\left[\sum_{i=1}^{n} T_{i}\left(x_{i}\right)\right] \\
+\text { s.t. } & \forall i, \\
+\text { s.t. } & \forall x=\left(x_{1}, \ldots, x_{I}\right)
+\end{array}
+$$
+
+
+\begin{equation*}
+p_{i}(x) \geq 0 \wedge \sum_{i=1}^{n} p_{i}(x) \leq 1 \tag{1G}
+\end{equation*}
+
+
+(IC) $\quad Q_{i}\left(x_{i}\right)=E_{x_{-i}} p_{i}\left(x_{i}, x_{-i}\right), Q_{i}$ is nondecreasing,
+
+$$
+U_{i}\left(x_{i}\right)=U_{i}(0)+\int_{0}^{x_{i}} Q_{i}(y) \mathrm{d} y
+$$
+
+$(I R) \quad U_{i} \geq 0$.
+
+$$
+\begin{aligned}
+& U_{i}\left(x_{i}\right)=Q_{i}\left(x_{i}\right) x_{i}-T_{i}\left(x_{i}\right) \\
+& T_{i}\left(x_{i}\right)=Q_{i}\left(x_{i}\right) x_{i}-U_{i}\left(x_{i}\right) .
+\end{aligned}
+$$
+
+\section*{Revenue in terms of probability}
+Lemma 1 IPVM, $N=1$ good. Let $(p, t)$ be a DRM. The seller's expected revenue is
+
+$$
+\begin{array}{r}
+\sum_{i=1}^{I} E\left[T_{i}\left(x_{i}\right)\right]=\sum_{i=1}^{I} \int_{0}^{1} \underbrace{\left[x_{i}-\frac{1-F_{i}\left(x_{i}\right)}{f_{i}\left(x_{i}\right)}\right]}_{v_{i}\left(x_{i}\right)} Q_{i}\left(x_{i}\right) f_{i}\left(x_{i}\right) \mathrm{d} x_{i} \\
+-U_{i}(0) .
+\end{array}
+$$
+
+(i) Note
+
+\begin{itemize}
+  \item $v_{i}\left(x_{i}\right)$ is called agent $i$ 's virtual utility in Myerson (1981).
+  \item If $X_{i}=\left[\underline{x}_{i}, \bar{x}_{i}\right]$, the lower limit of integration is $\underline{x}_{i}$ instead of zero, and $U_{i}(0)$ becomes $U_{i}\left(\underline{x}_{i}\right)$.
+  \item This Lemma also proves the Revenue Equivalence Theorem.
+\end{itemize}
+
+Proof.
+
+$$
+\begin{aligned}
+E\left[T_{i}\right] & =\int_{0}^{1}\left[Q_{i}\left(x_{i}\right) \cdot x_{i}-U_{i}\left(x_{i}\right)\right] f_{i}\left(x_{i}\right) \mathrm{d} x_{i} \\
+& =\int_{0}^{1}\left[Q_{i}\left(x_{i}\right) \cdot x_{i}-U_{i}(0)-\int_{0}^{x_{i}} Q_{i}(y) \mathrm{d} y\right] f_{i}\left(x_{i}\right) \mathrm{d} x_{i} \\
+& =\int_{0}^{1}\left(Q_{i}\left(x_{i}\right) \cdot x_{i}\right) f_{i}\left(x_{i}\right) \mathrm{d} x_{i}-\int_{0}^{1} \int_{0}^{x_{i}} Q_{i}(y) \mathrm{d} y f_{i}\left(x_{i}\right) \mathrm{d} x_{i} \\
+& -U_{i}(0)
+\end{aligned}
+$$
+
+Note: This step used the integrability condition included in IC but not the convexity of $U_{i}$ (that is to say, the increasingness of $Q_{i}\left(x_{i}\right)$ ).
+
+Integrate the second term by parts using
+
+$$
+\begin{gathered}
+\mathcal{U}\left(x_{i}\right)=\int_{0}^{x_{i}} Q_{i}(y) \mathrm{d} y \text { and } \mathcal{V}^{\prime}\left(x_{i}\right)=f\left(x_{i}\right) \mathrm{d} x_{i} \\
+\int_{0}^{1} \mathcal{U} \mathcal{V}^{\prime}=\mathcal{U}(1) \mathcal{V}(1)-\mathcal{U}(0) \mathcal{V}(0)-\int_{0}^{1} \mathcal{U}^{\prime} V \\
+\int_{0}^{1}\left[\int_{0}^{x_{i}} Q_{i}(y) \mathrm{d} y\right] f_{i}\left(x_{i}\right) \mathrm{d} x_{i}=\int_{0}^{1} Q_{i}(y) \mathrm{d} y-\int_{0}^{1} Q_{i}\left(x_{i}\right) F_{i}\left(x_{i}\right) \mathrm{d} x_{i} \\
+=\int_{0}^{1} Q_{i}\left(x_{i}\right)\left(1-F_{i}\left(x_{i}\right)\right) \mathrm{d} x_{i}
+\end{gathered}
+$$
+
+Replacing
+
+$$
+\begin{aligned}
+E\left[T_{i}\right] & =\int_{0}^{1} Q_{i}\left(x_{i}\right) x_{i} f_{i}\left(x_{i}\right) \mathrm{d} x_{i}-\int_{0}^{1} Q_{i}\left(x_{i}\right)\left(1-F_{i}\left(x_{i}\right)\right) \mathrm{d} x_{i}-U_{i}(0) \\
+& =\int_{0}^{1} \underbrace{\left[x_{i}-\frac{1-F_{i}\left(x_{i}\right)}{f_{i}\left(x_{i}\right)}\right]}_{v_{i}\left(x_{i}\right)} Q_{i}\left(x_{i}\right) f_{i}\left(x_{i}\right) \mathrm{d} x_{i}-U_{i}(0)
+\end{aligned}
+$$
+
+QED\\
+Note: $v_{i}\left(x_{i}\right)$ is called agent $i$ 's virtual utility (Myerson (1981)).
+
+\section*{The program simplified}
+$$
+\begin{aligned}
+& \max _{\left\{p_{i}\right\}_{i=1}^{I}} \sum_{i=1}^{I} \int_{0}^{1} \overbrace{\left[x_{i}-\frac{1-F_{i}\left(x_{i}\right)}{f_{i}\left(x_{i}\right)}\right]}^{v_{i}\left(x_{i}\right)} Q_{i}\left(x_{i}\right) f_{i}\left(x_{i}\right) \mathrm{d} x_{i}-U_{i}(0) \\
+& \quad \text { s.t. } \quad(\forall i)\left(\forall x=\left(x_{1}, \ldots, x_{I}\right)\right) \\
+& (1 G) \quad p_{i}(x) \geq 0 \wedge \sum_{i=1}^{I} p_{i}(x) \leq 1 \\
+& (I C) \quad Q_{i} \text { nondecreasing, } U_{i}\left(x_{i}\right)=U_{i}(0)+\int_{0}^{x_{i}} Q_{i}(y) \mathrm{d} y \\
+& \quad(I R) \quad U_{i} \geq 0
+\end{aligned}
+$$
+
+\section*{The final program}
+$$
+\begin{aligned}
+& \max _{\left\{p_{i}\right\}_{i=1}^{I}} \sum_{i=1}^{I} \int_{0}^{1} \overbrace{\left[x_{i}-\frac{1-F_{i}\left(x_{i}\right)}{f_{i}\left(x_{i}\right)}\right]}^{v_{i}\left(x_{i}\right)} Q_{i}\left(x_{i}\right) f_{i}\left(x_{i}\right) \mathrm{d} x_{i} \\
+& \quad \text { s.t. } \quad(\forall i)\left(\forall x=\left(x_{1}, \ldots, x_{I}\right)\right) \\
+& \quad(1 G) \quad p_{i}(x) \geq 0 \wedge \sum_{i=1}^{I} p_{i}(x) \leq 1 \\
+& \quad(I C) \quad Q_{i} \text { nondecreasing, } U_{i}\left(x_{i}\right)=U_{i}(0)+\int_{0}^{x_{i}} Q_{i}(y) \mathrm{d} y
+\end{aligned}
+$$
+
+where $Q_{i}\left(x_{i}\right)=E_{x_{-i}} p_{i}\left(x_{i}, x_{-i}\right)$
+
+\section*{The optimal mechanism}
+$$
+\begin{array}{r}
+\max _{p} \sum_{i=1}^{I} \int_{0}^{1} v_{i}\left(x_{i}\right) \overbrace{Q_{i}\left(x_{i}\right)}^{E_{x_{-i}}\left[p_{i}\left(x_{i}, x_{-i}\right)\right]} f_{i}\left(x_{i}\right) \mathrm{d} x_{i} \\
+v_{i}\left(x_{i}\right)=\left[x_{i}-\frac{1-F_{i}\left(x_{i}\right)}{f_{i}\left(x_{i}\right)}\right] .
+\end{array}
+$$
+
+Regularity condition: ( $\forall i) v_{i}\left(x_{i}\right)$ is strictly increasing.\\
+Theorem 1 (Myerson) IPVM and the regularity condition holds. The optimal DRM is
+
+$$
+p_{i}\left(x_{i}, x_{-i}\right)= \begin{cases}1 & \text { if } v_{i}\left(x_{i}\right)>\max \left\{0,\left\{v_{j}\left(x_{j}\right)\right\}_{j \neq i}\right\} \\ 0 & \text { otherwise }\end{cases}
+$$
+
+\section*{Interpretation.}
+\begin{itemize}
+  \item The object is sold to the bidder with highest $v_{i}\left(x_{i}\right)$ provided it is nonnegative.
+  \item If $v_{i}$ is strictly increasing and symmetry is assumed, the bidder with highest $v_{i}$ is the bidder with the highest valuation.
+\end{itemize}
+
+Proof(Myerson). By observation.
+
+$$
+\begin{aligned}
+& \max _{p} \sum_{i=1}^{I} \int_{0}^{1} v_{i}\left(x_{i}\right) Q_{i}\left(x_{i}\right) f_{i}\left(x_{i}\right) \mathrm{d} x_{i} \\
+& \max _{p} \sum_{i=1}^{I} \int_{0}^{1} \cdots \int_{0}^{1} v_{i}\left(x_{i}\right) p_{i}\left(x_{i}, x_{-i}\right) f_{1}\left(x_{1}\right) \cdots f_{I}\left(x_{I}\right) \mathrm{d} x_{1} \cdots \mathrm{~d} x_{I}
+\end{aligned}
+$$
+
+\begin{itemize}
+  \item Propose a mechanism $\left\{p_{i}\right\}_{i=1}^{I}$ that maximizes the OF without considering the IC constraint. Then verify that the proposed mechanism satisfies IC.
+\end{itemize}
+
+It remains to show that the proposed solution satisfies the IC constraint.
+
+\begin{itemize}
+  \item Since $v_{i}\left(x_{i}\right)$ is strictly increasing, $x_{i}^{\prime}>x_{i} \Longrightarrow v_{i}\left(x_{i}^{\prime}\right)>v_{i}\left(x_{i}\right)$.
+  \item By definition of the proposed $p_{i}$,
+\end{itemize}
+
+$$
+\left(\forall x_{-i}\right) p_{i}\left(x_{i}^{\prime}, x_{-i}\right) \geq p_{i}\left(x_{i}, x_{-i}\right) .
+$$
+
+\begin{itemize}
+  \item $E_{x_{-i}} p_{i}\left(x_{i}^{\prime}, x_{-i}\right) \geq E_{x_{-i}} p_{i}\left(x_{i}, x_{-i}\right)$.
+\end{itemize}
+
+This proves $\left\{p_{i}\right\}_{i=1}^{I}$ satisfies IC and completes the proof. QED
+
+\section*{Example: regularity and symmetry}
+\includegraphics[max width=\textwidth, alt={}, center]{cfc7a6fc-2ec3-4a80-83a2-b60fe85a485b-19_1190_1297_418_154}\\
+\includegraphics[max width=\textwidth, alt={}, center]{cfc7a6fc-2ec3-4a80-83a2-b60fe85a485b-19_1377_1288_351_1438}
+
+\section*{Remarks, regularity and symmetry in IPVM.}
+\begin{itemize}
+  \item Institution implementing optimal DRM is any of the classic auctions with reserve price.
+  \item The reserve price, which is $r=v^{-1}(0)=0.5$ in the uniform case, does not change with the number of bidders $I$.
+  \item Reserve price is only useful if $I-1$ bidders have low valuations and the winner has a high valuation.
+  \item If $x_{i}=\left[\underline{x}_{i}, \bar{x}_{i}\right]$, then for large $\underline{x}_{i}$, the optimal reserve price is zero.
+  \item $I=1$ leads to a bargaining or monopoly interpretation. The optimal strategy is a take-it-or-leave-it offer $r$; set price price $=r$.
+  \item With perfect information, mechanism that maximizes seller's revenue is efficient.
+\end{itemize}
+
+Observation: the perfectly discriminating monopolist maximizes revenue by making the pie as large a possible and then eating it all.
+
+\begin{itemize}
+  \item With incomplete information, seller's optimal mechanism implies seller keeps object with certain probability, in the example that probability is $\left(\frac{1}{2}\right)^{I}$.
+  \item Optimal social mechanism: any of the classic auctions without reserve price.
+  \item If in addition the seller's valuation is private information, is the socially optimal mechanism efficient?
+\end{itemize}
+
+\section*{Example non-symmetric IPVM}
+Without symmetry, the optimal DRM may assign object to bidder that does not have the highest valuation.
+
+\begin{itemize}
+  \item $i=1,2, x_{i} \in\left[0, \bar{x}_{i}\right], \bar{x}_{1}=1, \bar{x}_{2}=2$. Uniform distribution.
+  \item $v_{i}\left(x_{i}\right)=2 x_{i}-\bar{x}_{i}$.
+  \item $v_{1}\left(x_{1}\right)=2 x_{1}-1$.
+  \item $v_{2}\left(x_{2}\right)=2 x_{2}-2$.
+  \item $v_{1}^{-1}(0)=r_{1}=0.5$, and $v_{2}^{-1}(0)=r_{2}=1$.\\
+\includegraphics[max width=\textwidth, alt={}, center]{cfc7a6fc-2ec3-4a80-83a2-b60fe85a485b-23_1528_2599_190_140}
+  \item Relatively less work on asymmetric environments.
+  \item In example, bidder 1 may win the object even if bidder 2 has the highest valuation.
+\end{itemize}
+
+The optimal auction discriminates against bidders with higher up potential, i.e. high $x_{i}$. In the DRM this discrimination discourages those bidders from under representing values close to their upper limit.
+
+\begin{itemize}
+  \item Distinction between DRM and implementing institution.
+  \item See Manelli and Vincent (1995), Manelli and Vincent (2004), Zhang (2026) in the context of procurement auctions.
+\end{itemize}
+
+\section*{References}
+Manelli, Alejandro M., and Daniel R. Vincent. 1995. "Optimal Procurement Mechanisms." Econometrica 63: 591-620.\\
+Manelli, Alejandro M., and Daniel R. Vincent. 2004. "Duality in Procurement Design." Journal of Mathematical Economics.\\
+Monteiro, Paulo Klinger, and Benar Fux Svaiter. 2010. "Optimal Auction with a General Distribution: Virtual Valuation Without Densities." Journal of Mathematical Economics 46 (1): 21-31.\\
+Myerson, Roger. 1981. "Optimal Auction Design." Mathematics of Operations Research 6: 58-73. Zhang, Kun. 2026. "Optimal Procurement Designed: A Reduced Form Approach." American Economic Journal, Microeconomics.
+
+
+\end{document}

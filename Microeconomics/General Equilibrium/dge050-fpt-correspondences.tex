@@ -1,0 +1,184 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\graphicspath{ {./images/} }
+\usepackage{bbold}
+
+\begin{document}
+Correspondences and fixed points
+
+\section*{A pure exchange economy}
+\begin{itemize}
+  \item A pure exchange economy with three goods.
+  \item Excess demand good $\ell=1,2,3$ is
+\end{itemize}
+
+$$
+z_{\ell}\left(p_{1}, p_{2}, p_{3}\right)=D_{\ell}\left(p_{1}, p_{2}, p_{3}, \omega_{\ell}\right)-\omega_{\ell}
+$$
+
+where $D_{\ell}$ is the aggregate demand for good $\ell$, the sum of the individual demands of agents in the economy.
+
+\section*{The difficulty}
+\includegraphics[max width=\textwidth, alt={}, center]{dcd5bae1-af09-487b-b1c0-428c750b101f-04_755_732_357_159}\\
+\includegraphics[max width=\textwidth, alt={}, center]{dcd5bae1-af09-487b-b1c0-428c750b101f-04_755_736_357_977}\\
+\includegraphics[max width=\textwidth, alt={}, center]{dcd5bae1-af09-487b-b1c0-428c750b101f-04_755_734_357_1799}
+
+\section*{Increase $p_{2}$ to $p_{2}^{\prime}$}
+\includegraphics[max width=\textwidth, alt={}, center]{dcd5bae1-af09-487b-b1c0-428c750b101f-05_755_732_385_159}\\
+\includegraphics[max width=\textwidth, alt={}, center]{dcd5bae1-af09-487b-b1c0-428c750b101f-05_755_736_385_977}\\
+\includegraphics[max width=\textwidth, alt={}, center]{dcd5bae1-af09-487b-b1c0-428c750b101f-05_755_732_387_1799}
+
+Fixed points and correspondences review
+
+\section*{Fixed point of a function}
+Definition 1 (Fixed point) Let $f: X \rightarrow X . x \in X$ is a fixed point of $f$ if $f(x)=x$.
+
+Theorem 1 (Brouwer) Let $K \subseteq \mathbb{R}^{n}$ be a compact, convex set and $f: K \rightarrow K$ be a continuous function. Then $(\exists x \in K) f(x)=x$.
+
+\begin{itemize}
+  \item If $X \subset \mathbb{R}$, Theorem 1 is a consequence of the intermediate value theorem.
+\end{itemize}
+
+\section*{Example Brouwer FPT}
+\begin{center}
+\includegraphics[max width=\textwidth, alt={}]{dcd5bae1-af09-487b-b1c0-428c750b101f-08_1498_1521_347_159}
+\end{center}
+
+\section*{Example discontinuous function}
+\begin{itemize}
+  \item $g(x)$
+\end{itemize}
+
+\section*{Example set $K$ is not closed}
+\begin{center}
+\includegraphics[max width=\textwidth, alt={}]{dcd5bae1-af09-487b-b1c0-428c750b101f-10_1490_1521_380_159}
+\end{center}
+
+\section*{Example set $K$ is not bounded}
+\begin{center}
+\includegraphics[max width=\textwidth, alt={}]{dcd5bae1-af09-487b-b1c0-428c750b101f-11_1509_1544_378_157}
+\end{center}
+
+\section*{Example set $K$ is not convex}
+\begin{center}
+\includegraphics[max width=\textwidth, alt={}]{dcd5bae1-af09-487b-b1c0-428c750b101f-12_1465_1423_380_159}
+\end{center}
+
+\section*{Example $K$ is the boundary of a circle}
+$K$ is the boundary\\
+\includegraphics[max width=\textwidth, alt={}, center]{dcd5bae1-af09-487b-b1c0-428c750b101f-13_1084_991_504_193}
+
+\begin{itemize}
+  \item $f(x)=x+\delta$ where $\delta$ represents a fixed arc distance.
+\end{itemize}
+
+\section*{Correspondence}
+Definition 2 (Correspondence) Let $X, Y$ be two sets. A correspondence $\varphi$ from $X$ to $Y$, denoted $\varphi: X \rightarrow Y$, is a function that maps each element $x \in X$ to a subset $\varphi(x)$ of $Y$.
+
+\begin{itemize}
+  \item $\varphi$ can be seen as a function $\varphi: X \rightarrow 2^{Y}$, $\varphi$ maps $x \in X$ to $\varphi(x) \subseteq Y$.
+  \item Notation. If $X, Y$ are metric spaces (or topological spaces), $\tau_{X}$ and $\tau_{Y}$ are the collections of open subsets of $X$ and $Y$ respectively.
+  \item $U \in \tau_{X}$ means $U$ is an open subset of $X$.
+\end{itemize}
+
+\section*{Example: correspondence}
+\includegraphics[max width=\textwidth, alt={}, center]{dcd5bae1-af09-487b-b1c0-428c750b101f-15_1260_1138_351_150}\\
+\includegraphics[max width=\textwidth, alt={}, center]{dcd5bae1-af09-487b-b1c0-428c750b101f-15_1257_1135_354_1419}
+
+Kakutani FPT
+
+\section*{Fixed point of a correspondence}
+Definition 3 (Fixed point) Let $\varphi: X \rightarrow X$ be a correspondence. $x \in X$ is a fixed point of $\varphi$ if $x \in \varphi(x)$.
+
+Theorem 2 (Kakutani) Let $K \subseteq \mathbb{R}^{n}$ and $\varphi: K \rightarrow K$ be a correpondence.\\
+If $K$ is compact and convex, and ( $\forall x \in K$ )
+
+\begin{enumerate}
+  \item $\varphi(x) \neq \emptyset$,
+  \item $\varphi(x)$ is convex,
+  \item $\varphi(x)$ is closed,
+  \item $\varphi$ is upper-hemicontinuous, then
+\end{enumerate}
+
+$$
+(\exists x \in K) x \in \varphi(x)
+$$
+
+\section*{Upper-hemicontinuity (uhc)}
+Definition 4 Let $X, Y$ be metric spaces and $\varphi: X \rightarrow Y$ a correspondence. $\varphi$ is upper hemi-continuous at $\bar{x}$ if
+
+\begin{itemize}
+  \item $\varphi(\bar{x}) \neq \emptyset$ and
+  \item $\left(\forall V \in \tau_{Y}, V \supseteq \varphi(\bar{x})\right)\left(\exists U \in \tau_{X}, U \ni \bar{x}\right)$ such that
+\end{itemize}
+
+$$
+[(\forall x \in U) \varphi(x) \subseteq V] .
+$$
+
+$\varphi$ is upper-hemicontinuous (uhc) if $(\forall x \in X) \varphi(x)$ is uhc at $x$.
+
+\section*{uhc and continuity of functions}
+Lemma 1 Let $X, Y$ be metric spaces and $\varphi: X \rightarrow Y$ a correspondence. Suppose $(\forall x \in X) \varphi(x)=\left\{y_{x}\right\}, y_{x} \in Y$. Define $f(x):=y_{x}$. Then, $\varphi(x)$ is uhc if and only if $f$ is continuous.
+
+\section*{Example: uhc correspondence}
+\includegraphics[max width=\textwidth, alt={}, center]{dcd5bae1-af09-487b-b1c0-428c750b101f-20_1214_1137_351_154}\\
+\includegraphics[max width=\textwidth, alt={}, center]{dcd5bae1-af09-487b-b1c0-428c750b101f-20_1208_1128_354_1429}
+
+\section*{Lower-hemicontinuous (lhc)}
+Definition 5 (lhc) Let $X, Y$ be metric spaces and $\varphi: X \rightarrow Y$ a correspondence. $\varphi$ is lower hemi-continuous (lhc) at $\bar{x}$ if
+
+\begin{itemize}
+  \item $\varphi(\bar{x}) \neq \emptyset$ and
+  \item $\left(\forall V \in \tau_{Y}, V \cap \varphi(\bar{x}) \neq \emptyset\right)\left(\exists U \in \tau_{X}\right)$ such that
+\end{itemize}
+
+$$
+[(\forall x \in U) \varphi(x) \cap V \neq \emptyset] .
+$$
+
+$\varphi$ is lhc if $(\forall x \in X) \varphi(x)$ is lhc at $x$.
+
+\section*{Example: Ihc correspondence}
+\includegraphics[max width=\textwidth, alt={}, center]{dcd5bae1-af09-487b-b1c0-428c750b101f-22_1217_1159_351_154}\\
+\includegraphics[max width=\textwidth, alt={}, center]{dcd5bae1-af09-487b-b1c0-428c750b101f-22_1208_1134_354_1423}
+
+\section*{Closed correspondence}
+Let $X, Y$ be metric spaces and $\varphi: X \rightarrow Y$ a correspondence. $\varphi$ is closed if $\operatorname{gr}(\varphi)$ is closed in $X \times Y$ where
+
+$$
+\operatorname{gr}(\varphi)=\{(x, y) \in X \times Y: y \in \varphi(x), x \in X\}
+$$
+
+\section*{Relation between closed graph and uhc}
+Theorem 3 Let $X, Y$ be metric spaces and $\varphi: X \rightarrow Y$ a correspondence. If $\varphi$ is uhc and closed valued then $\operatorname{gr}(\varphi)$ is closed.
+
+\section*{2 examples}
+\includegraphics[max width=\textwidth, alt={}, center]{dcd5bae1-af09-487b-b1c0-428c750b101f-25_1186_1132_351_147}\\
+\includegraphics[max width=\textwidth, alt={}, center]{dcd5bae1-af09-487b-b1c0-428c750b101f-25_1190_1132_351_1416}
+
+\begin{itemize}
+  \item Left: $\varphi$ is uhc but it does not have a closed graph. Right: $\varphi$ has a closed graph and is closed valued; but not uhc at $x=0$.
+\end{itemize}
+
+\section*{Example}
+Let $X=\mathbb{R}, Y=\mathbb{R}^{2}$, and $\varphi: X \rightarrow Y$
+
+$$
+\varphi(x)=\left\{\left(y_{1}, y_{2}\right) \in Y: y_{2} \geq 0,\left(\forall y_{1} \neq x\right)\left[y_{2} \geq \frac{1}{y_{1}-x}\right]\right\}
+$$
+
+$\varphi$ is closed-valued and closed, it is not uhc at any $x \in X$.
+
+Theorem 4 Let $X$ be metric spaces, $Y$ a compact metric space, and $\varphi: X \rightarrow Y$ a correspondence. If $\operatorname{gr}(\varphi)$ is closed then $\varphi$ is uhc and closedvalued.
+
+
+\end{document}

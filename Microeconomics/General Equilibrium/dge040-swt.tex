@@ -1,0 +1,251 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+\usepackage{bbold}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\graphicspath{ {./images/} }
+
+\begin{document}
+Second Welfare Theorem (SWT)
+
+\section*{Preliminaries SWT}
+\begin{itemize}
+  \item Let $B \subset \mathbb{R}, a \in \mathbb{R}$, then
+  \item $\sup B \leq a \Longrightarrow[(\forall b \in B) b \leq a]$
+  \item $\inf B \geq a \Longrightarrow[(\forall b \in B) b \geq a]$
+  \item Let $A_{1}, A_{2}$ be subsets of a vector space $X$. Then,
+  \item $A_{1}+A_{2}=\left\{x_{1}+x_{2}: x_{1} \in A_{1}, x_{2} \in A_{2}\right\}$.
+  \item $\operatorname{co} A_{1}$ is the convex hull of $A_{1}$
+  \item If $A_{1}, A_{2}$ are convex, then $A_{1}+A_{2}$ is convex.
+  \item $p \cdot A_{1}=\left\{p \cdot x_{1}: x_{1} \in A_{1}\right\}$.
+\end{itemize}
+
+\section*{Separating Hyperplane Theorem}
+Theorem 1 (Minkowski) If $B, C \subseteq \mathbb{R}^{L}$ are convex and $B \cap C=\emptyset$, then $\exists p \in \mathbb{R}^{L}, p \neq 0$, such that $\sup p \cdot B \leq \inf p \cdot C$.
+
+In particular, $b \in B, c \in C \Longrightarrow p \cdot b \leq p \cdot c$.
+
+Second Welfare Theorem
+
+Second Welfare Theorem
+
+Second Welfare Theorem
+
+Second Welfare Theorem
+
+\section*{Weak second welfare theorem}
+Theorem 2 (WSWT) Let $\mathcal{E}$ be an Arrow-Debreu economy with convex production sets and complete, transitive, convex, LNS preferences. Let ( $x^{*}, y^{*}$ ) be a Pareto optimal allocation. Then ( $\exists p^{*} \in \mathbb{R}^{L}, p^{*} \neq 0$ ) such that
+
+\begin{enumerate}
+  \item $(\forall j)\left(\forall y_{j} \in Y_{j}\right) p^{*} \cdot y_{j}^{*} \geq p^{*} \cdot y_{j}$ (price-taking profit maximization)
+  \item $(\forall i)\left[x_{i} \succ_{i} x_{i}^{*} \Longrightarrow p^{*} \cdot x_{i} \geq p^{*} \cdot x_{i}^{*}\right]$ (price-taking "quasi preference maximization")
+  \item $\sum_{i=1}^{I} x_{i}^{*}=\bar{\omega}+\sum_{j=1}^{J} y_{j}^{*}$
+\end{enumerate}
+
+Any $\left(x^{*}, y^{*}, p^{*}\right)$ satisfying 1-3 is a quasi-equilibrium.
+
+\section*{Proof}
+Since $\left(x^{*}, y^{*}\right)$ is an allocation, (3) holds. We will prove (1) and (2) in several steps. Let
+
+$$
+\begin{aligned}
+V_{i} & =\left\{x_{i} \in X_{i}: x_{i} \succ_{i} x_{i}^{*}\right\} \\
+V & =\sum_{i=1}^{I} V_{i} \\
+Y & =\sum_{j=1}^{J} Y_{j}
+\end{aligned}
+$$
+
+Claim (i). $V, Y$, and $\left\{V_{i}\right\}_{i=1}^{I}$ are convex. It follows from convexity of preferences and production sets and because the sum of convex sets is a convex set.
+
+Claim ii. $V \cap(\bar{\omega}+Y)=\emptyset$
+
+\begin{itemize}
+  \item Suppose not. Then $\exists \sum_{i=1}^{I} x_{i} \in V: \sum_{i=1}^{I} x_{i} \in(\bar{\omega}+Y)$.
+  \item Hence $\left(x^{*}, y^{*}\right)$ is not PO because for every $i, x_{i} \succ_{i} x_{i}^{*}$, and there is $y \in Y$ such that $(x, y)$ is a feasible allocation.
+\end{itemize}
+
+This contradiction proves the claim.
+
+Claim iii. $\exists p^{*} \in \mathbb{R}^{L}, p^{*} \neq 0: \inf p^{*} \cdot \bar{V} \geq \sup p^{*} \cdot(\bar{\omega}+Y)$
+
+\begin{itemize}
+  \item $V$ and $\bar{\omega}+Y$ are nonempty, convex and do not intersect. By SHT,\\
+$\exists p^{*} \in \mathbb{R}^{L}, p^{*} \neq 0: \inf p^{*} \cdot V \geq \sup p^{*} \cdot(\bar{\omega}+Y)$. Thus
+\end{itemize}
+
+$$
+\begin{aligned}
+\left(\sum_{i=1}^{I} x_{i} \in V\right) \wedge & \left(\sum_{j=1}^{J} y_{j} \in Y\right) \Longrightarrow \\
+& {\left[p^{*} \cdot \sum_{i=1}^{I} x_{i} \geq p^{*} \cdot\left(\bar{\omega}+\sum_{j=1}^{J} y_{j}\right)\right] }
+\end{aligned}
+$$
+
+\begin{itemize}
+  \item If $z \in \bar{V}$, then $\exists z^{n} \in V: z^{n} \rightarrow z$ (definition of closure)
+  \item $p^{*} \cdot z^{n} \geq \sup p^{*} \cdot(\bar{\omega}+Y)$
+  \item Continuity of dot product implies $p^{*} \cdot z \geq \sup p^{*} \cdot(\bar{\omega}+Y)$.
+\end{itemize}
+
+Recall for future use that $\bar{\omega}+Y \ni \bar{\omega}+\sum_{j} y_{j}^{*}=\sum_{i} x_{i}^{*}$.
+
+Claim iv. $\forall z \in \bar{V}, \forall y \in Y$,\\
+$p^{*} \cdot z \geq p^{*} \cdot \sum_{i=1}^{I} x_{i}^{*}=p^{*} \cdot\left(\bar{\omega}+\sum_{j=1}^{J} y_{j}^{*}\right) \geq p^{*} \cdot\left(\bar{\omega}+\sum_{j=1}^{J} y_{j}\right)$\\
+Proof. By LNS for $i=1, \ldots, I$,
+
+$$
+\forall \epsilon>0, \exists \tilde{x}_{i}^{\epsilon},\left\|\tilde{x}_{i}^{\epsilon}-x_{i}^{*}\right\|<\epsilon \wedge \tilde{x}_{i}^{\epsilon} \in V_{i}
+$$
+
+Thus, $\sum_{i=1}^{I} \tilde{x}_{i}^{\epsilon} \in V$
+
+\begin{itemize}
+  \item As $\epsilon \rightarrow 0, \forall i, \tilde{x}_{i}^{\epsilon} \rightarrow x_{i}^{*}$ and therefore $\sum_{i=1}^{I} \tilde{x}_{i}^{\epsilon} \rightarrow \sum_{i=1}^{I} x_{i}^{*}$. Thus, $\sum_{i=1}^{I} x_{i}^{*} \in \bar{V}$.
+  \item $\sum_{i=1}^{I} x_{i}^{*}=\bar{\omega}+\sum_{j=1}^{J} y_{j}^{*} \in \bar{\omega}+Y$.
+  \item Therefore, $\sum_{i=1}^{I} x_{i}^{*} \in \bar{V} \cap(\bar{\omega}+Y)$ and the claim follows.\\
+\includegraphics[max width=\textwidth, alt={}, center]{f0229c61-9af6-488f-a6cb-d1d2024f4c46-15_828_760_192_152}\\
+\includegraphics[max width=\textwidth, alt={}, center]{f0229c61-9af6-488f-a6cb-d1d2024f4c46-15_832_772_190_967}\\
+\includegraphics[max width=\textwidth, alt={}, center]{f0229c61-9af6-488f-a6cb-d1d2024f4c46-15_837_773_190_1790}
+\end{itemize}
+
+Claim v. (1) holds, that is to say $(\forall j, j=1, \ldots, J)$,
+
+$$
+\left[p^{*} \cdot y_{j}^{*} \geq p^{*} \cdot y_{j}, \forall y_{j} \in Y_{j}\right] \text { (profit maximization) }
+$$
+
+Proof. Fix a firm $j$.
+
+\begin{itemize}
+  \item $\forall y_{j} \in Y_{j}, y_{j}+\sum_{h=1, h \neq j}^{J} y_{h}^{*} \in Y$.\\
+-By claim iv,
+\end{itemize}
+
+$$
+p^{*} \cdot\left(\bar{\omega}+y_{j}^{*}+\sum_{h=1, h \neq j}^{J} y_{h}^{*}\right) \geq p^{*} \cdot\left(\bar{\omega}+y_{j}+\sum_{h=1, h \neq j}^{J} y_{h}^{*}\right)
+$$
+
+\begin{itemize}
+  \item Substract the first and third terms to both sides to establish the claim.
+\end{itemize}
+
+Claim vi. (2) holds, that is to say
+
+$$
+\text { for } i=1, \ldots, I,\left[x_{i} \succ_{i} x_{i}^{*} \Longrightarrow p^{*} \cdot x_{i} \geq p^{*} \cdot x_{i}^{*}\right]
+$$
+
+Proof. Fix a consumer $i$.
+
+\begin{itemize}
+  \item By claim iv, $p^{*} \cdot\left(x_{i}+\sum_{h=i, h \neq i}^{I} x_{h}^{*}\right) \geq p^{*} \cdot\left(x_{i}^{*}+\sum_{h=i, h \neq i}^{I} x_{h}^{*}\right)$
+  \item Substracting the second term to both sides, the claim and the theorem are established.\\
+QED
+\end{itemize}
+
+Arrow's exceptional economy
+
+\section*{A corollary to the WSWT}
+Corollary $\mathbf{1}$ (WSWC) Let $\mathcal{E}$ be an Arrow-Debreu economy that satisfies the hypothesis of Theorem 2 and $p^{*}$ be the price identified in that theorem. If, in addition, preferences are continuous, consumption sets are convex and for $i=1, \ldots, I$ there is a bundle $x_{i}^{\prime} \in X_{i}$ such that $p^{*} \cdot x_{i}^{\prime}<p^{*} \cdot x_{i}^{*}$, then there exists an income transfer $t \in \mathbb{R}^{I}, \sum_{i=1}^{I} t_{i}=0$ such that $\left(x^{*}, y^{*}, p^{*}, t\right)$ is a WE with transfers of $\mathcal{E}$.
+
+\begin{itemize}
+  \item Unsatisfactory version of SWT; it uses assumptions on endogenous elements of the model.
+\end{itemize}
+
+\section*{Proof [sketch.]}
+Theorem 2 (1) and (3) establish that firms maximize profit at the proposed production plan and that aggregate demand equals aggregate supply.
+
+It remains to show preference maximization, that $\forall i$
+
+$$
+\forall i, x_{i}^{*} \in D_{i}\left(p^{*}, y^{*}, t_{i}\right) .
+$$
+
+Theorem 2 (2) states that
+
+$$
+\forall i, x_{i} \succ_{i} x_{i}^{*} \Longrightarrow p^{*} \cdot x_{i} \geq p^{*} \cdot x_{i}^{*}
+$$
+
+Claim. $\forall i, x_{i} \succ_{i} x_{i}^{*} \Longrightarrow p^{*} \cdot x_{i}>p^{*} \cdot x_{i}^{*}$.
+
+\begin{itemize}
+  \item Arguing by contradiction, suppose $\exists x_{i} \succ_{i} x_{i}^{*} \wedge p^{*} \cdot x_{i}=p^{*} \cdot x_{i}^{*}$ (using Theorem 2 (2))
+  \item Pick $x_{i}^{\prime}$ as in the hypothesis of corollary ( $x_{i}^{\prime}$ costs less than $x_{i}^{*}$ ).
+  \item By continuity of preferences
+\end{itemize}
+
+$$
+\exists \bar{\alpha} \in(0,1): 1 \geq \alpha \geq \bar{\alpha} \Longrightarrow \alpha x_{i}+(1-\alpha) x_{i}^{\prime} \succ_{i} x_{i}^{*}
+$$
+
+\begin{itemize}
+  \item Since $p^{*} \cdot x_{i}^{\prime}<p^{*} \cdot x_{i}^{*}=p^{*} \cdot x_{i}$, then
+\end{itemize}
+
+$$
+\forall \alpha \in[0,1), p^{*} \cdot\left[\alpha x_{i}+(1-\alpha) x_{i}^{\prime}\right]<p^{*} \cdot x_{i}^{*}
+$$
+
+This is a contradiction of Theorem 2 (2).
+
+It remains to identify transfers $\left\{t_{i}\right\}_{i=1}^{I}, \sum_{i=1}^{I} t_{i}=0$, so that $x_{i}^{*} \in D_{i}\left(p^{*}, y^{*}, t_{i}\right)$.
+
+For $i=1, \ldots, I$, define,
+
+$$
+t_{i}=p^{*} \cdot x_{i}^{*}-p^{*} \cdot \omega_{i}-\sum_{j=1}^{J} \theta_{i j} p^{*} y_{j}^{*}
+$$
+
+Then
+
+\begin{itemize}
+  \item $\sum_{i=1}^{I} t_{i}=0$, so $t=\left(t_{1}, \ldots, t_{I}\right)$ is an income transfer.
+  \item By construction, $x_{i}^{*} \in B_{i}\left(p^{*}, y^{*}, t_{i}\right)$. By previous argument any $x_{i}, x_{i} \succ_{i} x_{i}^{*}$ must cost more. Then $x_{i}^{*} \in D_{i}\left(p^{*}, y^{*}, t_{i}\right)$.
+\end{itemize}
+
+QED.
+
+\section*{A version of the Second Welfare Theorem}
+Theorem 3 If $x^{*}$ is a Pareto optimal allocation in a pure exchange economy, with strongly monotone, continuous, convex preferences, consumption sets are $\mathbb{R}_{+}^{L}$, and $\bar{\omega} \gg 0$, then there exists a price vector $p^{*}$ and an income transfer $t$ such that $\left(x^{*}, p^{*}\right)$ is a Walrasian Equilibrium with transfers provided that $(\forall i) x_{i}^{*} \neq 0$.
+
+\section*{Failures of the SWT}
+\begin{itemize}
+  \item There are three general types of failures.
+  \item Failure for insufficient income.
+  \item Failure of LNS.
+  \item Failure of convexity, no appropriate prices exist.
+\end{itemize}
+
+\section*{Failure of LNS}
+Failure of convexity
+
+\section*{Failure of convexity in production}
+\begin{center}
+\includegraphics[max width=\textwidth, alt={}]{f0229c61-9af6-488f-a6cb-d1d2024f4c46-28_1414_2361_348_147}
+\end{center}
+
+\section*{Failure of convexity in production}
+\begin{center}
+\includegraphics[max width=\textwidth, alt={}]{f0229c61-9af6-488f-a6cb-d1d2024f4c46-29_1414_2358_348_150}
+\end{center}
+
+\section*{Interpretation and limitations}
+\begin{itemize}
+  \item Planner must ensure that the new supporting prices are taken as given. This fails with market power; outcome of market economy is not a WE.
+  \item Planner's informational requirements: Identify the PO allocation to be implemented and compute the supporting prices in case transfers are used.
+  \item In both points above, planner must know the statistical distribution of preferences and endowments.
+  \item To implement transfers, the planner must observe the agents' private information, endowment and preferences. This is difficult; it often prevents lump sum transfers.
+  \item When lump-sum transfers are not possible, wealth redistribution is distortionary. Thus, the end result is not the desired PO allocation. This leads to theory of second best.
+  \item Transfers must be enforced.
+\end{itemize}
+
+Mas-Colell, Andreu, Michael Whinston, and Jerry Green. 1995. Microeconomic Theory. New York, Oxford: Oxford University Press.
+
+
+\end{document}

@@ -1,0 +1,316 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\graphicspath{ {./images/} }
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+\usepackage{caption}
+
+\begin{document}
+\captionsetup{singlelinecheck=false}
+Imperfect information
+
+\section*{Refinements-Imperfect information}
+\begin{itemize}
+  \item Refinements of extensive form games
+  \item Weakly Perfect Bayesian Equilibrium (WPBE):
+  \item Sequential Equilibrium (SE)
+  \item Forward induction concepts.
+\end{itemize}
+
+\section*{Non-credible threats, perfect information}
+\begin{center}
+\includegraphics[max width=\textwidth, alt={}]{fd69804c-f915-467d-b964-ffa616621981-04_515_907_444_190}
+\end{center}
+
+\begin{itemize}
+  \item Two Nash equilibria
+  \item $(d, T)$.
+  \item $(u, B)$. Not SPE. Subgame perfection eliminates noncredible threats in games of perfect information.
+\end{itemize}
+
+\section*{Threats and imperfect information}
+\section*{Example 1}
+\begin{center}
+\includegraphics[max width=\textwidth, alt={}]{fd69804c-f915-467d-b964-ffa616621981-05_1277_994_504_153}
+\end{center}
+
+NE: $[(L, L), B], \quad\left(E U_{1}, E U_{2}\right)=(2,2)$\\
+NE: $[(R, L), T], \quad\left(E U_{1}, E U_{2}\right)=(2.5,1.5)$\\
+$[(L, L), B]$ is an unintuitive NE
+
+\begin{itemize}
+  \item This is a signaling game:
+  \item Nature flips a coin.
+  \item Player 1 observes either $h_{1}$ (head) or $h_{1}^{\prime}$ (tail), and chooses an action.
+  \item Player 2 does not observe nature's move but observes player 1's action and responds.
+  \item The game has no subgames, so every NE is SPE.
+  \item Equilibrium $[(L, L, B)]$ is not intuitive.
+  \item For player $2, B$ is a dominated strategy, and therefore it should not be credible. Subgame perfection does not apply.
+\end{itemize}
+
+WPBE
+
+\section*{Assessment}
+Fix a finite extensive-form game $\Gamma$.
+
+\section*{Definition 1 (Assessment)}
+\begin{itemize}
+  \item A system of beliefs is a profile $\mu=\left(\mu_{1}, \ldots, \mu_{I}\right)$ such that
+\end{itemize}
+
+$$
+(\forall i \in N \backslash\{0\})\left(\forall h \in \mathcal{U}^{i}\right) \quad \mu_{i}(\cdot \mid h) \in \Delta(h),
+$$
+
+where $\Delta(h)$ is the set of probability distributions on the information set $h$.
+
+For $x \in h, \mu_{i}(x \mid h)$ is the probability assigned to $x$ by beliefs $\mu_{i}(\cdot \mid h)$.\\
+An assessment is a strategy-profile and system-of-beliefs pair $(\sigma, \mu)$.
+
+\section*{Weakly Perfect Bayesian Equilibrium}
+Definition 2 (WPBE) An assessment $(\sigma, \mu)$ is a Weakly Perfect Bayesian Equilibrium (WPBE) of a finite, extensive-form game if
+
+\begin{enumerate}
+  \item Sequential rationality: $(\forall i \in N)\left(\forall h \in \mathcal{U}_{i}\right)\left(\forall \sigma_{i}^{\prime} \in \Sigma_{i}\right)$
+\end{enumerate}
+
+$$
+E\left[u_{i} \mid h, \mu_{i}, \sigma_{i}, \sigma_{-i}\right] \geq E\left[u_{i} \mid h, \mu_{i}, \sigma_{i}^{\prime}, \sigma_{-i}\right]
+$$
+
+\begin{enumerate}
+  \setcounter{enumi}{1}
+  \item Bayes rule: $(\forall i \in N)\left(\forall h \in \mathcal{U}_{i}\right)$,
+\end{enumerate}
+
+$$
+P_{\sigma}(h)>0 \Longrightarrow \forall x \in h, \mu_{i}(x \mid h)=\frac{P_{\sigma}(x)}{P_{\sigma}(h)}
+$$
+
+\section*{NE and sequential rationality}
+Fix a finite, extensive-form game $\Gamma$ of perfect recall.\\
+Theorem 1 Let $(\sigma, \mu)$ be an assessment. If at every information set in the path of play,\\
+i. $\mu$ is derived by Bayes rule from $\sigma$ and\\
+ii. $(\sigma, \mu)$ satisfies sequential rationality, then $\sigma$ is a NE of $\Gamma$.
+
+Theorem 2 Let $\sigma$ be a NE and $\mu$ a system of beliefs derived by Bayes rule from $\sigma$ when possible. Then $(\sigma, \mu)$ is sequentially rational at every information set on the equilibrium path.
+
+\begin{itemize}
+  \item Maschler, Solan, and Zamir (2013), Theorems 7.44, 7.45. pp. 276-277.
+\end{itemize}
+
+\section*{Sequential rationality. Interpretation}
+\begin{itemize}
+  \item Subgame perfection eliminates non-credible threats by requiring that a NE be played in any subgame.
+  \item Games of imperfect information may have no subgames. A ˋ"game" starting at any information set may be defined.
+  \item Interpret an information set $h$ as the beginning of the game; $\mu_{i}(\cdot \mid h)$ as the probability of being at each $x \in h$.
+  \item Available actions remain as in the original game.
+  \item $E\left[u_{i} \mid h, \mu_{i}, \sigma_{i}, \sigma_{-i}\right]$ denotes $i$ 's expected payoff in the "game" that begins at information set $h$.
+\end{itemize}
+
+\section*{Example to illustrate WPBE 1}
+\begin{center}
+\includegraphics[max width=\textwidth, alt={}]{fd69804c-f915-467d-b964-ffa616621981-12_1390_2179_348_150}
+\end{center}
+
+\section*{Player 1's strategy and beliefs 2}
+$$
+\begin{aligned}
+\sigma_{1}\left(h_{1}\right) & =\underbrace{(0.5,0.5)}_{(U, D)} \\
+\sigma_{1}\left(h_{1}^{\prime}\right) & =\overbrace{(1,0)} \\
+\mu_{1}\left(h e a d \mid h_{1}\right) & =1 \\
+\mu_{1}\left(t a i l \mid h_{1}^{\prime}\right) & =1
+\end{aligned}
+$$
+
+\section*{Player 2's strategy and beliefs 3}
+$$
+\begin{aligned}
+& \sigma_{2}\left(h_{2}\right)=\underbrace{(0.5,0.5)}_{(R, L)} \\
+& \sigma_{2}\left(h_{2}^{\prime}\right)=\overbrace{(1,0)}
+\end{aligned}
+$$
+
+Consider the beliefs:
+
+$$
+\begin{aligned}
+\mu_{2}\left((\text { head }, U) \mid h_{2}\right) & =0.5 \\
+\mu_{2}\left((\text { tail }, U) \mid h_{2}^{\prime}\right) & =1
+\end{aligned}
+$$
+
+\section*{Revisit Example 1}
+\begin{center}
+\includegraphics[max width=\textwidth, alt={}]{fd69804c-f915-467d-b964-ffa616621981-15_1281_1007_391_149}
+\end{center}
+
+NE: $[(R, L), T], \quad\left(E U_{1}, E U_{2}\right)=(2.5,1.5)$\\
+1's beliefs: $\mu_{1}\left(\right.$ head $\left.\mid h_{1}\right)=1, \mu_{1}\left(\right.$ tail $\left.\left.\mid h_{1}^{\prime}\right)\right)=1$\\
+2's beliefs: $\mu_{2}\left((\right.$ head,$\left.R) \mid h_{2}\right)=1$
+
+\begin{itemize}
+  \item 2's beliefs: $h_{2}=\{($ head,$R),($ tail,$R)\}$.
+\end{itemize}
+
+$$
+\begin{aligned}
+& \mu_{2}\left((\text { head }, R) \mid h_{2}\right) \\
+& \quad=\frac{P_{\sigma}((\text { head }, R))}{P_{\sigma}\left(h_{2}\right)} \\
+& \quad=\frac{P_{0}(\text { head }) \times \sigma_{1}\left(R \mid h_{1}\right)}{P_{0}(\text { head }) \times \sigma_{1}\left(R \mid h_{1}\right)+P_{0}(\text { tail }) \times \sigma_{1}\left(R \mid h_{1}^{\prime}\right)} \\
+& \quad=\frac{1 / 2 \times 1}{1 / 2 \times 1+1 / 2 \times 0}=\frac{1 / 2}{1 / 2}=1
+\end{aligned}
+$$
+
+\begin{itemize}
+  \item 2's sequential rationality follows. See previous figure.
+  \item 2's sequential rationality if not yet convinced.\\
+$E\left[U_{2} \mid h_{2}, T, \sigma_{1}\right]=\mu_{2}\left((\right.$ head,$\left.R) \mid h_{2}\right) 1+\mu_{2}\left((\right.$ tail,$\left.R) \mid h_{2}\right) 0=1$\\
+$E\left[U_{2} \mid h_{2}, B, \sigma_{1}\right]=\mu_{2}\left((\right.$ head,$\left.R) \mid h_{2}\right) 0+\mu_{2}\left((\right.$ tail,$\left.R) \mid h_{2}\right)(-1)=0$\\
+$E\left[U_{2} \mid h_{2}, T, \sigma_{1}\right]=1>0=E\left[U_{2} \mid h_{2}, B, \sigma_{1}\right]$
+\end{itemize}
+
+\section*{The other equilibrium in Example 1}
+\begin{center}
+\includegraphics[max width=\textwidth, alt={}]{fd69804c-f915-467d-b964-ffa616621981-18_1277_1002_391_149}
+\end{center}
+
+NE: $[(L, L), B], \quad\left(E U_{1}, E U_{2}\right)=(2,2)$.\\
+$[(L, L), B]$ is the unintuitive NE.\\
+$P_{\sigma}\left(h_{2}\right)=0$; then free to choose beliefs.\\
+$\left(\forall \mu_{2}\left(x \mid h_{2}\right) \in[0,1]\right)$ 2's best action is T.\\
+No beliefs support 2's choosing $B$ at $h_{2}$.\\
+Hence $[(L, L), B]$ is not a WPBE.
+
+\section*{Example: WPBE need not be SPE}
+\begin{itemize}
+  \item A potential entrant (E), decides whether to enter a market, (in) or (out).
+  \item If E chooses in, then E and the incumbent (I), decide simultaneous whether to fight or acquiesce. Incumbent actions are in lower case.
+\end{itemize}
+
+\begin{figure}[h]
+\begin{center}
+  \includegraphics[alt={},max width=\textwidth]{fd69804c-f915-467d-b964-ffa616621981-19_577_1224_855_261}
+\captionsetup{labelformat=empty}
+\caption{Figure 1}
+\end{center}
+\end{figure}
+
+\begin{itemize}
+  \item Pure-strategy NE:
+  \item ((OUT, F), f),
+  \item ((OUT, A), f),
+  \item $((I N, A), a)$.
+  \item Subgame Perfect: $((I N, A), a)$.
+  \item A peculiar WPBE. $((O U T, A), f) ; \mu_{2}\left((I N, F) \mid h_{I}\right)=1$.
+  \item Normal form.
+\end{itemize}
+
+\begin{center}
+\begin{tabular}{lcc}
+ & $\mathbf{a}$ & $\mathbf{f}$ \\
+\hline
+OUT-A & 0,2 & 0,2 \\
+\hline
+OUT-F & 0,2 & 0,2 \\
+\hline
+IN-A & 3,1 & $-2,-2$ \\
+\hline
+IN-F & $1,-2$ & $-3,-1$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{itemize}
+  \item Reduced Normal form.
+\end{itemize}
+
+\begin{center}
+\begin{tabular}{lcc}
+ & $\mathbf{a}$ & $\mathbf{f}$ \\
+\hline
+OUT- & 0,2 & 0,2 \\
+\hline
+IN-A & 3,1 & $-2,-2$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{itemize}
+  \item The Entrant has two information sets, say $h_{E}$ and $h_{E}^{\prime}$, both singletons. The Incumbent has a single information set, $h_{I}$.
+  \item WPBE (OUT-A,f)
+\end{itemize}
+
+$$
+\begin{aligned}
+\sigma_{E}\left(h_{E}\right) & =(1,0) ;(\mathrm{OUT}, \mathrm{IN}) \\
+\sigma_{E}\left(h_{E}^{\prime}\right) & =(1,0) ;(\mathrm{A}, \mathrm{~F}) \\
+\sigma_{I}\left(h_{I}\right) & =(0,1) ;(\mathrm{a}, \mathrm{f}) \\
+\mu_{I}\left((I N, A) \mid h_{I}\right) & =0
+\end{aligned}
+$$
+
+This is WPBE but is not SPE; strategies do not specify an equilibrium in the subgme.
+
+\section*{Example: unintuitive WPBE}
+\begin{figure}[h]
+\begin{center}
+  \includegraphics[alt={},max width=\textwidth]{fd69804c-f915-467d-b964-ffa616621981-23_1298_1122_344_203}
+\captionsetup{labelformat=empty}
+\caption{Figure 2}
+\end{center}
+\end{figure}
+
+\begin{figure}[h]
+\begin{center}
+  \includegraphics[alt={},max width=\textwidth]{fd69804c-f915-467d-b964-ffa616621981-24_1304_1116_178_209}
+\captionsetup{labelformat=empty}
+\caption{Figure 3}
+\end{center}
+\end{figure}
+
+\begin{figure}[h]
+\begin{center}
+  \includegraphics[alt={},max width=\textwidth]{fd69804c-f915-467d-b964-ffa616621981-25_1276_1116_271_209}
+\captionsetup{labelformat=empty}
+\caption{Figure 4}
+\end{center}
+\end{figure}
+
+First WPBE (blue)
+
+$$
+\begin{array}{ll}
+\sigma_{1}\left(h_{1}\right)=(0,1) ;(L, R) . & \mu_{1}\left(h d \mid h_{1}\right)=\frac{1}{2} \\
+\sigma_{2}\left(h_{2}\right)=(0,1) ;(T, B) . & \mu_{2}\left(h d, R \mid h_{2}\right)=\frac{1}{2}
+\end{array}
+$$
+
+Second WPBE (red)
+
+$$
+\begin{array}{ll}
+\sigma_{1}\left(h_{1}\right)=(1,0) ;(L, R) . & \mu_{1}\left(h d \mid h_{1}\right)=\frac{1}{2} \\
+\sigma_{2}\left(h_{2}\right)=(1,0) ;(T, B) . & \mu_{2}\left(h d, R \mid h_{2}\right)=\frac{9}{10}
+\end{array}
+$$
+
+\section*{Remarks}
+\begin{itemize}
+  \item Many WPBE because it imposes no restrictions on beliefs off the equilibrium path.
+  \item Including beliefs in the definition of equilibrium possibilitates further refinements.
+  \item Red equilibrium and the common prior assumption.
+  \item Finding intuitive properties with examples, define solution concept. Weak as method.
+\end{itemize}
+
+\section*{References}
+Maschler, Michael, Eilon Solan, and Shmuel Zamir. 2013. Game Theory. Translated by Ziv Hellman. 1st ed. Cambridge University Press.
+
+
+\end{document}

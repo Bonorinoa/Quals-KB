@@ -1,0 +1,219 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+\usepackage{bbold}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\graphicspath{ {./images/} }
+
+\begin{document}
+\section*{Characterization of incentive compatibility}
+\begin{itemize}
+  \item One may restrict attention to direct mechanisms in which truthful revelation is an equilibrium.
+  \item Formalization: agents must have incentives to report truthfully.
+  \item Model: IPVM, $N=1$ object, $I$ bidders.
+  \item $X_{i}=\left[\underline{x}_{i}, \bar{x}_{i}\right]$ is $i^{\prime} s$ type space, $X=\prod_{i=1}^{I} X_{i}$ is the type-profile space. For easy of exposition we will use $X_{i}=[0,1]$.
+  \item A direct mechanism is $\left\{\left(p_{i}, t_{i}\right)\right\}_{i=1}^{I}$ where
+\end{itemize}
+
+$$
+\begin{aligned}
+p_{i}: X & \rightarrow[0,1],(\forall x) \sum p_{i}(x) \leq 1 \\
+t_{i}: X & \rightarrow \mathbb{R}
+\end{aligned}
+$$
+
+\section*{Ex post utility}
+\begin{itemize}
+  \item Fix a mechanism $\left\{p_{i}, t_{i}\right\}$.
+  \item The player that observes $x_{i}$ and reports $x_{i}^{\prime}$ when other agents observe $x_{-i}$ obtains a payoff
+\end{itemize}
+
+$$
+u_{i}\left(x_{i}^{\prime} \mid x_{i}, x_{-i}\right)=p_{i}\left(x_{i}^{\prime}, x_{-i}\right) \cdot x_{i}-t_{i}\left(x_{i}^{\prime}, x_{-i}\right) .
+$$
+
+The player that observes $x_{i}$ and reports truthfully when other agents observe $x_{-i}$ obtains a payoff
+
+$$
+u_{i}\left(x_{i} \mid x_{i}, x_{-i}\right)=p_{i}\left(x_{i}, x_{-i}\right) \cdot x_{i}-t_{i}\left(x_{i}, x_{-i}\right) .
+$$
+
+\section*{Interim utlity}
+\begin{itemize}
+  \item Fix a mechanism $\left\{p_{i}, t_{i}\right\}_{i=1}^{I}$.
+  \item If $i$ observes $x_{i} \in X_{i}$, reports $x_{i}^{\prime}$, but does not observe her opponents types $x_{-i}, i$ 's expected payoff is
+\end{itemize}
+
+$$
+\begin{gathered}
+\underbrace{E_{x_{-i}} u_{i}\left(x_{i}^{\prime} \mid x_{i}, x_{-i}\right)}_{U_{i}\left(x_{i}^{\prime} \mid x_{i}\right)}=\underbrace{E_{x_{-i}} p_{i}\left(x_{i}^{\prime}, x_{-i}\right)}_{Q_{i}\left(x_{i}^{\prime}\right)} \cdot x_{i}-\underbrace{E_{x_{-i}} t_{i}\left(x_{i}^{\prime}, x_{-i}\right)}_{T_{i}\left(x_{i}^{\prime}\right)} \\
+U_{i}\left(x_{i}^{\prime} \mid x_{i}\right):=Q_{i}\left(x_{i}^{\prime}\right) \cdot x_{i}-T_{i}\left(x_{i}^{\prime}\right) \\
+U_{i}\left(x_{i}\right):=Q_{i}\left(x_{i}\right) \cdot x_{i}-T_{i}\left(x_{i}\right)
+\end{gathered}
+$$
+
+\begin{itemize}
+  \item The expectation is taken with respect to the correct probability distribution for $x_{-i}$. This will lead to a Bayesian Nash equilibrium.
+\end{itemize}
+
+\section*{Incentive compatibility (IC)}
+Definition 1 (Ex post IC) $\left\{p_{i}, t_{i}\right\}$ satisfies ex post incentive compatibility if $\forall\left(x_{i}, x_{-i}\right) \in X \forall x_{i}^{\prime} \in X_{i}, u_{i}\left(x_{i} \mid x_{i}, x_{-i}\right) \geq u_{i}\left(x_{i}^{\prime} \mid x_{i}, x_{-i}\right)$.
+
+Definition 2 (Interim IC) $\left\{p_{i}, t_{i}\right\}$ satisfies interim incentive compatibility if $\forall x_{i} \in X_{i}, x_{i}^{\prime} \in X_{i}, U_{i}\left(x_{i}\right) \geq U_{i}\left(x_{i}^{\prime} \mid x_{i}\right)$.\\
+(i) Note
+
+\begin{itemize}
+  \item Ex post IC is often called dominant-strategy IC (DIC) or strategy-proofness.
+  \item Interim IC is often called Bayesian IC (BIC); agent $i$ chooses an action after observing her type but without observing other agents' types.
+  \item There is also ex ante incentive compatibility.
+\end{itemize}
+
+See Myerson (1979), Myerson (1985).
+
+\section*{Remarks}
+\begin{itemize}
+  \item $Q_{i}\left(x_{i}\right)$ is type $x_{i}$ 's expected probability of trade.
+  \item $T_{i}\left(x_{i}\right)$ is type $x_{i}$ 's expected transfer to seller.
+  \item DIC is determined by $\left\{\left(p_{i}, t_{i}\right)\right\}_{i=1}^{I}$.
+  \item BIC is determined by $\left\{\left(Q_{i}, T_{i}\right)\right\}_{i=1}^{I}$.
+  \item Different mechanisms $\left\{\left(p_{i}, t_{i}\right)\right\}_{i=1}^{I}$ may yield the same $\left(Q_{i}, T_{i}\right)$. Thus, they may all satisfy BIC but not DIC.
+  \item Both BIC and DIC have the same mathematical structure.
+  \item In DIC $x_{-i}$ is fixed and the defining inequality must hold for all $x_{-i}$.
+\end{itemize}
+
+\section*{Characterization}
+\begin{itemize}
+  \item Suppose there is a single agent, that is $I=1$. Then
+  \item Subindex $i$ need not be specified.
+  \item BIC and DSIC are equivalent.
+  \item See Myerson (1981).
+  \item See Rochet (1985), Rochet (1987) for an extension to $N$-good environments.
+\end{itemize}
+
+Theorem 1 IPVM. Let $\left\{\left(p_{i}, t_{i}\right)\right\}_{1}^{I}$ be a direct mechanism and $\left\{\left(Q_{i}, T_{i}\right)\right\}_{1}^{I}$ be the respectively expected probability of trade (or expected allocation) and the expected transfer. Let $U_{i}\left(x_{i}\right)=Q_{i}\left(x_{i}\right) \cdot x_{i}-T_{i}\left(x_{i}\right)$.
+
+The following statements are equivalent.\\
+a. $\{(p, t)\}_{1}^{I}$ satisfies Bayesian IC.\\
+b. $(\forall i) U_{i}$ is convex, $\frac{\mathrm{d} U\left(x_{i}\right)}{\mathrm{d} x_{i}}=Q_{i}\left(x_{i}\right) \in[0,1]$ a.e.\\
+c. $(\forall i)\left[Q_{i}\left(x_{i}^{\prime}\right)-Q_{i}\left(x_{i}\right)\right] \cdot\left(x_{i}^{\prime}-x_{i}\right) \geq 0$, and $\left.Q_{( } x_{i}\right)=\frac{\mathrm{d} U\left(x_{i}\right)}{\mathrm{d} x_{i}}$ a.e.\\
+d. $(\forall i)\left[Q_{i}\left(x_{i}\right)\right.$ is non-decreasing and
+
+$$
+\left.\left(\forall x_{i}\right) T_{i}\left(x_{i}\right)=Q_{i}\left(x_{i}\right) x_{i}-\int_{\underline{x}_{i}}^{x_{i}} Q_{i}(r) \mathrm{d} r\right]
+$$
+
+Corollary 1 Convexity of $U_{i}$ implies that
+
+$$
+\begin{aligned}
+U_{i}\left(x_{i}\right) & =U_{i}(0)+\int_{0}^{x_{i}} \frac{\mathrm{~d} U_{i}(z)}{\mathrm{d} z} \mathrm{~d} z \\
+& =U_{i}(0)+\int_{0}^{x} Q_{i}(z) \mathrm{d} z
+\end{aligned}
+$$
+
+The Fundamental Theorem of Calculus holds for convex functions on the real line.
+
+Because of convexity $U_{i}$ is differentiable in all but a countable number of points. This implies that FTC holds.\\
+->
+
+\section*{$a$ b}
+\includegraphics[max width=\textwidth, alt={}, center]{927fa1ca-fe9f-4831-99de-f64cc9562836-10_1492_2450_375_150}\\
+\includegraphics[max width=\textwidth, alt={}, center]{927fa1ca-fe9f-4831-99de-f64cc9562836-11_1525_2512_182_148}\\
+\includegraphics[max width=\textwidth, alt={}, center]{927fa1ca-fe9f-4831-99de-f64cc9562836-12_1523_2518_187_150}
+
+For all reports $x_{i}^{\prime}$
+
+$$
+\begin{aligned}
+U_{i}\left(x_{i}\right) & \geq U_{i}\left(x_{i}^{\prime} \mid x_{i}\right) \\
+Q_{i}\left(x_{i}\right) \cdot x_{i}-T_{i}\left(x_{i}\right) & \geq Q_{i}\left(x_{i}^{\prime}\right) \cdot x_{i}-T\left(x_{i}^{\prime}\right) \\
+U_{i}\left(x_{i}\right) & =\sup _{x_{i}^{\prime}} U_{i}\left(x_{i}^{\prime} \mid x_{i}\right)
+\end{aligned}
+$$
+
+This implies $u$ is convex because the pointwise supremum of a family of convex functions is convex. See for instance Rockafellar (1970).\\
+Since convex functions defined on $[0,1]$ are integrable, and $\frac{\mathrm{d} U_{i}\left(x_{i}\right)}{\mathrm{d} x_{i}} =Q_{i}\left(x_{i}\right)$ a.e.
+
+\section*{Intuition reverse}
+\begin{center}
+\includegraphics[max width=\textwidth, alt={}]{927fa1ca-fe9f-4831-99de-f64cc9562836-14_1479_1964_351_152}
+\end{center}
+
+\section*{Intuition reverse 2}
+\includegraphics[max width=\textwidth, alt={}, center]{927fa1ca-fe9f-4831-99de-f64cc9562836-15_1481_2368_350_151}\\
+$b \Longrightarrow c$
+
+$$
+U_{i} \text { convex } \Longrightarrow\left\{\begin{array}{l}
+U_{i}\left(x_{i}^{\prime}\right) \geq U_{i}\left(x_{i}\right)+\frac{\mathrm{d} U_{i}\left(x_{i}\right)}{\mathrm{d} x_{i}} \cdot\left(x_{i}^{\prime}-x_{i}\right) \\
+U_{i}\left(x_{i}\right) \geq U_{i}\left(x_{i}^{\prime}\right)-\frac{\mathrm{d} U_{i}\left(x_{i}^{\prime}\right)}{\mathrm{d} x_{i}^{\prime}} \cdot\left(x_{i}^{\prime}-x_{i}\right)
+\end{array}\right.
+$$
+
+\begin{itemize}
+  \item $U_{i}\left(x_{i}^{\prime}\right)-U_{i}\left(x_{i}\right) \geq \underbrace{\frac{\mathrm{d} U_{i}\left(x_{i}\right)}{\mathrm{d} x_{i}}}_{Q_{i}\left(x_{i}\right)} \cdot\left(x_{i}^{\prime}-x_{i}\right)$
+  \item $\underbrace{\frac{\mathrm{d} U_{i}\left(x_{i}^{\prime}\right)}{\mathrm{d} x_{i}^{\prime}}}_{Q_{i}\left(x_{i}^{\prime}\right)} \cdot\left(x_{i}^{\prime}-x_{i}\right) \geq U_{i}\left(x_{i}^{\prime}\right)-U_{i}\left(x_{i}\right)$.
+  \item then (c) $\left[Q_{i}\left(x_{i}^{\prime}\right)-Q_{i}\left(x_{i}\right)\right] \cdot\left(x_{i}^{\prime}-x_{i}\right) \geq 0$ a.e.
+\end{itemize}
+
+\section*{$c \Longrightarrow a$}
+\begin{itemize}
+  \item Property of convex functions,
+\end{itemize}
+
+
+\begin{equation*}
+U_{i}\left(x_{i}^{\prime}\right)=U_{i}\left(x_{i}\right)+\int_{x_{i}}^{x_{i}^{\prime}} Q_{i}(z) d z \tag{1}
+\end{equation*}
+
+
+Since $U_{i}\left(x_{i}\right)=Q_{i}\left(x_{i}\right) \cdot x_{i}-T_{i}\left(x_{i}\right)$,\\
+then $-T_{i}(x)=-Q_{i}\left(x_{i}\right) \cdot x_{i}+U_{i}\left(x_{i}\right)$.\\
+Hence $U_{i}\left(x_{i} \mid x_{i}^{\prime}\right)=Q_{i}\left(x_{i}\right) \cdot x_{i}^{\prime}-\overbrace{T\left(x_{i}\right)}$ or
+
+
+\begin{equation*}
+U_{i}\left(x_{i} \mid x_{i}^{\prime}\right)=Q_{i}\left(x_{i}\right) \cdot\left(x_{i}^{\prime}-x_{i}\right)+U_{i}\left(x_{i}\right) \tag{2}
+\end{equation*}
+
+
+$$
+\begin{aligned}
+U_{i}\left(x_{i}^{\prime}\right)-U_{i}\left(x_{i} \mid x_{i}^{\prime}\right) & =U_{i}\left(x_{i}\right)+\int_{x_{i}}^{x_{i}^{\prime}} Q_{i}(z) d z-Q_{i}\left(x_{i}\right)\left(x_{i}^{\prime}-x_{i}\right) \\
+& -U_{i}\left(x_{i}\right) \\
+& =\int_{x_{i}}^{x_{i}^{\prime}} Q_{i}(z) \mathrm{d} z-Q_{i}\left(x_{i}\right)\left(x_{i}^{\prime}-x_{i}\right) \\
+& =\int_{x_{i}}^{x_{i}^{\prime}} Q_{i}(z) \mathrm{d} z-Q_{i}\left(x_{i}\right) \underbrace{\int_{x_{i}}^{x_{i}^{\prime}} d z}_{x_{i^{\prime}}-x_{i}} \\
+& =\int_{x_{i}}^{x_{i^{\prime}}}\left[Q_{i}(z)-Q_{i}\left(x_{i}\right)\right] \mathrm{d} z \geq 0
+\end{aligned}
+$$
+
+where the first line replaces $U_{i}\left(x_{i}^{\prime}\right)$ with Equation 1 and $U_{i}\left(x_{i} \mid x_{i}^{\prime}\right)$ with Equation 2.
+
+\begin{itemize}
+  \item Don't forget (d). QED
+\end{itemize}
+
+\section*{Questions left}
+\begin{itemize}
+  \item Can one use $\left\{Q_{i}, T_{i}\right\}_{i=1}^{I}$ as a primitive for a mechanism?
+  \item Extend IC characterization to more general environments such as nonlinear preferences, etc.
+  \item Bayesian versus Dominant Strategy Incentive Compatibility
+  \item Detour
+\end{itemize}
+
+\section*{References}
+Myerson, Roger. 1979. "Incentive Compatibility and the Bargaining Problem." Econometrica 47: 61-73.\\
+Myerson, Roger. 1981. "Optimal Auction Design." Mathematics of Operations Research 6: 58-73.\\
+Myerson, Roger. 1985. "Bayesian Equilibrium and Incentive Compatibility: An Introduction." In Social Goals and Social Organization, edited by Leonid Hurwicz, David Schmeidler, and Hugo Sonneschein.\\
+Rochet, Jean-Charles. 1985. "The Taxation Principle and Multi-Time Hamilton-Jacobi Equations." Journal of Mathematical Economics 14 (2): 113-28.\\
+Rochet, Jean-Charles. 1987. "A Necessary and Sufficient Condition for Rationalizability in a Quasi-Linear Context." Journal of Mathematical Economics 16 (2): 191-200.\\
+Rockafellar, R. Tyrrell. 1970. Convex Analysis. Number 28 in Princeton Mathematical Series. Princeton University Press.
+
+
+\end{document}

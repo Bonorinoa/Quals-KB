@@ -1,0 +1,120 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+
+\begin{document}
+Applications of IC
+
+\section*{Applications of the IC characterization}
+\begin{itemize}
+  \item Revenue equivalence.
+  \item Obtaining equilibria in specific auctions.
+  \item Optimal reserve prices and entry fees.
+  \item Myerson (1981), ( $N=1, I$ bidders)
+  \item Alternative expression for revenue.
+  \item Optimal mechanism.
+  \item Optimal reserve price in classic auctions.
+\end{itemize}
+
+\section*{Revenue equivalence}
+Theorem 1 (Revenue equivalence) IPVM with $I$ bidders. $X_{i}=\left[\underline{x}_{i}, \bar{x}_{i}\right]$. Let $(p, t)$ and $\left(p^{\prime}, t^{\prime}\right)$ be two DRMs and let $(Q, T),\left(Q^{\prime}, T^{\prime}\right)$ be the corresponding expected probability of trade and expected transfer functions. If
+
+$$
+(\forall i) Q_{i}=Q_{i}^{\prime} \text {, then } T_{i}=T_{i}^{\prime}+\left[U_{i}^{\prime}\left(\underline{x}_{i}\right)-U_{i}\left(\underline{x}_{i}\right)\right] \text {. }
+$$
+
+\begin{itemize}
+  \item This formulation of revenue equivalence and its proof in the next slide are due to Williams (1999).
+  \item The same statement and proof hold in the extension of the model to $N$ goods.
+\end{itemize}
+
+Proof. By definition,
+
+$$
+\begin{aligned}
+T_{i}\left(x_{i}\right) & =\frac{\mathrm{d} U_{i}\left(x_{i}\right)}{\mathrm{d} x_{i}} \cdot x_{i}-U_{i}\left(x_{i}\right) \\
+T_{i}^{\prime}\left(x_{i}\right) & =\frac{\mathrm{d} U_{i}^{\prime}\left(x_{i}\right)}{\mathrm{d} x_{i}} \cdot x_{i}-U_{i}^{\prime}\left(x_{i}\right)
+\end{aligned}
+$$
+
+\begin{itemize}
+  \item By BIC, $\frac{\mathrm{d} U_{i}}{\mathrm{~d} x_{i}}=Q_{i}=Q_{i}^{\prime}=\frac{\mathrm{d} U_{i}^{\prime}}{\mathrm{d} x_{i}}$ a.e.
+  \item Then, $T_{i}\left(x_{i}\right)=T_{i}^{\prime}\left(x_{i}\right)+\left[U_{i}^{\prime}\left(x_{i}\right)-U_{i}\left(x_{i}\right)\right]$ a.e.
+  \item If two convex functions have the same gradient a.e., then both functions are equal up to a constant Rockafellar (1970), Chapter 24. Hence,
+\end{itemize}
+
+$$
+\left(\forall x_{i}\right)\left[U_{i}^{\prime}\left(x_{i}\right)-U_{i}\left(x_{i}\right)\right] \text { is a constant. }
+$$
+
+QED
+
+\section*{Revenue equivalence}
+Corollary 1 The four classic auctions yield the same expected revenue to the seller.
+
+Proof. At the respective equilibria of the four classic auctions, every bidder $i$ faces $Q_{i}\left(x_{i}\right)=F\left(x_{i}\right)^{I-1}$ and $U_{i}\left(\underline{x}_{i}\right)=0$. QED
+
+\section*{First-price sealed-bid auction}
+Theorem 2 (FPA) Symmetric IPVM, $N=1$ good, $I$ bidders. The unique, symmetric, monotone Bayesian-Nash equilibrium of the FPA is
+
+$$
+(\forall i), b_{i}\left(x_{i}\right)=x_{i}-\int_{0}^{x_{i}}\left(\frac{F(y)^{I-1}}{F\left(x_{i}\right)^{I-1}}\right) \mathrm{d} y .
+$$
+
+Proof. Sketch.
+
+\begin{enumerate}
+  \item If the equilibrium strategy is monotone nondecreasing then
+\end{enumerate}
+
+$$
+Q_{i}\left(x_{i}\right)=F\left(x_{i}\right)^{I-1}
+$$
+
+\begin{enumerate}
+  \setcounter{enumi}{1}
+  \item Under the assumption of monotonicity, we have the system
+\end{enumerate}
+
+$$
+\begin{aligned}
+U_{i}\left(x_{i}\right) & =F\left(x_{i}\right)^{I-1} x_{i}-T_{i}\left(x_{i}\right) \\
+U_{i}\left(x_{i}\right) & =U_{i}(0)+\int_{0}^{x_{i}} F(y)^{I-1} \mathrm{~d} y \\
+T_{i}\left(x_{i}\right) & =F^{I-1}\left(x_{i}\right) b\left(x_{i}\right)
+\end{aligned}
+$$
+
+\begin{enumerate}
+  \setcounter{enumi}{2}
+  \item Solve for $b\left(x_{i}\right)$ and check it is monotone.
+\end{enumerate}
+
+\section*{Reserve price and entry fees}
+\begin{itemize}
+  \item Before bidding agents pay an entry fee $\boldsymbol{c}$. Only agents that choose to submit bids pay $c$.
+  \item Generally $c>0$. Sometimes $c<0$ to compensate bidders for cost of bid preparation and to increase participation.
+  \item A reserve price $r$ is a minimum price chosen by the seller. It may be announced or kept secret.\\
+If no bid exceeds $r$ the seller keeps the object.
+  \item In SPA, if only one bid exceeds $r$, the bidder gets the object and pays $r$.
+\end{itemize}
+
+\section*{SPA: Reserve price and entry fee}
+\begin{itemize}
+  \item SIPVM, $X_{i}=[0,1]$. SPA with entry fee $c$ and reserve price $r$.
+  \item Buyers' expected profits from bidding are negative if $c>1-r$.
+  \item Suppose $0 \leq c \leq 1-r \leq 1$. Find a non-trivial equilibrium of the SPA.
+  \item A participant will only bid if her valuation exceeds a marginal value $x_{i}^{\prime}$. The marginal value $x_{i}^{\prime}$ can be determined intuitively by considering the incentives of a bidder with valuation $x_{i}^{\prime}$. Then, use $x_{i}^{\prime}$ to guess an equilibrium strategy.
+\end{itemize}
+
+\section*{References}
+Myerson, Roger. 1981. "Optimal Auction Design." Mathematics of Operations Research 6: 58-73.\\
+Rockafellar, R. Tyrrell. 1970. Convex Analysis. Number 28 in Princeton Mathematical Series. Princeton University Press.\\
+Williams, Steven. 1999. "A Characterization of Efficient, Bayesian Incentive Compatible Mechanisms." Economic Theory 14: 155-80.
+
+
+\end{document}

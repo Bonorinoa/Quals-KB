@@ -1,0 +1,262 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+\usepackage{bbold}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\graphicspath{ {./images/} }
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=blue, filecolor=magenta, urlcolor=cyan,}
+\urlstyle{same}
+
+\begin{document}
+GE and uncertainty
+
+\section*{General equilibrium and uncertainty}
+Varios models.
+
+\begin{enumerate}
+  \item Arrow-Debreu contingent claims. (Debreu 1959, chap. 7).
+  \item Arrow securities
+  \item Rational expectations equilibrium (REE). (Radner 1979).
+  \item General equilibrium, incomplete markets (GEI)
+  \item Dynamic variations\\
+a. Dynamic completeness (DC)\\
+b. Dynamic incompleteness (DI)
+\end{enumerate}
+
+\section*{Arrow-Debreu contingent-claims model}
+\begin{itemize}
+  \item Goods: $\ell=1, \ldots, L$
+  \item States: $s \in\{1, \ldots, S\}$
+  \item There are two periods, $t=0$ and $t=1$.
+  \item $t=0$ : agents are uncertain about $s, s$ is realized at $t=1$.
+  \item $t=0$ : Markets for contingent claims open (complete markets) and agents trade them.
+  \item A contingent claim $x_{\ell s} \in \mathbb{R}_{+}$is a claim to $x_{\ell s}$ units of good $\ell$ at time $t =1$ if state $s$ is realized.
+  \item At $t=1, s$ is realized, contingent claims are exercised, and consumption takes place.
+  \item Agent $i$ :
+  \item $X_{i} \subseteq \mathbb{R}_{+}^{L S}$,
+  \item $\omega_{i} \in \mathbb{R}_{+}^{L S}, \omega_{i \ell s}$ is the endowment of good $\ell$ that agent $i$ will have if state $s$ occurs.
+  \item $\succeq_{i}$ is a binary relation on $X_{i}$.
+  \item A state-contingent commodity bundle for $i$ is
+\end{itemize}
+
+$$
+\left(x_{i 11}, x_{i 21}, \ldots, x_{i L 1}, x_{i 12}, \ldots, x_{i L 2}, \ldots, x_{i 1 S}, \ldots, x_{i L S}\right) \in X_{i},
+$$
+
+\begin{itemize}
+  \item where $X_{i} \subseteq \mathbb{R}_{+}^{L S}$; and
+  \item $\left(x_{i 1 s}, x_{i 2 s}, \ldots, x_{i L s}\right)$ is $i$ 's consumption bundle at $t=1$ if $s$ occurs.
+\end{itemize}
+
+\section*{Preferences}
+\begin{itemize}
+  \item $\succeq_{i}$ on $X_{i}$ reflects the consumer's ˋ"tastes for goods and services (including, in particular, their spacial and temporal specifications), his personal appraisal of the likelihoods of the various events, and his attitude toward risk." (Debreu 1959, chap. 7, page 101).
+  \item Convexity of preferences is naturally interpreted in the context of contingent claims as risk aversion.
+  \item Common assumptions yield a utility representation for preferences,
+\end{itemize}
+
+$$
+x \succeq_{i} x^{\prime} \Longleftrightarrow u_{i}(x) \geq u_{i}\left(x^{\prime}\right) .
+$$
+
+Additional assumptions yield specific representations:
+
+\begin{itemize}
+  \item subjective probabilities and state-dependent expected utility
+\end{itemize}
+
+$$
+u_{i}(x)=\sum_{s=1}^{S} \pi_{i}(s) v_{i}\left(x_{s}, s\right)=\sum_{s=1}^{S} \pi_{i}(s) v_{i}\left(x_{1 s}, \ldots, x_{L s}, s\right)
+$$
+
+where $v_{i}: \mathbb{R}^{L} \times\{1, \ldots, S\} \rightarrow \mathbb{R}$
+
+\begin{itemize}
+  \item subjective probabilities and state-independent expected utility
+\end{itemize}
+
+$$
+u_{i}(x)=\sum_{s=1}^{S} \pi_{i}(s) v_{i}\left(x_{s}\right)=\sum_{s=1}^{S} \pi_{i}(s) v_{i}\left(x_{1 s}, \ldots, x_{L s}\right)
+$$
+
+where $v_{i}: \mathbb{R}^{L} \rightarrow \mathbb{R}$
+
+\section*{Results}
+\begin{itemize}
+  \item Formally identical to Arrow-Debreu economy: Goods and services are reinterpreted as contingent claims resulting in an Arrow-Debreu economy with $L S$ goods.
+  \item Then, existence of WE and welfare theorems hold under the same formal assumptions. Proofs remain the same.
+  \item Implicit assumptions:
+  \item There are $L S$ markets, one for each contingent claim.
+  \item One of the following alternative assumptions about the information structure:
+\end{itemize}
+
+\section*{Alternative information assumptions}
+\begin{enumerate}
+  \item No private information: Every agent knows the true probability distribution over states, or
+  \item Common beliefs: Every agent agrees on a probability distribution over states, and maximizes expected utility with respect to the common beliefs-common beliefs may be wrong-or
+  \item Private information: Agents have different beliefs about the distribution over states but do not update beliefs based on prices or actions of others.
+\end{enumerate}
+
+Pareto optimality is in ex ante sense with respect to given beliefs: At $t=0$, feasible allocation of contingent claims makes every agent better off given agents' $t=0$ beliefs.
+
+\section*{Arrow securities}
+\begin{itemize}
+  \item In the Arrow-Debreu contingent-claims model, before uncertainty is revealed, there is a market for every contingent claim to every commodity. This requires $L S$ markets, an extraordinary number, and all trading takes place at $t=0$.
+  \item Innovation:
+  \item Introduce trading at $t=1$ (i.e. after $s$ is revealed) for the $L$ standard goods.
+  \item At $t=0$ allow trading of particular securities that suffice to transfer "income" between states.
+  \item Essential model remains unchanged but the number of necessary markets is reduced.
+\end{itemize}
+
+\section*{Features}
+\begin{itemize}
+  \item Full set of Arrow securities: one for each state $s$. An $s$-state Arrow security promises to pay one unit of account in state $s$ and 0 for $s^{\prime} \neq s$.
+  \item At $t=0$, securities are traded.
+  \item At $t=1$,
+  \item A state $s$ is revealed. State- $s$ security pays 1 unit of account. Agents get a positive or negative dividend. The net dividend is zero.
+  \item State- $s$ spot market opens, the $L$ commodities and services are traded.
+  \item Information assumptions: same as in Arrow-Debreu contingent claims model.
+  \item At $t=0$, agent $i$ may purchase $z_{i} \in \mathbb{R}^{S}$ of Arrow securities at price $q \in \mathbb{R}^{S}$ subject to budget constraint $q \cdot z_{i} \leq 0$.
+  \item If at $t=1$ the state $s \in S$ is revealed, $i$ faces the following budget constraint $p_{s} \cdot x_{i s} \leq p_{s} \cdot \omega_{i s}+z_{i s}$.
+  \item An allocation of securities $z=\left(z_{1}, \ldots, z_{I}\right)$ is feasible if $\sum_{i=1}^{I} z_{i}=0$.
+\end{itemize}
+
+\section*{Results}
+Theorem 1 (Arrow securities) Let $\left(x^{*}, p^{*}\right)$ be a WE of an Arrow-Debreu economy with contingent claims. If $q=(1, \ldots, 1)$, and $\forall i, s, z_{i s}=p_{s}^{*}$ - $\left(x_{i s}^{*}-\omega_{i s}\right)$, then $\left(x^{*}, z, p^{*}, q\right)$ is a WE with Arrow securities.
+
+Conversely, let $\left(x^{*}, z^{*}, p^{*}, q^{*}\right)$ be an equilibrium with Arrow securities. If $\forall s, p_{s}=q_{s}^{*} p_{s}^{*}$, then $\left(x^{*}, p\right)$ is a WE with contingent claims.\\
+"Theorem."A Walrasian equilibrium exists. If at $t=0$ agents correctly anticipate the spot-prices that prevail at $t=1$ in every\} state, the WE is Pareto optimal.
+
+Note: It requires that agents correctly anticipate the spot prices at every state, not that they anticipate the state itself.
+
+\section*{Rational expectations equilibrium}
+\begin{itemize}
+  \item Asymmetric information.
+  \item Agents infer from prices the information that other agents have.
+  \item Rational expectations equilibria only exists generically.
+  \item $i=1, \ldots, I$ agents, $\ell=1, \ldots, L$ goods
+  \item $i$ 's consumption set is $X_{i}=\mathbb{R}_{+}^{L}$
+  \item $i$ has state dependent utility and endowments
+  \item $\Omega$ is the set of states of the world
+  \item $F_{\Omega}$ is a probability distribution on $\Omega$
+  \item Information structure
+  \item Every agent $i$ observes a signal $s_{i} \in S^{i}$
+  \item Signal space $S=\prod_{i=1}^{I} S^{i}$
+  \item $F$ is a probability distribution on $S \times \Omega$ whose marginal on $\Omega$ is $F_{\Omega}$.
+\end{itemize}
+
+Definition 1 A fully revealing rational expectations equilibrium is a price function $\varphi: S \rightarrow \Delta$ and $\forall p \in \varphi(S)$ a feasible allocation $f_{p}: I \rightarrow \mathbb{R}_{+}^{L}$ such that
+
+\begin{enumerate}
+  \item $\varphi$ is one to one
+  \item $f_{p}(i)$ maximizes
+\end{enumerate}
+
+$$
+\left\{\begin{array}{l}
+E\left[u_{i}(x, \omega) \mid s_{i}^{\prime}, \varphi(s)=p\right] \text { s.t. } \\
+\cap_{s: \varphi(s)=p, s_{i}=s_{i}^{\prime}}\{x: p \cdot x \leq p \cdot \omega(i, s)\}
+\end{array}\right.
+$$
+
+\section*{Assumptions and results}
+\begin{itemize}
+  \item Additional assumptions: $S$ finite, or restrictions on the dimensionality of $S$ relative to commodity space $L$. Smooth demands.
+  \item Result: Generically (i.e. except for a measure zero set of economies parametrized by endowments), economies have a rational expectations equilibrium that fully reveals the joint signal profile $s=\left(s_{1}, \ldots, s_{I}\right)$.
+\end{itemize}
+
+\section*{Remarks}
+\begin{itemize}
+  \item Since $S$ is finite and $\Delta$ has the cardinality of the continuum, it is easier to obtain a one-to-one function $\varphi$.
+\end{itemize}
+
+The correct model should have $\operatorname{dim} S>\operatorname{dim} \Delta$
+
+\begin{itemize}
+  \item How is the price $\varphi(s)$ determined in the market?
+  \item If $p \notin \varphi(S)$, excess demand is not defined. Adjustment rule cannot depend on excess demand.
+  \item Suppose there is $i$ with information that no other agent has, an this information does not affect $i$ 's demand function. How do prices acquire this information? (Beja's critique)
+  \item If prices revealed all information, why would agents invest in acquiring information? (Grossman-Stiglitz)
+\end{itemize}
+
+\section*{GE with incomplete markets}
+\begin{itemize}
+  \item Symmetric information.
+  \item Two periods $t=0,1 ; L=1$ good
+  \item $s=1, \ldots, S$ states are revealed in period 1.
+  \item $J$ securities, $J<S$, similar to Arrow securities but may pay in more than one state. Securities are traded at $t=0$.
+  \item Walrasian equilibrium exists (same arguments as in Arrow-Debreu economy.
+  \item Both First and Second Welfare Theorems fail.
+\end{itemize}
+
+\section*{Complete markets, two securities}
+\begin{center}
+\includegraphics[max width=\textwidth, alt={}]{0f378870-afa9-4a33-9947-d5e0c0f440f5-23_1211_2576_351_150}
+\end{center}
+
+\begin{itemize}
+  \item $L=1, S=\{1,2\}$, 2 Arrow securites. For $s \in S$, security $z_{s}$ pays 1 unit of account in state $s$.
+\end{itemize}
+
+\section*{Incomplete markets, one security}
+\begin{center}
+\includegraphics[max width=\textwidth, alt={}]{0f378870-afa9-4a33-9947-d5e0c0f440f5-24_1202_2569_354_154}
+\end{center}
+
+\begin{itemize}
+  \item $L=1, S=\{1,2\}$, one Arrow security $z_{2}$.
+\end{itemize}
+
+Edgeworth cube 1\\
+\includegraphics[max width=\textwidth, alt={}, center]{0f378870-afa9-4a33-9947-d5e0c0f440f5-26_1491_2194_48_153}
+
+Edgeworth cube 2\\
+\includegraphics[max width=\textwidth, alt={}, center]{0f378870-afa9-4a33-9947-d5e0c0f440f5-28_1491_2194_48_153}
+
+Edgeworth cube\\
+\includegraphics[max width=\textwidth, alt={}, center]{0f378870-afa9-4a33-9947-d5e0c0f440f5-30_1495_2194_44_153}
+
+\section*{Incomplete markets}
+\begin{itemize}
+  \item 2 periods, $L>1$ goods,
+  \item Securities pay in goods.
+  \item Or more than 2 periods, $L=1$ good.
+  \item Conjecture. WE is constrained PO, there is no allocation achievable by the available markets that Pareto dominates the WE allocation.
+  \item Note. Allocations achievable by given markets depend on prices.
+  \item Example in (Hart 1975) and (Mas-Colell, Whinston, and Green 1995, 19.F.2).
+\end{itemize}
+
+\section*{Hart example}
+\begin{itemize}
+  \item $I=2, L=2, S=2$. No securities.
+  \item Agent $i, E \succ_{i} E^{\prime}$; Agent $j E^{\prime} \succ_{j} E$.
+  \item A consumption for agent $i$ in state $s$ of good $\ell$ is $x_{i s \ell}$. For given $n \in \mathbb{N}$, preferences are
+\end{itemize}
+
+$$
+\begin{aligned}
+u_{i}\left(x_{i 11}, x_{i 12}, x_{i 21}, x_{i 22}\right) & =n v_{i}\left(x_{i 11}, x_{i 12}\right)+v_{i}\left(x_{i 21}, x_{i 22}\right) \\
+u_{j}\left(x_{j 11}, x_{j 12}, x_{j 21}, x_{j 22}\right) & =v_{j}\left(x_{j 11}, x_{j 12}\right)+n v_{j}\left(x_{j 21}, x_{j 22}\right)
+\end{aligned}
+$$
+
+\begin{itemize}
+  \item There are at least four equilibria,\\
+->
+\end{itemize}
+
+\section*{References}
+Debreu, Gerard. 1959. The Theory of Value. New York: John Wiley.\\
+Hart, Oliver D. 1975. "On the Optimality of Equilibrium When the Market Structure Is Incomplete." Journal of Economic Theory 11: 418-43. \href{https://doi.org/10.1016/0022-0531(75)90028-9}{https://doi.org/10.1016/0022-0531(75)90028-9}.\\
+Mas-Colell, Andreu, Michael Whinston, and Jerry Green. 1995. Microeconomic Theory. New York, Oxford: Oxford University Press.\\
+Radner, Roy. 1979. "Rational Expectations Equilibria." Econometrica.
+
+
+\end{document}
